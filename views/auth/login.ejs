@@ -1,0 +1,37 @@
+<h1>Please Login</h1>
+<form method="POST" action="/auth/login">
+  <div>
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Enter email ..."
+      value=""
+    />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Enter password ..."
+    />
+  </div>
+  <button type="submit">Login</button>
+</form>
+
+<p>
+  If you don't have an account,
+  <a class="normal-link" href="/auth/register">register</a> here.
+</p>
+
+<% if(errors[0].msg) { %>
+<h2 style="color: red">Errors:</h2>
+<ul>
+  <% errors.forEach(error=> { %>
+  <li><%= error.msg %></li>
+  <% }) %>
+</ul>
+<% } %>

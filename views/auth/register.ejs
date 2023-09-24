@@ -1,0 +1,72 @@
+<h1>Please Register</h1>
+<form method="POST" action="/auth/register">
+  <div>
+    <label for="fname">First name</label>
+    <input
+      type="text"
+      id="fname"
+      name="fname"
+      placeholder="Enter first name ..."
+      value=""
+    />
+  </div>
+  <div>
+    <label for="lname">Last name</label>
+    <input
+      type="text"
+      id="lname"
+      name="lname"
+      placeholder="Enter last name ..."
+      value=""
+    />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Enter email ..."
+      value=""
+    />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Enter password ..."
+      value=""
+    />
+  </div>
+  <div>
+    <label for="repeatPassword">Re-enter password</label>
+    <input
+      type="password"
+      id="repeatPassword"
+      name="repeatPassword"
+      placeholder="Re-enter password ..."
+    />
+  </div>
+  <div>
+    <label for="roles">Role</label>
+    <input
+      type="text"
+      id="roles"
+      name="roles"
+      placeholder="Enter roles ..."
+      value="member"
+    />
+  </div>
+  <button type="submit">Register</button>
+</form>
+
+<% if(errors && errors !== '' ) { %>
+<h2 style="color: red">Errors:</h2>
+<ul>
+  <% errors.forEach(error=> { %>
+  <li><%= error.msg %></li>
+  <% }) %>
+</ul>
+<% } %>

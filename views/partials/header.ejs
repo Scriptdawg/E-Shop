@@ -1,0 +1,21 @@
+<nav id="top-nav">
+  <ul>
+    <li><a href="/">Main</a></li>
+    <li><a href="/About">About</a></li>
+    <li><a href="/Contact">Contact</a></li>
+    <li><a href="/Public">Public</a></li>
+
+    <% if(roles) { roles.forEach(role => { %>
+    <li><a href="/<%= role %>"><%= role %></a></li>
+    <% }) %>
+    <li><a href="/auth/Logout">Logout</a></li>
+    <% } else { %>
+    <li><a href="/auth/Login">Login</a></li>
+    <% } %>
+    
+    <li><a href="/member/cart">Cart</a></li>
+  </ul>
+</nav>
+<span style="color: red; font-size: 14px; padding-inline: 16px">
+  <%= messages %>
+</span>

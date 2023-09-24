@@ -1,0 +1,22 @@
+<h1><%= pageTitle %></h1>
+<p>
+  To test database connectivity, these dogs are retrieved from a mongoDb cloud
+  database called zoo, a collection of documents called dogs which are linked to
+  a collection of documents called breeds.
+</p>
+
+<% dogs.forEach((dog)=> { %>
+<a style="padding: 16px 0" href="dog/<%= dog.url %>">
+  <h2><%= dog.name %></h2>
+  <% if(dog.coverImagePath) { %>
+  <img
+    width="800"
+    height="600"
+    src="<%= dog.coverImagePath %>"
+    alt="Database picture"
+  />
+  <% } %>
+</a>
+<% }); %> <% if (roles && roles.includes("Author")) { %>
+<p><a href="/author/dog/create">Create New Dog</a></p>
+<% } %>

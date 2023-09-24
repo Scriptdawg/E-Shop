@@ -1,0 +1,9 @@
+<h1><%= pageTitle %></h1>
+<h2><%= dog.name %></h2>
+<p>Do you really want to delete <%= dog.name %>?</p>
+
+<form method="POST" action="/author/dog/delete">
+  <input type="hidden" name="dogid" required="true" value="<%= dog._id %>" />
+  <button type="submit">Delete</button>
+</form>
+<a href="/author/dog/<%= dog.url %>">Cancel</a>

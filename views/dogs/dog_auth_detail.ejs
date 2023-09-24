@@ -1,0 +1,22 @@
+<h1 id="top"><%= pageTitle %></h1>
+
+<% if(dog.coverImagePath) { %>
+<img width="800" height="600" src="<%= dog.coverImagePath %>" />
+<% } %>
+
+<h2>Description:</h2>
+<p><%= dog.description %></p>
+
+<% if(dog.favoriteFood) { %>
+<p>My favorite food is <%= dog.favoriteFood %>.</p>
+<% } %>
+
+<!-- Don't display Breed section if Unavailable or Other -->
+<% if(dog.breed.name !== "Unavailable" && dog.breed.name !== "Other") { %>
+<h2>Breed:</h2>
+<p>I am a <%= dog.breed.name %>.</p>
+<p><%= dog.breed.description %></p>
+<% } %>
+
+<a href="/author/dog/update/<%= dog.url %>">Update</a>
+<a href="/author/dog/delete/<%= dog.url %>">Delete</a>

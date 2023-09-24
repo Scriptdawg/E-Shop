@@ -1,0 +1,28 @@
+<h1><%= pageTitle %></h1>
+
+<form method="POST" action="">
+  <label for="name">Name *</label><br />
+  <input
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Enter a name ..."
+    value="<%= breed.name %>"
+  /><br /><br />
+  <label for="description">Description *</label><br />
+  <textarea id="description" name="description">
+<%= breed.description %></textarea
+  ><br /><br />
+  <button type="submit">Submit</button>
+</form>
+
+<p><i>* required</i></p>
+
+<% if(errors && errors !=='' ) { %>
+<h2 style="color: red">Errors:</h2>
+<ul>
+  <% errors.forEach(error=> { %>
+  <li><%= error.msg %></li>
+  <% }) %>
+</ul>
+<% } %>
