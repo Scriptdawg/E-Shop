@@ -13,4 +13,8 @@ router.get("/", public_controller.public_index);
 router.get("/dog/:id", public_controller.dog_detail_get);
 router.get("/dogs", public_controller.dog_list_get);
 
+// ** CART ROUTES ** //
+router.get("/cart", public_controller.cart_detail_get);
+router.get("/products/api", public_controller.products_api_list_get)
+
 module.exports = router;

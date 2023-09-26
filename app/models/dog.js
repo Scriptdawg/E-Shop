@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 // Define schema
 const DogSchema = new Schema({
   name: { type: String, required: true, minLength: 3, maxLength: 50 },
+  price: { type: Number, require: true },
   breed: { type: Schema.Types.ObjectId, ref: "Breed", required: true },
   favoriteFood: { type: String, maxLength: 50 },
   description: { type: String, required: true, minLength: 3 },

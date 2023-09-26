@@ -1,9 +1,15 @@
 <nav id="top-nav">
   <ul>
+    <li><a href="/public/cart">
+      <div class="cart">
+        <i class="bi bi-cart2"></i>
+        <div id="cartAmount" class="cartAmount">0</div>
+      </div>
+    </a></li>
     <li><a href="/">Main</a></li>
     <li><a href="/About">About</a></li>
     <li><a href="/Contact">Contact</a></li>
-    <li><a href="/Public">Public</a></li>
+    <li><a href="/Public">Shop</a></li>
 
     <% if(roles) { roles.forEach(role => { %>
     <li><a href="/<%= role %>"><%= role %></a></li>
@@ -16,6 +22,6 @@
     <li><a href="/member/cart">Cart</a></li>
   </ul>
 </nav>
-<span style="color: red; font-size: 14px; padding-inline: 16px">
+<!-- <span style="color: red; font-size: 14px; padding-inline: 16px">
   <%= messages %>
-</span>
+</span> -->

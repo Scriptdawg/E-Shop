@@ -34,3 +34,32 @@ exports.dog_list_get = asyncHandler(async (req, res) => {
     dogs,
   });
 });
+
+// ** CART ROUTES ** //
+exports.cart_detail_get = asyncHandler(async (req, res) => {
+  res.render("public/cart", {
+    roles: req.session.roles,
+  });
+});
+
+exports.products_api_list_get = asyncHandler(async (req, res) => {
+  const products = [];
+  const dogs = (await Dog.find()).sort(function (a, b) {
+    let textA = a.name.toUpperCase();
+    let textB = b.name.toUpperCase();
+    return textA < textB ? -1 : textA > textB ? 1 : 0;
+  });
+  dogs.forEach(async dog => {
+    //const path = (await Dog.findById("650cca39bfd761325af3c77c"));
+    const imagePath = dog.coverImagePath;
+    const item = {
+      id: dog.id,
+      name: dog.name,
+      price: dog.price,
+      desc: dog.description,
+      img: imagePath
+    };
+    products.push(item);
+  });
+  res.json(products);
+});
