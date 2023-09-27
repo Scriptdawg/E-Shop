@@ -1,24 +1,27 @@
 /**
  * ! GET the products from the database
- */
+*/
 const init = () => {
   fetch("http://localhost:3000/Public/products/api")
-    .then((response) => response.json())
-    .then((data) => {
-      let shopItemsData = data;
-      let test = document.querySelector("#test");
-      // test.innerHTML = `
-      // <img src= "${data[0].img}" />
-      // `;
-      console.log(data);
-      
-      let shop = document.getElementById("shop");
-      
-      /**
-       * ! Basket to hold all the selected items
-       * ? the getItem part is retrieving data from the local storage
+  .then((response) => response.json())
+  .then((data) => {
+    //let shopItemsData = data;
+    //let test = document.querySelector("#test");
+    // test.innerHTML = `
+    // <img src= "${data[0].img}" />
+    // `;
+    //console.log(data);
+  });
+  };
+  init();
+    
+    let shop = document.getElementById("shop");
+    
+    /**
+     * ! Basket to hold all the selected items
+     * ? the getItem part is retrieving data from the local storage
        * ? if local storage is blank, basket becomes an empty array
-      */
+    */
      
      let basket = JSON.parse(localStorage.getItem("data")) || [];
      
@@ -122,6 +125,3 @@ const init = () => {
   
   calculation();
   
-});
-};
-init();
