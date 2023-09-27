@@ -1,6 +1,6 @@
 import { FetchWrap } from "./fetchWrap.js";
 class View {
-  #viewApi = new FetchWrap("http://localhost:3000/Public/");
+  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/products/api");
   constructor() {
     this.#main();
     this.basket = JSON.parse(localStorage.getItem("data")) || [];
