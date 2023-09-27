@@ -5,7 +5,7 @@ const Dog = require("../models/dog.js");
 
 // INDEX - GET
 exports.public_index = (req, res) => {
-  res.render("public/index", {
+  res.render("public/product_list", {
     roles: req.session.roles,
   });
 };
@@ -37,7 +37,7 @@ exports.dog_list_get = asyncHandler(async (req, res) => {
 
 // ** CART ROUTES ** //
 exports.cart_detail_get = asyncHandler(async (req, res) => {
-  res.render("public/cart", {
+  res.render("public/basket", {
     roles: req.session.roles,
   });
 });
@@ -50,7 +50,6 @@ exports.products_api_list_get = asyncHandler(async (req, res) => {
     return textA < textB ? -1 : textA > textB ? 1 : 0;
   });
   dogs.forEach(async dog => {
-    //const path = (await Dog.findById("650cca39bfd761325af3c77c"));
     const imagePath = dog.coverImagePath;
     const item = {
       id: dog.id,

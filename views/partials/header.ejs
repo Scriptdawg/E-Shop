@@ -1,11 +1,5 @@
 <nav id="top-nav">
   <ul>
-    <li><a href="/public/cart">
-      <div class="cart">
-        <i class="bi bi-cart2"></i>
-        <div id="cartAmount" class="cartAmount">0</div>
-      </div>
-    </a></li>
     <li><a href="/">Main</a></li>
     <li><a href="/About">About</a></li>
     <li><a href="/Contact">Contact</a></li>
@@ -18,10 +12,20 @@
     <% } else { %>
     <li><a href="/auth/Login">Login</a></li>
     <% } %>
-    
+
     <li><a href="/member/cart">Cart</a></li>
+    <li>
+      <a href="/public/cart">
+        <div class="cart">
+          <i class="bi bi-cart2"></i>
+          <div id="cartAmount" class="cartAmount">0</div>
+        </div>
+      </a>
+    </li>
   </ul>
 </nav>
 <!-- <span style="color: red; font-size: 14px; padding-inline: 16px">
   <%= messages %>
 </span> -->
+
+<script type="module" src="/javascripts/header.js"></script>

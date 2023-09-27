@@ -1,3 +1,23 @@
 #top-nav ul {
+  align-items: center;
   display: flex;
+  flex-wrap: wrap;
+}
+.cart {
+  border-radius: 4px;
+  color: #212529;
+  font-size: 24px;
+  position: relative;
+}
+.cartAmount {
+  background-color: green;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 2px 4px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: 4px;
 }

@@ -1,0 +1,71 @@
+.products-container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.product-list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, auto);
+  margin-block: 16px;
+}
+@media (max-width: 1000px) {
+  .product-list {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+@media (max-width: 500px) {
+  .product-list {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+.product-card {
+  border: 2px solid #212529;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-card-imgage {
+  border-radius: 2px 2px 0 0;
+  width: 100%;
+}
+.product-card-body {
+  padding: 8px;
+}
+.product-card-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+.product-card-footer-buttons {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+}
+.product-card-footer .btn-minus,
+.product-card-footer .btn-plus,
+.product-quantity {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: black;
+  text-align: center;
+  width: 50px;
+}
+.product-card-footer .btn-minus,
+.product-card-footer .btn-plus {
+  cursor: pointer;
+  font-size: 32px;
+}
+.product-card-footer .btn-minus {
+  color: red;
+}
+.product-card-footer .btn-plus {
+  color: green;
+}
+.product-card-footer .btn-minus:hover,
+.product-card-footer .btn-plus:hover {
+  background-color: white;
+  border: 1px solid gainsboro;
+}

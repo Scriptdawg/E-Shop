@@ -1,6 +1,7 @@
 @import url("shared/header.css");
 @import url("shared/footer.css");
 @import url("shared/style.css");
+@import url("shared/eshop.css");
 * {
   box-sizing: border-box;
 }
@@ -15,7 +16,6 @@ body {
 }
 main {
   margin-inline: auto;
-  max-width: 800px;
   padding: 16px;
 }
 h1 {
@@ -36,7 +36,8 @@ ul {
 li {
   list-style: none;
 }
-a {
+a,
+.cart {
   color: #0b5c7c;
   display: inline-block;
   padding: 8px 16px;

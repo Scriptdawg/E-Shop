@@ -35,25 +35,7 @@ a {
   margin-bottom: 30px;
 }
 
-.cart {
-  position: relative;
-  background-color: #fff;
-  color: #212529;
-  font-size: 30px;
-  padding: 5px;
-  border-radius: 4px;
-}
 
-.cartAmount {
-  position: absolute;
-  top: -15px;
-  right: -10px;
-  font-size: 16px;
-  background-color: red;
-  color: white;
-  padding: 3px;
-  border-radius: 3px;
-}
 
 /**
 * ! Shop items styles are here
