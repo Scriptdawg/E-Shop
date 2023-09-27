@@ -5,15 +5,12 @@ const init = () => {
   fetch("http://localhost:3000/Public/products/api")
     .then((response) => response.json())
     .then((data) => {
-      //let shopItemsData = data;
+      let shopItemsData = data;
       let test = document.querySelector("#test");
       // test.innerHTML = `
       // <img src= "${data[0].img}" />
       // `;
       console.log(data);
-    });
-    };
-    init();
       
       let shop = document.getElementById("shop");
       
@@ -40,47 +37,47 @@ const init = () => {
           <div id=product-id-${id} class="item">
           <img width="219" height="164" src= "${img}" alt="">
           <div class="details">
-        <h3>${name}</h3>
-        <p>${desc}</p>
-        <div class="price-quantity">
-        <h2>$ ${price} </h2>
-        <div class="buttons">
-        <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-        <div id=${id} class="quantity">${
-          search.item === undefined ? 0 : search.item
-        }</div>
-        <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
-        </div>
-        </div>
-        </div>
-        </div>
-        `;
-      })
-      .join(""));
-    };
-    
-    generateShop();
-    
-    /**
-     * ! used to increase the selected product item quantity by 1
-    */
-   
-   let increment = (id) => {
-   let selectedItem = id;
-   let search = basket.find((x) => x.id === selectedItem.id);
-   
-   if (search === undefined) {
-     basket.push({
-       id: selectedItem.id,
-       item: 1,
-      });
-    } else {
-      search.item += 1;
-    }
-    
-    console.log(basket);
-    update(selectedItem.id);
-    localStorage.setItem("data", JSON.stringify(basket));
+          <h3>${name}</h3>
+          <p>${desc}</p>
+          <div class="price-quantity">
+          <h2>$ ${price} </h2>
+          <div class="buttons">
+          <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+          <div id=${id} class="quantity">${
+            search.item === undefined ? 0 : search.item
+          }</div>
+          <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+          </div>
+          </div>
+          </div>
+          </div>
+          `;
+        })
+        .join(""));
+      };
+      
+      generateShop();
+      
+      /**
+       * ! used to increase the selected product item quantity by 1
+      */
+     
+     let increment = (id) => {
+       let selectedItem = id;
+       let search = basket.find((x) => x.id === selectedItem.id);
+       
+       if (search === undefined) {
+         basket.push({
+           id: selectedItem.id,
+           item: 1,
+          });
+        } else {
+          search.item += 1;
+        }
+        
+        console.log(basket);
+        update(selectedItem.id);
+        localStorage.setItem("data", JSON.stringify(basket));
   };
   
   /**
@@ -88,6 +85,7 @@ const init = () => {
   */
  
  let decrement = (id) => {
+  console.log("hello")
    let selectedItem = id;
    let search = basket.find((x) => x.id === selectedItem.id);
    
@@ -124,3 +122,6 @@ const init = () => {
   
   calculation();
   
+});
+};
+init();
