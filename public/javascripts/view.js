@@ -1,7 +1,7 @@
 import { FetchWrap } from "./fetchWrap.js";
 class View {
-  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
-  // #viewApi = new FetchWrap("http://localhost:3000/Public/");
+  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
+  #viewApi = new FetchWrap("http://localhost:3000/Public/");
   constructor() {
     this.#main();
     this.basket = JSON.parse(localStorage.getItem("data")) || [];
@@ -51,11 +51,9 @@ class View {
             <p>$ ${product.price}</p>
             <div class="product-card-footer-buttons">
               <button id="btn-minus-${product.id}" class="btn-minus" data-id="${product.id}">-</button>
-
               <p id="product-quantity-${product.id}" class="product-quantity">
                 ${search.qty === undefined ? 0 : search.qty}
               </p>
-
               <button id="btn-plus-${product.id}" class="btn-plus" data-id="${product.id}">+</button>
             </div>
           </div>
@@ -64,10 +62,10 @@ class View {
       this.#calculation();
     })
     print.innerHTML += `</div>`;
-    this.#attachButtons(products);
+    this.#attachButtons();
   };
 
-  #attachButtons = (products) => {
+  #attachButtons = () => {
     //? Minus Button
     document.querySelectorAll(".product-card-footer-buttons .btn-minus").forEach(button => {
       button.addEventListener("click", event => {
@@ -80,7 +78,6 @@ class View {
         this.#increment(`${button.dataset.id}`);
       });
     });
-    
   };
 
   #decrement = (buttonId) => {
@@ -92,7 +89,6 @@ class View {
      }
     this.#update(buttonId);
     this.basket = this.basket.filter((x) => Number.parseInt(x.qty, 10) !==0);
-    console.log(this.basket);   
     localStorage.setItem("data", JSON.stringify(this.basket));      
   };
 
