@@ -1,7 +1,7 @@
 import { FetchWrap } from "./fetchWrap.js";
 class View {
-   #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
-  //#viewApi = new FetchWrap("http://localhost:3000/Public/");
+  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
+  // #viewApi = new FetchWrap("http://localhost:3000/Public/");
   constructor() {
     this.#main();
     this.basket = JSON.parse(localStorage.getItem("data")) || [];
@@ -91,6 +91,8 @@ class View {
       search.qty -= 1;
      }
     this.#update(buttonId);
+    this.basket = this.basket.filter((x) => Number.parseInt(x.qty, 10) !==0);
+    console.log(this.basket);   
     localStorage.setItem("data", JSON.stringify(this.basket));      
   };
 
@@ -105,7 +107,6 @@ class View {
       search.qty += 1;
     }
     this.#update(buttonId);
-    this.basket = this.basket.filter((x) => x.item !== 0);
     localStorage.setItem("data", JSON.stringify(this.basket));    
   };
   
