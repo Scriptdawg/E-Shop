@@ -33,7 +33,6 @@ class Cart {
   };
 
   #printProducts = (items) => {
-
     const products = items.filter(item => {
       const search = this.basket.find(product => {
         return product.id === item.id;
@@ -45,9 +44,7 @@ class Cart {
     } else {
       this.#printLegend();
     };
-
-    print = document.querySelector("#product-list");
-    
+    const print = document.querySelector("#product-list");
     products.forEach(product => {
       const search = this.basket.find((y) => y.id === product.id) || [];
       print.innerHTML += `
@@ -164,9 +161,7 @@ class Cart {
   #printLegend = () => {
     const total = this.#totalAmount();
     document.querySelector("#product-legend").innerHTML=`
-
       <h2>Total Bill: $ <span id="total-bill">${total}</span></h2>
-
       <button id="btn-checkout" class="btn-checkout">CheckOut</button>
       <button id="btn-clear-cart" class="btn-clear-cart">Clear Cart</button>
     `
@@ -183,14 +178,13 @@ class Cart {
   }
 
   #deleteItem = (buttonId) => {
-    console.log(buttonId)
     document.querySelector(`#product-${buttonId}`).classList.add("hide");
     const search = this.basket.find(item => item.id === buttonId);
     search.qty = 0;
-    console.log(search);
     this.#calculation()
     this.#printLegend();
     this.basket = this.basket.filter((x) => Number.parseInt(x.qty, 10) !==0);
+    if(this.basket.length === 0) this.#clearCart();
     localStorage.setItem("data", JSON.stringify(this.basket));
   };
 
