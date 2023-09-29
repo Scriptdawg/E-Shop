@@ -2,6 +2,7 @@
 @import url("shared/footer.css");
 @import url("shared/style.css");
 @import url("shared/eshop.css");
+@import url("shared/cart.css");
 * {
   box-sizing: border-box;
 }

@@ -1,0 +1,18 @@
+.hide {
+  display: none;
+}
+.product-legend {
+  text-align: center;
+}
+.product-legend h2 {
+  font-size: 24px;
+}
+/* .product-legend a {
+  background-color: black;
+  border-radius: 4px;
+  color: white;
+}
+.product-legend a:hover {
+  background-color: black;
+  color: white;
+} */

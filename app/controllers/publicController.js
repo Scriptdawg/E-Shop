@@ -37,7 +37,7 @@ exports.dog_list_get = asyncHandler(async (req, res) => {
 
 // ** CART ROUTES ** //
 exports.cart_detail_get = asyncHandler(async (req, res) => {
-  res.render("public/basket", {
+  res.render("public/cart", {
     roles: req.session.roles,
   });
 });

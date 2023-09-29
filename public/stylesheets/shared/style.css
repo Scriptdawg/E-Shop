@@ -109,9 +109,9 @@ a {
   margin-bottom: 20px;
 }
 
-.HomeBtn,
-.checkout,
-.removeAll {
+.btn-continue,
+.btn-checkout,
+.btn-clear-cart {
   background-color: #212529;
   color: white;
   border: none;
@@ -121,11 +121,11 @@ a {
   margin-top: 10px;
 }
 
-.checkout {
+.btn-checkout {
   background-color: green;
   text-decoration: line-through;
 }
-.removeAll {
+.btn-clear-cart {
   background-color: red;
 }
 .bi-x-lg {
