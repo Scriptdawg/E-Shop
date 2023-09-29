@@ -7,12 +7,24 @@
 .product-legend h2 {
   font-size: 24px;
 }
-/* .product-legend a {
-  background-color: black;
-  border-radius: 4px;
-  color: white;
+.product-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.product-legend a:hover {
-  background-color: black;
-  color: white;
-} */
+.product-card-delete {
+  color: red;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 24px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  text-align: center;
+  width: 50px;
+  font-weight: bold;
+}
+.product-card-delete:hover {
+  background-color: white;
+  border: 1px solid gainsboro;
+}

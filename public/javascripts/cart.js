@@ -1,7 +1,7 @@
 import { FetchWrap } from "./fetchWrap.js";
 class Cart {
-  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
-  //#viewApi = new FetchWrap("http://localhost:3000/Public/");
+  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
+  #viewApi = new FetchWrap("http://localhost:3000/Public/");
   constructor() {
     this.products = [];
     this.#main();
@@ -60,7 +60,10 @@ class Cart {
             />
           </div>
           <div class="product-card-body">
-            <h2>${product.name}</h2>
+            <div id="product-card-container" class="product-card-container">
+              <h2>${product.name}</h2>
+              <button id="product-card-delete" class="product-card-delete" data-id="${product.id}">X</button>
+            </div>
             <p id="product-card-subtotal-${product.id}" class="product-card-subtotal">
               Subtotal: $ ${product.price * search.qty}
             </p>
@@ -94,6 +97,12 @@ class Cart {
     document.querySelectorAll(".product-card-footer-buttons .btn-plus").forEach(button => {
       button.addEventListener("click", event => {
         this.#increment(`${button.dataset.id}`);
+      });
+    });
+    //? Delete Button
+    document.querySelectorAll("#product-card-delete").forEach(button => {
+      button.addEventListener("click", event =>  {
+        this.#deleteItem(`${button.dataset.id}`);
       });
     });
   };
@@ -172,6 +181,18 @@ class Cart {
     this.#emptyCart();
     localStorage.setItem("data", JSON.stringify(this.basket));
   }
+
+  #deleteItem = (buttonId) => {
+    console.log(buttonId)
+    document.querySelector(`#product-${buttonId}`).classList.add("hide");
+    const search = this.basket.find(item => item.id === buttonId);
+    search.qty = 0;
+    console.log(search);
+    this.#calculation()
+    this.#printLegend();
+    this.basket = this.basket.filter((x) => Number.parseInt(x.qty, 10) !==0);
+    localStorage.setItem("data", JSON.stringify(this.basket));
+  };
 
   #totalAmount = () => {
     if (this.basket.length !== 0) {

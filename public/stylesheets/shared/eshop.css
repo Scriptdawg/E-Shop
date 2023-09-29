@@ -51,6 +51,7 @@
   border: 1px solid transparent;
   border-radius: 3px;
   color: black;
+  font-weight: bold;
   text-align: center;
   width: 50px;
 }
