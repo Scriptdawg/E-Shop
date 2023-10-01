@@ -3,18 +3,18 @@
     <li><a href="/">Main</a></li>
     <li><a href="/About">About</a></li>
     <li><a href="/Contact">Contact</a></li>
-    <li><a href="/Public">Shop</a></li>
+    <li><a href="/Public/product/list">Shop</a></li>
 
     <% if(roles) { roles.forEach(role => { %>
     <li><a href="/<%= role %>"><%= role %></a></li>
     <% }) %>
-    <li><a href="/auth/Logout">Logout</a></li>
+    <li><a href="/auth/logout">Logout</a></li>
     <% } else { %>
-    <li><a href="/auth/Login">Login</a></li>
+    <li><a href="/auth/login">Login</a></li>
     <% } %>
 
     <li>
-      <a href="/public/cart">
+      <a href="/public/cart/list">
         <div class="cart">
           <i class="bi bi-cart2"></i>
           <div id="cartAmount" class="cartAmount">0</div>

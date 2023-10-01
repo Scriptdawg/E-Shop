@@ -1,0 +1,25 @@
+<h1><%= pageTitle %></h1>
+<h2><%= story.name %></h2>
+<p>Do you really want to delete <%= story.name %>?</p>
+
+<form method="POST" action="">
+  <input
+    type="hidden"
+    name="storyid"
+    required="true"
+    value="<%= story._id %>"
+  />
+  <button type="submit">Delete</button>
+</form>
+
+<a href="/author/story/<%= story.url %>">Cancel</a>
+
+<% if(stories) { %>
+<h2 style="color: red">Errors:</h2>
+<span>This story is still assigned to:</span>
+<ul style="margin-inline: 16px">
+  <% products.forEach(product => { %>
+  <li><%= product.name %></li>
+  <% }) %>
+</ul>
+<% } %>

@@ -89,7 +89,9 @@ app.use((err, req, res, next) => {
   res.locals.error = req.app.get("env") === "development" ? err : {};
   // Render the error page.
   res.status(err.status || 500);
-  res.render("error", {});
+  res.render("error", {
+    roles: req.session.roles,
+  });
 });
 
 // Exports

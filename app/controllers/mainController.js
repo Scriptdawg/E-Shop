@@ -1,19 +1,22 @@
 const mailer = require("../middlewares/mailer.js");
-// INDEX - GET
+
+//! MAIN ROUTES
+
+//? INDEX
 exports.index_get = (req, res) => {
   res.render("main/index", {
     roles: req.session.roles,
   });
 };
 
-// ABOUT - GET
+//? ABOUT - GET
 exports.about_get = (req, res) => {
   res.render("main/about", {
     roles: req.session.roles,
   });
 };
 
-// CONTACT - GET
+//? CONTACT - GET
 exports.contact_get = (req, res) => {
   res.render("main/contact", {
     roles: req.session.roles,
@@ -21,7 +24,7 @@ exports.contact_get = (req, res) => {
   });
 };
 
-// CONTACT - POST
+//? CONTACT - POST
 exports.contact_post = (req, res) => {
   mailer({
     from: req.body.email,

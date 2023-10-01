@@ -1,113 +1,114 @@
 const express = require("express");
 const router = express.Router();
 const author_controller = require("../controllers/authorController");
-const dog_controller = require("../controllers/dogController");
-const breed_controller = require("../controllers/breedController");
+const product_controller = require("../controllers/productController");
+const story_controller = require("../controllers/storyController");
 const authJwt = require("../middlewares/authJwt");
 
-// ** AUTHOR ROUTES ** //
+//! AUTHOR ROUTES
 
-// INDEX
+//? INDEX
 router.get(
   "/",
   [authJwt.verifyToken, authJwt.isAuthor],
   author_controller.index
 );
 
-// ** DOG ROUTES ** //
-// CREATE Dog - This must come before routes that display Dog (uses id)
+//? PRODUCT
+// CREATE Product - This must come before routes that display Product (uses id)
 router.get(
-  "/dog/create",
+  "/product/create",
   [authJwt.verifyToken, authJwt.isAuthor],
-  dog_controller.dog_create_get
+  product_controller.product_create_get
 );
 router.post(
-  "/dog/create",
+  "/product/create",
   [authJwt.verifyToken, authJwt.isAuthor],
-  dog_controller.dog_create_post
+  product_controller.product_create_post
 );
 router.post(
-  "/dog/create/post",
+  "/product/create/post",
   [authJwt.verifyToken, authJwt.isAuthor],
-  dog_controller.dog_create_post
+  product_controller.product_create_post
 );
-// READ Dog - detail & list
+// READ Product - detail & list
 router.get(
-  "/dog/:id",
+  "/product/:id",
   [authJwt.verifyToken, authJwt.isAuthor],
-  dog_controller.dog_detail_get
+  product_controller.product_detail_get
 );
 router.get(
-  "/dogs",
+  "/products",
   [authJwt.verifyToken, authJwt.isAuthor],
-  dog_controller.dog_list_get
+  product_controller.product_list_get
 );
-// UPDATE Dog
+// UPDATE Product
 router.get(
-  "/dog/update/:id",
+  "/product/update/:id",
   [authJwt.verifyToken, authJwt.isAuthor],
-  dog_controller.dog_update_get
+  product_controller.product_update_get
 );
 router.post(
-  "/dog/update/:id",
+  "/product/update/:id",
   [authJwt.verifyToken, authJwt.isAuthor],
-  dog_controller.dog_update_post
+  product_controller.product_update_post
 );
-// DELETE Dog
+// DELETE Product
 router.get(
-  "/dog/delete/:id",
+  "/product/delete/:id",
   [authJwt.verifyToken, authJwt.isAuthor],
-  dog_controller.dog_delete_get
+  product_controller.product_delete_get
 );
 router.post(
-  "/dog/delete",
+  "/product/delete",
   [authJwt.verifyToken, authJwt.isAuthor],
-  dog_controller.dog_delete_post
+  product_controller.product_delete_post
 );
 
-// ** BREED ROUTES ** //
-// CREATE Breed - This must come before routes that display Breed (uses id)
+//? STORY
+// CREATE Story - This must come before routes that display Story (uses id)
 router.get(
-  "/breed/create",
+  "/story/create",
   [authJwt.verifyToken, authJwt.isAuthor],
-  breed_controller.breed_create_get
+  story_controller.story_create_get
 );
 router.post(
-  "/breed/create",
+  "/story/create",
   [authJwt.verifyToken, authJwt.isAuthor],
-  breed_controller.breed_create_post
+  story_controller.story_create_post
 );
-// READ Breed - detail & list
+// READ Story - detail & list
 router.get(
-  "/breed/:id",
+  "/story/:id",
   [authJwt.verifyToken, authJwt.isAuthor],
-  breed_controller.breed_detail_get
+  story_controller.story_detail_get
 );
 router.get(
-  "/breeds",
+  "/stories",
   [authJwt.verifyToken, authJwt.isAuthor],
-  breed_controller.breed_list_get
+  story_controller.story_list_get
 );
-// UPDATE Breed
+// UPDATE Story
 router.get(
-  "/breed/update/:id",
+  "/story/update/:id",
   [authJwt.verifyToken, authJwt.isAuthor],
-  breed_controller.breed_update_get
+  story_controller.story_update_get
 );
 router.post(
-  "/breed/update/:id",
+  "/story/update/:id",
   [authJwt.verifyToken, authJwt.isAuthor],
-  breed_controller.breed_update_post
+  story_controller.story_update_post
 );
-// DELETE Breed
+// DELETE Story
 router.get(
-  "/breed/delete/:id",
+  "/story/delete/:id",
   [authJwt.verifyToken, authJwt.isAuthor],
-  breed_controller.breed_delete_get
+  story_controller.story_delete_get
 );
 router.post(
-  "/breed/delete/:id",
+  "/story/delete/:id",
   [authJwt.verifyToken, authJwt.isAuthor],
-  breed_controller.breed_delete_post
+  story_controller.story_delete_post
 );
+
 module.exports = router;

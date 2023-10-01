@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs");
 const Role = require("../../models/role");
 const User = require("../../models/user");
 
+//! REGISTER ROUTES
+
 // REGISTER -  GET
 exports.register_get = (req, res) => {
   res.render("auth/register", {

@@ -1,7 +1,6 @@
 const asyncHandler = require("express-async-handler");
-const Order = require("../models/order.js");
 
-// ** MEMBER ROUTES ** //
+//! MEMBER ROUTES
 
 // INDEX
 exports.index = (req, res) => {
@@ -10,56 +9,56 @@ exports.index = (req, res) => {
   });
 };
 
-// ** CART ROUTES ** //
-// READ Cart - detail
-exports.cart_detail_get = asyncHandler(async (req, res) => {
-  const order = await Order.findOne({
-    userId: req.session.id,
-    status: "Cart",
-  }).populate("products.id");
-  if (order) {
-    res.render("member/cart", {
-      roles: req.session.roles,
-      order,
-    });
-  } else {
-    // Create a new order object.
-    let order = new Order({
-      userId: req.session.id,
-      status: "Cart",
-      products: [],
-    });
-    await order.save();
-    res.render("member/cart", {
-      roles: req.session.roles,
-      order,
-    });
-  }
-});
+//! CART ROUTES 
+// // READ Cart - detail
+// exports.cart_detail_get = asyncHandler(async (req, res) => {
+//   const order = await Order.findOne({
+//     userId: req.session.id,
+//     status: "Cart",
+//   }).populate("products.id");
+//   if (order) {
+//     res.render("member/cart", {
+//       roles: req.session.roles,
+//       order,
+//     });
+//   } else {
+//     // Create a new order object.
+//     let order = new Order({
+//       userId: req.session.id,
+//       status: "Cart",
+//       products: [],
+//     });
+//     await order.save();
+//     res.render("member/cart", {
+//       roles: req.session.roles,
+//       order,
+//     });
+//   }
+// });
 
-// Update Cart - add product to 'cart' order document
-exports.cart_update_post = asyncHandler(async (req, res) => {
-  const product = {
-    quantity: req.body.quantity,
-    id: req.body.orderId,
-  };
-  const order = await Order.findOne({
-    userId: req.session.id,
-    status: "Cart",
-  });
-  if (order) {
-    order.products.push(product);
-    await order.save();
-    res.redirect("/public/dogs");
-  } else {
-    // Create a new order object.
-    let order = new Order({
-      userId: req.session.id,
-      status: "Cart",
-      products: [],
-    });
-    order.products.push(product);
-    await order.save();
-    res.redirect("/public/dogs");
-  }
-});
+// // Update Cart - add product to 'cart' order document
+// exports.cart_update_post = asyncHandler(async (req, res) => {
+//   const product = {
+//     quantity: req.body.quantity,
+//     id: req.body.orderId,
+//   };
+//   const order = await Order.findOne({
+//     userId: req.session.id,
+//     status: "Cart",
+//   });
+//   if (order) {
+//     order.products.push(product);
+//     await order.save();
+//     res.redirect("/public/dogs");
+//   } else {
+//     // Create a new order object.
+//     let order = new Order({
+//       userId: req.session.id,
+//       status: "Cart",
+//       products: [],
+//     });
+//     order.products.push(product);
+//     await order.save();
+//     res.redirect("/public/dogs");
+//   }
+// });

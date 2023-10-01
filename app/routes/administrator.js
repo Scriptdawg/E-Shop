@@ -3,9 +3,9 @@ const router = express.Router();
 const administrator_controller = require("../controllers/administratorController");
 const authJwt = require("../middlewares/authJwt");
 
-// ** ADMINISTRATOR ROUTES ** //
+//! ADMINISTRATOR ROUTES
 
-// INDEX
+//? INDEX
 router.get(
   "/",
   [authJwt.verifyToken, authJwt.isAdministrator],

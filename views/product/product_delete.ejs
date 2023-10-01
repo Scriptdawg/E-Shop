@@ -1,0 +1,9 @@
+<h1><%= pageTitle %></h1>
+<h2><%= product.name %></h2>
+<p>Do you really want to delete <%= product.name %>?</p>
+
+<form method="POST" action="/author/product/delete">
+  <input type="hidden" name="productid" required="true" value="<%= product._id %>" />
+  <button type="submit">Delete</button>
+</form>
+<a href="/author/product/<%= product.url %>">Cancel</a>

@@ -7,21 +7,21 @@
     id="name"
     name="name"
     placeholder="Enter a name ..."
-    value="<%= dog.name %>"
+    value="<%= product.name %>"
   /><br /><br />
 
   <label for="cover">Cover</label>
   <input id="cover" name="cover" type="file" class="filepond" />
 
-  <label for="breed">Breed *</label><br />
-  <select id="breed" name="breed">
-    <% if(!dog.breed) { %>
-    <option value="" selected>Pick a breed</option>
-    <% } %> <% breeds.forEach(breed => { %> <% if(dog.breed && breed.id ==
-    dog.breed.id) { %>
-    <option value="<%= breed.id %>" selected><%= breed.name %></option>
+  <label for="story">Story *</label><br />
+  <select id="story" name="story">
+    <% if(!product.story) { %>
+    <option value="" selected>Pick a story</option>
+    <% } %> <% stories.forEach(story => { %> <% if(product.story && product.id ==
+    product.story.id) { %>
+    <option value="<%= story.id %>" selected><%= story.name %></option>
     <% } else { %>
-    <option value="<%= breed.id %>"><%= breed.name %></option>
+    <option value="<%= story.id %>"><%= story.name %></option>
     <% } %> <% }) %></select
   ><br /><br />
 
@@ -31,11 +31,11 @@
     id="favoriteFood"
     name="favoriteFood"
     placeholder="Enter a food ..."
-    value="<%= dog.favoriteFood %>"
+    value="<%= product.favoriteFood %>"
   /><br /><br />
 
   <label for="description">Description *</label><br />
-  <textarea id="description" name="description"><%= dog.description %></textarea
+  <textarea id="description" name="description"><%= product.description %></textarea
   ><br /><br />
 
   <button type="submit">Submit</button>

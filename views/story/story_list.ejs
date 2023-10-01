@@ -1,0 +1,14 @@
+<h1><%= pageTitle %></h1>
+<p>
+  To test database connectivity, these stories are retrieved from a mongoDb cloud
+  database called E-Shop and a collection of documents called stories.
+</p>
+
+<h2>List of stories:</h2>
+<ul>
+  <% stories.forEach((story) => { %>
+  <li><a href="story/<%= story.url %>"><%= story.name %></a></li>
+  <% }); %>
+</ul>
+
+<p><a href="/author/story/create">Create New Story</a></p>

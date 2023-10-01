@@ -3,6 +3,8 @@ const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const User = require("../../models/user");
 
+//! LOGIN ROUTES
+
 // LOGIN -  GET
 exports.login_get = (req, res) => {
   res.render("auth/login", {
@@ -11,7 +13,6 @@ exports.login_get = (req, res) => {
     errors: [{ msg: req.params.message ?? "" }],
   });
 };
-
 // LOGIN -  POST
 exports.login_post = [
   // Validate and sanitize the body fields.

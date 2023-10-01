@@ -1,0 +1,21 @@
+<h1 id="top"><%= pageTitle %></h1>
+
+<% if(product.coverImagePath) { %>
+<img width="800" height="600" src="<%= product.coverImagePath %>" />
+<% } %>
+
+<h2>Description:</h2>
+<p><%= product.description %></p>
+
+<% if(product.favoriteFood) { %>
+<p>My favorite food is <%= product.favoriteFood %>.</p>
+<% } %>
+
+<!-- Don't display Product section if Unavailable or Other -->
+<% if(product.story.name !== "Unavailable" && product.story.name !== "Other") { %>
+<h2>Story:</h2>
+<p><%= product.story.description %></p>
+<% } %>
+
+<a href="/author/product/update/<%= product.url %>">Update</a>
+<a href="/author/product/delete/<%= product.url %>">Delete</a>

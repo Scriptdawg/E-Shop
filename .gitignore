@@ -1,4 +1,5 @@
 .env
 node_modules
 mock_data
+images
 requests.rest

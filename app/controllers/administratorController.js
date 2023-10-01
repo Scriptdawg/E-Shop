@@ -1,4 +1,4 @@
-// ** ADMINISTRATOR ROUTES ** //
+//! ADMINISTRATOR ROUTES
 
 // INDEX - GET
 exports.index = (req, res) => {

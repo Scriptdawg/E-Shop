@@ -1,7 +1,7 @@
 import { FetchWrap } from "./fetchWrap.js";
 class Cart {
-  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
-  //#viewApi = new FetchWrap("http://localhost:3000/Public/");
+  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
+  #viewApi = new FetchWrap("http://localhost:3000/Public/");
   constructor() {
     this.products = [];
     this.#main();
@@ -23,7 +23,7 @@ class Cart {
   #getProductsList = () => {
     return new Promise((resolve, reject) => {
       this.#viewApi
-        .get("products/api")
+        .get("api/product/list")
         .then((data) => {
           resolve(data);
         })
@@ -151,7 +151,7 @@ class Cart {
   #emptyCart = () => {
     document.querySelector("#product-legend").innerHTML=`
       <h2>Cart is Empty</h2>
-      <a href="/Public">
+      <a href="/Public/product/list">
         <button class="btn-continue">Continue Shopping</button>
       </a>
     `

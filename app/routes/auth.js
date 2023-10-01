@@ -5,23 +5,23 @@ const verify_controller = require("../controllers/auth/verifyController");
 const login_controller = require("../controllers/auth/loginController");
 const logout_controller = require("../controllers/auth/logoutController");
 
-// ** AUTHORIZATION ROUTES ** //
+//! AUTHORIZATION ROUTES
 
-// REGISTER
+//? REGISTER
 router.get("/register", register_controller.register_get);
 router.post("/register", register_controller.register_post);
 
-// VERIFY
+//? VERIFY
 router.get("/verify/:id", verify_controller.verify_get);
 router.post("/verify", verify_controller.verify_post);
 router.post("/verify/resend", verify_controller.verify_resend);
 
-// LOGIN
+//? LOGIN
 router.get("/login", login_controller.login_get);
 router.get("/login/:message", login_controller.login_get);
 router.post("/login", login_controller.login_post);
 
-// LOGOUT
+//? LOGOUT
 router.get("/logout", logout_controller.logout_get);
 
 module.exports = router;
