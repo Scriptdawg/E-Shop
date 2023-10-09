@@ -1,4 +1,10 @@
 footer {
-  margin-block-start: 2rem;
+  background-color: #133a26;
+  color: white;
+  padding: 16px 16px 80px 16px;
   text-align: center;
+}
+footer a {
+  color: white;
+  text-decoration: none;
 }

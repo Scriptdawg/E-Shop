@@ -1,25 +1,27 @@
-<h1>Email Verification</h1>
-<p>Please check your email for a verification code.</p>
+<div id="container-subpage-verify" class="container-subpage">
+  <h1>Email Verification</h1>
+  <p>Please check your email for a verification code.</p>
 
-<form method="POST" action="/auth/verify">
-  <div>
-    <input type="hidden" id="id" name="id" value="<%= id %>" />
-    <label for="verificationCode">Verification Code</label>
-    <input type="text" id="verificationCode" name="verificationCode" />
-    <button type="submit">Verify</button>
-  </div>
-</form>
+  <form method="POST" action="/auth/verify">
+    <div>
+      <input type="hidden" id="id" name="id" value="<%= id %>" />
+      <label for="verificationCode">Verification Code</label>
+      <input type="text" id="verificationCode" name="verificationCode" />
+      <button type="submit">Verify</button>
+    </div>
+  </form>
 
-<% if (error) { %>
+  <% if (error) { %>
 
-<h2 style="color: red">Errors:</h2>
-<p><%= error %></p>
+  <h2 style="color: red">Errors:</h2>
+  <p><%= error %></p>
 
-<form method="POST" action="/auth/verify/resend">
-  <div>
-    <input type="hidden" id="id" name="id" value="<%= id %>" />
-    <button type="submit">Resend Code</button>
-  </div>
-</form>
+  <form method="POST" action="/auth/verify/resend">
+    <div>
+      <input type="hidden" id="id" name="id" value="<%= id %>" />
+      <button type="submit">Resend Code</button>
+    </div>
+  </form>
 
-<% } %>
+  <% } %>
+</div>

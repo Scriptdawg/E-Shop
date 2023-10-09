@@ -1,7 +1,7 @@
 import { FetchWrap } from "./fetchWrap.js";
 class Cart {
-  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
-  //#viewApi = new FetchWrap("http://localhost:3000/Public/");
+  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
+  #viewApi = new FetchWrap("http://localhost:3000/Public/");
   constructor() {
     this.products = [];
     this.#main();

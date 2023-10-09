@@ -134,10 +134,6 @@ ul {
   position: absolute;
 
 }
-/*? Subpage Container */
-.container-subpage {
-  margin-inline: auto;
-}
 /* Sticky Sub-page Banner & Navigation Bar */
 .nav {
   bottom: 0;
@@ -168,11 +164,8 @@ ul {
   flex-direction: column;
 }
 .card-image {
-  background-image: url("/images/variety/image_7.jpg");
-  background-position: center;
-  background-size: cover;
   border-radius: 3px 3px 0 0;
-  flex: 1 0 calc(440px / var(--aspect-ratio));
+  flex: 0 0 calc(440px / var(--aspect-ratio));
 }
 .card-image img {
   width: 100%;
@@ -214,11 +207,9 @@ ul {
   min-height: 160px;
 }
 /* Extra Extra Small - xxs */
-@media (max-width: 300px) {
-}
+@media (max-width: 300px) {}
 /* Extra Small - xs */
-@media (max-width: 575px) {
-}
+@media (max-width: 575px) {}
 /* Small - sm */
 @media (min-width: 576px) {
   .container-card {
@@ -226,13 +217,9 @@ ul {
     gap: 16px;
     padding: 16px;
   }
-  .card-image {
-    flex-basis: calc(371px / var(--aspect-ratio));
-  }
 }
 /* Medium - md */
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 /* Large - lg */
 @media (min-width: 992px) {
   html {
@@ -260,9 +247,6 @@ ul {
     position: sticky;
     top: 0;
   }
-  .card-image {
-    flex-basis: calc(378px / var(--aspect-ratio));
-  }
 }
 /* Extra Large - xl */
 @media (min-width: 1200px) {
@@ -282,16 +266,10 @@ ul {
   .container-card {
     grid-template-columns: repeat(2, 1fr);
   }
-  .card-image {
-    flex-basis: calc(382px / var(--aspect-ratio));
-  }
 }
 @media (min-width: 1600px) {
   .container-card {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .card-image {
-    flex-basis: calc(297px / var(--aspect-ratio));
   }
 }
 @media (min-width: 1800px) {
@@ -305,39 +283,6 @@ ul {
       "left left right right"
       "card card card  card";
   }
-  /* .container-card .card:first-child {
-    background-color: rgba(185, 228, 199, 0.1);
-    grid-area: left;
-  }
-  .container-card .card:first-child .card-details h2 {
-    color: brown;
-    font-size: 32px;
-  }
-  .container-card .card:first-child .card-details p:first-of-type {
-    color: #133a26;
-    font-size: 1.25rem;
-    font-weight: 500;
-    padding-block-end: 32px;
-  } */
-  /*! REMOVE */
-  .card.special,
-  .card.overlay {
-    grid-area: left;
-  }
-  .card.overlay {
-    background-color: rgba(185, 228, 199, 0.1);
-    padding: 16px;
-    border-radius: 3px;
-  }
-  .card.overlay p {
-    padding-inline: 2rem;
-    text-align: center;
-    width: 50%;
-  }
-  /* ! TO HERE */
-  .card-image {
-    flex-basis: calc(287px / var(--aspect-ratio));
-  }
 }
 @media (min-width: 2000px) {
   .container-shop {
@@ -346,12 +291,8 @@ ul {
   .container-card {
     grid-template-columns: repeat(5, 1fr);
   }
-  .card-image {
-    flex-basis: calc(280px / var(--aspect-ratio));
-  }
 }
-@media print {
-}
+@media print {}
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: auto;

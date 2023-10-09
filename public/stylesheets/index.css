@@ -1,0 +1,15 @@
+@import url("main.css");
+@import url("shared/header.css");
+@import url("shared/footer.css");
+@import url("eshop/eshop.css");
+@import url("shared/template.css");
+
+.container-subpage {
+  padding-inline: 16px;
+  margin-inline: auto;
+  max-width: 1200px;
+  min-height: calc(100dvh - 240px);
+}
+h1 {
+  color: brown;
+}
