@@ -1,9 +1,9 @@
 <nav id="top-nav">
   <ul>
     <li><a href="/">Main</a></li>
-    <li><a href="/About">About</a></li>
-    <li><a href="/Contact">Contact</a></li>
-    <li><a href="/Public/product/list">Shop</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/public">Public</a></li>
 
     <% if(roles) { roles.forEach(role => { %>
     <li><a href="/<%= role %>"><%= role %></a></li>
@@ -12,17 +12,5 @@
     <% } else { %>
     <li><a href="/auth/login">Login</a></li>
     <% } %>
-
-    <li>
-      <a href="/public/cart/list">
-        <div class="cart">
-          <i class="bi bi-cart2"></i>
-          <div id="cartAmount" class="cartAmount">0</div>
-        </div>
-      </a>
-    </li>
   </ul>
 </nav>
-<!-- <span style="color: red; font-size: 14px; padding-inline: 16px">
-  <%= messages %>
-</span> -->

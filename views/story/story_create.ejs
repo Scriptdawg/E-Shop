@@ -1,28 +1,52 @@
 <h1><%= pageTitle %></h1>
 
 <form method="POST" action="">
-  <label for="name">Name *</label><br />
+  <!-- Name -->
+  <label for="name" title="The name of your story.">Name *</label><br />
   <input
-    type="text"
     id="name"
     name="name"
+    type="text"
     placeholder="Enter a name ..."
     value="<%= story.name %>"
-  /><br /><br />
-  <label for="description">Description *</label><br />
-  <textarea id="description" name="description">
-<%= story.description %></textarea
-  ><br /><br />
+    autocomplete="off"
+  />
+  <br /><br />
+
+  <!-- Synopsis -->
+  <label for="synopsis" title="A brief overview.">Synopsis *</label><br />
+  <input
+    id="synopsis"
+    name="synopsis"
+    type="text"
+    placeholder="Enter a synopsis ..."
+    value="<%= story.synopsis %>"
+    autocomplete="off"
+  />
+  <br /><br />
+
+  <!-- Introduction -->
+  <label for="introduction" title="A story introduction paragraph. ">Introduction</label><br />
+  <textarea id="introduction" name="introduction"><%= story.introduction %></textarea>
+  <br /><br />
+
+  <!-- Content -->
+  <label for="content" title="Main story contents.">Content</label><br />
+  <textarea id="content" name="content"><%= story.content %></textarea>
+  <br /><br />
+
+  <!-- Submit -->
   <button type="submit">Submit</button>
 </form>
 
+<!--? * required and Errors -->
 <p><i>* required</i></p>
 
 <% if(errors && errors !=='' ) { %>
-<h2 style="color: red">Errors:</h2>
-<ul>
-  <% errors.forEach(error=> { %>
-  <li><%= error.msg %></li>
-  <% }) %>
-</ul>
+  <h2 style="color: red">Errors:</h2>
+  <ul>
+    <% errors.forEach(error=> { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
 <% } %>

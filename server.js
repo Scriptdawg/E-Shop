@@ -12,17 +12,18 @@ const mongoose = require("mongoose");
 const path = require("path");
 
 // Require routes
-const mainRouter = require("./app/routes/main");
-const publicRouter = require("./app/routes/public");
-const authRouter = require("./app/routes/auth");
-const memberRouter = require("./app/routes/member");
-const authorRouter = require("./app/routes/author");
-const moderatorRouter = require("./app/routes/moderator");
 const administratorRouter = require("./app/routes/administrator");
+const authRouter = require("./app/routes/auth");
+const authorRouter = require("./app/routes/author");
+const mainRouter = require("./app/routes/main");
+const memberRouter = require("./app/routes/member");
+const moderatorRouter = require("./app/routes/moderator");
+const publicRouter = require("./app/routes/public");
 
 // Express application
 const app = express();
 
+//! Variables
 // Global but can not change because no access to app
 app.locals.title = "E-Shop";
 app.locals.global = { general: "global.general" };
@@ -70,12 +71,12 @@ app.use(express.urlencoded({ extended: true }));
 
 // Use routers
 app.use("/", mainRouter);
-app.use("/auth", authRouter);
-app.use("/public", publicRouter);
-app.use("/member", memberRouter);
-app.use("/author", authorRouter);
-app.use("/moderator", moderatorRouter);
 app.use("/administrator", administratorRouter);
+app.use("/auth", authRouter);
+app.use("/author", authorRouter);
+app.use("/member", memberRouter);
+app.use("/moderator", moderatorRouter);
+app.use("/public", publicRouter);
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {

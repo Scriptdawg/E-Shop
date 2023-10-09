@@ -3,13 +3,16 @@ const Schema = mongoose.Schema;
 
 // Define schema
 const ProductSchema = new Schema({
-  name: { type: String, required: true, minLength: 3, maxLength: 50 },
-  price: { type: Number, require: true },
-  story: { type: Schema.Types.ObjectId, ref: "Story", required: true },
-  favoriteFood: { type: String, maxLength: 50 },
-  description: { type: String, required: true, minLength: 3 },
+  available: { type: Boolean, required: true },
   coverImage: { type: Buffer },
   coverImageType: { type: String },
+  longDescription: { type: String },
+  name: { type: String, required: true, minLength: 3, maxLength: 50 },
+  price: { type: String, required: true },
+  priceType: { type: String, required: true },
+  shortDescription: { type: String, required: true },
+  specialMessage: { type: String },
+  story: { type: Schema.Types.ObjectId, ref: "Story", required: true },
 });
 
 // Virtual for product's url

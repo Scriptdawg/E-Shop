@@ -23,7 +23,6 @@ exports.contact_get = (req, res) => {
     message: "",
   });
 };
-
 //? CONTACT - POST
 exports.contact_post = (req, res) => {
   mailer({
@@ -42,6 +41,9 @@ exports.contact_post = (req, res) => {
 
   res.render("main/contact", {
     roles: req.session.roles,
-    message: req.body.message,
+    message: {
+      subject: req.body.subject,
+      message: req.body.message
+      }
   });
 };

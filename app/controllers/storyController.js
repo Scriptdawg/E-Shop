@@ -21,9 +21,11 @@ exports.story_create_post = [
     .trim()
     .isLength({ min: 3, max: 50 })
     .escape(),
-  body("description", "Description must contain at least 3 characters.")
+  body("synopsis", "Synopsis must contain at least 3 characters.")
     .trim()
     .isLength({ min: 3 }),
+  body("introduction", "Invalid introduction.").trim().escape(),
+  body("content", "Invalid content.").trim().escape(),
   // Process request after validation and sanitization.
   asyncHandler(async (req, res) => {
     // Extract the validation errors from a request.
@@ -31,7 +33,9 @@ exports.story_create_post = [
     // Create a story object with escaped and trimmed data.
     const story = new Story({
       name: req.body.name,
-      description: req.body.description,
+      synopsis: req.body.synopsis,
+      introduction: req.body.introduction,
+      content: req.body.content,
     });
     if (!errors.isEmpty()) {
       // There are errors. Render the form again with sanitized values/error messages.
@@ -102,9 +106,11 @@ exports.story_update_post = [
     .trim()
     .isLength({ min: 3, max: 50 })
     .escape(),
-  body("description", "Description must contain at least 3 characters.")
+  body("synopsis", "Synopsis must contain at least 3 characters.")
     .trim()
     .isLength({ min: 3 }),
+  body("introduction", "Invalid introduction.").trim().escape(),
+  body("content", "Invalid content.").trim().escape(),
   // Process request after validation and sanitization.
   asyncHandler(async (req, res) => {
     // Extract the validation errors from a request.
@@ -112,7 +118,9 @@ exports.story_update_post = [
     // Create a story object with escaped and trimmed data.
     const story = new Story({
       name: req.body.name,
-      description: req.body.description,
+      synopsis: req.body.synopsis,
+      introduction: req.body.introduction,
+      content: req.body.content,
       _id: req.params.id, // This is required, or a new ID will be assigned!
     });
     if (!errors.isEmpty()) {
@@ -140,7 +148,7 @@ exports.story_delete_get = asyncHandler(async (req, res) => {
     roles: req.session.roles,
     pageTitle: "Delete Story",
     story,
-    stories: "",
+    products: "",
   });
 });
 // DELETE Story - POST delete form

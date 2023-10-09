@@ -2,20 +2,22 @@
 <form method="POST" action="">
   <div>
     <label for="email">Your email</label>
-    <input type="email" id="email" name="email" autocomplete="true" />
+    <input type="email" id="email" name="email" autocomplete="email" required />
   </div>
   <div>
     <label for="subject">Subject</label>
-    <input type="text" id="subject" name="subject" />
+    <input type="text" id="subject" name="subject" required />
   </div>
   <div>
     <label for="message">Message</label>
-    <input type="text" id="message" name="message" />
+    <input type="text" id="message" name="message" required />
   </div>
   <button type="submit">Send Message</button>
 </form>
 
 <% if(message) { %>
-<p><b>You sent:</b> <%= message %></p>
-<p>Thank you for contacting us!</p>
+  <h2>You sent:</h2>
+  <p>Subject: <%= message.subject %></p>
+  <p>Message: <%= message.message %></p>
+  <p><b>Thank you for contacting us!</b></p>
 <% } %>

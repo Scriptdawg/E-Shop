@@ -1,17 +1,18 @@
 <h1>About</h1>
-<p>This is the about page.</p>
 <h2>package.json</h2>
 <pre class="pre-font">
   {
     "name": "eshop",
     "version": "1.0.0",
     "private": true,
-    "description": "Node.js server with JWT authentication",
+    "description":
+      "Node.js server with JWT authentication",
     "main": "./bin/www",
     "scripts": {
       "start": "node ./bin/www",
       "devStart": "nodemon ./bin/www",
-      "serverStart": "SET DEBUG=eshop:* & npm run devStart"
+      "serverStart":
+        "SET DEBUG=eshop:* & npm run devStart"
     },
     "author": "Paul Oosterhoff",
     "license": "ISC",
@@ -35,6 +36,85 @@
     "devDependencies": {
       "dotenv": "^16.0.3",
       "nodemon": "^2.0.22"
+    }
+  }
+</pre>
+<h2>data structure</h2>
+<pre class="pre-font">
+  {
+    "products": [
+      {
+        "id": 0,
+        "coverImage": "image-1.jpg",
+        "coverImageType": "string",
+        "longDescription": "string",
+        "name": "Whole Chicken",
+        "price": {
+          "kilogram": 0,
+          "package": 0,
+          "box": 0
+        },
+        "public": false,
+        "shortDescription": "string",
+        "specialMessage": "string",
+        "story": "string"
+      }
+    ],
+  
+    "stories": [
+      {
+        "id": 0,
+        "content": "string",
+        "description": "string",
+        "introduction": "string",
+        "name": "chicken"
+      }
+    ],
+  
+    "users": [
+      {
+        "id": 0,
+        "email": "string",
+        "fname": "string",
+        "lname": "string",
+        "password": "string",
+        "roles": "string",
+        "verificationCode": "string",
+        "verified": false
+      }
+    ],
+  
+    "roles": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+  
+    "orders": [
+      {
+        "id": 0,
+        "products": [
+          {
+            "id": 0,
+            "favorite": false,
+            "later": false,
+            "qty": 0
+          }
+        ],
+        "userId": "string"
+      }
+    ],
+  
+    "localStorageData": {
+      "items": [
+        {
+          "favorite": false,
+          "later": false,
+          "productId": 0,
+          "qty": 0
+        }
+      ]
     }
   }
 </pre>

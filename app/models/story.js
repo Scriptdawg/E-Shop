@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 
 // Define schema
 const StorySchema = new Schema({
+  content: { type: String }, // textarea - editor plugin
+  synopsis: { type: String, required: true, minLength: 3 },
+  introduction: { type: String },
   name: { type: String, required: true, minLength: 3, maxLength: 50 },
-  description: { type: String, required: true, minLength: 3 },
 });
 
 // Virtual for story's url

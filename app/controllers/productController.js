@@ -6,7 +6,7 @@ const imageMimeTypes = ["image/jpeg", "image/png", "image/gif"];
 
 //! PRODUCT ROUTES
 
-//? CREATE Product - GET create form
+// CREATE Product - GET create form
 exports.product_create_get = asyncHandler(async (req, res) => {
   const allStories = (await Story.find()).sort(function (a, b) {
     let textA = a.name.toUpperCase();
@@ -18,10 +18,11 @@ exports.product_create_get = asyncHandler(async (req, res) => {
     pageTitle: "Create Product",
     stories: allStories,
     product: {},
+    priceTypeSelections: ["/kilogram", "/pound", "/package", "/box"],
     errors: "",
   });
 });
-//? CREATE Product - POST create form
+// CREATE Product - POST create form
 exports.product_create_post = [
   // Validate and sanitize the body fields.
   body("name", "Name must contain at least 3 characters and less then 50.")
@@ -32,11 +33,7 @@ exports.product_create_post = [
     .trim()
     .isLength({ min: 3, max: 50 })
     .escape(),
-  body("favoriteFood", "Favorite Food must contain less then 50 characters.")
-    .trim()
-    .isLength({ max: 50 })
-    .escape(),
-  body("description", "Description must contain at least 3 characters.").trim(),
+  body("shortDescription", "Short Description must contain at least 3 characters.").trim(),
   // Process request after validation and sanitization.
   asyncHandler(async (req, res) => {
     // Extract the validation errors from a request.
@@ -44,9 +41,13 @@ exports.product_create_post = [
     // Create a product object with escaped and trimmed data.
     const product = new Product({
       name: req.body.name,
+      available: req.body.available,
+      shortDescription: req.body.shortDescription,
+      longDescription: req.body.longDescription,
+      specialMessage: req.body.specialMessage,
       story: req.body.story,
-      favoriteFood: req.body.favoriteFood,
-      description: req.body.description,
+      price: req.body.price,
+      priceType: req.body.priceType,
     });
 
     saveCover(product, req.body.cover);
@@ -63,6 +64,7 @@ exports.product_create_post = [
         pageTitle: "Create Product",
         stories: allStories,
         product,
+        priceTypeSelections: ["/kilogram", "/pound", "/package", "/box"],
         errors: errors.array(),
       });
       return;
@@ -81,6 +83,7 @@ exports.product_create_post = [
           pageTitle: "Create Product",
           stories: allStories,
           product,
+          priceTypeSelections: ["/kilogram", "/pound", "/package", "/box"],
           errors: [{ msg: "Name already exists!" }],
         });
       } else {
@@ -111,27 +114,6 @@ exports.product_detail_get = asyncHandler(async (req, res) => {
     product,
   });
 });
-// // !READ /api/product/list
-// exports.api_product_list_get = asyncHandler(async (req, res) => {
-//   const merged = [];
-//   const products = (await Product.find()).sort(function (a, b) {
-//     let textA = a.name.toUpperCase();
-//     let textB = b.name.toUpperCase();
-//     return textA < textB ? -1 : textA > textB ? 1 : 0;
-//   });
-//   products.forEach(async product => {
-//     const imagePath = product.coverImagePath;
-//     const item = {
-//       id: product.id,
-//       name: product.name,
-//       price: product.price,
-//       desc: product.description,
-//       img: imagePath
-//     };
-//     merged.push(item);
-//   });
-//   res.json(merged);
-// });
 // READ Product - list
 exports.product_list_get = asyncHandler(async (req, res) => {
   const products = (await Product.find()).sort(function (a, b) {
@@ -159,12 +141,13 @@ exports.product_update_get = asyncHandler(async (req, res) => {
     pageTitle: "Update Product",
     stories: allStories,
     product,
+    priceTypeSelections: ["/kilogram", "/pound", "/package", "/box"],
     errors: "",
   });
 });
 // UPDATE Product - POST update form
 exports.product_update_post = [
-  // Validate and sanitize the name field.
+  // Validate and sanitize the body fields.
   body("name", "Name must contain at least 3 characters and less then 50.")
     .trim()
     .isLength({ min: 3, max: 50 })
@@ -173,11 +156,7 @@ exports.product_update_post = [
     .trim()
     .isLength({ min: 3, max: 50 })
     .escape(),
-  body("favoriteFood", "Favorite Food must contain less then 50 characters.")
-    .trim()
-    .isLength({ max: 50 })
-    .escape(),
-  body("description", "Description must contain at least 3 characters.")
+  body("shortDescription", "Short Description must contain at least 3 characters.")
     .trim()
     .isLength({ min: 3 }),
   // Process request after validation and sanitization.
@@ -187,9 +166,13 @@ exports.product_update_post = [
     // Create a product object with escaped and trimmed data.
     const product = new Product({
       name: req.body.name,
+      available: req.body.available,
+      shortDescription: req.body.shortDescription,
+      longDescription: req.body.longDescription,
+      specialMessage: req.body.specialMessage,
       story: req.body.story,
-      favoriteFood: req.body.favoriteFood,
-      description: req.body.description,
+      price: req.body.price,
+      priceType: req.body.priceType,
       _id: req.params.id, // This is required, or a new ID will be assigned!
     });
 
@@ -203,6 +186,7 @@ exports.product_update_post = [
         pageTitle: "Update Product",
         stories: allStories,
         product,
+        priceTypeSelections: ["/kilogram", "/pound", "/package", "/box"],
         errors: errors.array(),
       });
       return;

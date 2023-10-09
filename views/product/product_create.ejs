@@ -1,6 +1,6 @@
 <h1><%= pageTitle %></h1>
-
 <form method="POST" action="">
+  <!-- Name -->
   <label for="name">Name *</label><br />
   <input
     type="text"
@@ -8,35 +8,76 @@
     name="name"
     placeholder="Enter a name ..."
     value="<%= product.name %>"
-  /><br /><br />
-
-  <label for="cover">Cover</label>
-  <input id="cover" name="cover" type="file" class="filepond" />
-
+    autocomplete="off"
+  />
+  <br /><br />
+  <!-- Available -->
+  <label for="available">Available *</label><br />
+  <input
+    type="text"
+    id="available"
+    name="available"
+    placeholder="Enter true or false ..."
+    value="<%= product.available %>"
+    autocomplete="off"
+  />
+  <br /><br />
+  <!-- Short Description -->
+  <label for="shortDescription">Short Description *</label><br />
+  <textarea id="shortDescription" name="shortDescription"><%= product.shortDescription %></textarea>
+  <br /><br />
+  <!-- Long Description -->
+  <label for="longDescription">Long Description</label><br />
+  <textarea id="longDescription" name="longDescription"><%= product.longDescription %></textarea>
+  <br /><br />
+  <!-- Special Message -->
+  <label for="specialMessage">Special Message</label><br />
+  <textarea id="specialMessage" name="specialMessage"><%= product.specialMessage %></textarea>
+  <br /><br />
+  <!-- Story -->
   <label for="story">Story *</label><br />
   <select id="story" name="story">
     <% if(!product.story) { %>
-    <option value="" selected>Pick a story</option>
-    <% } %> <% stories.forEach(story => { %> <% if(product.story && product.id ==
-    product.story.id) { %>
-    <option value="<%= story.id %>" selected><%= story.name %></option>
-    <% } else { %>
-    <option value="<%= story.id %>"><%= story.name %></option>
-    <% } %> <% }) %></select
-  ><br /><br />
-
-  <label for="favoriteFood">Favorite Food</label><br />
+      <option value="" selected>Pick a story</option>
+    <% } %>
+    <% stories.forEach(story => { %>
+      <% if(product.story && (product.story.id == story.id)) { %>
+        <option value="<%= story.id %>" selected><%= story.name %></option>
+      <% } else { %>
+        <option value="<%= story.id %>"><%= story.name %></option>
+      <% } %>
+    <% }) %>
+  </select>
+  <br /><br />
+  <!-- Price -->
+  <label for="price">Price</label><br />
   <input
     type="text"
-    id="favoriteFood"
-    name="favoriteFood"
-    placeholder="Enter a food ..."
-    value="<%= product.favoriteFood %>"
-  /><br /><br />
-
-  <label for="description">Description *</label><br />
-  <textarea id="description" name="description"><%= product.description %></textarea
-  ><br /><br />
+    id="price"
+    name="price"
+    placeholder="Enter price ..."
+    value="<%= product.price %>"
+    autocomplete="off"
+  />
+  <br /><br />
+  <!-- Price Type -->
+  <label for="priceType">Price Type</label><br />
+  <select id="priceType" name="priceType">
+    <% if(!product.priceType) {
+      product.priceType = "/pound" %>
+    <% } %>    
+    <% priceTypeSelections.forEach(selection => { %>
+      <% if(product.priceType && selection === product.priceType) { %>
+        <option value="<%= selection %>" selected><%= selection %></option>
+      <% } else { %>
+        <option value="<%= selection %>"><%= selection %></option>
+      <% } %>
+    <% }) %>
+  </select>
+  <br /><br />
+  <!-- Cover Image  -->
+  <!-- <label for="cover">Cover</label> -->
+  <input id="cover" name="cover" type="file" class="filepond" />
 
   <button type="submit">Submit</button>
 </form>
@@ -44,10 +85,10 @@
 <p><i>* required</i></p>
 
 <% if(errors && errors !=='' ) { %>
-<h2 style="color: red">Errors:</h2>
-<ul>
-  <% errors.forEach(error=> { %>
-  <li><%= error.msg %></li>
-  <% }) %>
-</ul>
+  <h2 style="color: red">Errors:</h2>
+  <ul>
+    <% errors.forEach(error=> { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
 <% } %>

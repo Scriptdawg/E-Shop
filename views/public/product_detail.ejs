@@ -11,14 +11,8 @@
 <p>My favorite food is <%= product.favoriteFood %>.</p>
 <% } %>
 
-<!-- Don't display Product story if Unavailable or Other -->
+<!-- Don't display Product section if Unavailable or Other -->
 <% if(product.story.name !== "Unavailable" && product.story.name !== "Other") { %>
 <h2>Story:</h2>
-<p><%= product.story.name %></p>
-<p><%= product.story.synopsis %></p>
-<p><%= product.story.introduction %></p>
-<p><%= product.story.content %></p>
+<p><%= product.story.description %></p>
 <% } %>
-
-<a href="/author/product/update/<%= product.url %>">Update</a>
-<a href="/author/product/delete/<%= product.url %>">Delete</a>

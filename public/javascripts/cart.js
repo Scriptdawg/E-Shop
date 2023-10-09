@@ -1,7 +1,7 @@
 import { FetchWrap } from "./fetchWrap.js";
 class Cart {
-  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
-  //#viewApi = new FetchWrap("http://localhost:3000/Public/");
+  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
+  #viewApi = new FetchWrap("http://localhost:3000/Public/");
   constructor() {
     this.products = [];
     this.#main();
@@ -66,7 +66,7 @@ class Cart {
             </p>
           </div>
           <div class="product-card-footer">
-            <p>$ ${product.price}</p>
+            <p>$ ${product.price}${product.priceType}</p>
             <div class="product-card-footer-buttons">
               <button id="btn-minus-${product.id}" class="btn-minus" data-id="${product.id}">-</button>
               <p id="product-quantity-${product.id}" class="product-quantity">
@@ -145,13 +145,13 @@ class Cart {
   };
   
   #calculation = () => {
-    document.querySelector(`#cartAmount`).textContent = this.basket.map((x) => x.qty).reduce((x, y) => x + y, 0);
+    document.querySelector(`#cart-quantity`).textContent = this.basket.map((x) => x.qty).reduce((x, y) => x + y, 0);
   };
 
   #emptyCart = () => {
     document.querySelector("#product-legend").innerHTML=`
       <h2>Cart is Empty</h2>
-      <a href="/Public/product/list">
+      <a href="/public">
         <button class="btn-continue">Continue Shopping</button>
       </a>
     `
