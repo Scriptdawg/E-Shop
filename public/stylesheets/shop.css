@@ -58,6 +58,7 @@
 }
 /* ? Details */
 .card-details {
+  background-color: whitesmoke;
   flex: 1;
   padding: 16px;
 }
