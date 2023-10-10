@@ -1,15 +1,50 @@
-@import url("main.css");
-@import url("shared/header.css");
-@import url("shared/footer.css");
-@import url("eshop/eshop.css");
-@import url("shared/template.css");
-
+@import url("header.css");
+@import url("footer.css");
+@import url("shop.css");
+:root {
+  /* Font Families */
+  --font-primary: system-ui;
+  --font-secondary: Verdana, Helvetica, Arial, sans-serif;
+  --font-teritiary: Georgia, serif;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  margin-inline: auto;
+  max-width: 2600px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-primary);
+  margin: 0;
+}
 .container-subpage {
-  padding-inline: 16px;
   margin-inline: auto;
   max-width: 1200px;
   min-height: calc(100dvh - 240px);
+  padding-inline: 16px;
 }
 h1 {
   color: brown;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.link {
+  padding: 4px 8px;
+}
+@media print {}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: auto;
+  }
 }

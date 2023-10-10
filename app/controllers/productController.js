@@ -4,6 +4,8 @@ const Product = require("../models/product.js");
 const Story = require("../models/story.js");
 const imageMimeTypes = ["image/jpeg", "image/png", "image/gif"];
 
+const priceTypes = ["/kilogram", "/pound", "/package", "/box", " points"];
+
 //! PRODUCT ROUTES
 
 // CREATE Product - GET create form
@@ -18,7 +20,7 @@ exports.product_create_get = asyncHandler(async (req, res) => {
     pageTitle: "Create Product",
     stories: allStories,
     product: {},
-    priceTypeSelections: ["/kilogram", "/pound", "/package", "/box"],
+    priceTypeSelections: priceTypes,
     errors: "",
   });
 });
@@ -64,7 +66,7 @@ exports.product_create_post = [
         pageTitle: "Create Product",
         stories: allStories,
         product,
-        priceTypeSelections: ["/kilogram", "/pound", "/package", "/box"],
+        priceTypeSelections: priceTypes,
         errors: errors.array(),
       });
       return;
@@ -83,7 +85,7 @@ exports.product_create_post = [
           pageTitle: "Create Product",
           stories: allStories,
           product,
-          priceTypeSelections: ["/kilogram", "/pound", "/package", "/box"],
+          priceTypeSelections: priceTypes,
           errors: [{ msg: "Name already exists!" }],
         });
       } else {
@@ -141,7 +143,7 @@ exports.product_update_get = asyncHandler(async (req, res) => {
     pageTitle: "Update Product",
     stories: allStories,
     product,
-    priceTypeSelections: ["/kilogram", "/pound", "/package", "/box"],
+    priceTypeSelections: priceTypes,
     errors: "",
   });
 });
@@ -186,7 +188,7 @@ exports.product_update_post = [
         pageTitle: "Update Product",
         stories: allStories,
         product,
-        priceTypeSelections: ["/kilogram", "/pound", "/package", "/box"],
+        priceTypeSelections: priceTypes,
         errors: errors.array(),
       });
       return;
