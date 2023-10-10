@@ -24,7 +24,47 @@
   <!-- Shop Grid Container -->
   <div id="container-shop" class="container-shop">
     <!-- Card Grid Container from shop.js -->
-    <div id="container-card" class="container-card"></div>
+    <div id="container-card" class="container-card">
+      <!-- Card Template -->
+      <div id="card" class="card">
+        <div id="card-image" class="card-image">
+          <a href="">
+            <img
+              src="/images/arrowwood_grass_fire.jpg"
+              width="600px"
+              height="400px"
+              alt="arrowwood_grass_fire"
+              title="arrowwood_grass_fire"
+            />
+          </a>
+        </div>
+        <div id="card-details" class="card-details">
+          <h2 id="product-name" class="product-name">Loading files ...</h2>
+          <p id="product-shortDescription" class="product-shortDescription">
+            Waiting for shop.js to retrieve data and render the view ...
+          </p>
+          <p id="product-price" class="product-price">$0</p>
+          <div id="card-controls" class="card-controls">
+            <button
+              id="btn-product-heart"
+              class="btn btn-product-heart"
+              data-id="0"
+            >
+              <i class="bi bi-heart">heart </i>
+            </button>
+            <div>
+              <button id="btn-minus" class="btn btn-minus" data-id="0">
+                <i class="bi bi-chevron-double-down"></i>
+              </button>
+              <span id="quantity" class="quantity" data-id="0"> 0 </span>
+              <button id="btn-plus" class="btn btn-plus" data-id="0">
+                <i class="bi bi-chevron-double-up"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Menu Container -->
     <div id="menu" class="menu">
