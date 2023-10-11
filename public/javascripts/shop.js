@@ -7,8 +7,9 @@ class Shop {
     this.products = [];
     this.#main();
   }
+  // Get all products & save to this.products
   #main = () => {
-    this.#getProductsList()
+    this.#getProductList()
       .then((response) => {
         this.products = response;
         this.#printProducts();
@@ -18,7 +19,7 @@ class Shop {
       })
       .finally();
   };
-  #getProductsList = () => {
+  #getProductList = () => {
     return new Promise((resolve, reject) => {
       this.#viewApi
         .get("api/product/list")
@@ -29,12 +30,11 @@ class Shop {
         .finally();
     });
   };
+  // Generate the html view
   #printProducts = () => {
-    const containerCard = document.querySelector("#container-card");
-    containerCard.innerHTML = "";
-    this.products.forEach((product) => {
-      let search = this.basket.find((item) => item.id === product.id) || [];
-      containerCard.innerHTML += `
+    document.querySelector("#container-card").innerHTML = this.products.map(product => {
+      const search = this.basket.find((item) => item.id === product.id) || [];
+      return `
         <div id="card-${product.id}" class="card">
           <div id="card-image" class="card-image">
             <a href="/public/product/${product.id}">
@@ -68,14 +68,14 @@ class Shop {
               </div>
             </div>
           </div>
-        </div>
-      `;
-    });
+        </div>      
+      `
+    }).join("");  
     this.#updateHeartQty();
     this.#updateCartQty();
     this.#attachButtons();
   };
-  // Update heart quantity
+  // Update heart-quantity
   #updateHeartQty = () => {
     document.querySelector(`#heart-quantity`).textContent = this.basket.filter((item) => item.heart === true).length;
   };
@@ -85,7 +85,7 @@ class Shop {
       .map((item) => item.qty)
       .reduce((accumulator, current) => accumulator + current, 0);
   };
-  // Add Button Event Listeners
+  // Attach Button Event Listeners
   #attachButtons = () => {
     //? Minus Button
     document.querySelectorAll(".btn-minus").forEach((button) => {
