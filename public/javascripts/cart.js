@@ -1,13 +1,13 @@
 import { FetchWrap } from "./fetchWrap.js";
 class Cart {
-  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
-  //#viewApi = new FetchWrap("http://localhost:3000/Public/");
+  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/Public/");
+  #viewApi = new FetchWrap("http://localhost:3000/Public/");
   constructor() {
+    this.basket = JSON.parse(localStorage.getItem("data")) || [];
     this.products = [];
     this.#main();
-    this.basket = JSON.parse(localStorage.getItem("data")) || [];
   };
-
+  // ! Gets all products from database via api & store in this.products array of objects
   #main = () => {
     this.#getProductsList()
       .then((response) => {
@@ -19,7 +19,6 @@ class Cart {
       })
       .finally();
   };
-
   #getProductsList = () => {
     return new Promise((resolve, reject) => {
       this.#viewApi

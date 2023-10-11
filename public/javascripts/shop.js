@@ -7,7 +7,7 @@ class Shop {
     this.products = [];
     this.#main();
   }
-  // Get all products & save to this.products
+  // ! Gets all products from database via api & store in this.products array of objects
   #main = () => {
     this.#getProductList()
       .then((response) => {
@@ -30,7 +30,7 @@ class Shop {
         .finally();
     });
   };
-  // Generate the html view
+  // ! Generates the shop html with product cards composed of images, name, desciption, price, buttons
   #printProducts = () => {
     document.querySelector("#container-card").innerHTML = this.products.map(product => {
       const { id, img, name, price, priceType, shortDescription } = product;
@@ -70,7 +70,7 @@ class Shop {
     this.#updateCartQty();
     this.#attachButtons();
   };
-  // Attach Button Event Listeners
+  // ! Activates buttons event listeners
   #attachButtons = () => {
     //? Minus Button
     document.querySelectorAll(".btn-minus").forEach(button => {
@@ -91,7 +91,7 @@ class Shop {
       });
     });
   };
-  // Decrement product quantity
+  // ! Decreases the selected product card item quantity by 1
   #decrement = id => {
     const search = this.basket.find(item => item.id === id);
     if (search === undefined) return;
@@ -101,7 +101,7 @@ class Shop {
     this.basket = this.basket.filter(item => Number.parseInt(item.qty, 10) !== 0 || item.heart !== false);
     localStorage.setItem("data", JSON.stringify(this.basket));
   };
-  // Increment product quantity
+  // ! Increases the selected product card item quantity by 1
   #increment = id => {
     const search = this.basket.find(item => item.id === id);
     if (search === undefined) this.basket.push({ id, heart: false, qty: 1 });
@@ -109,23 +109,23 @@ class Shop {
     this.#updateProductQty(id);
     localStorage.setItem("data", JSON.stringify(this.basket));
   };
-  // Update heart-quantity
+  // ! Calculates the total quantity of products selected for favorites list and updates the HEART icon
   #updateHeartQty = () => {
     document.querySelector(`#heart-quantity`).textContent = this.basket.filter(item => item.heart === true).length;
   };
-  // Update cart-quantity
+  // ! Adds up the total number of items in the CART and updates the CART icon
   #updateCartQty = () => {
     document.querySelector(`#cart-quantity`).textContent = this.basket
       .map(item => item.qty)
       .reduce((accumulator, current) => accumulator + current, 0);
   };
-  // Update card product quantity
+  // ! Updates the product CARD quantity subtotal
   #updateProductQty = id => {
     const search = this.basket.find(item => item.id === id);
     document.querySelector(`#quantity-${id}`).textContent = search.qty;
     this.#updateCartQty();
   };
-  // Update card product heart (true/false)
+  // ! Toggles the product CARD heart (true/false)
   #updateProductHeart = id => {
     const search = this.basket.find(item => item.id === id);
     if (search === undefined) this.basket.push({ id, heart: true, qty: 0 });
@@ -135,8 +135,7 @@ class Shop {
     document.querySelectorAll(".btn-product-heart").forEach(button =>
       button.innerHTML = `<i class="bi bi-heart"></i>`);
     const hearts = this.basket.filter(item => item.heart === true);
-    const heartArray = hearts.map(item => item.id);
-    heartArray.forEach(heart => document.querySelector(`#btn-product-heart-${heart}`)
+    hearts.map(item => item.id).forEach(heart => document.querySelector(`#btn-product-heart-${heart}`)
       .innerHTML = `<i class="bi bi-heart-fill"></i>`);
     this.#updateHeartQty();
     localStorage.setItem("data", JSON.stringify(this.basket));
