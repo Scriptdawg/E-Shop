@@ -1,4 +1,7 @@
 /* Sticky Sub-page Banner & Navigation Bar */
+.container-subpage-shop {
+  min-height: calc(100dvh);
+}
 #sub-nav {
   align-items: center;
   background-color: black;
