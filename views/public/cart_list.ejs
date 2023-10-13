@@ -1,9 +1,93 @@
-<div id="container-subpage-cart" class="container-subpage">
+<!-- <div id="container-subpage-cart" class="container-subpage">
   <h1>Cart Contents</h1>
   <div class="products-container">
     <div id="product-legend" class="product-legend"></div>
     <div id="product-list" class="product-list"></div>
   </div>
-</div>
+</div> -->
 
+<!-- Subpage Container -->
+<div id="container-subpage-shop" class="container-subpage-shop">
+  <!-- Sticky Sub-page Banner & Navigation Bar -->
+  <nav id="sub-nav" class="sub-nav">
+    <a href="#container-ledger">
+      <div id="link-ledger" class="link link-ledger">
+        <i class="bi bi-calculator"></i>
+      </div>
+    </a>
+    <a href="">
+      <div id="link-heart" class="link link-heart">
+        <i class="bi bi-heart-fill"></i>
+        <div id="heart-quantity" class="heart-quantity">0</div>
+      </div>
+    </a>
+    <a href="/public">
+      <div id="link-cart" class="link link-cart">
+        <i class="bi bi-shop-window"></i>
+      </div>
+    </a>
+  </nav>
+  <!-- Shop Grid Container -->
+  <div id="container-shop" class="container-shop">
+    
+    <!-- Card Grid Container (replaced by shop.js) -->
+    <div id="container-card" class="container-card">
+      <!-- Card Template -->
+      <div id="card" class="card">
+        <div id="card-image" class="card-image">
+          <a href="">
+            <img src="/images/arrowwood_grass_fire.jpg" width="600px" height="400px"
+            alt="arrowwood_grass_fire" title="arrowwood_grass_fire" />
+          </a>
+        </div>
+        <div id="card-details" class="card-details">
+          <h2 id="product-name" class="product-name">Your cart is empty.</h2>
+          <p id="product-shortDescription" class="product-shortDescription">
+            Please visit our <a href="/public">Shop</a> page to select your items.
+          </p>
+          <!-- <p id="product-price" class="product-price">$0</p>
+          <div id="card-controls" class="card-controls">
+            <button id="btn-product-heart" class="btn btn-product-heart" data-id="0">
+              <i class="bi bi-heart">heart </i>
+            </button>
+            <div>
+              <button id="btn-minus" class="btn btn-minus" data-id="0">
+                <i class="bi bi-chevron-double-down"></i>
+              </button>
+              <span id="quantity" class="quantity" data-id="0"> 0 </span>
+              <button id="btn-plus" class="btn btn-plus" data-id="0">
+                <i class="bi bi-chevron-double-up"></i>
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Ledger Container -->
+    <div id="container-ledger" class="container-ledger">
+      <div id="ledger" class="ledger">
+        <h2>Ledger:</h2>
+        <p>Total: $ <span id="total-amount">0</span></p>
+        <p>Number of items: <span id="cart-quantity">0</span></p>
+        <button id="clear-cart" class="btn btn-clear">Empty Cart</button>
+        <button id="checkout" class="btn btn-checkout">Checkout</button>
+      </div>
+      <div><a id="link-continue" class="link link-continue" href="/public">Continue Shopping</a></div>
+    </div>
+    <!-- Ads Container -->
+    <div id="ads" class="ads">
+      <h2>More Content:</h2>
+      <ul>
+        <li>Specials</li>
+        <li>Related Products</li>
+        <li>Newsletters</li>
+        <li>Articles</li>
+        <li>Recipes</li>
+        <li>Advertisements</li>
+        <li>Other Stuff</li>
+      </ul>
+    </div>
+  </div>
+</div>
 <script type="module" src="/javascripts/cart.js"></script>

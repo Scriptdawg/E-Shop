@@ -1,0 +1,33 @@
+/* Ledger Container */
+.container-ledger {
+  background-color: #f2eeee;
+  font-size: 18px;
+  line-height: 46px;
+  min-height: 60dvh;
+  text-align: center;
+}
+.card-details .btn-remove-card,
+.container-ledger .btn-clear {
+  background-color: red;
+  color: white;
+}
+.container-ledger .btn-checkout {
+  background-color: green;
+  color: white;
+  text-decoration: line-through;
+}
+.empty-cart {
+  min-height: 30dvh;
+  padding-block: 32px;
+  text-align: center;
+}
+.bi-cart-x-fill {
+  color: gray;
+  font-size: 64px;
+}
+.remove {
+  display: none;
+}
+.hidden {
+  visibility: hidden;
+}

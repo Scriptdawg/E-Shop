@@ -17,13 +17,21 @@
 }
 .link-menu,
 .link-heart,
-.link-cart {
+.link-cart,
+.link-ledger {
   color: white;
   font-size: 18px;
   position: relative;
 }
 .link-heart .bi-heart-fill {
   color: white;
+}
+.container-ledger .link-continue {
+  background-color: black;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
 }
 .heart-quantity,
 .cart-quantity {
@@ -140,7 +148,8 @@
     position: sticky;
     top: 0;
   }
-  #link-menu {
+  #link-menu,
+  #link-ledger {
     display: none;
   }
   .container-shop {
