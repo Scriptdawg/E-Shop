@@ -1,9 +1,9 @@
 const asyncHandler = require("express-async-handler");
 const Product = require("../models/product.js");
 
-//! PUBLIC ROUTES
+// ! PUBLIC ROUTES
 
-//? INDEX
+// ? INDEX
 // READ Product - list
 exports.index_get = asyncHandler(async (req, res) => {
   res.render("public/index", {
@@ -43,10 +43,18 @@ exports.product_detail_get = asyncHandler(async (req, res) => {
   });
 });
 
-//? CART
+// ? CART
 // READ Cart - list
 exports.cart_list_get = (req, res) => {
   res.render("public/cart_list", {
     roles: req.session.roles,
   });
 };
+
+// ? FAVORITES
+// READ Favorites - list
+exports.favorites_get = asyncHandler(async (req, res) => {
+  res.render("public/favorites", {
+    roles: req.session.roles,
+  });
+});

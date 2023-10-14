@@ -1,7 +1,7 @@
-/* Sticky Sub-page Banner & Navigation Bar */
 .container-subpage-shop {
   min-height: calc(100dvh);
 }
+/* Sticky Sub-page Banner & Navigation Bar */
 #sub-nav {
   align-items: center;
   background-color: black;
@@ -51,6 +51,7 @@
 /* Card Grid Container */
 .container-card {
   display: grid;
+  min-height: 80dvh;
 }
 /* Card */
 .card {

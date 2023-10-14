@@ -3,9 +3,7 @@ class Footer {
     this.scrollTop = document.querySelector("#btn-scroll-top");
     this.#main();
   };
-
   #main = () => {
-    // Window size - get and display initial window size
     document.querySelector("#window-size").innerHTML = window.innerWidth + "px x " + window.innerHeight + "px";
     this.scrollTop.addEventListener("click", event => {
       document.body.scrollTop = 0; // for Safari
@@ -14,7 +12,6 @@ class Footer {
     window.onscroll = () => this.#scroll();
     window.onresize = () => this.#resize();
   };
-
   #scroll = () => {
     if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
       this.scrollTop.style.display = "block";
@@ -22,11 +19,8 @@ class Footer {
       this.scrollTop.style.display = "none";
     }
   };
-
-  // Update display whenever screen size changes
   #resize = () => {
     document.querySelector("#window-size").innerHTML = window.innerWidth + "px x " + window.innerHeight + "px";
   };
 };
-
 new Footer();
