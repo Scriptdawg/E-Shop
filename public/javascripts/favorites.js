@@ -1,7 +1,7 @@
 import { FetchWrap } from "./fetchWrap.js";
 class Favorites {
-  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
-  //#viewApi = new FetchWrap("http://localhost:3000/public/");
+  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
+  #viewApi = new FetchWrap("http://localhost:3000/public/");
   constructor() {
     this.basket = JSON.parse(localStorage.getItem("data")) || [];
     this.products = [];
@@ -69,8 +69,7 @@ class Favorites {
         </div>      
       `
     }).join("");
-    this.basket.filter(item => item.qty).forEach(item => document
-      .querySelector(`#btn-minus-${item.id}`).classList.remove("hidden"));
+    this.basket.filter(item => item.qty && item.heart).forEach(item => document.querySelector(`#btn-minus-${item.id}`).classList.remove("hidden"));
     this.#updateCartQuantity();
     this.#updateHeartQuantity();
     this.#attachButtons();
