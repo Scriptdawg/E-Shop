@@ -44,15 +44,6 @@
   right: -4px;
   top: 0;
 }
-/* Shop Grid Container */
-.container-shop {
-  display: grid;
-}
-/* Card Grid Container */
-.container-card {
-  display: grid;
-  min-height: 80dvh;
-}
 /* Card */
 .card {
   border: 1px solid #e9eeec;;
@@ -129,6 +120,15 @@
   line-height: 46px;
   padding: 4px;
   text-align: center;
+}
+/* Shop Grid Container */
+.container-shop {
+  display: grid;
+}
+/* Card Grid Container */
+.container-card {
+  display: grid;
+  min-height: 80dvh;
 }
 /* Extra Extra Small - xxs */
 @media (max-width: 300px) {}
