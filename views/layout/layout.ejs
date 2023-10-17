@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Application -->
+  <link rel="stylesheet" href="/stylesheets/index.css" />
+  <script type="module" defer src="/javascripts/layout.js"></script>
+  <title><%= title %></title>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
   <!-- Filepond -->
   <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
   <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
@@ -17,18 +22,19 @@
   <script defer src="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.js"></script>
   <script defer src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
   <script defer src="/javascripts/fileUpload.js"></script>
-  <!-- Application -->
-  <link rel="stylesheet" href="/stylesheets/index.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
-  <title><%= title %></title>
 </head>
-
 <body>
-  <header><%- include('../partials/header.ejs') %></header>
-
-  <main><%- body %></main>
-
-  <footer><%- include('../partials/footer.ejs') %></footer>
+  <div id="layout" class="layout">
+    <!-- Main Navigation -->
+    <%- include('top.ejs') %>
+    <!-- Side Navigation -->
+    <%- include('left.ejs') %>
+    <!-- Sub-Pages-->
+    <div id="middle">
+      <%- body %>
+    </div>
+    <!-- Footer -->
+    <%- include('bottom.ejs') %>
+  </div>
 </body>
-
 </html>

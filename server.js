@@ -59,7 +59,7 @@ async function main() {
 }
 
 // View engine setup
-app.set("layout", "layouts/layout");
+app.set("layout", "layout/layout");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 

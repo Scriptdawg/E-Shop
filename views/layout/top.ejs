@@ -1,0 +1,16 @@
+<div id="top">
+  <!-- Website top navigation -->
+  <nav id="website-top-nav" class="website-top-nav">
+    <ul>
+      <li><button id="left-button" class="btn btn-left"><i class="bi bi-list"> Menu</i></button></li>
+      <li><a class="link" href="/public"><i class="bi bi-shop"> Store</i></a></li>
+
+      <% if(roles) { %>
+        <li><a class="link" href="/auth/logout"><i class="bi bi-box-arrow-in-left"> Sign Out</i></a></li>
+      <% } else { %>
+        <li><a class="link" href="/auth/login"><i class="bi bi-box-arrow-in-right"> Sign In</i></a></li>
+      <% } %>
+
+    </ul>
+  </nav>
+</div>

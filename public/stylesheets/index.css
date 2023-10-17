@@ -1,8 +1,7 @@
-@import url("header.css");
-@import url("footer.css");
 @import url("shop.css");
 @import url("cart.css");
 @import url("favorites.css");
+@import url("layout.css");
 :root {
   /* Font Families */
   --font-primary: system-ui;
@@ -24,7 +23,6 @@ body {
 .container-subpage {
   margin-inline: auto;
   max-width: 1200px;
-  min-height: calc(100dvh - 240px);
   padding-inline: 16px;
 }
 h1 {
@@ -32,7 +30,8 @@ h1 {
 }
 ul {
   list-style: none;
-  padding: 0;
+  margin-block: 0;
+  padding-inline: 0;
 }
 .btn {
   background-color: transparent;

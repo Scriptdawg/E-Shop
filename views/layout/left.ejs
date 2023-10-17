@@ -1,0 +1,24 @@
+<div id="left" class="left">
+  <!-- Website side navigation -->
+  <nav id="website-side-nav" class="website-side-nav">
+    <ul>
+
+      <li><a class="link" href="/">Main</a></li>
+      <li><a class="link" href="/public">Store</a></li>
+      <li><a class="link" href="/about">About</a></li>
+      <li><a class="link" href="/contact">Contact</a></li>
+      
+      <% if(roles) { 
+        roles.forEach(role => { %>
+          <li><a class="link" href="/<%= role %>"><%= role %></a></li>
+        <% }) %>
+        <li><a class="link" href="/auth/logout">Sign Out</a></li>
+      <% } else { %>
+        <li><a class="link" href="/auth/register">Register</a></li>
+        <li><a class="link" href="/auth/login">Sign In</a></li>
+      <% } %>
+
+    </ul>
+  </nav>
+</div>
+        

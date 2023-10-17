@@ -1,6 +1,3 @@
-.container-subpage-shop {
-  min-height: calc(100dvh);
-}
 /* Sticky Sub-page Banner & Navigation Bar */
 #sub-nav {
   align-items: center;
@@ -53,12 +50,13 @@
 }
 /* ? Image */
 .card-image {
-  border-radius: 3px 3px 0 0;
-  flex: 0 0 240px;
+  border-radius: 4px 4px 0 0;
+  flex: 0 0 100px;
 }
 .card-image img {
-  height: 100%;
-  width: 100%;
+  border-radius: 4px 4px 0 0;
+  height: auto;
+  max-width: 100%;
 }
 /* ? Details */
 .card-details {
@@ -110,7 +108,7 @@
   background-color: #f2eeee;
   font-size: 18px;
   line-height: 46px;
-  padding: 4px;
+  padding: 16px;
   text-align: center;
 }
 /* Ads Container */
@@ -128,7 +126,6 @@
 /* Card Grid Container */
 .container-card {
   display: grid;
-  min-height: 80dvh;
 }
 /* Extra Extra Small - xxs */
 @media (max-width: 300px) {}
@@ -155,10 +152,10 @@
     display: none;
   }
   .container-shop {
-    grid-template-columns: 300px 3fr;
+    grid-template-columns: 300px 1fr;
     grid-template-areas:
-    "menu cards"
-      "ads  cards";
+      "menu cards"
+      "ads   ads";
   }
   .menu {
     grid-area: menu;
@@ -197,10 +194,6 @@
   }
   .container-card {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-      "left left right right"
-      "left left right right"
-      "card card card  card";
   }
 }
 @media (min-width: 2000px) {
