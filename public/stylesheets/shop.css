@@ -126,19 +126,16 @@
 /* Card Grid Container */
 .container-card {
   display: grid;
+  gap: 8px;
+  padding: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 /* Extra Extra Small - xxs */
 @media (max-width: 300px) {}
 /* Extra Small - xs */
 @media (max-width: 575px) {}
 /* Small - sm */
-@media (min-width: 576px) {
-  .container-card {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 16px;
-  }
-}
+@media (min-width: 576px) {}
 /* Medium - md */
 @media (min-width: 768px) {}
 /* Large - lg */
@@ -168,39 +165,18 @@
   }
 }
 /* Extra Large - xl */
-@media (min-width: 1200px) {
-  .container-card {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+@media (min-width: 1200px) {}
 /* Extra Extra Large - xxl */
 @media (min-width: 1400px) {
   .container-shop {
-    grid-template-columns: 300px 2fr 1fr;
+    grid-template-columns: 300px 4fr minmax(300px, 1fr);
     grid-template-areas: "menu cards ads";
   }
-  .container-card {
-    grid-template-columns: repeat(2, 1fr);
+  .menu {
+    position: sticky;
+    top: 100px;
   }
 }
-@media (min-width: 1600px) {
-  .container-card {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (min-width: 1800px) {
-  .container-shop {
-    grid-template-columns: 300px 3fr 1fr;
-  }
-  .container-card {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (min-width: 2000px) {
-  .container-shop {
-    grid-template-columns: 300px 3fr 1fr;
-  }
-  .container-card {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
+@media (min-width: 1600px) {}
+@media (min-width: 1800px) {}
+@media (min-width: 2000px) {}

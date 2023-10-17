@@ -1,5 +1,5 @@
 class Layout {
-  constructor () {
+  constructor() {
     this.scrollTop = document.querySelector("#btn-scroll-top");
     this.windowSize = document.querySelector("#window-size");
     this.#main(), this.#scroller(), this.#leftBtn();
@@ -10,7 +10,7 @@ class Layout {
     window.onresize = () => this.#resize();
     return;
   };
-  
+
   #scroller = () => {
     this.scrollTop.addEventListener("click", event => {
       document.body.scrollTop = 0; // for Safari
@@ -36,11 +36,16 @@ class Layout {
     leftButton.addEventListener("click", event => {
       document.querySelector("#left").classList.toggle("open-left");
     });
+
     window.onclick = event => {
-      if(!event.target.matches(".bi-list")) {
+      console.log(event.target)
+      if (!event.target.matches(".bi-list")
+        && !event.target.matches(".website-top-nav")
+        && !event.target.matches(".website-side-nav")) {
         document.querySelector("#left").classList.remove("open-left");
       };
     }
+
     return;
   };
 };
