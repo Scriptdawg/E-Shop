@@ -38,14 +38,12 @@ class Layout {
     });
 
     window.onclick = event => {
-      console.log(event.target)
       if (!event.target.matches(".bi-list")
-        && !event.target.matches(".website-top-nav")
-        && !event.target.matches(".website-side-nav")) {
+        && !event.target.matches(".website-top-nav")) {
         document.querySelector("#left").classList.remove("open-left");
       };
     }
-
+  
     return;
   };
 };
