@@ -1,0 +1,98 @@
+/* Cart Grid Container */
+.container-cart {
+  /* display: grid; */
+  max-width: 600px;
+  margin-inline: auto;
+  padding: 8px;
+}
+/* Package Grid Container */
+.container-package {
+  border: 1px solid gray;
+  display: grid;
+}
+.package:nth-child(even) {
+  background-color: rgb(250, 250, 250)
+}
+.package {
+  border-bottom: 1px solid gainsboro;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 70px 4fr 3fr;
+  grid-template-areas:
+  "image amount subtotal"
+  "name  name   name"
+  "delete control control";
+  padding: 16px;
+}
+.hide {
+  display: none;
+}
+.image {
+  grid-area: image;
+  align-items: center;
+}
+.amount {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  grid-area: amount;
+  padding-inline-start: 32px;
+}
+.subtotal {
+  align-items: end;
+  color: green;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  gap: 8px;
+  grid-area: subtotal;
+  justify-content: space-between;
+}
+.name {
+  grid-area: name;
+}
+.remove-card {
+  background-color: rgba(240, 240, 240, 0.4);
+  color: red;
+  grid-area: delete;
+  font-size: 12px;
+}
+.control {
+  align-items: center;
+  display: flex;
+  grid-area: control;
+  justify-content: end;
+}
+
+
+.image img {
+  height: auto;
+  width: 100%;
+}
+.name h2 {
+  color: brown;
+  font-size: 18px;
+  margin: 0;
+}
+/* .heart {
+  padding-block-start: 16px;
+} */
+
+p {
+  margin: 0;
+}
+.quantity-buttons {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  justify-content: center;
+  text-align: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 4px 8px;
+  text-align: center;
+}

@@ -37,18 +37,12 @@ class Layout {
       document.querySelector("#left").classList.toggle("open-left");
     });
 
-    document.querySelector("body").addEventListener("click", event => {
-      console.log(event.target)
-      if(!event.target.matches(".bi-list")) {
-        document.querySelector("#left").classList.remove("open-left");  
-      }
-    });
-    // window.onclick = event => {
-    //   if (!event.target.matches(".bi-list")
-    //     && !event.target.matches(".website-top-nav")) {
-    //     document.querySelector("#left").classList.remove("open-left");
-    //   };
-    //}
+    window.onclick = event => {
+      if (!event.target.matches(".bi-list")
+        && !event.target.matches(".website-top-nav")) {
+        document.querySelector("#left").classList.remove("open-left");
+      };
+    }
   
     return;
   };

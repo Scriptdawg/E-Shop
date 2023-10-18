@@ -81,10 +81,10 @@
   font-weight: 600;
   justify-content: space-between;
 }
-.card-controls .bi-heart {
+.bi-heart {
   color: gray;
 }
-.card-controls .bi-heart-fill {
+.bi-heart-fill {
   color: red;
 }
 .btn-minus {
@@ -171,10 +171,6 @@
   .container-shop {
     grid-template-columns: 300px 4fr minmax(300px, 1fr);
     grid-template-areas: "menu cards ads";
-  }
-  .menu {
-    position: sticky;
-    top: 100px;
   }
 }
 @media (min-width: 1600px) {}

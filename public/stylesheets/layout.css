@@ -95,6 +95,7 @@
   background-image: linear-gradient(#133a26, #c1eed7);
   color: white;
   padding: 16px;
+  padding-block-end: 64px;
   position: relative;
   text-align: center;
 }

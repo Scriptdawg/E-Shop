@@ -39,36 +39,43 @@ class Cart {
       const { id, img, name, price, priceType } = product;
       const search = this.basket.find(item => item.id === id) || [];
       return `
-        <div id="card-${id}" class="card">
-          <div id="card-image" class="card-image">
-            <a href="/public/product/${id}">
-              <img src="${img}" width="600px" height="400px" alt="${name}" title="${name}" />
-            </a>
-          </div>
-          <div id="card-details" class="card-details">
-            <h2 id="product-name" class="product-name">${name}</h2>
-            <p id="product-price" class="product-price">$${price}${priceType}</p>
-            <button id="remove-card-${id}" class="btn btn-remove-card" data-id="${id}">Remove</button>
-            <p>Subtotal: $ <span id="card-subtotal-${id}" class="card-subtotal">${price * search.qty}</span></p>
-            <div id="card-controls" class="card-controls">
-              <button id="btn-card-heart-${id}" class="btn btn-card-heart" data-id="${id}">
-                ${search.heart === true ? `<i class="bi bi-heart-fill"></i>` : `<i class="bi bi-heart"></i>`}
-              </button>
-              <div>
-                <button id="btn-minus-${id}" class="btn btn-minus" data-id="${id}">
-                  <i class="bi bi-chevron-double-down"></i>
-                </button>
-                <span id="quantity-${id}" class="quantity" data-id=${id}>
-                  ${search.qty === undefined ? 0 : search.qty}
-                </span>
-                <button id="btn-plus-${id}" class="btn btn-plus" data-id="${id}">
-                  <i class="bi bi-chevron-double-up"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>      
+      <div id="card-${id}" class="package">
+        <div id="image" class="image">
+          <img src="${img}" width="600px" height="400px" alt="${name}" title="${name}" />
+        </div>
+        <div id="amount" class="amount">
+          <p id="product-price" class="product-price">$${price}</p>
+        </div>
+        <div id="subtotal" class="subtotal">
+          <button id="btn-card-heart-${id}" class="btn btn-card-heart" data-id="${id}">
+            ${search.heart === true ? `<i class="bi bi-heart-fill"></i>` : `<i class="bi bi-heart"></i>`}
+          </button>
+          <p>$<span id="card-subtotal-${id}" class="card-subtotal">${price * search.qty}</span></p>
+        </div>
+        <div id="name" class="name">
+          <h2 id="product-name" class="product-name">${name}</h2>
+        </div>
+
+        <button id="remove-card-${id}" class="btn btn-remove-card" data-id="${id}">Remove</button>
+        
+        <div id="card-controls" class="control">
+          <span>Qty:</span>
+          <span id="quantity-buttons" class="quantity-buttons">
+            <button id="btn-minus-${id}" class="btn btn-minus" data-id="${id}">
+              <i class="bi bi-chevron-double-down"></i>
+            </button>
+            <span id="quantity-${id}" class="quantity" data-id=${id}>
+              ${search.qty === undefined ? 0 : search.qty}
+            </span>
+            <button id="btn-plus-${id}" class="btn btn-plus" data-id="${id}">
+              <i class="bi bi-chevron-double-up"></i>
+            </button>
+          </span>
+        </div>
+        
+      </div>   
       `
+      
     }).join("");
     this.basket.filter(item => item.qty === 1).forEach(item => document
       .querySelector(`#btn-minus-${item.id}`).classList.add("hidden"));
@@ -137,7 +144,7 @@ class Cart {
   };
   // ! Removes card from view, sets quantity to zero, prints empty state if no more cards
   #removeCard = id => {
-    document.querySelector(`#card-${id}`).classList.add("remove");
+    document.querySelector(`#card-${id}`).classList.add("hide");
     this.basket.find(item => item.id === id).qty = 0;
     this.#updateCartQuantity();
     this.#updateLocalStorage();
