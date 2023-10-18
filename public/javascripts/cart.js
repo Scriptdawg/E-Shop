@@ -59,7 +59,6 @@ class Cart {
         <button id="remove-card-${id}" class="btn btn-remove-card" data-id="${id}">Remove</button>
         
         <div id="card-controls" class="control">
-          <span>Qty:</span>
           <span id="quantity-buttons" class="quantity-buttons">
             <button id="btn-minus-${id}" class="btn btn-minus" data-id="${id}">
               <i class="bi bi-chevron-double-down"></i>

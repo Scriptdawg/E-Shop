@@ -126,8 +126,8 @@
 /* Card Grid Container */
 .container-card {
   display: grid;
-  gap: 8px;
-  padding: 8px;
+  gap: 16px;
+  padding: 12px;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 /* Extra Extra Small - xxs */

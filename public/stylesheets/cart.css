@@ -1,8 +1,8 @@
 /* Ledger Container */
 .container-ledger {
-  background-color: #f2eeee;
   font-size: 18px;
   line-height: 46px;
+  padding-block-end: 64px;
   text-align: center;
 }
 .card-details .btn-remove-card,

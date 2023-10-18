@@ -95,7 +95,7 @@
   background-image: linear-gradient(#133a26, #c1eed7);
   color: white;
   padding: 16px;
-  padding-block-end: 64px;
+  padding-block-end: 80px;
   position: relative;
   text-align: center;
 }
@@ -106,7 +106,7 @@
 /* ? Display Window Size */
 .website-footer .window-size {
   background-color: transparent;
-  bottom: 16px;
+  bottom: 40px;
   color: black;
   font-size: 8px;
   padding: 8px;
