@@ -16,7 +16,7 @@ router.get("/product/:id", public_controller.product_detail_get);
 
 // ? CART
 // READ Cart - list
-router.get("/cart", public_controller.cart_list_get);
+router.get("/cart", public_controller.cart_get);
 
 // ? Favorites
 // READ Favorites - list

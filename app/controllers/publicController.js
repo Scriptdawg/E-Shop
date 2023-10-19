@@ -45,8 +45,8 @@ exports.product_detail_get = asyncHandler(async (req, res) => {
 
 // ? CART
 // READ Cart - list
-exports.cart_list_get = (req, res) => {
-  res.render("public/cart_list", {
+exports.cart_get = (req, res) => {
+  res.render("public/cart", {
     roles: req.session.roles,
   });
 };

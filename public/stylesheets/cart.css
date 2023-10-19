@@ -1,16 +1,108 @@
-/* Ledger Container */
-.container-ledger {
+/* Cart Grid Container */
+.cart {
+  max-width: 600px;
+  margin-inline: auto;
+  -webkit-user-select: none; /* Safari */
+  user-select: none;
+}
+/* Packages Grid Container */
+.packages {
+  display: grid;
+}
+.package {
+  background-image: linear-gradient(white 90%, rgb(248, 248, 248));
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 70px 1fr auto;
+  grid-template-areas:
+  "picture   cost        info"
+  "term      term        term"
+  "left-ctrl middle-ctrl right-ctrl";
+  padding: 16px;
+}
+.hide {
+  display: none;
+}
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  user-select: none;
+}
+.picture {
+  grid-area: picture;
+  align-items: center;
+}
+.cost {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   font-size: 18px;
-  line-height: 46px;
+  font-weight: bold;
+  grid-area: cost;
+  justify-content: center;
+}
+.info {
+  align-items: end;
+  color: green;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  grid-area: info;
+  justify-content: space-between;
+}
+.package-subtotal {
+  align-self: center;
+}
+.term {
+  grid-area: term;
+}
+.left-ctrl {
+  grid-area: left-ctrl;
+}
+.right-ctrl {
+  align-items: center;
+  display: grid;
+  grid-area: right-ctrl;
+  grid-template-columns: repeat(3, 50px);
+  justify-content: center;
+  text-align: center;
+}
+.picture img {
+  height: auto;
+  width: 100%;
+}
+.term h2 {
+  color: brown;
+  font-size: 18px;
+  margin: 0;
+}
+/* Duplicates in shop.css */
+.bi-heart {
+  color: gray;
+}
+.bi-heart-fill {
+  color: red;
+}
+.btn-minus {
+  border: 1px solid rgba(255, 0, 0, 0.1);
+  color: red;
+}
+.btn-plus {
+  border: 1px solid rgba(86, 149, 86, 0.1);
+  color: green;
+}
+
+/* Ledger Container */
+.ledger {
+  font-size: 18px;
   padding-block-end: 64px;
   text-align: center;
 }
-.card-details .btn-remove-card,
-.container-ledger .btn-clear {
+.package .btn-remove-package,
+.ledger .btn-clear {
   background-color: red;
   color: white;
 }
-.container-ledger .btn-checkout {
+.ledger .btn-checkout {
   background-color: green;
   color: white;
   text-decoration: line-through;
@@ -29,7 +121,4 @@
 }
 .hidden {
   visibility: hidden;
-}
-.visible {
-  visibility: visible;
 }
