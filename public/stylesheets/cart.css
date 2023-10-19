@@ -2,7 +2,7 @@
 .cart {
   max-width: 600px;
   margin-inline: auto;
-  -webkit-user-select: none; /* Safari */
+  /* -webkit-user-select: none; */
   user-select: none;
 }
 /* Packages Grid Container */
