@@ -38,9 +38,7 @@ class Shop {
       return `
         <div id="card-${id}" class="card">
           <div id="card-image" class="card-image">
-            <a href="/public/product/${id}">
-              <img src="${img}" width="600px" height="400px" alt="${name}" title="${name}" />
-            </a>
+            <img src="${img}" width="600px" height="400px" alt="${name}" title="${name}" />
           </div>
           <div id="card-details" class="card-details">
             <h2 id="product-name" class="product-name">${name}</h2>

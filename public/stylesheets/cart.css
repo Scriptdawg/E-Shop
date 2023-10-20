@@ -49,7 +49,7 @@
   grid-area: info;
   justify-content: space-between;
 }
-.package-subtotal {
+.subtotal {
   align-self: center;
 }
 .term {
@@ -97,7 +97,7 @@
   padding-block-end: 64px;
   text-align: center;
 }
-.package .btn-remove-package,
+.package .btn-remove,
 .ledger .btn-clear {
   background-color: red;
   color: white;

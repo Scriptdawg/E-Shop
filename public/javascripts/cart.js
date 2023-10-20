@@ -32,40 +32,40 @@ class Cart {
   };
   // ! Filters the api data and generates the packages html
   #printProducts = () => {
-    // ? Filter products that are in picks with a quantity > 0
+    // ? Filter products that are in picks with a qty > 0
     this.products = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.qty));
     // ? Generate the packages html
     document.querySelector("#packages").innerHTML = this.products.map(product => {
       const { id, img, name, price, priceType } = product;
       const search = this.picks.find(pick => pick.id === id) || [];
       return `
-        <div id="package-${id}" class="package">
+        <div id="package-${id}" class="package" title="Package">
           <div class="picture">
-            <img src="${img}" width="100px" height="100px" alt="${name}" title="${name}" />
+            <img src="${img}" width="70px" height="70px" alt="${name}" title="${name}" />
           </div>
           <div class="cost">
-            <span>$${Number.parseInt(price, 10).toFixed(2)}</span>
+            <span title="Price">$${Number.parseInt(price, 10).toFixed(2)}</span>
           </div>
           <div class="info">
-            <button id="btn-package-heart-${id}" class="btn btn-package-heart" data-id="${id}">
+            <button id="btn-heart-${id}" class="btn btn-heart" data-id="${id}" title="Toggle Favorite">
               ${search.heart === true ? `<i class="bi bi-heart-fill"></i>` : `<i class="bi bi-heart"></i>`}
             </button>
-            <span id="package-subtotal-${id}" class="package-subtotal">$${(price * search.qty).toFixed(2)}</span>
+            <span id="subtotal-${id}" class="subtotal" title="Subtotal">$${(price * search.qty).toFixed(2)}</span>
           </div>
           <div class="term">
-            <h2>${name}</h2>
+            <h2 title="Product Name">${name}</h2>
           </div>
           <div class="left-ctrl">
-            <button id="remove-package-${id}" class="btn btn-remove-package" data-id="${id}">Remove</button>
+            <button id="btn-remove-${id}" class="btn btn-remove" data-id="${id}" title="Remove package from cart!">Remove</button>
           </div>  
           <div class="right-ctrl">
-            <button id="btn-minus-${id}" class="btn btn-minus" data-id="${id}">
+            <button id="btn-minus-${id}" class="btn btn-minus" data-id="${id}" title="Decrease Quantity">
               <i class="bi bi-chevron-double-down"></i>
             </button>
-            <span id="quantity-${id}" class="quantity" data-id=${id}>
+            <span id="qty-${id}" class="qty" data-id=${id} title="Quantity">
               ${search.qty === undefined ? 0 : search.qty}
             </span>
-            <button id="btn-plus-${id}" class="btn btn-plus" data-id="${id}">
+            <button id="btn-plus-${id}" class="btn btn-plus" data-id="${id}" title="Increase Quantity">
               <i class="bi bi-chevron-double-up"></i>
             </button>
           </div>
@@ -95,7 +95,7 @@ class Cart {
       });
     });
     // ? Remove package Button
-    document.querySelectorAll(".btn-remove-package").forEach(button => {
+    document.querySelectorAll(".btn-remove").forEach(button => {
       button.addEventListener("click", event => {
         this.#removePackage(`${button.dataset.id}`);
       });
@@ -105,13 +105,13 @@ class Cart {
       this.#clearCart();
     });
     //? Heart Button
-    document.querySelectorAll(".btn-package-heart").forEach(button => {
+    document.querySelectorAll(".btn-heart").forEach(button => {
       button.addEventListener("click", event => {
         this.#updatePackageHeart(`${button.dataset.id}`);
       });
     });
   };
-  // ! Increases the selected package quantity by 1
+  // ! Increases the selected package qty by 1
   #plus = id => {
     const search = this.picks.find(pick => pick.id === id);
     search.qty += 1;
@@ -120,7 +120,7 @@ class Cart {
     this.#updateLocalStorage();
     this.#updateTotalAmount();
   };
-  // ! Decreases the selected package quantity by 1
+  // ! Decreases the selected package qty by 1
   #minus = id => {
     const search = this.picks.find(pick => pick.id === id);
     if (search.qty === 2) document.querySelector(`#btn-minus-${id}`).classList.add("hidden");
@@ -129,15 +129,15 @@ class Cart {
     this.#updateLocalStorage();
     this.#updateTotalAmount();
   };
-  // ! Updates the package quantity and subtotal
+  // ! Updates the package qty and subtotal
   #updatePackage = id => {
     const search = this.picks.find(pick => pick.id === id);
-    document.querySelector(`#quantity-${id}`).textContent = search.qty;
+    document.querySelector(`#qty-${id}`).textContent = search.qty;
     const query = this.products.find(product => product.id === search.id);
-    document.querySelector(`#package-subtotal-${id}`).textContent = `$${(search.qty * query.price).toFixed(2)}`;
+    document.querySelector(`#subtotal-${id}`).textContent = `$${(search.qty * query.price).toFixed(2)}`;
     this.#updateCartQuantity();
   };
-  // ! Sets quantity to zero, prints empty state if no more packages
+  // ! Sets qty to zero, prints empty state if no more packages
   #removePackage = id => {
     document.querySelector(`#package-${id}`).classList.add("hide");
     this.picks.find(pick => pick.id === id).qty = 0;
@@ -201,10 +201,10 @@ class Cart {
     const search = this.picks.find(pick => pick.id === id);
     if (search.heart) {
       search.heart = false;
-      document.querySelector(`#btn-package-heart-${id}`).innerHTML = `<i class="bi bi-heart"></i>`;
+      document.querySelector(`#btn-heart-${id}`).innerHTML = `<i class="bi bi-heart"></i>`;
     } else {
       search.heart = true;
-      document.querySelector(`#btn-package-heart-${id}`).innerHTML = `<i class="bi bi-heart-fill"></i>`;
+      document.querySelector(`#btn-heart-${id}`).innerHTML = `<i class="bi bi-heart-fill"></i>`;
     };
     this.#updateHeartQuantity();
     this.#updateLocalStorage();

@@ -9,33 +9,33 @@
   <main>
 
     <!-- package template -->
-    <div id="package-${id}" class="package">
+    <div id="package-${id}" class="package" title="Package">
       <div class="picture">
-        <img src="${img}" width="100px" height="100px" alt="${name}" title="${name}" />
+        <img src="${img}" width="70px" height="70px" alt="${name}" title="${name}" />
       </div>
       <div class="cost">
-        <span>$${Number.parseInt(price, 10).toFixed(2)}</span>
+        <span title="Price">$${Number.parseInt(price, 10).toFixed(2)}</span>
       </div>
       <div class="info">
-        <button id="btn-package-heart-${id}" class="btn btn-package-heart" data-id="${id}">
+        <button id="btn-heart-${id}" class="btn btn-heart" data-id="${id}" title="Toggle Favorite">
           ${search.heart === true ? `<i class="bi bi-heart-fill"></i>` : `<i class="bi bi-heart"></i>`}
         </button>
-        <span id="package-subtotal-${id}" class="package-subtotal">$${(price * search.qty).toFixed(2)}</span>
+        <span id="subtotal-${id}" class="subtotal" title="Subtotal">$${(price * search.qty).toFixed(2)}</span>
       </div>
       <div class="term">
-        <h2>${name}</h2>
+        <h2 title="Product Name">${name}</h2>
       </div>
       <div class="left-ctrl">
-        <button id="remove-package-${id}" class="btn btn-remove-package" data-id="${id}">Remove</button>
+        <button id="btn-remove-${id}" class="btn btn-remove" data-id="${id}" title="Remove package from cart!">Remove</button>
       </div>  
       <div class="right-ctrl">
-        <button id="btn-minus-${id}" class="btn btn-minus" data-id="${id}">
+        <button id="btn-minus-${id}" class="btn btn-minus" data-id="${id}" title="Decrease Quantity">
           <i class="bi bi-chevron-double-down"></i>
         </button>
-        <span id="quantity-${id}" class="quantity" data-id=${id}>
+        <span id="qty-${id}" class="qty" data-id=${id} title="Quantity">
           ${search.qty === undefined ? 0 : search.qty}
         </span>
-        <button id="btn-plus-${id}" class="btn btn-plus" data-id="${id}">
+        <button id="btn-plus-${id}" class="btn btn-plus" data-id="${id}" title="Increase Quantity">
           <i class="bi bi-chevron-double-up"></i>
         </button>
       </div>

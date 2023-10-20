@@ -2,29 +2,29 @@
 <main id="cart-subpage" class="cart-subpage">
   <!-- sticky subpage navigation -->
   <nav id="sub-nav" class="sub-nav">
-    <a href="#ledger">
+    <a href="#ledger" title="View Totals">
       <div id="link-ledger" class="link link-ledger">
         <i class="bi bi-calculator"></i>
       </div>
     </a>
-    <a href="/public/favorites">
+    <a href="/public/favorites" title="Go to Favorites">
       <div id="link-heart" class="link link-heart">
         <i class="bi bi-heart-fill"></i>
         <div id="heart-quantity" class="heart-quantity">0</div>
       </div>
     </a>
-    <a href="/public">
+    <a href="/public" title="Go Shopping">
       <div id="link-cart" class="link link-cart">
         <i class="bi bi-shop-window"></i>
       </div>
     </a>
   </nav>
   <!-- cart -->
-  <div id="cart" class="cart">
+  <article id="cart" class="cart">
     <!-- packages (rendered by cart.js) -->
-    <div id="packages" class="packages"></div>
+    <section id="packages" class="packages"></section>
     <!-- ledger -->
-    <div id="ledger" class="ledger">
+    <aside id="ledger" class="ledger">
       <h2>Ledger:</h2>
       <p>Total: $<span id="total-amount">0.00</span></p>
       <p>Number of products: <span id="cart-products">0</span></p>
@@ -36,7 +36,7 @@
       <p>
         <a id="continue" class="link link-continue" href="/public">Continue Shopping</a>
       </p>
-    </div>
-  </div>
+    </aside>
+  </article>
 </main>
 <script type="module" src="/javascripts/cart.js"></script>
