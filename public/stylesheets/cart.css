@@ -64,9 +64,9 @@
 .term {
   grid-area: term;
 }
-/* .term h2 {
+.term h2.title.large {
   margin: 0;
-} */
+}
 /* Left Ctrl */
 .left-ctrl {
   grid-area: left-ctrl;
