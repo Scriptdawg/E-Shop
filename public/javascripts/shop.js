@@ -1,7 +1,7 @@
 import { FetchWrap } from "./fetchWrap.js";
 class Shop {
-  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
-  #viewApi = new FetchWrap("http://localhost:3000/public/");
+  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
+  //#viewApi = new FetchWrap("http://localhost:3000/public/");
   constructor() {
     this.basket = JSON.parse(localStorage.getItem("data")) || [];
     this.products = [];
