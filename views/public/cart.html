@@ -20,13 +20,13 @@
         <button id="btn-heart-${id}" class="btn btn-heart" data-id="${id}" title="Toggle Favorite">
           ${search.heart === true ? `<i class="bi bi-heart-fill"></i>` : `<i class="bi bi-heart"></i>`}
         </button>
-        <span id="subtotal-${id}" class="subtotal" title="Subtotal">$${(price * search.qty).toFixed(2)}</span>
+        <span id="subtotal-${id}" class="subtotal" title="Subtotal">$${(price * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}</span>
       </div>
       <div class="term">
         <h2 title="Product Name">${name}</h2>
       </div>
       <div class="left-ctrl">
-        <button id="btn-remove-${id}" class="btn btn-remove" data-id="${id}" title="Remove package from cart!">Remove</button>
+        <button id="btn-clear-${id}" class="btn btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
       </div>  
       <div class="right-ctrl">
         <button id="btn-minus-${id}" class="btn btn-minus" data-id="${id}" title="Decrease Quantity">
@@ -40,7 +40,7 @@
         </button>
       </div>
     </div>
-
+    
   </main>
 </body>
 </html>

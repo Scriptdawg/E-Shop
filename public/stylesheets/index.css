@@ -1,7 +1,9 @@
-@import url("shop.css");
-@import url("cart.css");
-@import url("favorites.css");
 @import url("layout.css");
+@import url("palette.css");
+@import url("typography.css");
+@import url("shop.css");
+@import url("favorites.css");
+@import url("cart.css");
 :root {
   /* Font Families */
   --font-primary: system-ui;
@@ -35,15 +37,12 @@ ul {
   margin-block: 0;
   padding-inline: 0;
 }
-.btn {
-  background-color: transparent;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  padding: 4px 8px;
-}
 .link {
   padding: 4px 8px;
+}
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  user-select: none;
 }
 @media print {}
 @media (prefers-reduced-motion: no-preference) {

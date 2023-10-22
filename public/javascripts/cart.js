@@ -1,18 +1,19 @@
 import { FetchWrap } from "./fetchWrap.js";
 class Cart {
-  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
-  //#viewApi = new FetchWrap("http://localhost:3000/public/");
+  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
+  #viewApi = new FetchWrap("http://localhost:3000/public/");
   constructor() {
+    document.querySelector("#center-link").classList.add("hidden");
     this.picks = JSON.parse(localStorage.getItem("data")) || [];
     this.products = [];
-    this.#main();
+    this.view = [];
+    this.#getProducts();
   }
-  // ! Gets all products from database via api
-  #main = () => {
+  // Gets all products from database via api
+  #getProducts = () => {
     this.#getProductList()
       .then((response) => {
-        this.products = response;
-        this.#printProducts();
+        this.#main(response);
       })
       .catch((reject) => {
         console.log(reject);
@@ -30,13 +31,22 @@ class Cart {
         .finally();
     });
   };
-  // ! Filters the api data and generates the packages html
+  // Main
+  #main = (data) => {
+    this.products = data;
+    this.view = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.qty));
+    this.#updateCartQuantity().#updateHeartQuantity().#updateTotalAmount().#printProducts();
+    this.picks.filter(pick => pick.qty === 1).forEach(pick => document
+      .querySelector(`#btn-minus-${pick.id}`).classList.add("hidden"));
+  }
+  //  Filters the api data and generates the packages html
   #printProducts = () => {
-    // ? Filter products that are in picks with a qty > 0
-    this.products = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.qty));
-    // ? Generate the packages html
-    document.querySelector("#packages").innerHTML = this.products.map(product => {
-      const { id, img, name, price, priceType } = product;
+    if (!this.view.length) {
+      this.#printEmptyState();
+      return;
+    }
+    document.querySelector("#packages").innerHTML = this.view.map(product => {
+      const { id, img, name, price } = product;
       const search = this.picks.find(pick => pick.id === id) || [];
       return `
         <div id="package-${id}" class="package" title="Package">
@@ -47,16 +57,16 @@ class Cart {
             <span title="Price">$${Number.parseInt(price, 10).toFixed(2)}</span>
           </div>
           <div class="info">
-            <button id="btn-heart-${id}" class="btn btn-heart" data-id="${id}" title="Toggle Favorite">
+            <button id="btn-heart-${id}" class="btn-plain btn-heart" data-id="${id}" title="Toggle Favorite">
               ${search.heart === true ? `<i class="bi bi-heart-fill"></i>` : `<i class="bi bi-heart"></i>`}
             </button>
-            <span id="subtotal-${id}" class="subtotal" title="Subtotal">$${(price * search.qty).toFixed(2)}</span>
+            <span id="subtotal-${id}" class="subtotal" title="Subtotal">$${(price * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}</span>
           </div>
           <div class="term">
-            <h2 title="Product Name">${name}</h2>
+            <h2 class="title large" title="Product Name">${name}</h2>
           </div>
           <div class="left-ctrl">
-            <button id="btn-remove-${id}" class="btn btn-remove" data-id="${id}" title="Remove package from cart!">Remove</button>
+            <button id="btn-clear-${id}" class="btn btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
           </div>  
           <div class="right-ctrl">
             <button id="btn-minus-${id}" class="btn btn-minus" data-id="${id}" title="Decrease Quantity">
@@ -72,142 +82,141 @@ class Cart {
         </div>
       `
     }).join("");
-    this.picks.filter(pick => pick.qty === 1).forEach(pick => document
-      .querySelector(`#btn-minus-${pick.id}`).classList.add("hidden"));
-    if (!this.products.length) this.#printEmptyCart();
-    this.#updateCartQuantity();
-    this.#updateHeartQuantity();
-    this.#updateTotalAmount();
     this.#attachButtons();
+    return this;
   };
-  // ! Activates buttons event listeners
+  // Activates buttons event listeners
   #attachButtons = () => {
-    //? Plus Button
+    //? Plus Buttons
     document.querySelectorAll(".btn-plus").forEach(button => {
-      button.addEventListener("click", event => {
-        this.#plus(`${button.dataset.id}`);
+      button.addEventListener("click", () => {
+        if (this.#plus(button.dataset.id) === 2)
+          document.querySelector(`#btn-minus-${button.dataset.id}`).classList.remove("hidden");
+        this.#updatePackage(button.dataset.id).#updateLocalStorage().#updateTotalAmount();
       });
     });
-    //? Minus Button
+    //? Minus Buttons
     document.querySelectorAll(".btn-minus").forEach(button => {
-      button.addEventListener("click", event => {
-        this.#minus(`${button.dataset.id}`);
+      button.addEventListener("click", () => {
+        if (this.#minus(button.dataset.id) === 1)
+          document.querySelector(`#btn-minus-${button.dataset.id}`).classList.add("hidden");
+        this.#updatePackage(button.dataset.id).#updateLocalStorage().#updateTotalAmount();
       });
     });
-    // ? Remove package Button
-    document.querySelectorAll(".btn-remove").forEach(button => {
-      button.addEventListener("click", event => {
-        this.#removePackage(`${button.dataset.id}`);
+    // ? Clear Buttons
+    document.querySelectorAll(".btn-clear").forEach(button => {
+      button.textContent = "Remove";
+      button.addEventListener("click", () => {
+        this.#clearPackage(button.dataset.id);
+        this.#updatePackage(button.dataset.id).#updateLocalStorage().#updateTotalAmount();
+        document.querySelector(`#package-${button.dataset.id}`).classList.add("hide");
+        if (!this.picks.filter(pick => pick.qty).length) this.#printEmptyState();
       });
     });
     // ? Clear Cart Button - remove all packages from the cart
-    document.querySelector("#clear-cart").addEventListener("click", event => {
-      this.#clearCart();
+    document.querySelector("#btn-clear-cart").addEventListener("click", () => {
+      this.#clearCart().#updateCartQuantity().#updateLocalStorage().#updateTotalAmount();
     });
-    //? Heart Button
+    //? Heart Buttons
     document.querySelectorAll(".btn-heart").forEach(button => {
-      button.addEventListener("click", event => {
-        this.#updatePackageHeart(`${button.dataset.id}`);
+      button.addEventListener("click", () => {
+        this.#updatePackageHeart(button.dataset.id).#updateHeartQuantity().#updateLocalStorage();
       });
     });
   };
-  // ! Increases the selected package qty by 1
+  // Increases the selected package qty by 1
   #plus = id => {
     const search = this.picks.find(pick => pick.id === id);
-    search.qty += 1;
-    if (search.qty === 2) document.querySelector(`#btn-minus-${id}`).classList.remove("hidden");
-    this.#updatePackage(id);
-    this.#updateLocalStorage();
-    this.#updateTotalAmount();
+    if (search === undefined) this.picks.push({ id, heart: false, qty: 1 });
+    else search.qty += 1;
+    return search ? search.qty : false;
   };
-  // ! Decreases the selected package qty by 1
+  // Decreases the selected package qty by 1
   #minus = id => {
     const search = this.picks.find(pick => pick.id === id);
-    if (search.qty === 2) document.querySelector(`#btn-minus-${id}`).classList.add("hidden");
+    if (search === undefined || !search.qty) return;
     search.qty -= 1;
-    this.#updatePackage(id);
-    this.#updateLocalStorage();
-    this.#updateTotalAmount();
+    return search.qty;
   };
-  // ! Updates the package qty and subtotal
+  // Updates the package qty and subtotal
   #updatePackage = id => {
     const search = this.picks.find(pick => pick.id === id);
     document.querySelector(`#qty-${id}`).textContent = search.qty;
     const query = this.products.find(product => product.id === search.id);
     document.querySelector(`#subtotal-${id}`).textContent = `$${(search.qty * query.price).toFixed(2)}`;
     this.#updateCartQuantity();
+    return this;
   };
-  // ! Sets qty to zero, prints empty state if no more packages
-  #removePackage = id => {
-    document.querySelector(`#package-${id}`).classList.add("hide");
+  // Sets qty to zero
+  #clearPackage = id => {
     this.picks.find(pick => pick.id === id).qty = 0;
-    this.#updateCartQuantity();
-    this.#updateLocalStorage();
-    this.#updateTotalAmount();
-    if (!this.picks.filter(pick => pick.qty).length) this.#printEmptyCart();
   };
-  // ! Sets the qty of all picks to zero and removes picks not in favorites
+  // Sets the qty of all picks to zero
   #clearCart = () => {
     this.picks.forEach(pick => pick.qty = 0);
-    this.#printEmptyCart();
-    this.#updateCartQuantity();
-    this.#updateLocalStorage();
-    this.#updateTotalAmount();
+    this.#printEmptyState();
+    return this;
   };
-  // ! Cleans picks and stores it in local storage
+  // Cleans picks and stores it in local storage
   #updateLocalStorage = () => {
     this.picks = this.picks.filter(pick => pick.qty || pick.heart);
     localStorage.setItem("data", JSON.stringify(this.picks));
+    return this;
   };
-  // ! Prints empty cart
-  #printEmptyCart = () => {
+  // Prints empty state
+  #printEmptyState = () => {
     document.querySelector("#packages").innerHTML = `
       <div id="empty-cart" class="empty-cart">
         <i class="bi bi-cart-x-fill"></i>
         <p>Shopping Cart is Empty</p>
         <p>
           Get started by <a class="link" href="/public">browsing our products</a>
-          or pick products from <a class="link" href="/public/favorites">your favorites list</a>.
+          or pick products from <a class="link" href="/public/favorites">your favorites list.</a>
         </p>
       </div>
     `;
-    document.querySelector("#clear-cart").classList.add("remove");
+    document.querySelector("#btn-clear-cart").classList.add("remove");
     document.querySelector("#checkout").classList.add("remove");
   };
-  // ! Totals number of products and items in the cart and updates the ledger
+  // Totals number of products and items in the cart and updates the ledger
   #updateCartQuantity = () => {
     document.querySelector(`#cart-quantity`).textContent = this.picks
       .map(pick => pick.qty)
       .reduce((accumulator, current) => accumulator + current, 0);
     document.querySelector(`#cart-products`).textContent = this.picks
       .filter(pick => pick.qty).length;
+    return this;
   };
-  // ! Calculates total cost of all picks in cart and updates the ledger
+  // Calculates total cost of all picks in cart and updates the ledger
   #updateTotalAmount = () => {
     if (!this.picks.length) {
       document.querySelector("#total-amount").textContent = "0.00";
-      return;
-    } 
-    document.querySelector("#total-amount").textContent = this.picks.filter(pick => pick.qty !== 0)
+      return this;
+    }
+    document.querySelector("#total-amount").textContent = this.picks.filter(pick => pick.qty)
       .map(pick => this.products.find(product => product.id === pick.id).price * pick.qty)
       .reduce((accumulator, current) => accumulator + current, 0).toFixed(2);
+    return this;
   };
-  // ! Totals quantity of products in favorites list and updates the HEART icon
+  // Totals quantity of products in favorites list
   #updateHeartQuantity = () => {
-    document.querySelector(`#heart-quantity`).textContent = this.picks.filter(pick => pick.heart === true).length;
+    document.querySelector(`#heart-quantity`).textContent = this.picks.filter(pick => pick.heart).length;
+    return this;
   };
-  // ! Toggles the package heart (true/false)
+  // Toggles the package heart (true/false)
   #updatePackageHeart = id => {
     const search = this.picks.find(pick => pick.id === id);
-    if (search.heart) {
+    if (search === undefined) {
+      this.picks.push({ id, heart: true, qty: 0 });
+      document.querySelector(`#btn-heart-${id}`).innerHTML = `<i class="bi bi-heart-fill"></i>`;
+    } else if (search.heart) {
       search.heart = false;
       document.querySelector(`#btn-heart-${id}`).innerHTML = `<i class="bi bi-heart"></i>`;
     } else {
       search.heart = true;
       document.querySelector(`#btn-heart-${id}`).innerHTML = `<i class="bi bi-heart-fill"></i>`;
     };
-    this.#updateHeartQuantity();
-    this.#updateLocalStorage();
+    return this;
   };
 };
 new Cart();
