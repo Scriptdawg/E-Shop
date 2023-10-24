@@ -18,6 +18,8 @@ export class Shop extends Store {
     });
     this.#attachButtons();
     this.updateCartQuantity().updateHeartQuantity().updateTotalAmount();
+    document.body.scrollTop = 0; // for Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   };
   // Activates buttons event listeners
   #attachButtons = () => {

@@ -142,7 +142,7 @@
 @media (min-width: 992px) {
   #sub-nav {
     position: sticky;
-    top: 0;
+    top: 48px;
   }
   #link-menu,
   #link-ledger {

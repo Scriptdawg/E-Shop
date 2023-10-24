@@ -17,6 +17,8 @@ export class Cart extends Store {
       .querySelector(`#btn-minus-${pick.id}`).classList.add("hidden"));
     this.#attachButtons();
     this.updateCartQuantity().updateHeartQuantity().updateTotalAmount();
+    document.body.scrollTop = 0; // for Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 
   // Activates buttons event listeners
