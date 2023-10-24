@@ -3,13 +3,6 @@ const Product = require("../models/product.js");
 
 // ! PUBLIC ROUTES
 
-// ? INDEX
-// READ Product - list
-exports.index_get = asyncHandler(async (req, res) => {
-  res.render("public/index", {
-    roles: req.session.roles,
-  });
-});
 // API *** READ Product - list
 exports.api_product_list_get = asyncHandler(async (req, res) => {
   const merged = [];
@@ -43,23 +36,6 @@ exports.product_detail_get = asyncHandler(async (req, res) => {
   });
 });
 
-// ? CART
-// READ Cart - list
-exports.cart_get = (req, res) => {
-  res.render("public/cart", {
-    roles: req.session.roles,
-  });
-};
-
-// ? FAVORITES
-// READ Favorites - list
-exports.favorites_get = asyncHandler(async (req, res) => {
-  res.render("public/favorites", {
-    roles: req.session.roles,
-  });
-});
-
-// ? Store
 // READ Store - list
 exports.store_get = asyncHandler(async (req, res) => {
   res.render("public/store", {
