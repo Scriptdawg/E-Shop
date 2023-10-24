@@ -5,6 +5,7 @@ export class Favorites extends Store {
     document.querySelector("#ledger").classList.add("hidden");
     super();
     this.products = products;
+    console.log(products);
     this.#main();
   };
   #main = () => {

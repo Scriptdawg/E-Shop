@@ -4,6 +4,7 @@ class Layout {
     this.windowSize = document.querySelector("#window-size");
     this.#main(), this.#scroller(), this.#leftBtn();
   };
+  
   #main = () => {
     this.windowSize.innerHTML = window.innerWidth + "px x " + window.innerHeight + "px";
     window.onscroll = () => this.#scroll();
@@ -34,6 +35,8 @@ class Layout {
   #leftBtn = () => {
     const leftButton = document.querySelector("#left-button");
     leftButton.addEventListener("click", event => {
+      document.body.scrollTop = 0; // for Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       document.querySelector("#left").classList.toggle("open-left");
     });
 

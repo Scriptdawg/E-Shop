@@ -10,7 +10,7 @@ export class Store {
       return;
     }
     document.querySelector("#packages").innerHTML = this.view.map(product => {
-      const { id, img, name, price } = product;
+      const { id, img, name, price, shortDescription } = product;
       const search = this.picks.find(pick => pick.id === id) || [];
       return `
         <div id="package-${id}" class="package" title="Package">
@@ -28,6 +28,7 @@ export class Store {
           </div>
           <div class="term">
             <h2 class="title large" title="Product Name">${name}</h2>
+            <p class="short-description">${shortDescription}</p>
           </div>
           <div class="left-ctrl">
             <button id="btn-clear-${id}" class="btn btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
