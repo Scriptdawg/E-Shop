@@ -3,8 +3,8 @@ import { Shop } from "./shop.js";
 import { Favorites } from "./favorites.js";
 import { Cart } from "./cart.js";
 class Index {
-  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
-  #viewApi = new FetchWrap("http://localhost:3000/public/");
+  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
+  //#viewApi = new FetchWrap("http://localhost:3000/public/");
   constructor() {
     this.#getProducts()
   };
