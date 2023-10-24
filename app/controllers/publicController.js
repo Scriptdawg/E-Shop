@@ -58,3 +58,11 @@ exports.favorites_get = asyncHandler(async (req, res) => {
     roles: req.session.roles,
   });
 });
+
+// ? Store
+// READ Store - list
+exports.store_get = asyncHandler(async (req, res) => {
+  res.render("public/store", {
+    roles: req.session.roles,
+  });
+})

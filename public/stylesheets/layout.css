@@ -30,40 +30,40 @@
 /* Top */
 /* ? Website Top Navigation */
 .website-top-nav {
-  background-color: #133a26;
+  background-color: var(--theme-green);
   padding: 8px;
 }
 .website-top-nav {
   align-items: center;
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   justify-content: space-between;
 }
 .website-top-nav .btn-left {
-  color: white;
+  color: var(--white);
   font-size: 18px;
   font-weight: 600;
 }
 .website-top-nav .btn-left:hover {
-  color: rgb(102, 255, 0);
+  color: var(--bright);
 }
 .website-top-nav .link {
-  color: white;
+  color: var(--white);
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
 }
 .website-top-nav .link:hover {
-  color: rgb(102, 255, 0);
+  color: var(--bright);
 }
 /* Left */
 .left {
-  background-color: rgba(19, 58, 38, 1);
+  background-color: var(--theme-green);
+  height: fit-content;
   overflow-y: auto;
   overscroll-behavior: contain;
   transition: 0.5s;
-  height: fit-content;
   width: 0;
 }
 .open-left {
@@ -75,39 +75,39 @@
   flex-direction: column;
   font-size: 20px;
   line-height: 40px;
-  z-index: 999;
   padding-block-end: 32px;
+  z-index: 999;
 }
 
 .website-side-nav .link {
-  color: white;
-  text-decoration: none;
+  color: var(--white);
   display: block;
-  padding-inline-start: max(3.5ch, 3vw)
+  padding-inline-start: max(3.5ch, 3vw);
+  text-decoration: none;
 }
 .website-side-nav .link:hover {
-  color: rgb(102, 255, 0);
+  color: var(--bright);
 }
 /* Bottom */
 /* ? Footer */
 .website-footer {
-  background-color: #133a26;
-  background-image: linear-gradient(#133a26, #c1eed7);
-  color: white;
+  background-color: var(--theme-green);
+  background-image: linear-gradient(var(--theme-green), var(--primary-5));
+  color: var(--white);
   padding: 16px;
   padding-block-end: 80px;
   position: relative;
   text-align: center;
 }
 .website-footer .link {
-  color: white;
+  color: var(--white);
   text-decoration: none;
 }
 /* ? Display Window Size */
 .website-footer .window-size {
   background-color: transparent;
   bottom: 40px;
-  color: black;
+  color: var(--black);
   font-size: 8px;
   padding: 8px;
   position: absolute;
@@ -115,11 +115,11 @@
 }
 /* ? Scroll to Top */
 #btn-scroll-top {
-  background-color: rgb(230, 230, 230);
+  background-color: var(--medium);
   border: initial;
   border-radius: 50%;
   bottom: 10dvh;
-  color: red;
+  color: var(--danger);
   cursor: pointer;
   display: none;
   font-size: 18px;
@@ -131,6 +131,13 @@
   z-index: 999;
 }
 #btn-scroll-top:hover {
-  background-color: rgb(68, 68, 68);
-  color: rgb(102, 255, 0);
+  background-color: var(--xdark);
+  color: var(--bright);
+}
+@media print {
+  #top,
+  #left,
+  #bottom {
+    display: none;
+  }
 }

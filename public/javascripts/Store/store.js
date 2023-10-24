@@ -1,48 +1,12 @@
-import { FetchWrap } from "./fetchWrap.js";
-class Cart {
-  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
-  #viewApi = new FetchWrap("http://localhost:3000/public/");
+export class Store {
   constructor() {
-    document.querySelector("#center-link").classList.add("hidden");
     this.picks = JSON.parse(localStorage.getItem("data")) || [];
-    this.products = [];
     this.view = [];
-    this.#getProducts();
-  }
-  // Gets all products from database via api
-  #getProducts = () => {
-    this.#getProductList()
-      .then((response) => {
-        this.#main(response);
-      })
-      .catch((reject) => {
-        console.log(reject);
-      })
-      .finally();
   };
-  #getProductList = () => {
-    return new Promise((resolve, reject) => {
-      this.#viewApi
-        .get("api/product/list")
-        .then((data) => {
-          resolve(data);
-        })
-        .catch((error) => reject(error))
-        .finally();
-    });
-  };
-  // Main
-  #main = (data) => {
-    this.products = data;
-    this.view = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.qty));
-    this.#updateCartQuantity().#updateHeartQuantity().#updateTotalAmount().#printProducts();
-    this.picks.filter(pick => pick.qty === 1).forEach(pick => document
-      .querySelector(`#btn-minus-${pick.id}`).classList.add("hidden"));
-  }
-  //  Filters the api data and generates the packages html
-  #printProducts = () => {
+  //  Generates the packages html
+  printProducts = () => {
     if (!this.view.length) {
-      this.#printEmptyState();
+      this.printEmptyState();
       return;
     }
     document.querySelector("#packages").innerHTML = this.view.map(product => {
@@ -82,113 +46,62 @@ class Cart {
         </div>
       `
     }).join("");
-    this.#attachButtons();
     return this;
   };
-  // Activates buttons event listeners
-  #attachButtons = () => {
-    //? Plus Buttons
-    document.querySelectorAll(".btn-plus").forEach(button => {
-      button.addEventListener("click", () => {
-        if (this.#plus(button.dataset.id) === 2)
-          document.querySelector(`#btn-minus-${button.dataset.id}`).classList.remove("hidden");
-        this.#updatePackage(button.dataset.id).#updateLocalStorage().#updateTotalAmount();
-      });
-    });
-    //? Minus Buttons
-    document.querySelectorAll(".btn-minus").forEach(button => {
-      button.addEventListener("click", () => {
-        if (this.#minus(button.dataset.id) === 1)
-          document.querySelector(`#btn-minus-${button.dataset.id}`).classList.add("hidden");
-        this.#updatePackage(button.dataset.id).#updateLocalStorage().#updateTotalAmount();
-      });
-    });
-    // ? Clear Buttons
-    document.querySelectorAll(".btn-clear").forEach(button => {
-      button.textContent = "Remove";
-      button.addEventListener("click", () => {
-        this.#clearPackage(button.dataset.id);
-        this.#updatePackage(button.dataset.id).#updateLocalStorage().#updateTotalAmount();
-        document.querySelector(`#package-${button.dataset.id}`).classList.add("hide");
-        if (!this.picks.filter(pick => pick.qty).length) this.#printEmptyState();
-      });
-    });
-    // ? Clear Cart Button - remove all packages from the cart
-    document.querySelector("#btn-clear-cart").addEventListener("click", () => {
-      this.#clearCart().#updateCartQuantity().#updateLocalStorage().#updateTotalAmount();
-    });
-    //? Heart Buttons
-    document.querySelectorAll(".btn-heart").forEach(button => {
-      button.addEventListener("click", () => {
-        this.#updatePackageHeart(button.dataset.id).#updateHeartQuantity().#updateLocalStorage();
-      });
-    });
-  };
   // Increases the selected package qty by 1
-  #plus = id => {
+  plus = id => {
     const search = this.picks.find(pick => pick.id === id);
     if (search === undefined) this.picks.push({ id, heart: false, qty: 1 });
     else search.qty += 1;
     return search ? search.qty : false;
   };
   // Decreases the selected package qty by 1
-  #minus = id => {
+  minus = id => {
     const search = this.picks.find(pick => pick.id === id);
     if (search === undefined || !search.qty) return;
     search.qty -= 1;
-    return search.qty;
+    return search ? search.qty : false;
   };
   // Updates the package qty and subtotal
-  #updatePackage = id => {
+  updatePackage = id => {
     const search = this.picks.find(pick => pick.id === id);
     document.querySelector(`#qty-${id}`).textContent = search.qty;
-    const query = this.products.find(product => product.id === search.id);
+    const query = this.products.find(product => product.id === id);
     document.querySelector(`#subtotal-${id}`).textContent = `$${(search.qty * query.price).toFixed(2)}`;
-    this.#updateCartQuantity();
+    this.updateCartQuantity();
     return this;
   };
   // Sets qty to zero
-  #clearPackage = id => {
+  clearPackage = id => {
+    const search = this.picks.find(pick => pick.id === id);
+    if (search === undefined) return;
     this.picks.find(pick => pick.id === id).qty = 0;
   };
   // Sets the qty of all picks to zero
-  #clearCart = () => {
+  clearCart = () => {
     this.picks.forEach(pick => pick.qty = 0);
-    this.#printEmptyState();
+    this.printEmptyState();
     return this;
   };
   // Cleans picks and stores it in local storage
-  #updateLocalStorage = () => {
+  updateLocalStorage = () => {
     this.picks = this.picks.filter(pick => pick.qty || pick.heart);
     localStorage.setItem("data", JSON.stringify(this.picks));
     return this;
   };
-  // Prints empty state
-  #printEmptyState = () => {
-    document.querySelector("#packages").innerHTML = `
-      <div id="empty-cart" class="empty-cart">
-        <i class="bi bi-cart-x-fill"></i>
-        <p>Shopping Cart is Empty</p>
-        <p>
-          Get started by <a class="link" href="/public">browsing our products</a>
-          or pick products from <a class="link" href="/public/favorites">your favorites list.</a>
-        </p>
-      </div>
-    `;
-    document.querySelector("#btn-clear-cart").classList.add("remove");
-    document.querySelector("#checkout").classList.add("remove");
-  };
   // Totals number of products and items in the cart and updates the ledger
-  #updateCartQuantity = () => {
-    document.querySelector(`#cart-quantity`).textContent = this.picks
-      .map(pick => pick.qty)
-      .reduce((accumulator, current) => accumulator + current, 0);
+  updateCartQuantity = () => {
+    document.querySelectorAll(`.cart-quantity`).forEach(selector => {
+      selector.textContent = this.picks
+        .map(pick => pick.qty)
+        .reduce((accumulator, current) => accumulator + current, 0);
+    });
     document.querySelector(`#cart-products`).textContent = this.picks
       .filter(pick => pick.qty).length;
     return this;
   };
   // Calculates total cost of all picks in cart and updates the ledger
-  #updateTotalAmount = () => {
+  updateTotalAmount = () => {
     if (!this.picks.length) {
       document.querySelector("#total-amount").textContent = "0.00";
       return this;
@@ -199,12 +112,12 @@ class Cart {
     return this;
   };
   // Totals quantity of products in favorites list
-  #updateHeartQuantity = () => {
+  updateHeartQuantity = () => {
     document.querySelector(`#heart-quantity`).textContent = this.picks.filter(pick => pick.heart).length;
     return this;
   };
   // Toggles the package heart (true/false)
-  #updatePackageHeart = id => {
+  updatePackageHeart = id => {
     const search = this.picks.find(pick => pick.id === id);
     if (search === undefined) {
       this.picks.push({ id, heart: true, qty: 0 });
@@ -219,4 +132,3 @@ class Cart {
     return this;
   };
 };
-new Cart();

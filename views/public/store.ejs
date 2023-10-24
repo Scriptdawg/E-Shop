@@ -1,0 +1,36 @@
+<!-- cart subpage -->
+<main id="cart-subpage" class="cart-subpage">
+  <!-- sticky subpage navigation -->
+  <nav id="sub-nav" class="sub-nav">
+    <button id="btn-store" class="btn-plain btn-store" title="Go Shopping">
+      <i class="bi bi-shop"> Shop</i>
+    </button>
+    <button id="btn-favorites" class="btn-plain btn-favorites" title="View Favorites">
+      <i class="bi bi-heart-fill"></i>
+      <div id="heart-quantity" class="heart-quantity">0</div>     
+    </button>
+    <button id="btn-cart" class="btn-plain btn-cart" title="View Cart">
+      <i class="bi bi-cart4"></i>
+      <div id="cart-quantity" class="cart-quantity"><span>0</span></div>
+    </button>
+  </nav>
+
+  <!-- cart -->
+  <article id="cart" class="cart">
+    <!-- packages  -->
+    <section id="packages" class="packages"></section>
+    <!-- ledger -->
+    <aside id="ledger" class="ledger">
+      <h2>Ledger:</h2>
+      <p>Total: $<span id="total-amount">0.00</span></p>
+      <p>Number of products: <span id="cart-products">0</span></p>
+      <p>Number of items: <span class="cart-quantity">0</span></p>
+      <p>
+        <button id="btn-clear-cart" class="btn btn-clear-cart">Empty Cart</button>
+        <button id="checkout" class="btn btn-checkout disabled">Checkout</button>
+      </p>
+    </aside>
+  </article>
+</main>
+
+<script type="module" src="/javascripts/Store/index.js"></script>

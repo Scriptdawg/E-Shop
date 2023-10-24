@@ -21,4 +21,9 @@ router.get("/cart", public_controller.cart_get);
 // ? Favorites
 // READ Favorites - list
 router.get("/favorites", public_controller.favorites_get);
+
+// ? Store
+// READ Store - list
+router.get("/store", public_controller.store_get);
+
 module.exports = router;

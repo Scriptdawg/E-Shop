@@ -1,37 +1,24 @@
-@import url("layout.css");
+@import url("global.css");
 @import url("palette.css");
 @import url("typography.css");
+@import url("layout.css");
 @import url("shop.css");
 @import url("favorites.css");
 @import url("cart.css");
-:root {
-  /* Font Families */
-  --font-primary: system-ui;
-  --font-secondary: Verdana, Helvetica, Arial, sans-serif;
-  --font-teritiary: Georgia, serif;
+@import url("forms.css");
+html {
   -webkit-user-select: none; /* Safari */
   user-select: none;
-}
-* {
-  box-sizing: border-box;
-}
-html {
   margin-inline: auto;
   max-width: 2600px;
   scroll-behavior: smooth;
-}
-body {
-  font-family: var(--font-primary);
-  margin: 0;
 }
 .container-subpage {
   margin-inline: auto;
   max-width: 1200px;
   padding-inline: 16px;
 }
-h1 {
-  color: brown;
-}
+
 ul {
   list-style: none;
   margin-block: 0;
@@ -40,10 +27,23 @@ ul {
 .link {
   padding: 4px 8px;
 }
-.unselectable {
-  -webkit-user-select: none; /* Safari */
-  user-select: none;
-}
+/* Extra Extra Small - xxs */
+@media (max-width: 300px) {}
+/* Extra Small - xs */
+@media (max-width: 575px) {}
+/* Small - sm */
+@media (min-width: 576px) {}
+/* Medium - md */
+@media (min-width: 768px) {}
+/* Large - lg */
+@media (min-width: 992px) {}
+/* Extra Large - xl */
+@media (min-width: 1200px) {}
+/* Extra Extra Large - xxl */
+@media (min-width: 1400px) {}
+@media (min-width: 1600px) {}
+@media (min-width: 1800px) {}
+@media (min-width: 2000px) {}
 @media print {}
 @media (prefers-reduced-motion: no-preference) {
   html {

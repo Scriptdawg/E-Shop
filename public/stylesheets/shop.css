@@ -13,15 +13,15 @@
   right: 0;
   z-index: 99;
 }
-.link-menu,
-.link-heart,
-.link-cart,
+.btn-store,
+.btn-favorites,
+.btn-cart,
 .link-ledger {
   color: white;
   font-size: 18px;
   position: relative;
 }
-.link-heart .bi-heart-fill {
+.btn-favorites .bi-heart-fill {
   color: white;
 }
 .container-ledger .link-continue {
@@ -31,8 +31,8 @@
   font-size: 16px;
   text-decoration: none;
 }
-.heart-quantity,
-.cart-quantity {
+#heart-quantity,
+#cart-quantity {
   background-color: green;
   border-radius: 50%;
   font-size: 12px;
