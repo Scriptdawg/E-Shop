@@ -44,6 +44,7 @@ exports.product_create_post = [
     const product = new Product({
       name: req.body.name,
       available: req.body.available,
+      category: req.body.category,
       shortDescription: req.body.shortDescription,
       longDescription: req.body.longDescription,
       specialMessage: req.body.specialMessage,
@@ -169,6 +170,7 @@ exports.product_update_post = [
     const product = new Product({
       name: req.body.name,
       available: req.body.available,
+      category: req.body.category,
       shortDescription: req.body.shortDescription,
       longDescription: req.body.longDescription,
       specialMessage: req.body.specialMessage,

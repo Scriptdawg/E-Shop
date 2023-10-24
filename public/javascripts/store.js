@@ -10,7 +10,7 @@ export class Store {
       return;
     }
     document.querySelector("#packages").innerHTML = this.view.map(product => {
-      const { id, img, name, price, shortDescription } = product;
+      const { id, img, name, price, shortDescription, priceType } = product;
       const search = this.picks.find(pick => pick.id === id) || [];
       return `
         <div id="package-${id}" class="package" title="Package">
@@ -90,18 +90,18 @@ export class Store {
     localStorage.setItem("data", JSON.stringify(this.picks));
     return this;
   };
-  // Totals number of products and items in the cart and updates the ledger
+  // Totals number of products and items in the cart
   updateCartQuantity = () => {
-    document.querySelectorAll(`.cart-quantity`).forEach(selector => {
+    document.querySelectorAll(".cart-quantity").forEach(selector => {
       selector.textContent = this.picks
         .map(pick => pick.qty)
         .reduce((accumulator, current) => accumulator + current, 0);
     });
-    document.querySelector(`#cart-products`).textContent = this.picks
+    document.querySelector("#cart-products").textContent = this.picks
       .filter(pick => pick.qty).length;
     return this;
   };
-  // Calculates total cost of all picks in cart and updates the ledger
+  // Calculates total cost of all picks in cart
   updateTotalAmount = () => {
     if (!this.picks.length) {
       document.querySelector("#total-amount").textContent = "0.00";
@@ -114,7 +114,7 @@ export class Store {
   };
   // Totals quantity of products in favorites list
   updateHeartQuantity = () => {
-    document.querySelector(`#heart-quantity`).textContent = this.picks.filter(pick => pick.heart).length;
+    document.querySelector("#heart-quantity").textContent = this.picks.filter(pick => pick.heart).length;
     return this;
   };
   // Toggles the package heart (true/false)

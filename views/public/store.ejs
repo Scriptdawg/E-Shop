@@ -2,6 +2,9 @@
 <main id="cart-subpage" class="cart-subpage">
   <!-- sticky subpage navigation -->
   <nav id="sub-nav" class="sub-nav">
+    <a id="btn-left-sidebar" class="btn-plain btn-left-sidebar" href="#left-sidebar" title="Categories || Legend">
+      <i class="bi bi-three-dots-vertical"></i>
+    </a>
     <button id="btn-store" class="btn-plain btn-store" title="Go Shopping">
       <i class="bi bi-shop"> Shop</i>
     </button>
@@ -14,22 +17,32 @@
       <div id="cart-quantity" class="cart-quantity"><span>0</span></div>
     </button>
   </nav>
-
   <!-- cart -->
   <article id="cart" class="cart">
     <!-- packages  -->
     <section id="packages" class="packages"></section>
-    <!-- ledger -->
-    <aside id="ledger" class="ledger">
-      <h2>Ledger:</h2>
-      <p>Total: $<span id="total-amount">0.00</span></p>
-      <p>Number of products: <span id="cart-products">0</span></p>
-      <p>Number of items: <span class="cart-quantity">0</span></p>
-      <p>
-        <button id="btn-clear-cart" class="btn btn-clear-cart">Empty Cart</button>
-        <button id="checkout" class="btn btn-checkout disabled">Checkout</button>
-      </p>
-    </aside>
+    <div id="left-sidebar" class="left-sidebar">
+      <!-- categories -->
+      <aside id="categories" class="categories">
+        <h2 class="title large">Categories:</h2>
+        <ul>
+          <li><button id="btn-beef" class="btn-plain btn-beef">Beef</button></li>
+          <li><button id="btn-chicken" class="btn-plain btn-chicken">Chicken</button></li>
+          <li><button id="btn-miscellaneous" class="btn-plain btn-miscellaneous">Miscellaneous</button></li>
+        </ul>
+      </aside>
+      <!-- ledger -->
+      <aside id="ledger" class="ledger">
+        <h2 class="title large">Ledger:</h2>
+        <p>Total: $<span id="total-amount">0.00</span></p>
+        <p>Number of products: <span id="cart-products">0</span></p>
+        <p>Number of items: <span class="cart-quantity">0</span></p>
+        <p>
+          <button id="btn-clear-cart" class="btn btn-clear-cart">Empty Cart</button>
+          <button id="checkout" class="btn btn-checkout disabled">Checkout</button>
+        </p>
+      </aside>
+    </div>
   </article>
 </main>
 

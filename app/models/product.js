@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 // Define schema
 const ProductSchema = new Schema({
   available: { type: Boolean, required: true },
+  category: { type: String },
   coverImage: { type: Buffer },
   coverImageType: { type: String },
   longDescription: { type: String },

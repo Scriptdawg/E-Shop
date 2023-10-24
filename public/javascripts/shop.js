@@ -1,15 +1,19 @@
 import { Store } from "./store.js";
 export class Shop extends Store {
-  constructor(products) {
-    document.querySelector("#center-list").innerHTML = `<span>Shopping</span>`;
-    document.querySelector("#ledger").classList.add("hidden");
+  constructor(products, category = false) {
     super();
     this.products = products;
+    this.category = category;
     this.#main();
   };
   #main = () => {
-    this.view = this.products;
-    this.printProducts().products.forEach(product => {
+    document.querySelector("#center-list").innerHTML = `<span>Shopping</span>`;
+    // document.querySelector("#ledger").classList.add("hidden");
+
+    if (this.category) this.view = this.products.filter(product => product.category === this.category);
+    else this.view = this.products;
+
+    this.printProducts().view.forEach(product => {
       const search = this.picks.find(pick => pick.id === product.id);
       if (search === undefined || !search.qty) {
         document.querySelector(`#btn-minus-${product.id}`).classList.add("hidden");
@@ -20,6 +24,9 @@ export class Shop extends Store {
     this.updateCartQuantity().updateHeartQuantity().updateTotalAmount();
     document.body.scrollTop = 0; // for Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.querySelector("#ledger").classList.add("hide");
+    document.querySelector("#categories").classList.remove("hide");
+    document.querySelector("#btn-left-sidebar").classList.remove("hide");
   };
   // Activates buttons event listeners
   #attachButtons = () => {
@@ -44,7 +51,6 @@ export class Shop extends Store {
     });
     // ? Clear Buttons
     document.querySelectorAll(".btn-clear").forEach(button => {
-      // button.textContent = "Remove";
       button.addEventListener("click", () => {
         this.clearPackage(button.dataset.id);
         this.updatePackage(button.dataset.id).updateLocalStorage().updateTotalAmount();
@@ -58,5 +64,13 @@ export class Shop extends Store {
         this.updatePackageHeart(button.dataset.id).updateHeartQuantity().updateLocalStorage();
       });
     });
+  };
+  // Prints empty state
+  printEmptyState = () => {
+    document.querySelector("#packages").innerHTML = `
+      <div id="empty-cart" class="empty-cart">
+        <p>There aren't any products that match search phrase.</p>
+      </div>
+    `;
   };
 };

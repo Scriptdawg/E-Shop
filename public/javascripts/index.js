@@ -3,8 +3,8 @@ import { Shop } from "./shop.js";
 import { Favorites } from "./favorites.js";
 import { Cart } from "./cart.js";
 class Index {
-  #viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
-  //#viewApi = new FetchWrap("http://localhost:3000/public/");
+  //#viewApi = new FetchWrap("https://animal-y4xn.onrender.com/public/");
+  #viewApi = new FetchWrap("http://localhost:3000/public/");
   constructor() {
     this.#getProducts()
   };
@@ -12,8 +12,7 @@ class Index {
   #getProducts = () => {
     this.#getProductList()
       .then((response) => {
-        this.#printSubNav(response);
-        new Shop(response);
+        this.#main(response);
       })
       .catch((reject) => {
         console.log(reject);
@@ -31,8 +30,13 @@ class Index {
         .finally();
     });
   };
+  #main = (data) => {
+    this.#subNavButtons(data);
+    this.#categoryButtons(data);
+    new Shop(data);
+  }
   // Attach event listeners to sub nav buttons
-  #printSubNav = (data) => {
+  #subNavButtons = (data) => {
     // ? Store Button
     document.querySelector("#btn-store").addEventListener("click", () => {
       new Shop(data);
@@ -46,5 +50,16 @@ class Index {
       new Cart(data);
     });
   };
+
+  // Attach event listeners to category buttons
+  #categoryButtons = (data) => {
+    // ? Beef
+    document.querySelector("#btn-beef").addEventListener("click", () =>  new Shop(data, "beef"));
+    // ? Chicken
+    document.querySelector("#btn-chicken").addEventListener("click", () => new Shop(data, "chicken"));
+    // ? Miscellaneous
+    document.querySelector("#btn-miscellaneous").addEventListener("click", () => new Shop(data));
+  };
+
 };
 new Index();

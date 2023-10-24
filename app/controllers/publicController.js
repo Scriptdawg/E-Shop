@@ -15,6 +15,8 @@ exports.api_product_list_get = asyncHandler(async (req, res) => {
     const imagePath = product.coverImagePath;
     const item = {
       id: product.id,
+      available: product.available,
+      category: product.category,
       name: product.name,
       price: product.price,
       priceType: product.priceType,

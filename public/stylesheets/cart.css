@@ -86,11 +86,8 @@
 /* Ledger Container */
 .ledger {
   font-size: 18px;
-  padding-block-end: 64px;
+  padding: 32px;
   text-align: center;
-}
-.remove {
-  display: none;
 }
 .empty-cart {
   min-height: 30dvh;
@@ -102,9 +99,7 @@
   color: var(--neutral-4);
   font-size: 64px;
 }
-
 /* Buttons */
-
 .btn {
   background-color: var(--light);
   border: initial;

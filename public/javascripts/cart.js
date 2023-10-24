@@ -1,10 +1,6 @@
 import { Store } from "./store.js";
 export class Cart extends Store {
   constructor(products) {
-    document.querySelector("#center-list").innerHTML = `<span>Cart Contents</span>`;
-    document.querySelector("#ledger").classList.remove("hidden");
-    document.querySelector("#btn-clear-cart").classList.remove("remove");
-    document.querySelector("#checkout").classList.remove("remove");
     super();
     this.products = products;
     this.#main();
@@ -18,9 +14,15 @@ export class Cart extends Store {
     this.#attachButtons();
     this.updateCartQuantity().updateHeartQuantity().updateTotalAmount();
     document.querySelectorAll(".short-description")
-     .forEach(description => description.classList.add("hide"));
+      .forEach(description => description.classList.add("hide"));
     document.body.scrollTop = 0; // for Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.querySelector("#btn-clear-cart").classList.remove("hide");
+    document.querySelector("#checkout").classList.remove("hide");
+    document.querySelector("#center-list").innerHTML = `<span>Cart Contents</span>`;
+    document.querySelector("#ledger").classList.remove("hide");
+    document.querySelector("#categories").classList.add("hide");
+    document.querySelector("#btn-left-sidebar").classList.remove("hide");
   }
   // Activates buttons event listeners
   #attachButtons = () => {
@@ -69,7 +71,7 @@ export class Cart extends Store {
         <p>Shopping Cart is Empty</p>
       </div>
     `;
-    document.querySelector("#btn-clear-cart").classList.add("remove");
-    document.querySelector("#checkout").classList.add("remove");
+    document.querySelector("#btn-clear-cart").classList.add("hide");
+    document.querySelector("#checkout").classList.add("hide");
   };
 };
