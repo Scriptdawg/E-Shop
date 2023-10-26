@@ -7,7 +7,7 @@ export class Shop extends Store {
     this.#main();
   };
   #main = () => {
-    document.querySelector("#subpage-name").textContent = "Shopping";
+    document.querySelector("#subpage-name").textContent = "Butcher's Shop";
     if (this.category) this.view = this.products.filter(product => product.category === this.category);
     else this.view = this.products;
     this.printProducts().view.forEach(product => {
