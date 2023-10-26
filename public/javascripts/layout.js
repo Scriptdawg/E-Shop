@@ -37,16 +37,22 @@ class Layout {
     leftButton.addEventListener("click", event => {
       document.body.scrollTop = 0; // for Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-      document.querySelector("#left").classList.toggle("open-left");
+      document.querySelector("#left").classList.add("open-left");
+      document.querySelector("#overlay").classList.add("show-overlay");
     });
 
-    window.onclick = event => {
-      if (!event.target.matches(".bi-list")
-        && !event.target.matches(".website-top-nav")) {
-        document.querySelector("#left").classList.remove("open-left");
-      };
-    }
-  
+    // window.onclick = event => {
+    //   if (!event.target.matches(".bi-list")
+    //     && !event.target.matches(".website-top-nav")) {
+    //     document.querySelector("#left").classList.remove("open-left");
+    //   };
+    // }
+    
+    document.querySelector("#overlay").addEventListener("click", (event) => {
+      document.querySelector("#left").classList.remove("open-left");
+      event.target.classList.remove("show-overlay");
+    });
+
     return;
   };
 };
