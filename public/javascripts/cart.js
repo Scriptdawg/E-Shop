@@ -13,16 +13,18 @@ export class Cart extends Store {
       .querySelector(`#btn-minus-${pick.id}`).classList.add("hidden"));
     this.#attachButtons();
     this.updateCartQuantity().updateHeartQuantity().updateTotalAmount();
+    document.body.scrollTop = 0; // for Safari
+    document.querySelector("#center-list").innerHTML = `<span>Cart Contents</span>`;
+    // hide elements
     document.querySelectorAll(".short-description")
       .forEach(description => description.classList.add("hide"));
-    document.body.scrollTop = 0; // for Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     document.querySelector("#btn-clear-cart").classList.remove("hide");
     document.querySelector("#checkout").classList.remove("hide");
-    document.querySelector("#center-list").innerHTML = `<span>Cart Contents</span>`;
-    document.querySelector("#ledger").classList.remove("hide");
-    document.querySelector("#categories").classList.add("hide");
-    document.querySelector("#btn-left-sidebar").classList.remove("hide");
+    document.querySelector(".categories").classList.remove("show");
+    document.querySelector(".instructions").classList.remove("show");
+    document.querySelector(".ledger").classList.add("show");
+
   }
   // Activates buttons event listeners
   #attachButtons = () => {

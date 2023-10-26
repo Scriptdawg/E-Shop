@@ -7,11 +7,9 @@ export class Favorites extends Store {
   };
   #main = () => {
     document.querySelector("#center-list").innerHTML = `<span>Favorites List</span>`;
-    // document.querySelector("#ledger").classList.add("hidden");
     this.view = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.heart));
     this.printProducts();
-    const search = this.picks.filter(pick => pick.heart && !pick.qty);
-    search.forEach(pick => {
+    this.picks.filter(pick => pick.heart && !pick.qty).forEach(pick => {
       document.querySelector(`#btn-minus-${pick.id}`).classList.add("hidden");
       document.querySelector(`#btn-clear-${pick.id}`).classList.add("hidden");
     });
@@ -19,9 +17,9 @@ export class Favorites extends Store {
     this.updateCartQuantity().updateHeartQuantity().updateTotalAmount();
     document.body.scrollTop = 0; // for Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    document.querySelector("#ledger").classList.add("hide");
-    document.querySelector("#categories").classList.add("hide");
-    document.querySelector("#btn-left-sidebar").classList.add("hide");
+    document.querySelector(".categories").classList.remove("show");
+    document.querySelector(".instructions").classList.add("show");
+    document.querySelector(".ledger").classList.remove("show");
   };
   // Activates buttons event listeners
   #attachButtons = () => {

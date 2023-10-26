@@ -8,11 +8,8 @@ export class Shop extends Store {
   };
   #main = () => {
     document.querySelector("#center-list").innerHTML = `<span>Shopping</span>`;
-    // document.querySelector("#ledger").classList.add("hidden");
-
     if (this.category) this.view = this.products.filter(product => product.category === this.category);
     else this.view = this.products;
-
     this.printProducts().view.forEach(product => {
       const search = this.picks.find(pick => pick.id === product.id);
       if (search === undefined || !search.qty) {
@@ -24,9 +21,10 @@ export class Shop extends Store {
     this.updateCartQuantity().updateHeartQuantity().updateTotalAmount();
     document.body.scrollTop = 0; // for Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    document.querySelector("#ledger").classList.add("hide");
-    document.querySelector("#categories").classList.remove("hide");
-    document.querySelector("#btn-left-sidebar").classList.remove("hide");
+    document.querySelector(".categories").classList.add("show");
+    document.querySelector(".instructions").classList.remove("show");
+    document.querySelector(".ledger").classList.remove("show");
+    document.querySelector(".sales").classList.add("show");
   };
   // Activates buttons event listeners
   #attachButtons = () => {

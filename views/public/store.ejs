@@ -1,38 +1,47 @@
-<!-- cart subpage -->
-<main id="cart-subpage" class="cart-subpage">
-  <!-- sticky subpage navigation -->
-  <nav id="sub-nav" class="sub-nav">
-    <a id="btn-left-sidebar" class="btn-plain btn-left-sidebar" href="#left-sidebar" title="Categories || Legend">
-      <i class="bi bi-three-dots-vertical"></i>
-    </a>
+<!-- store subpage -->
+<main id="store-subpage" class="store-subpage">
+
+  <!-- subpage navigation -->
+  <nav id="subpage-nav" class="subpage-nav">
+    <a id="btn-information" class="btn-plain btn-information" href="#information" title="Categories || Ledger">
+      <i class="bi bi-three-dots-vertical"></i></a>
     <button id="btn-store" class="btn-plain btn-store" title="Go Shopping">
-      <i class="bi bi-shop"> Shop</i>
+      <i class="bi bi-shop"></i>
     </button>
     <button id="btn-favorites" class="btn-plain btn-favorites" title="View Favorites">
       <i class="bi bi-heart-fill"></i>
-      <div id="heart-quantity" class="heart-quantity">0</div>     
+      <div id="heart-quantity" class="heart-quantity">0</div>
     </button>
     <button id="btn-cart" class="btn-plain btn-cart" title="View Cart">
       <i class="bi bi-cart4"></i>
       <div id="cart-quantity" class="cart-quantity"><span>0</span></div>
     </button>
   </nav>
-  <!-- cart -->
-  <article id="cart" class="cart">
+
+  <!-- store content -->
+  <article id="store-content" class="store-content">
+
     <!-- packages  -->
     <section id="packages" class="packages"></section>
-    <div id="left-sidebar" class="left-sidebar">
+
+    <div id="information">
       <!-- categories -->
-      <aside id="categories" class="categories">
+      <section id="categories" class="categories">
         <h2 class="title large">Categories:</h2>
         <ul>
           <li><button id="btn-beef" class="btn-plain btn-beef">Beef</button></li>
           <li><button id="btn-chicken" class="btn-plain btn-chicken">Chicken</button></li>
           <li><button id="btn-miscellaneous" class="btn-plain btn-miscellaneous">Miscellaneous</button></li>
         </ul>
-      </aside>
+      </section>
+      <!-- instuctions -->
+      <section id="instructions" class="instructions">
+        <h2 class="title large">Instructions:</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
+          quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!</p>
+      </section>
       <!-- ledger -->
-      <aside id="ledger" class="ledger">
+      <section id="ledger" class="ledger">
         <h2 class="title large">Ledger:</h2>
         <p>Total: $<span id="total-amount">0.00</span></p>
         <p>Number of products: <span id="cart-products">0</span></p>
@@ -41,9 +50,26 @@
           <button id="btn-clear-cart" class="btn btn-clear-cart">Empty Cart</button>
           <button id="checkout" class="btn btn-checkout disabled">Checkout</button>
         </p>
-      </aside>
+      </section>
     </div>
+
+    <div id="more" class="more">
+      <!-- sales -->
+      <section id="sales" class="sales">
+        <h2 class="title large">Sales:</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
+          quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!</p>
+      </section>
+      <!-- advertisements -->
+      <section id="advertisements" class="advertisements">
+        <h2 class="title large">Advertisements:</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
+          quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!</p>
+      </section>
+    </div>
+
   </article>
+
 </main>
 
 <script type="module" src="/javascripts/index.js"></script>

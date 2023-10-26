@@ -1,13 +1,14 @@
-/* Cart Grid */
-.cart {
-  margin-inline: auto;
-  max-width: 600px;
+/* ? packages grid */
+/* Medium - md */
+@media (min-width: 768px) {
+  .packages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-rows: repeat(4, min-content);
+    gap: 8px;
+  }
 }
-/* Packages Grid */
-.packages {
-  display: grid;
-}
-/* Package Grid */
+/* ? Package Grid */
 .package {
   background-image: var(--bg-white);
   display: grid;
@@ -22,7 +23,7 @@
 .hide {
   display: none;
 }
-/* Picture */
+/* picture */
 .picture {
   align-items: center;
   grid-area: picture;
@@ -31,7 +32,7 @@
   height: auto;
   width: 100%;
 }
-/* Cost Flex */
+/* cost flex */
 .cost {
   align-items: center;
   display: flex;
@@ -41,7 +42,7 @@
   grid-area: cost;
   justify-content: center;
 }
-/* Info Flex */
+/* info flex */
 .info {
   align-items: end;
   color: var(--success);
@@ -60,18 +61,18 @@
 .bi-heart-fill {
   color: var(--danger);
 }
-/* Term */
+/* term */
 .term {
   grid-area: term;
 }
 .term h2.title.large {
   margin: 0;
 }
-/* Left Ctrl */
+/* left ctrl */
 .left-ctrl {
   grid-area: left-ctrl;
 }
-/* Right Ctrl */
+/* right ctrl */
 .right-ctrl {
   align-items: center;
   display: grid;
@@ -83,12 +84,6 @@
 .hidden {
   visibility: hidden;
 }
-/* Ledger Container */
-.ledger {
-  font-size: 18px;
-  padding: 32px;
-  text-align: center;
-}
 .empty-cart {
   min-height: 30dvh;
   padding-block: 32px;
@@ -99,7 +94,7 @@
   color: var(--neutral-4);
   font-size: 64px;
 }
-/* Buttons */
+/* buttons */
 .btn {
   background-color: var(--light);
   border: initial;
@@ -139,4 +134,14 @@
   border: none;
   box-shadow: none;
   outline: none;
+}
+.categories,
+.instructions,
+.ledger,
+.sales,
+.advertisements {
+  display: none;
+}
+.show {
+  display: block;
 }

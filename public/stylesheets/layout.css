@@ -7,7 +7,6 @@
     "middle middle middle middle"
     "bottom bottom bottom bottom";
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
 }
 /* Top */
 #top {
@@ -23,7 +22,7 @@
 /* Middle */
 #middle {
   grid-area: middle;
-  min-height: 80vh;
+  min-height: 100dvh;
 }
 /* Bottom */
 #bottom {

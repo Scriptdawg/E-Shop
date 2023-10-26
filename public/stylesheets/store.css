@@ -1,0 +1,74 @@
+/* ? subpage navigation */
+#subpage-nav {
+  align-items: center;
+  background-color: black;
+  bottom: 0;
+  color: white;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  left: 0;
+  padding: 8px 32px 8px 16px;
+  position: fixed;
+  right: 0;
+  z-index: 99;
+}
+.btn-information,
+.btn-store,
+.btn-favorites,
+.btn-cart {
+  color: white;
+  font-size: 18px;
+  position: relative;
+}
+.btn-favorites .bi-heart-fill {
+  color: white;
+}
+#heart-quantity,
+#cart-quantity {
+  background-color: green;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 0px 4px;
+  position: absolute;
+  right: -4px;
+  top: 0;
+}
+
+/* ? store content grid */
+.store-content {
+  display: grid;
+  gap: 24px;
+  margin-inline: auto;
+  max-width: 2000px;
+}
+/* large - lg */
+@media (min-width: 992px) {
+  .store-content {
+    grid-template-columns: 270px 1fr 270px;
+    grid-template-areas:
+      "info packs more";
+  }
+  .information {
+    grid-area: info;
+  }
+  .packages {
+    grid-area: packs;
+  }
+  .more {
+    grid-area: more;
+  }
+  .btn-information {
+    display: none;
+  }
+}
+/* ? individual styles */
+.categories,
+.instructions,
+.ledger,
+.sales,
+.advertisements {
+  font-size: 18px;
+  text-align: center;
+  padding: 16px;
+}
