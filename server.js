@@ -25,7 +25,7 @@ const app = express();
 
 //! Variables
 // Global but can not change because no access to app
-app.locals.title = "E-Shop";
+app.locals.title = "Coder's Cove";
 app.locals.global = { general: "global.general" };
 // Accessed by any req, res, next function.
 app.use(function (req, res, next) {

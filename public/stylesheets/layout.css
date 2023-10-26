@@ -1,3 +1,6 @@
+main {
+  min-height: 75vh;
+}
 /* ? Website Top Banner */
 .website-top-banner {
   background-color: var(--primary-1);
@@ -62,7 +65,7 @@
   z-index: 99;
 }
 .open-website-side-nav {
-  width: max(200px, 15vw);
+  width: max(220px, 15vw);
 }
 .overlay {
   background-color: var(--overlay);
@@ -136,8 +139,3 @@
   color: var(--bright);
 }
 @media print {}
-
-
-main {
-  min-height: 80dvh;
-}
