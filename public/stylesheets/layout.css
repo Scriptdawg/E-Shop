@@ -120,7 +120,7 @@
   background-color: var(--medium);
   border: initial;
   border-radius: 50%;
-  bottom: 10dvh;
+  bottom: max(70px, 10dvh);
   color: var(--danger);
   cursor: pointer;
   display: none;
