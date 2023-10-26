@@ -6,7 +6,7 @@ export class Favorites extends Store {
     this.#main();
   };
   #main = () => {
-    document.querySelector("#center-list").innerHTML = `<span>Favorites List</span>`;
+    document.querySelector("#subpage-name").textContent = "Favorites List";
     this.view = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.heart));
     this.printProducts();
     this.picks.filter(pick => pick.heart && !pick.qty).forEach(pick => {

@@ -13,7 +13,7 @@ class Layout {
   };
 
   #scroller = () => {
-    this.scrollTop.addEventListener("click", event => {
+    this.scrollTop.addEventListener("click", () => {
       document.body.scrollTop = 0; // for Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     });
@@ -33,23 +33,14 @@ class Layout {
   };
 
   #leftBtn = () => {
-    const leftButton = document.querySelector("#left-button");
-    leftButton.addEventListener("click", event => {
-      document.body.scrollTop = 0; // for Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-      document.querySelector("#left").classList.add("open-left");
+    const leftButton = document.querySelector("#btn-open-website-side-nav");
+    leftButton.addEventListener("click", () => {
       document.querySelector("#overlay").classList.add("show-overlay");
+      document.querySelector(".website-side-nav").classList.add("open-website-side-nav");
     });
-
-    // window.onclick = event => {
-    //   if (!event.target.matches(".bi-list")
-    //     && !event.target.matches(".website-top-nav")) {
-    //     document.querySelector("#left").classList.remove("open-left");
-    //   };
-    // }
     
     document.querySelector("#overlay").addEventListener("click", (event) => {
-      document.querySelector("#left").classList.remove("open-left");
+      document.querySelector(".website-side-nav").classList.remove("open-website-side-nav");
       event.target.classList.remove("show-overlay");
     });
 

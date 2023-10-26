@@ -24,18 +24,11 @@
   <script defer src="/javascripts/fileUpload.js"></script>
 </head>
 <body>
-  <div id="layout" class="layout">
-    <div id="overlay" class="overlay"></div>
-    <!-- Main Navigation -->
-    <%- include('top.ejs') %>
-    <!-- Side Navigation -->
-    <%- include('left.ejs') %>
-    <!-- Sub-Pages-->
-    <div id="middle">
-      <%- body %>
-    </div>
-    <!-- Footer -->
-    <%- include('bottom.ejs') %>
-  </div>
+  <!-- website navigation & banner -->
+  <%- include('top.ejs') %>
+  <!-- subpages -->
+  <%- body %>
+  <!-- website footer -->
+  <%- include('bottom.ejs') %>
 </body>
 </html>

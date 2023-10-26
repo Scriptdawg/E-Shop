@@ -7,6 +7,7 @@ export class Cart extends Store {
   };
   // Main
   #main = () => {
+    document.querySelector("#subpage-name").textContent = "Cart Contents";
     this.view = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.qty));
     this.printProducts();
     this.picks.filter(pick => pick.qty === 1).forEach(pick => document
@@ -14,7 +15,6 @@ export class Cart extends Store {
     this.#attachButtons();
     this.updateCartQuantity().updateHeartQuantity().updateTotalAmount();
     document.body.scrollTop = 0; // for Safari
-    document.querySelector("#center-list").innerHTML = `<span>Cart Contents</span>`;
     // hide elements
     document.querySelectorAll(".short-description")
       .forEach(description => description.classList.add("hide"));

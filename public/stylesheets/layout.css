@@ -1,53 +1,32 @@
-/* Layout grid container */
-#layout {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas:
-    "top    top    top    top"
-    "middle middle middle middle"
-    "bottom bottom bottom bottom";
-  grid-template-rows: auto 1fr auto;
+/* ? Website Top Banner */
+.website-top-banner {
+  background-color: var(--primary-1);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px;
 }
-/* Top */
-#top {
-  grid-area: top;
-  position: sticky;
-  top: 0;
-  z-index: 3;
-}
-/* Left */
-#left {
-  grid-area: middle;
-  z-index: 999;
-}
-/* Middle */
-#middle {
-  grid-area: middle;
-  min-height: 100dvh;
-}
-/* Bottom */
-#bottom {
-  grid-area: bottom;
-}
-/* Top */
 /* ? Website Top Navigation */
 .website-top-nav {
   background-color: var(--theme-green);
   padding: 8px;
-}
-.website-top-nav {
+  color: var(--white);
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: space-between;
 }
-.website-top-nav .btn-left {
+#top-nav-container {
+  position: sticky;
+  top: 0;
+}
+.website-top-nav .btn-open-website-side-nav {
   color: var(--white);
   font-size: 18px;
   font-weight: 600;
 }
-.website-top-nav .btn-left:hover {
+.website-top-nav .btn-open-website-side-nav:hover {
   color: var(--bright);
 }
 .website-top-nav .link {
@@ -59,28 +38,46 @@
 .website-top-nav .link:hover {
   color: var(--bright);
 }
-/* Left */
-.left {
-  background-color: var(--theme-green);
-  height: fit-content;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  transition: 0.5s;
-  width: 0;
-}
-.open-left {
-  width: max(200px, 15vw);
+.website-top-nav h1 {
+  margin: 0;
+  color: var(--white);
 }
 /* ? Website Side Navigation */
 .website-side-nav {
+  background-color: var(--theme-green);
   display: flex;
   flex-direction: column;
   font-size: 20px;
+  height: fit-content;
+  left: 0;
   line-height: 40px;
-  padding-block-end: 32px;
-  z-index: 999;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  padding-block: 32px;
+  position: absolute;
+  top: 0;
+  transition: 0.5s;
+  width: 0;
 }
-
+.open-website-side-nav {
+  width: max(200px, 15vw);
+}
+.overlay {
+  background-color: var(--overlay);
+  bottom: 0;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 0.5s;
+  width: 0;
+}
+.show-overlay {
+  width: 100%;
+}
 .website-side-nav .link {
   color: var(--white);
   display: block;
@@ -130,34 +127,14 @@
   padding: 10px 12px 8px 12px;
   position: fixed;
   right: 8px;
-  z-index: 999;
 }
 #btn-scroll-top:hover {
   background-color: var(--xdark);
   color: var(--bright);
 }
-@media print {
-  #top,
-  #left,
-  #bottom {
-    display: none;
-  }
-}
+@media print {}
 
 
-.overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-}
-.show-overlay {
-  display: block;
+main {
+  min-height: 80dvh;
 }
