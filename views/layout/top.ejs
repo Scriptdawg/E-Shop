@@ -23,7 +23,6 @@
   <!-- website side navigation -->
   <nav id="website-side-nav">
     <ul class="website-side-nav">
-
       <li><a class="link" href="/">Main</a></li>
       <li><a class="link" href="/public/store">Store</a></li>
       <li><a class="link" href="/about">About</a></li>
@@ -32,13 +31,14 @@
       <% if(roles) { 
         roles.forEach(role => { %>
           <li><a class="link" href="/<%= role %>"><%= role %></a></li>
-        <% }) %>
-        <li><a class="link" href="/auth/logout">Sign Out</a></li>
-      <% } else { %>
-        <li><a class="link" href="/auth/register">Register</a></li>
-        <li><a class="link" href="/auth/login">Sign In</a></li>
-      <% } %>
-  
-    </ul>
-  </nav>
-</div>
+          <% }) %>
+          <li><a class="link" href="/auth/logout">Sign Out</a></li>
+          <% } else { %>
+            <li><a class="link" href="/auth/register">Register</a></li>
+            <li><a class="link" href="/auth/login">Sign In</a></li>
+            <% } %>
+            
+          </ul>
+        </nav>
+      </div>
+      <div id="overlay" class="overlay"></div>

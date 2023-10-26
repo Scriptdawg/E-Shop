@@ -35,7 +35,7 @@ class Layout {
   #leftBtn = () => {
     const leftButton = document.querySelector("#btn-open-website-side-nav");
     leftButton.addEventListener("click", () => {
-      document.querySelector("#overlay").classList.add("show-overlay");
+      document.querySelector(".overlay").classList.add("show-overlay");
       document.querySelector(".website-side-nav").classList.add("open-website-side-nav");
     });
     

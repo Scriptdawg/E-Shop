@@ -20,6 +20,7 @@
 #top-nav-container {
   position: sticky;
   top: 0;
+  z-index: 98;
 }
 .website-top-nav .btn-open-website-side-nav {
   color: var(--white);
@@ -58,6 +59,7 @@
   top: 0;
   transition: 0.5s;
   width: 0;
+  z-index: 99;
 }
 .open-website-side-nav {
   width: max(200px, 15vw);
@@ -74,6 +76,7 @@
   top: 0;
   transition: 0.5s;
   width: 0;
+  z-index: 97;
 }
 .show-overlay {
   width: 100%;
