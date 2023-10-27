@@ -9,6 +9,7 @@ const User = require("../../models/user");
 // REGISTER -  GET
 exports.register_get = (req, res) => {
   res.render("auth/register", {
+    subpageName: "Register",
     errors: "",
   });
 };

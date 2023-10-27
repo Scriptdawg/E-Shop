@@ -8,6 +8,7 @@ const User = require("../../models/user");
 // LOGIN -  GET
 exports.login_get = (req, res) => {
   res.render("auth/login", {
+    subpageName: "Login",
     user: {},
     sharedMessage: req.sharedVariable.sharedMessage,
     errors: [{ msg: req.params.message ?? "" }],

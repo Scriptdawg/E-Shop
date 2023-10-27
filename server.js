@@ -31,6 +31,7 @@ app.locals.global = { general: "global.general" };
 app.use(function (req, res, next) {
   res.locals.messages = "No messages.";
   res.locals.roles = "";
+  res.locals.subpageName = "Coder's Cove";
   next();
 });
 const sharedVariable = function (req, res, next) {

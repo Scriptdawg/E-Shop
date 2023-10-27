@@ -1,10 +1,10 @@
 const mailer = require("../middlewares/mailer.js");
-
 //! MAIN ROUTES
 
 //? INDEX
 exports.index_get = (req, res) => {
   res.render("main/index", {
+    subpageName: "Main",
     roles: req.session.roles,
   });
 };
@@ -12,6 +12,7 @@ exports.index_get = (req, res) => {
 //? ABOUT - GET
 exports.about_get = (req, res) => {
   res.render("main/about", {
+    subpageName: "About",
     roles: req.session.roles,
   });
 };
@@ -19,6 +20,7 @@ exports.about_get = (req, res) => {
 //? CONTACT - GET
 exports.contact_get = (req, res) => {
   res.render("main/contact", {
+    subpageName: "Contact Us",
     roles: req.session.roles,
     message: "",
   });
