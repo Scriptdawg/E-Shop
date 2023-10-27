@@ -45,6 +45,9 @@ main {
 .website-top-nav h1 {
   margin: 0;
   color: var(--white);
+  min-width: 130px;
+  text-align: center;
+  padding: 4px;
 }
 /* ? Website Side Navigation */
 .website-side-nav {
