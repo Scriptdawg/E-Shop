@@ -1,6 +1,7 @@
 <div id="container-subpage-register" class="container-subpage">
   <main>
-    <h1>Please Register</h1>
+
+    <h2 class="title large">Please Register</h2>
     <form method="POST" action="/auth/register">
       <div>
         <label for="fname">First name</label>
@@ -52,9 +53,9 @@
         />
       </div>
       <div>
-        <label for="roles">Role</label>
+        <!-- <label for="roles">Role</label> -->
         <input
-          type="text"
+          type="hidden"
           id="roles"
           name="roles"
           placeholder="Enter roles ..."
@@ -65,12 +66,13 @@
     </form>
 
     <% if(errors && errors !== '' ) { %>
-      <h2 style="color: red">Errors:</h2>
+      <h3 class="title error">Errors:</h3>
       <ul>
         <% errors.forEach(error=> { %>
           <li><%= error.msg %></li>
         <% }) %>
       </ul>
     <% } %>
+
   </main>
 </div>

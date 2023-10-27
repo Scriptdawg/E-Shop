@@ -20,7 +20,7 @@ main {
   gap: 8px;
   justify-content: space-between;
 }
-#top-nav-container {
+#website-nav-container {
   position: sticky;
   top: 0;
   z-index: 98;

@@ -4,8 +4,9 @@
     This banner area is suitable for a logo, company name, vision statement etc. 
   </p>
 </div>
-<!-- website top navigation -->
-<div id="top-nav-container">
+
+<div id="website-nav-container">
+  <!-- website top navigation -->
   <nav id="website-top-nav">
     <ul class="website-top-nav">
       <li><button id="btn-open-website-side-nav" class="btn-plain btn-open-website-side-nav"><i class="bi bi-list"></i></button></li>
@@ -31,14 +32,15 @@
       <% if(roles) { 
         roles.forEach(role => { %>
           <li><a class="link" href="/<%= role %>"><%= role %></a></li>
-          <% }) %>
-          <li><a class="link" href="/auth/logout">Sign Out</a></li>
-          <% } else { %>
-            <li><a class="link" href="/auth/register">Register</a></li>
-            <li><a class="link" href="/auth/login">Sign In</a></li>
-            <% } %>
+        <% }) %>
+        <li><a class="link" href="/auth/logout">Sign Out</a></li>
+      <% } else { %>
+        <li><a class="link" href="/auth/register">Register</a></li>
+        <li><a class="link" href="/auth/login">Sign In</a></li>
+      <% } %>
             
-          </ul>
-        </nav>
-      </div>
-      <div id="overlay" class="overlay"></div>
+    </ul>
+  </nav>
+</div>
+
+<div id="overlay" class="overlay"></div>

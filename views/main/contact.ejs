@@ -1,6 +1,8 @@
 <div id="container-subpage-contact" class="container-subpage">
   <main>
-    <h1>Contact</h1>
+
+    <h2 class="title large">Contact Us</h2>
+
     <form method="POST" action="">
       <div>
         <label for="email">Your email</label>
@@ -24,10 +26,11 @@
     </form>
 
     <% if(message) { %>
-      <h2>You sent:</h2>
+      <h3 class="title">You sent:</h3>
       <p>Subject: <%= message.subject %></p>
       <p>Message: <%= message.message %></p>
       <p><b>Thank you for contacting us!</b></p>
     <% } %>
+
   </main>
 </div>

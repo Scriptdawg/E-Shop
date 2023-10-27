@@ -1,6 +1,6 @@
 <div id="container-subpage-verify" class="container-subpage">
   <main>
-    <h1>Email Verification</h1>
+    <h2 class="title large">Email Verification</h2>
     <p>Please check your email for a verification code.</p>
 
     <form method="POST" action="/auth/verify">
@@ -13,7 +13,7 @@
     </form>
 
     <% if (error) { %>
-      <h2 style="color: red">Errors:</h2>
+      <h3 class="title error">Errors:</h3>
       <p><%= error %></p>
 
       <form method="POST" action="/auth/verify/resend">

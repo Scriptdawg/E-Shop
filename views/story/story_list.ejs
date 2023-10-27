@@ -1,16 +1,22 @@
-<main>
-<h1><%= pageTitle %></h1>
-<p>
-  To test database connectivity, these stories are retrieved from a mongoDb cloud
-  database called E-Shop and a collection of documents called stories.
-</p>
+<div id="container-subpage-story_detail" class="container-subpage">
+  <main>
 
-<h2>List of stories:</h2>
-<ul>
-  <% stories.forEach((story) => { %>
-  <li><a href="story/<%= story.url %>"><%= story.name %></a></li>
-  <% }); %>
-</ul>
+    <h2 class="title large"><%= pageTitle %></h2>
+    <p>
+      To test database connectivity, these stories are retrieved from a mongoDb cloud
+      database called E-Shop and a collection of documents called stories.
+    </p>
 
-<p><a href="/author/story/create">Create New Story</a></p>
-</main>
+    <% if (roles && roles.includes("Author")) { %>
+      <p><a href="/author/story/create">Create New Story</a></p>
+    <% } %>
+
+    <h3 class="title">List of stories:</h3>
+    <ul>
+      <% stories.forEach((story) => { %>
+        <li><a href="story/<%= story.url %>"><%= story.name %></a></li>
+      <% }); %>
+    </ul>
+
+  </main>
+</div>

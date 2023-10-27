@@ -1,54 +1,53 @@
-<main>
-<h1><%= pageTitle %></h1>
+<div id="container-subpage-story_create" class="container-subpage">
+  <main>
+    <h2 class="title large"><%= pageTitle %></h2>
 
-<form method="POST" action="">
-  <!-- Name -->
-  <label for="name" title="The name of your story.">Name *</label><br />
-  <input
-    id="name"
-    name="name"
-    type="text"
-    placeholder="Enter a name ..."
-    value="<%= story.name %>"
-    autocomplete="off"
-  />
-  <br /><br />
+    <form method="POST" action="">
 
-  <!-- Synopsis -->
-  <label for="synopsis" title="A brief overview.">Synopsis *</label><br />
-  <input
-    id="synopsis"
-    name="synopsis"
-    type="text"
-    placeholder="Enter a synopsis ..."
-    value="<%= story.synopsis %>"
-    autocomplete="off"
-  />
-  <br /><br />
+      <!-- name -->
+      <label for="name" title="The name of your story.">Name *</label><br />
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="Enter a name ..."
+        value="<%= story.name %>"
+        autocomplete="off"
+      />
 
-  <!-- Introduction -->
-  <label for="introduction" title="A story introduction paragraph. ">Introduction</label><br />
-  <textarea id="introduction" name="introduction"><%= story.introduction %></textarea>
-  <br /><br />
+      <!-- synopsis -->
+      <label for="synopsis" title="A brief overview.">Synopsis *</label><br />
+      <input
+        id="synopsis"
+        name="synopsis"
+        type="text"
+        placeholder="Enter a synopsis ..."
+        value="<%= story.synopsis %>"
+        autocomplete="off"
+      />
 
-  <!-- Content -->
-  <label for="content" title="Main story contents.">Content</label><br />
-  <textarea id="content" name="content"><%= story.content %></textarea>
-  <br /><br />
+      <!-- introduction -->
+      <label for="introduction" title="A story introduction paragraph. ">Introduction</label><br />
+      <textarea id="introduction" name="introduction"><%= story.introduction %></textarea>
 
-  <!-- Submit -->
-  <button type="submit">Submit</button>
-</form>
+      <!-- content -->
+      <label for="content" title="Main story contents.">Content</label><br />
+      <textarea id="content" name="content"><%= story.content %></textarea>
 
-<!--? * required and Errors -->
-<p><i>* required</i></p>
+      <!-- submit -->
+      <button type="submit">Submit</button>
+    </form>
 
-<% if(errors && errors !=='' ) { %>
-  <h2 style="color: red">Errors:</h2>
-  <ul>
-    <% errors.forEach(error=> { %>
-      <li><%= error.msg %></li>
-    <% }) %>
-  </ul>
-<% } %>
-</main>
+    <p><i>* required</i></p>
+
+    <% if(errors && errors !=='' ) { %>
+      <h3 class="title error">Errors:</h3>
+      <ul>
+        <% errors.forEach(error=> { %>
+          <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+  </main>
+</div>

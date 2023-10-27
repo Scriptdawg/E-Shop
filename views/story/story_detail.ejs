@@ -1,11 +1,13 @@
-<main>
-<h1 id="top"><%= pageTitle %></h1>
-<p><%= story.synopsis %></p>
-<p><%= story.introduction %></p>
-<p><%= story.content %></p>
+<div id="container-subpage-product_auth_detail" class="container-subpage">
+  <main>
+  
+    <h2 class="title large"><%= pageTitle %></h2>
+    <p><%= story.synopsis %></p>
+    <p><%= story.introduction %></p>
+    <p><%= story.content %></p>
 
+    <a href="/author/story/update/<%= story.url %>">Update</a>
+    <a href="/author/story/delete/<%= story.url %>">Delete</a>
 
-
-<a href="/author/story/update/<%= story.url %>">Update</a>
-<a href="/author/story/delete/<%= story.url %>">Delete</a>
-</main>
+  </main>
+</div>

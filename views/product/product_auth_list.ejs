@@ -1,24 +1,31 @@
-<main>
-  <h1><%= pageTitle %></h1>
-  <p>
-    To test database connectivity, these products are retrieved from a mongoDb
-    cloud database called E-Shop, a collection of documents called products
-    which are linked to a collection of documents called stories.
-  </p>
+<div id="container-subpage-product_auth_list" class="container-subpage">
+  <main>
 
-  <% products.forEach((product)=> { %>
-  <a style="padding: 16px 0" href="product/<%= product.url %>">
-    <h2><%= product.name %></h2>
-    <% if(product.coverImagePath) { %>
-    <img
-      width="800"
-      height="600"
-      src="<%= product.coverImagePath %>"
-      alt="Database picture"
-    />
+    <h2 class="title large"><%= pageTitle %></h2>
+    <p>
+      To test database connectivity, these products are retrieved from a mongoDb
+      cloud database called E-Shop, a collection of documents called products
+      which are linked to a collection of documents called stories.
+    </p>
+
+    <% if (roles && roles.includes("Author")) { %>
+      <p><a href="/author/product/create">Create New Product</a></p>
     <% } %>
-  </a>
-  <% }); %> <% if (roles && roles.includes("Author")) { %>
-  <p><a href="/author/product/create">Create New Product</a></p>
-  <% } %>
-</main>
+
+    <% products.forEach((product)=> { %>
+      <a style="padding: 16px 0" href="product/<%= product.url %>">
+        <h3 class="title"><%= product.name %></h3>
+        <% if(product.coverImagePath) { %>
+          <img
+            width="300"
+            height="300"
+            src="<%= product.coverImagePath %>"
+            alt="<%= product.name %>"
+            title="<%= product.name %>"
+          />
+        <% } %>
+      </a>
+    <% }); %>
+
+  </main>
+</div>

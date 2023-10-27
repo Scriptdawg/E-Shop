@@ -1,6 +1,7 @@
 <div id="container-subpage-login" class="container-subpage">
   <main>
-    <h1>Please Login</h1>
+    
+    <h2 class="title large">Please Login</h2>
     <form method="POST" action="/auth/login">
       <div>
         <label for="email">Email</label>
@@ -31,7 +32,7 @@
     </p>
 
     <% if(errors[0].msg) { %>
-      <h2 style="color: red">Errors:</h2>
+      <h3 class="title error">Errors:</h3>
       <ul>
         <% errors.forEach(error=> { %>
           <li><%= error.msg %></li>

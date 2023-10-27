@@ -10,7 +10,6 @@ html {
   -webkit-user-select: none; /* Safari */
   user-select: none;
   margin-inline: auto;
-  max-width: 2600px;
   scroll-behavior: smooth;
 }
 .container-subpage {
@@ -26,6 +25,9 @@ ul {
 }
 .link {
   padding: 4px 8px;
+}
+.error {
+  color: var(--danger);
 }
 /* Extra Extra Small - xxs */
 @media (max-width: 300px) {}

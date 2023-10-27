@@ -1,27 +1,31 @@
-<main>
-  <h1 id="top"><%= pageTitle %></h1>
+<div id="container-subpage-product_auth_detail" class="container-subpage">
+  <main>
+    <h2 class="title large"><%= pageTitle %></h2>
 
-  <% if(product.coverImagePath) { %>
-  <img width="800" height="600" src="<%= product.coverImagePath %>" />
-  <% } %>
+    <% if(product.coverImagePath) { %>
+      <img
+        width="300"
+        height="300"
+        src="<%= product.coverImagePath %>"
+        alt="<%= product.name %>"
+        title="<%= product.name %>"
+      />
+    <% } %>
 
-  <h2>Description:</h2>
-  <p><%= product.description %></p>
+    <h3 class="title">Description:</h3>
+    <p><%= product.shortDescription %></p>
 
-  <% if(product.favoriteFood) { %>
-  <p>My favorite food is <%= product.favoriteFood %>.</p>
-  <% } %>
+    <!-- don't display product story if unavailable or other -->
+    <% if(product.story.name !== "Unavailable" && product.story.name !== "Other") { %>
+      <h3 class="title">Story:</h3>
+      <p><%= product.story.name %></p>
+      <p><%= product.story.synopsis %></p>
+      <p><%= product.story.introduction %></p>
+      <p><%= product.story.content %></p>
+    <% } %>
 
-  <!-- Don't display Product story if Unavailable or Other -->
-  <% if(product.story.name !== "Unavailable" && product.story.name !== "Other")
-  { %>
-  <h2>Story:</h2>
-  <p><%= product.story.name %></p>
-  <p><%= product.story.synopsis %></p>
-  <p><%= product.story.introduction %></p>
-  <p><%= product.story.content %></p>
-  <% } %>
+    <a href="/author/product/update/<%= product.url %>">Update</a>
+    <a href="/author/product/delete/<%= product.url %>">Delete</a>
 
-  <a href="/author/product/update/<%= product.url %>">Update</a>
-  <a href="/author/product/delete/<%= product.url %>">Delete</a>
-</main>
+  </main>
+</div>

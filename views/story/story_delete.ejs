@@ -1,27 +1,32 @@
-<main>
-<h1><%= pageTitle %></h1>
-<h2><%= story.name %></h2>
-<p>Do you really want to delete <%= story.name %>?</p>
+<div id="container-subpage-story_delete" class="container-subpage">
+  <main>
 
-<form method="POST" action="">
-  <input
-    type="hidden"
-    name="storyid"
-    required="true"
-    value="<%= story._id %>"
-  />
-  <button type="submit">Delete</button>
-</form>
+    <h2 class="title large"><%= pageTitle %></h2>
+    <h3 class="title"><%= story.name %></h3>
+    <p>Do you really want to delete <%= story.name %>?</p>
 
-<a href="/author/story/<%= story.url %>">Cancel</a>
+    <form method="POST" action="">
+      <input
+        type="hidden"
+        name="storyid"
+        required="true"
+        value="<%= story._id %>"
+      />
+      <button type="submit">Delete</button>
+    </form>
 
-<% if(products) { %>
-  <h2 style="color: red">Errors:</h2>
-  <span>This story is still assigned to:</span>
-  <ul style="margin-inline: 16px">
-    <% products.forEach(product => { %>
-      <li><%= product.name %></li>
-    <% }) %>
-  </ul>
-<% } %>
-</main>
+    <br />
+    <a href="/author/story/<%= story.url %>">Cancel</a>
+
+    <% if(products) { %>
+      <h3 class="title error">Errors:</h3>
+      <span class="error">This story is still assigned to:</span>
+      <ul style="margin-inline: 16px">
+        <% products.forEach(product => { %>
+          <li><%= product.name %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+    
+  </main>
+</div>

@@ -1,7 +1,9 @@
-<main>
+<div id="container-subpage-error" class="container-subpage">
+  <main>
 
-  <h1><%= message %></h1>
-  <h2><%= error.status %></h2>
-  <pre><%= error.stack %></pre>
-  
-</main>
+    <h2 class="title error"><%= message %></h2>
+    <h3 class="title">Error <%= error.status %></h3>
+    <pre><%= error.stack %></pre>
+   
+  </main>
+</div>
