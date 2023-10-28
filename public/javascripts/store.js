@@ -2,8 +2,6 @@ export class Store {
   constructor() {
     this.picks = JSON.parse(localStorage.getItem("data")) || [];
     this.view = [];
-    console.log(window.innerWidth);
-    console.log(window.outerWidth);
   };
   //  Generates the packages html
   printProducts = () => {

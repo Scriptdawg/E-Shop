@@ -5,7 +5,6 @@
 @import url("store.css");
 @import url("package.css");
 @import url("forms.css");
-@import url("main.css");
 html {
   -webkit-user-select: none; /* Safari */
   user-select: none;
