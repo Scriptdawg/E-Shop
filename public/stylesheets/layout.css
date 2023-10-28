@@ -64,7 +64,7 @@ main {
   position: absolute;
   top: 0;
   transition: 0.5s;
-  width: 0;
+  width: 220px;
   z-index: 99;
 }
 .open-website-side-nav {
