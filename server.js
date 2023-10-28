@@ -1,9 +1,9 @@
-// Environment variables
+// environment variables
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config({ path: ".env" });
 }
 
-// Requires ...
+// requires ...
 const cors = require("cors");
 const createError = require("http-errors");
 const express = require("express");
@@ -11,7 +11,7 @@ const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const path = require("path");
 
-// Require routes
+// require routes
 const administratorRouter = require("./app/routes/administrator");
 const authRouter = require("./app/routes/auth");
 const authorRouter = require("./app/routes/author");
@@ -20,14 +20,14 @@ const memberRouter = require("./app/routes/member");
 const moderatorRouter = require("./app/routes/moderator");
 const publicRouter = require("./app/routes/public");
 
-// Express application
+// express application
 const app = express();
 
-//! Variables
-// Global but can not change because no access to app
+//! variables
+// global but can not change because no access to app
 app.locals.title = "Coder's Cove";
 app.locals.global = { general: "global.general" };
-// Accessed by any req, res, next function.
+// accessed by any req, res, next function.
 app.use(function (req, res, next) {
   res.locals.messages = "No messages.";
   res.locals.roles = "";
@@ -41,7 +41,7 @@ const sharedVariable = function (req, res, next) {
 };
 app.use(sharedVariable);
 
-// Cors & Cookies
+// cors & cookies
 const corsOptions = { origin: "http://localhost:3001" };
 const cookieSession = require("cookie-session");
 app.use(cors(corsOptions));
@@ -53,24 +53,24 @@ app.use(
   })
 );
 
-// Database connection
+// database connection
 main().catch((err) => console.log(err));
 async function main() {
   mongoose.connect(process.env.DATABASE_URL);
 }
 
-// View engine setup
+// view engine setup
 app.set("layout", "layout/layout");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// Use ...
+// use ...
 app.use(express.json());
 app.use(expressLayouts);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
-// Use routers
+// use routers
 app.use("/", mainRouter);
 app.use("/administrator", administratorRouter);
 app.use("/auth", authRouter);
@@ -79,12 +79,12 @@ app.use("/member", memberRouter);
 app.use("/moderator", moderatorRouter);
 app.use("/public", publicRouter);
 
-// Catch 404 and forward to error handler
+// catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
 });
 
-// Error handler
+// error handler
 app.use((err, req, res, next) => {
   // Set locals, only providing error in development.
   res.locals.message = err.message;
@@ -96,5 +96,5 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Exports
+// exports
 module.exports = app;
