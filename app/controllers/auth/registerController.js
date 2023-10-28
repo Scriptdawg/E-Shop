@@ -47,12 +47,14 @@ exports.register_post = [
     });
     if (!errors.isEmpty()) {
       res.render("auth/register", {
+        subpageName: "Register",
         errors: errors.array(),
       });
     } else {
       // Check if passwords match
       if (req.body.password !== req.body.repeatPassword) {
         res.render("auth/register", {
+          subpageName: "Register",
           errors: [{ msg: "Passwords don't match!" }],
         });
         return;
@@ -64,6 +66,7 @@ exports.register_post = [
       const userExists = await User.findOne({ email: req.body.email }).exec();
       if (userExists) {
         res.render("auth/register", {
+          subpageName: "Register",
           errors: [{ msg: "Email already exists!" }],
         });
       } else {

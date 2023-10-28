@@ -16,6 +16,7 @@ exports.product_create_get = asyncHandler(async (req, res) => {
     return textA < textB ? -1 : textA > textB ? 1 : 0;
   });
   res.render("product/product_create", {
+    subpageName: "Create Product",
     roles: req.session.roles,
     pageTitle: "Create Product",
     stories: allStories,
@@ -63,6 +64,7 @@ exports.product_create_post = [
         return textA < textB ? -1 : textA > textB ? 1 : 0;
       });
       res.render("product/product_create", {
+        subpageName: "Create Product",
         roles: req.session.roles,
         pageTitle: "Create Product",
         stories: allStories,
@@ -82,6 +84,7 @@ exports.product_create_post = [
           return textA < textB ? -1 : textA > textB ? 1 : 0;
         });
         res.render("product/product_create", {
+          subpageName: "Create Product",
           roles: req.session.roles,
           pageTitle: "Create Product",
           stories: allStories,
@@ -112,6 +115,7 @@ function saveCover(product, coverEncoded) {
 exports.product_detail_get = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id).populate("story");
   res.render("product/product_auth_detail", {
+    subpageName: "Product Detail",
     roles: req.session.roles,
     pageTitle: product.name,
     product,
@@ -125,6 +129,7 @@ exports.product_list_get = asyncHandler(async (req, res) => {
     return textA < textB ? -1 : textA > textB ? 1 : 0;
   });
   res.render("product/product_auth_list", {
+    subpageName: "Product List",
     roles: req.session.roles,
     pageTitle: "E-Shop Products",
     products,
@@ -140,6 +145,7 @@ exports.product_update_get = asyncHandler(async (req, res) => {
     return textA < textB ? -1 : textA > textB ? 1 : 0;
   });
   res.render("product/product_create", {
+    subpageName: "Update Product",
     roles: req.session.roles,
     pageTitle: "Update Product",
     stories: allStories,
@@ -186,6 +192,7 @@ exports.product_update_post = [
       // There are errors. Render the form again with sanitized values/error messages.
       const allStories = await Story.find();
       res.render("product/product_create", {
+        subpageName: "Update Product",
         roles: req.session.roles,
         pageTitle: "Update Product",
         stories: allStories,
@@ -207,6 +214,7 @@ exports.product_update_post = [
 exports.product_delete_get = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
   res.render("product/product_delete", {
+    subpageName: "Delete Product",
     roles: req.session.roles,
     pageTitle: "Delete Product",
     product,

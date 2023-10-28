@@ -8,6 +8,7 @@ const Story = require("../models/story.js");
 // CREATE Story - GET create form
 exports.story_create_get = asyncHandler(async (req, res) => {
   res.render("story/story_create", {
+    subpageName: "Create Story",
     roles: req.session.roles,
     pageTitle: "Create Story",
     story: {},
@@ -40,6 +41,7 @@ exports.story_create_post = [
     if (!errors.isEmpty()) {
       // There are errors. Render the form again with sanitized values/error messages.
       res.render("story/story_create", {
+        subpageName: "Create Story",
         roles: req.session.roles,
         pageTitle: "Create Story",
         story,
@@ -52,6 +54,7 @@ exports.story_create_post = [
       if (storyExists) {
         // Story exists. Render the form again with sanitized values/error messages..
         res.render("story/story_create", {
+          subpageName: "Create Story",
           roles: req.session.roles,
           pageTitle: "Create Story",
           story,
@@ -70,6 +73,7 @@ exports.story_create_post = [
 exports.story_detail_get = asyncHandler(async (req, res) => {
   const story = await Story.findById(req.params.id);
   res.render("story/story_detail", {
+    subpageName: "Story Detail",
     roles: req.session.roles,
     pageTitle: story.name,
     story,
@@ -83,6 +87,7 @@ exports.story_list_get = asyncHandler(async (req, res) => {
     return textA < textB ? -1 : textA > textB ? 1 : 0;
   });
   res.render("story/story_list", {
+    subpageName: "Story List",
     roles: req.session.roles,
     pageTitle: "Stories",
     stories,
@@ -93,6 +98,7 @@ exports.story_list_get = asyncHandler(async (req, res) => {
 exports.story_update_get = asyncHandler(async (req, res) => {
   const story = await Story.findById(req.params.id);
   res.render("story/story_create", {
+    subpageName: "Update Story",
     roles: req.session.roles,
     pageTitle: "Update Story",
     story,
@@ -126,6 +132,7 @@ exports.story_update_post = [
     if (!errors.isEmpty()) {
       // There are errors. Render the form again with sanitized values/error messages.
       res.render("story/story_create", {
+        subpageName: "Update Story",
         roles: req.session.roles,
         pageTitle: "Update Story",
         story,
@@ -145,6 +152,7 @@ exports.story_update_post = [
 exports.story_delete_get = asyncHandler(async (req, res) => {
   const story = await Story.findById(req.params.id);
   res.render("story/story_delete", {
+    subpageName: "Delete Story",
     roles: req.session.roles,
     pageTitle: "Delete Story",
     story,
@@ -159,6 +167,7 @@ exports.story_delete_post = asyncHandler(async (req, res) => {
     // Story assigned. Return to form - display errors.
     const story = await Story.findById(req.params.id);
     res.render("story/story_delete", {
+      subpageName: "Delete Story",
       roles: req.session.roles,
       pageTitle: "Delete Story",
       story,

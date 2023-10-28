@@ -44,6 +44,7 @@ exports.verify_get = async (req, res) => {
 
     // Render email verification form
     res.render("auth/verify", {
+      subpageName: "Verification",
       id: userExists.id,
       error: "",
     });
@@ -90,6 +91,7 @@ exports.verify_post = async (req, res) => {
   );
   if (!verificationIsValid) {
     res.render("auth/verify", {
+      subpageName: "Verification",
       id: req.body.id,
       error: "Invalid Code!",
     });

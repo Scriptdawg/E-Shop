@@ -32,6 +32,7 @@ exports.api_product_list_get = asyncHandler(async (req, res) => {
 exports.product_detail_get = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id).populate("story");
   res.render("public/product_detail", {
+    subpageName: "Product Detail",
     roles: req.session.roles,
     pageTitle: product.name,
     product,
@@ -41,6 +42,7 @@ exports.product_detail_get = asyncHandler(async (req, res) => {
 // READ Store - list
 exports.store_get = asyncHandler(async (req, res) => {
   res.render("public/store", {
+    subpageName: "Product List",
     roles: req.session.roles,
   });
 })
