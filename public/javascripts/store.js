@@ -13,7 +13,7 @@ export class Store {
       const { id, img, name, price, shortDescription, priceType } = product;
       const search = this.picks.find(pick => pick.id === id) || [];
       return `
-        <div id="package-${id}" class="package" title="Package">
+        <div id="package-${id}" class="package">
           <div class="picture">
             <img src="${img}" width="70px" height="70px" alt="${name}" title="${name}" />
           </div>

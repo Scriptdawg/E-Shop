@@ -3,7 +3,7 @@ main {
 }
 /* ? Website Top Banner */
 .website-top-banner {
-  background-color: var(--primary-1);
+  background-color: var(--theme-green);
   color: var(--white);
   font-size: 18px;
   font-weight: 600;
