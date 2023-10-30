@@ -3,7 +3,7 @@ main {
 }
 /* ? website mission */
 .website-mission {
-  background-color: var(--black);
+  background-color: var(--theme-green);
   color: var(--caution);
   padding: 8px;
   text-align: center;
@@ -45,7 +45,7 @@ main {
 
 /* ? website top navigation */
 .website-top-nav {
-  background-color: var(--black);
+  background-color: var(--theme-green);
   padding: 4px 8px;
   color: var(--white);
   align-items: center;
@@ -85,7 +85,7 @@ main {
 }
 /* ? website side navigation */
 .website-side-nav {
-  background-color: var(--black);
+  background-color: var(--theme-green);
   display: flex;
   flex-direction: column;
   font-size: 20px;
