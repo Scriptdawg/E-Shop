@@ -63,7 +63,7 @@ export class Favorites extends Store {
   // Prints empty state
   printEmptyState = () => {
     document.querySelector("#packages").innerHTML = `
-      <div id="empty-cart" class="empty-cart">
+      <div id="empty-state" class="empty-state">
         <i class="bi bi-heart"></i>
         <p>Favorites list is Empty</p>
       </div>

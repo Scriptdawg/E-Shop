@@ -68,7 +68,7 @@ export class Cart extends Store {
   // Prints empty state
   printEmptyState = () => {
     document.querySelector("#packages").innerHTML = `
-      <div id="empty-cart" class="empty-cart">
+      <div id="empty-state" class="empty-state">
         <i class="bi bi-cart-x-fill"></i>
         <p>Shopping Cart is Empty</p>
       </div>

@@ -1,17 +1,38 @@
 main {
   min-height: 75vh;
 }
-/* ? Website Top Banner */
+/* ? website mission */
+.website-mission {
+  background-color: var(--black);
+  color: orange;
+  padding: 8px;
+  text-align: center;
+}
+.website-mission p {
+  margin: 0;
+}
+/* ? website top banner */
 .website-top-banner {
-  background-color: var(--theme-green);
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+    url("/images/banners/IMG_3103_lrg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: local;
   color: var(--white);
   font-size: 18px;
   font-weight: 600;
-  padding: 16px;
 }
-/* ? Website Top Navigation */
+.website-top-banner p {
+  margin: 0;
+}
+.website-top-banner .content {
+  padding: 16px;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+/* ? website top navigation */
 .website-top-nav {
-  background-color: var(--theme-green);
+  background-color: var(--black);
   padding: 8px;
   color: var(--white);
   align-items: center;
@@ -49,9 +70,9 @@ main {
   text-align: center;
   padding: 4px;
 }
-/* ? Website Side Navigation */
+/* ? website side navigation */
 .website-side-nav {
-  background-color: var(--theme-green);
+  background-color: var(--black);
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -97,7 +118,7 @@ main {
   color: var(--bright);
 }
 /* Bottom */
-/* ? Footer */
+/* ? footer */
 .website-footer {
   background-color: var(--theme-green);
   background-image: linear-gradient(var(--theme-green), var(--primary-5));
@@ -111,7 +132,7 @@ main {
   color: var(--white);
   text-decoration: none;
 }
-/* ? Display Window Size */
+/* ? display window size */
 .website-footer .window-size {
   background-color: transparent;
   bottom: 40px;
@@ -121,7 +142,7 @@ main {
   position: absolute;
   right: 16px;
 }
-/* ? Scroll to Top */
+/* ? scroll to top */
 #btn-scroll-top {
   background-color: var(--medium);
   border: initial;
@@ -141,4 +162,5 @@ main {
   background-color: var(--xdark);
   color: var(--bright);
 }
-@media print {}
+@media print {
+}
