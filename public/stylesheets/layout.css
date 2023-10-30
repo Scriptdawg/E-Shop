@@ -4,7 +4,7 @@ main {
 /* ? website mission */
 .website-mission {
   background-color: var(--black);
-  color: var(--theme-orange);
+  color: var(--caution);
   padding: 8px;
   text-align: center;
   font-size: 18px;
@@ -46,7 +46,7 @@ main {
 /* ? website top navigation */
 .website-top-nav {
   background-color: var(--black);
-  padding: 8px;
+  padding: 4px 8px;
   color: var(--white);
   align-items: center;
   display: flex;
@@ -78,10 +78,10 @@ main {
 }
 .website-top-nav h1 {
   margin: 0;
-  color: var(--theme-orange);
+  color: var(--caution);
   min-width: 130px;
   text-align: center;
-  padding: 4px;
+  padding: 0 4px;
 }
 /* ? website side navigation */
 .website-side-nav {
