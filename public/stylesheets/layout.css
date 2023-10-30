@@ -4,9 +4,11 @@ main {
 /* ? website mission */
 .website-mission {
   background-color: var(--black);
-  color: orange;
+  color: var(--theme-orange);
   padding: 8px;
   text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 .website-mission p {
   margin: 0;
@@ -22,14 +24,25 @@ main {
   font-size: 18px;
   font-weight: 600;
 }
+.website-top-banner .content {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: 16px;
+}
 .website-top-banner p {
   margin: 0;
+  padding: 8px 16px;
 }
-.website-top-banner .content {
-  padding: 16px;
-  max-width: 1000px;
-  margin-inline: auto;
+.website-top-banner p:first-child {
+  display: none;
 }
+/* Large - lg */
+@media (min-width: 992px) {
+  .website-top-banner p:first-child {
+    display: block;
+  }
+}
+
 /* ? website top navigation */
 .website-top-nav {
   background-color: var(--black);
@@ -65,7 +78,7 @@ main {
 }
 .website-top-nav h1 {
   margin: 0;
-  color: var(--white);
+  color: var(--theme-orange);
   min-width: 130px;
   text-align: center;
   padding: 4px;
