@@ -4,7 +4,7 @@
   .packages {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    grid-template-rows: repeat(4, min-content);
+    grid-auto-rows: min-content;
     gap: 8px;
   }
 }
@@ -85,10 +85,11 @@
   visibility: hidden;
 }
 .empty-state {
+  background-image: var(--bg-white);
   min-height: 30dvh;
   padding-block: 32px;
   text-align: center;
-  grid-column-start: span 4;
+  grid-column-start: span 3;
 }
 .bi-cart-x-fill,
 .empty-state .bi-heart {

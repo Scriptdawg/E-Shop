@@ -1,5 +1,6 @@
 main {
   min-height: 75vh;
+  padding-block-end: 64px;
 }
 /* ? website mission */
 .website-mission {

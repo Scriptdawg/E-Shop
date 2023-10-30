@@ -34,7 +34,16 @@
   right: -4px;
   top: 0;
 }
-
+/* ? individual styles */
+section {
+  font-size: 18px;
+  padding: 16px;
+  margin-block-start: 32px;
+}
+.categories button {
+  font-size: 18px;
+  padding: 8px 16px;
+}
 /* ? store content grid */
 .store-content {
   display: grid;
@@ -61,18 +70,4 @@
   .btn-information {
     display: none;
   }
-}
-/* ? individual styles */
-.categories,
-.instructions,
-.ledger,
-.sales,
-.advertisements {
-  font-size: 18px;
-  text-align: center;
-  padding: 16px;
-}
-.categories button {
-  font-size: 18px;
-  padding: 8px 16px;
 }

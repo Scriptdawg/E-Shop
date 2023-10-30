@@ -28,7 +28,7 @@ export class Store {
           </div>
           <div class="term">
             <h2 class="title large" title="Product Name">${name}</h2>
-            <p class="short-description">${shortDescription}</p>
+            <p class="short-description" title="Short Description">${shortDescription}</p>
           </div>
           <div class="left-ctrl">
             <button id="btn-clear-${id}" class="btn btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
