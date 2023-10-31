@@ -55,28 +55,44 @@
   scroll-snap-type: x mandatory;
 }
 .child {
-  background-color: var(--primary-1);
-  width: 100vw;
-  height: 200px;
-  font-size: 30px;
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
   color: white;
   display: grid;
-  place-items: center;
+  font-size: 30px;
+  grid-template-columns: 1fr;
+  height: 400px;
+  align-items: end;
+  justify-items: center;
   scroll-snap-align: center;
+  width: 100vw;
+}
+.child:nth-child(1) {
+  background-color: var(--primary-1);
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+  url("/images/variety/IMG_3703.jpg");
 }
 .child:nth-child(2) {
   background-color: var(--primary-2);
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+  url("/images/variety/image_2.jpg");
 }
 .child:nth-child(3) {
   background-color: var(--primary-3);
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+  url("/images/variety/image_4.jpg");
 }
 .child:nth-child(4) {
   background-color: var(--primary-4);
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+  url("/images/variety/image_10.jpg");
 }
 .dot-box {
   display: grid;
   grid-template-columns: repeat(4, 1rem);
   gap: 20px;
+  padding: 16px;
 }
 .dot {
   height: 1rem;
@@ -99,8 +115,4 @@
   .dot-box {
     visibility: hidden;
   }
-}
-.orderFirst {
-  order: -1;
-  color: red;
 }
