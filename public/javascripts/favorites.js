@@ -66,6 +66,7 @@ export class Favorites extends Store {
       <div id="empty-state" class="empty-state">
         <i class="bi bi-heart"></i>
         <p>Favorites list is Empty</p>
+        <a class="btn btn-continue" href="/public/store">Continue Shopping</a>
       </div>
     `;
   };

@@ -86,9 +86,10 @@
 }
 .empty-state {
   background-image: var(--bg-white);
-  min-height: 30dvh;
+  display: grid;
+  row-gap: 16px;
   padding-block: 32px;
-  text-align: center;
+  place-items: center;
   grid-column-start: span 3;
 }
 .bi-cart-x-fill,
@@ -108,7 +109,8 @@
   text-decoration: none;
 }
 .btn-plus,
-.ledger .btn-checkout {
+.ledger .btn-checkout,
+.btn-continue {
   color: var(--inform);
 }
 .btn-minus,

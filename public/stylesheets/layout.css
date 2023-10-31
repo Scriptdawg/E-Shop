@@ -107,14 +107,10 @@ main {
 }
 .overlay {
   background-color: var(--overlay);
-  bottom: 0;
   cursor: pointer;
   display: block;
-  height: 100%;
-  left: 0;
+  inset: 0;
   position: fixed;
-  right: 0;
-  top: 0;
   transition: 0.5s;
   width: 0;
   z-index: 97;
