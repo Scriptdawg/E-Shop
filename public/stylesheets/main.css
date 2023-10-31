@@ -91,6 +91,7 @@
 @media (min-width: 992px) {
   .parent {
     grid-template-columns: repeat(4, 1fr);
+    overflow-x: initial;
   }
   .child {
     width: 100%;
@@ -98,4 +99,8 @@
   .dot-box {
     visibility: hidden;
   }
+}
+.orderFirst {
+  order: -1;
+  color: red;
 }
