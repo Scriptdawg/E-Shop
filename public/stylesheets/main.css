@@ -71,7 +71,7 @@
 .child:nth-child(1) {
   background-color: var(--primary-1);
   background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-  url("/images/variety/IMG_3703.jpg");
+  url("/images/variety/image_13.jpg");
 }
 .child:nth-child(2) {
   background-color: var(--primary-2);
