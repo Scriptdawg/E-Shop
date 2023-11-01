@@ -57,11 +57,11 @@
 /* transform: skew() */
 .fade.first {
   opacity: 0;
-  animation: fast-fade 40s;
+  animation: fast-fade 14s;
 }
 @keyframes fast-fade {
   0% { opacity: 1 }
-  50% { opacity: 1 }
+  70% { opacity: 1 }
   100% { opacity: 0 }
 }
 .fade.one {
@@ -86,8 +86,8 @@
 }
 @keyframes fade {
   0% { opacity: 0 }
-  5% { opacity: 1 }
+  10% { opacity: 1 }
   25% { opacity: 1 }
-  30% { opacity: 0 }
+  35% { opacity: 0 }
   100% { opacity: 0 }
 }
