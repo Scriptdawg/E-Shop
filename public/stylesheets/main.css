@@ -6,7 +6,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: local;
-  height: 40dvh;
+  height: 30dvh;
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
@@ -116,12 +116,4 @@
   .dot-box {
     visibility: hidden;
   }
-}
-.fader {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "picture";
-}
-.fade {
-  grid-area: picture;
 }
