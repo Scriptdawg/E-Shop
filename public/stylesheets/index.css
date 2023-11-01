@@ -6,6 +6,7 @@
 @import url("package.css");
 @import url("main.css");
 @import url("forms.css");
+@import url("animations.css");
 html {
   -webkit-user-select: none; /* Safari */
   user-select: none;

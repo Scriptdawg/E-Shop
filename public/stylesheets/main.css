@@ -1,7 +1,8 @@
 .container-subpage-main {
   background-color: var(--theme-green);
 }
-.slide {
+.slide,
+.fade {
   background-size: cover;
   background-position: center;
   background-attachment: local;
@@ -14,12 +15,10 @@
   text-align: center;
   color: white;
   padding: 0;
-  font-size: 1.2rem;
 }
-.slide-content p {
-  text-align: center;
-  margin: 0;
-  padding: 0;
+.first {
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+  url("/images/slides/image_5.jpg");
 }
 .one {
   background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
@@ -43,11 +42,9 @@
 .title-slide {
   font-size: 2.25rem;
   font-style: italic;
-  color: var(--caution);
-  /* transition */
 }
 
-/* slide dots */
+/* ? slide dots */
 .parent {
   display: grid;
   grid-template-columns: repeat(4, 100%);
@@ -119,4 +116,12 @@
   .dot-box {
     visibility: hidden;
   }
+}
+.fader {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "picture";
+}
+.fade {
+  grid-area: picture;
 }

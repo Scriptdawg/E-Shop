@@ -1,0 +1,92 @@
+/* ? Animations */
+/* ? opacity, translate, scale, rotate, transform: skew() */
+/* fade in */
+.fade-in {
+  font-size: 3rem;
+  animation: fade-in 8s;
+}
+@keyframes fade-in {
+  0% { opacity: 0.2 }
+  50% { opacity: 0.8 }
+  100% { opacity: 1 }
+}
+/* fade-out */
+.fade-out {
+  opacity: 0;
+  animation: fade-out 4s;
+}
+@keyframes fade-out {
+  0% { opacity: 1; }
+  50% { opacity: 0.8 }
+  100% { opacity: 0 }
+}
+/* pulse */
+.pulse {
+  opacity: .4;
+  animation: pulse 4s infinite;
+}
+@keyframes pulse {
+  0% { opacity: .4; }
+  50% { opacity: 1; }
+  75% { opacity: .8; }
+  100% { opacity: .4; }
+}
+/* translate */
+
+/* scale */
+.scale {
+  font-size: 28px;
+  scale: .5;
+  animation: scale 10s;
+}
+@keyframes scale {
+  0% { scale: 0; }
+  20% { scale: 1; }
+  60% { scale: 1; }
+  100% { scale: .5; }
+}
+/* rotate */
+.rotate-360 {
+  animation: rotate-360 4s;
+}
+@keyframes rotate-360 {
+  0% { translate: 0 -100px; rotate: 0; }
+  50% { translate: 0 100px; rotate: 0.5turn; }
+  100% { translate: 0 0; rotate: 1turn; }
+}
+/* transform: skew() */
+.fade.first {
+  opacity: 0;
+  animation: fast-fade 30s;
+}
+@keyframes fast-fade {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
+.fade.one {
+  opacity: 0;
+  animation: fade 40s infinite;
+  animation-delay: 10s;
+}
+.fade.two {
+  opacity: 0;
+  animation: fade 40s infinite;
+  animation-delay: 20s;
+}
+.fade.three {
+  opacity: 0;
+  animation: fade 40s infinite;
+  animation-delay: 30s;
+}
+.fade.four {
+  opacity: 0;
+  animation: fade 40s infinite;
+  animation-delay: 40s;
+}
+@keyframes fade {
+  0% { opacity: 0 }
+  10% { opacity: 1 }
+  25% { opacity: 1 }
+  35% { opacity: 0 }
+  100% { opacity: 0 }
+}

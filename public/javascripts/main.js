@@ -7,6 +7,6 @@ const carousel = () => {
   counter ++;
   if(counter > slides.length) counter = 1;
   slides[counter -1].classList.remove("hide-slide");
-  setTimeout(() => { carousel(); }, 6000);
+    setTimeout(() => { carousel(); }, 10000);
 };
 carousel();
