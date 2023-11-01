@@ -2,7 +2,6 @@
 /* ? opacity, translate, scale, rotate, transform: skew() */
 /* fade in */
 .fade-in {
-  font-size: 3rem;
   animation: fade-in 8s;
 }
 @keyframes fade-in {
@@ -22,14 +21,15 @@
 }
 /* pulse */
 .pulse {
-  opacity: .4;
-  animation: pulse 4s infinite;
+  font-size: 1.5rem;
+  font-weight: 700;
+  scale: .9;
+  animation: pulse 3s infinite;
 }
 @keyframes pulse {
-  0% { opacity: .4; }
-  50% { opacity: 1; }
-  75% { opacity: .8; }
-  100% { opacity: .4; }
+  0% { scale: .9; }
+  50% { scale: 1; }
+  100% { scale: .9; }
 }
 /* translate */
 
@@ -57,10 +57,11 @@
 /* transform: skew() */
 .fade.first {
   opacity: 0;
-  animation: fast-fade 30s;
+  animation: fast-fade 40s;
 }
 @keyframes fast-fade {
   0% { opacity: 1 }
+  50% { opacity: 1 }
   100% { opacity: 0 }
 }
 .fade.one {
@@ -85,8 +86,8 @@
 }
 @keyframes fade {
   0% { opacity: 0 }
-  10% { opacity: 1 }
+  5% { opacity: 1 }
   25% { opacity: 1 }
-  35% { opacity: 0 }
+  30% { opacity: 0 }
   100% { opacity: 0 }
 }

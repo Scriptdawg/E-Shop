@@ -17,8 +17,9 @@
   margin-block-start: 16px;
 }
 .title-slide {
-  color: var(--white);
+  color: var(--caution);
   font-family: var(--font-teritiary);
+  font-size: 2.5rem;
 }
 .uppercase::first-letter {
   color: var(--theme);
