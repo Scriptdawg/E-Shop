@@ -101,7 +101,7 @@
   font-weight: 700;
 }
 @keyframes translate {
-  from { translate: 0; }
+  from { translate: 0 140px; }
   to   { translate: 0 0; }
 }
 
