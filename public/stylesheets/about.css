@@ -1,4 +1,46 @@
-/* ? slide dots */
+/* ? carousel */
+.slide {
+  background-size: cover;
+  background-position: center;
+  background-attachment: local;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  min-height: 180px;
+}
+.slide-content {
+  text-align: center;
+  color: white;
+  padding: 0;
+}
+.first {
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+  url("/images/slides/image_5.jpg");
+}
+.one {
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+  url("/images/slides/IMG_2950_lrg.jpg");
+}
+.two {
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+  url("/images/slides/IMG_6224_lrg.jpg");
+}
+.three {
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+  url("/images/slides/IMG_6273_lrg.jpg");
+}
+.four {
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+  url("/images/slides/IMG_6275_lrg.jpg");
+}
+.hide-slide {
+  display: none;
+}
+.title-slide {
+  font-size: 2.25rem;
+  font-style: italic;
+}
+/* ? snaps */
 .parent {
   display: grid;
   grid-template-columns: repeat(4, 100%);
@@ -70,44 +112,4 @@
   .dot-box {
     visibility: hidden;
   }
-}
-.slide {
-  background-size: cover;
-  background-position: center;
-  background-attachment: local;
-  display: grid;
-  grid-template-columns: 1fr;
-  place-items: center;
-}
-.slide-content {
-  text-align: center;
-  color: white;
-  padding: 0;
-}
-.first {
-  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-  url("/images/slides/image_5.jpg");
-}
-.one {
-  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-  url("/images/slides/IMG_2950_lrg.jpg");
-}
-.two {
-  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-  url("/images/slides/IMG_6224_lrg.jpg");
-}
-.three {
-  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-  url("/images/slides/IMG_6273_lrg.jpg");
-}
-.four {
-  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-  url("/images/slides/IMG_6275_lrg.jpg");
-}
-.hide-slide {
-  display: none;
-}
-.title-slide {
-  font-size: 2.25rem;
-  font-style: italic;
 }

@@ -3,7 +3,7 @@ const mailer = require("../middlewares/mailer.js");
 
 //? INDEX
 exports.index_get = (req, res) => {
-  res.render("main/index", {
+  res.render("main/main", {
     subpageName: "Main",
     roles: req.session.roles,
   });
