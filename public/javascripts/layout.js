@@ -2,7 +2,7 @@ class Layout {
   constructor() {
     this.scrollTop = document.querySelector("#btn-scroll-top");
     this.windowSize = document.querySelector("#window-size");
-    this.#main(), this.#scroller(), this.#leftBtn();
+    this.#main(), this.#scroller(), this.#webSideNav();
   };
   #main = () => {
     // displays initial screen size
@@ -35,16 +35,28 @@ class Layout {
     });
     return;
   };
-  // opens and closes website side navigation and overlay
-  #leftBtn = () => {
-    const leftButton = document.querySelector("#btn-open-website-side-nav");
-    leftButton.addEventListener("click", () => {
-      document.querySelector(".overlay").classList.add("show-overlay");
-      document.querySelector(".website-side-nav").classList.add("open-website-side-nav");
+  // opens and closes website side navigation with overlay
+  #webSideNav = () => {
+    const overLay = document.querySelector(".overlay");
+    const webSideNav = document.querySelector(".website-side-nav");
+    document.querySelector("#btn-open-website-side-nav").addEventListener("click", () => {
+      webSideNav.style.display = "flex";
+      overLay.style.display = "block";
+      requestAnimationFrame(() => {
+        overLay.classList.add("show-overlay");
+        webSideNav.classList.add("open-website-side-nav");
+      });
     });
-    document.querySelector("#overlay").addEventListener("click", (event) => {
-      document.querySelector(".website-side-nav").classList.remove("open-website-side-nav");
+    overLay.addEventListener("click", (event) => {
+      webSideNav.classList.remove("open-website-side-nav");
       event.target.classList.remove("show-overlay");
+    });
+    // make un-discoverable by accessibility software
+    webSideNav.addEventListener("transitionend", (event) => {
+      if(!event.target.classList.contains("open-website-side-nav")) {
+        event.target.style.display = "none";
+        overLay.style.display = "none";
+      };
     });
   };
 };

@@ -6,28 +6,28 @@ main {
 .website-mission {
   background-color: var(--theme-green);
   color: var(--caution);
+  font-weight: bold;
   padding: 8px;
   text-align: center;
   font-size: 18px;
-  font-weight: bold;
 }
 .website-mission p {
   margin: 0;
 }
 /* ? website top banner */
 .website-top-banner {
+  background-attachment: local;
   background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
     url("/images/banners/IMG_3103_lrg.jpg");
-  background-size: cover;
   background-position: center;
-  background-attachment: local;
+  background-size: cover;
   color: var(--white);
   font-size: 18px;
   font-weight: 600;
 }
 .website-top-banner .content {
-  max-width: 1200px;
   margin-inline: auto;
+  max-width: 1200px;
   padding-block: 16px;
 }
 .website-top-banner p {
@@ -43,17 +43,16 @@ main {
     display: block;
   }
 }
-
 /* ? website top navigation */
 .website-top-nav {
-  background-color: var(--theme-green);
-  padding: 4px 8px;
-  color: var(--white);
   align-items: center;
+  background-color: var(--theme-green);
+  color: var(--white);
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: space-between;
+  padding: 4px 8px;
 }
 #website-nav-container {
   position: sticky;
@@ -78,19 +77,21 @@ main {
   color: var(--bright);
 }
 .website-top-nav h1 {
-  margin: 0;
   color: var(--caution);
+  margin: 0;
   min-width: 130px;
-  text-align: center;
   padding: 0 4px;
+  text-align: center;
 }
 /* ? website side navigation */
 .website-side-nav {
   background-color: var(--theme-green);
-  display: flex;
+  display: none;
   flex-direction: column;
   font-size: 20px;
   height: fit-content;
+  /* height: 100vh; */
+  /* height: 100dvh; */
   left: 0;
   line-height: 40px;
   overflow: hidden;
@@ -98,25 +99,27 @@ main {
   padding-block: 32px;
   position: absolute;
   top: 0;
-  transition: 0.5s;
-  width: 0;
+  transition: translate 0.5s;
+  translate: -250px;
+  width: max(220px, 15vw);
   z-index: 99;
 }
 .open-website-side-nav {
-  width: max(220px, 15vw);
+  translate: 0;
 }
 .overlay {
   background-color: var(--overlay);
   cursor: pointer;
-  display: block;
+  display: none;
   inset: 0;
   position: fixed;
-  transition: 0.5s;
-  width: 0;
+  transition: translate 0.5s;
+  translate: -100vw;
+  translate: -100dvw;
   z-index: 97;
 }
 .show-overlay {
-  width: 100%;
+  translate: 0;
 }
 .website-side-nav .link {
   color: var(--white);
@@ -133,8 +136,7 @@ main {
   background-color: var(--theme-green);
   background-image: linear-gradient(var(--theme-green), var(--primary-5));
   color: var(--white);
-  padding: 16px;
-  padding-block-end: 80px;
+  padding: 16px 16px 80px 16px;
   position: relative;
   text-align: center;
 }
