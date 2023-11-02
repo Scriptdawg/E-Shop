@@ -113,3 +113,43 @@
     visibility: hidden;
   }
 }
+/* ? boxes transitions */
+.boxes {
+  display: grid;
+  gap: 8px;
+  grid-template-rows: 40px;
+  grid-auto-rows: 7ch;
+  grid-template-columns: repeat(3, 7ch);
+  grid-template-areas: 
+    "title title title"
+    "box   box   box";
+  margin-block: 64px;
+  margin-inline: auto;
+  max-width: fit-content;
+}
+.boxes-title {
+  grid-area: title;
+  justify-self: center;
+}
+.box {
+  background-color: red;
+  color: white;
+  display: inline-grid;
+  cursor: pointer;
+  place-items: center;
+  transition: scale, rotate, translate, transform, opacity;
+  transition-duration: 300ms;
+}
+.box-two {
+  background-color: green; 
+}
+.box-three {
+  background-color: blue;
+}
+.box:hover {
+  opacity: 0.5;
+  rotate: -20deg;
+  scale: 1.5;
+  transform: skew(20deg, 20deg);
+  translate: 2ch 2ch;
+}
