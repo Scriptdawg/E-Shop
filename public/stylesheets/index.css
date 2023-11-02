@@ -8,6 +8,7 @@
 @import url("about.css");
 @import url("forms.css");
 @import url("animations.css");
+@import url("transitions.css");
 html {
   -webkit-user-select: none; /* Safari */
   user-select: none;
