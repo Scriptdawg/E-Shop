@@ -1,124 +1,76 @@
-<div id="container-subpage-about" class="container-subpage">
+<div id="container-subpage-about" class="container-subpage-about">
   <main>
-    <h2 class="title large">About</h2>
-    <h3 class="title">package.json</h3>
-    <pre class="pre-font">
-  {
-    "name": "eshop",
-    "version": "1.0.0",
-    "private": true,
-    "description":
-      "Node.js server with JWT authentication",
-    "main": "./bin/www",
-    "scripts": {
-      "start": "node ./bin/www",
-      "devStart": "nodemon ./bin/www",
-      "serverStart":
-        "SET DEBUG=eshop:* & npm run devStart"
-    },
-    "author": "Paul Oosterhoff",
-    "license": "ISC",
-    "dependencies": {
-      "async": "^3.2.4",
-      "bcryptjs": "^2.4.3",
-      "cookie-parser": "^1.4.6",
-      "cookie-session": "^2.0.0",
-      "cors": "^2.8.5",
-      "debug": "^4.3.4",
-      "ejs": "^3.1.9",
-      "express": "^4.18.2",
-      "express-async-handler": "^1.2.0",
-      "express-ejs-layouts": "^2.5.1",
-      "express-validator": "^7.0.1",
-      "http-errors": "^2.0.0",
-      "jsonwebtoken": "^9.0.0",
-      "mongoose": "^7.1.0",
-      "nodemailer": "^6.9.3"
-    },
-    "devDependencies": {
-      "dotenv": "^16.0.3",
-      "nodemon": "^2.0.22"
-    }
-  }
-  </pre>
-    <h3 class="title">data structure</h3>
-    <pre class="pre-font">
-  {
-    "products": [
-      {
-        "id": 0,
-        "coverImage": "image-1.jpg",
-        "coverImageType": "string",
-        "longDescription": "string",
-        "name": "Whole Chicken",
-        "price": {
-          "kilogram": 0,
-          "package": 0,
-          "box": 0
-        },
-        "public": false,
-        "shortDescription": "string",
-        "specialMessage": "string",
-        "story": "string"
-      }
-    ],
-  
-    "stories": [
-      {
-        "id": 0,
-        "content": "string",
-        "description": "string",
-        "introduction": "string",
-        "name": "chicken"
-      }
-    ],
-  
-    "users": [
-      {
-        "id": 0,
-        "email": "string",
-        "fname": "string",
-        "lname": "string",
-        "password": "string",
-        "roles": "string",
-        "verificationCode": "string",
-        "verified": false
-      }
-    ],
-  
-    "roles": [
-      {
-        "id": 0,
-        "name": "string"
-      }
-    ],
-  
-    "orders": [
-      {
-        "id": 0,
-        "products": [
-          {
-            "id": 0,
-            "favorite": false,
-            "later": false,
-            "qty": 0
-          }
-        ],
-        "userId": "string"
-      }
-    ],
-  
-    "localStorageData": {
-      "items": [
-        {
-          "favorite": false,
-          "later": false,
-          "productId": 0,
-          "qty": 0
-        }
-      ]
-    }
-  }
-  </pre>
+
+    <!-- ? carousel -->
+    <div id="carousel" class="carousel">
+      <div class="slide one">
+        <div class="slide-content">
+          <div class="scale">Welcome to <%= title %>!</div>
+          <div class="fade-in">Picture Collections</div>
+          <div class="pulse">Node.js, Express, MongoDb, PHP, SQL</div>
+        </div>
+      </div>
+      <div class="slide two">
+        <div class="slide-content">
+          <h2 class="title-slide">E-Commerce</h2>
+          <p>Node.js, Express, MongoDb, PHP, SQL</p>
+        </div>
+      </div>
+      <div class="slide three">
+        <div class="slide-content">
+          <h2 class="title-slide">Code Snippets</h2>
+          <p>Node.js, Express, MongoDb, PHP, SQL</p>
+        </div>
+      </div>
+      <div class="slide four">
+        <div class="slide-content">
+          <h2 class="title-slide">Custom Programming</h2>
+          <p>Node.js, Express, MongoDb, PHP, SQL</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ? snaps -->
+    <div class="parent">
+      <div class="child">
+        <div class="dot-box">
+          <span class="dot active-dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="child">
+        <div class="dot-box">
+          <span class="dot"></span>
+          <span class="dot active-dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="child">
+        <div class="dot-box">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot active-dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="child">
+        <p>
+          Where can you implement this user interface component?
+        </p>
+        <div class="dot-box">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot active-dot"></span>
+        </div>
+      </div>
+    </div>
+    
   </main>
+
+  <script src="/javascripts/about.js"></script>
+
 </div>

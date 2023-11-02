@@ -8,7 +8,7 @@
 .fade {
   grid-area: picture;
 }
-.fade.first {
+.fade-first {
   opacity: 0;
   animation: fade-first 14s;
 }
@@ -17,22 +17,22 @@
   70% { opacity: 1 }
   100% { opacity: 0 }
 }
-.fade.one {
+.fade-one {
   opacity: 0;
   animation: fade 40s infinite;
   animation-delay: 10s;
 }
-.fade.two {
+.fade-two {
   opacity: 0;
   animation: fade 40s infinite;
   animation-delay: 20s;
 }
-.fade.three {
+.fade-three {
   opacity: 0;
   animation: fade 40s infinite;
   animation-delay: 30s;
 }
-.fade.four {
+.fade-four {
   opacity: 0;
   animation: fade 40s infinite;
   animation-delay: 40s;
@@ -96,9 +96,6 @@
   60% { scale: 1; }
   100% { scale: .9; }
 }
-
-
-
 /* ? opacity, translate, scale, rotate, transform: skew() */
 /* fade-out */
 .fade-out {
@@ -122,5 +119,3 @@
   100% { translate: 0 0; rotate: 1turn; }
 }
 /* transform: skew() */
-
-
