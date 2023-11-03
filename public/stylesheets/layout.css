@@ -3,14 +3,21 @@ main {
   padding-block-end: 64px;
 }
 /* ? website mission */
-.website-mission {
+.website-mission-container {
   background-color: var(--theme-green);
-  color: var(--white);
-  padding: 8px;
   font-size: 14px;
+  overflow: hidden;
 }
-.website-mission p {
+.website-mission {
+  animation: from-left 1s;
+  color: white;
   margin: 0;
+  display: inline-block;
+  padding: 8px 16px;
+}
+@keyframes from-left {
+  0%   { translate: -200px 0; }
+  100% { translate: 0 0; }
 }
 /* ? website top banner */
 .website-top-banner {
@@ -26,6 +33,7 @@ main {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
+  font-family: var(--font-teritiary);
   padding: 16px;
 }
 .logo {
@@ -34,11 +42,12 @@ main {
   place-items: center;
   gap: 16px;
   font-size: 24px;
-  font-family: var(--font-teritiary);
 }
 .website-top-banner a {
   color: var(--white);
   text-decoration: none;
+  font-style: italic;
+  font-weight: normal;
 }
 
 
@@ -53,8 +62,8 @@ main {
   color: var(--white);
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  justify-content: space-between;
+  gap: 16px;
+  justify-content: left;
   padding: 4px 8px;
   top: 0;
 }
@@ -76,11 +85,7 @@ main {
   color: var(--bright);
 }
 .website-top-nav h1 {
-  color: var(--caution);
   margin: 0;
-  min-width: 130px;
-  padding: 0 4px;
-  text-align: center;
 }
 /* ? website side navigation */
 .website-side-nav {
