@@ -44,6 +44,10 @@ main {
   }
 }
 /* ? website top navigation */
+#website-top-nav {
+  position: sticky;
+  top: 0;
+}
 .website-top-nav {
   align-items: center;
   background-color: var(--theme-green);
@@ -53,11 +57,7 @@ main {
   gap: 8px;
   justify-content: space-between;
   padding: 4px 8px;
-}
-#website-nav-container {
-  position: sticky;
   top: 0;
-  z-index: 98;
 }
 .website-top-nav .btn-open-website-side-nav {
   color: var(--white);
@@ -89,15 +89,17 @@ main {
   display: none;
   flex-direction: column;
   font-size: 20px;
-  height: fit-content;
-  /* height: 100vh; */
-  /* height: 100dvh; */
+  /* height: fit-content; */
+  height: 100vh;
+  height: 100dvh;
   left: 0;
   line-height: 40px;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-y: auto;
   overscroll-behavior: contain;
   padding-block: 32px;
   position: absolute;
+  position: fixed;
   top: 0;
   transition: translate 0.5s;
   translate: -250px;

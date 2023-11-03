@@ -17,42 +17,40 @@
   </div>
 </div>
 
-<div id="website-nav-container">
-  <!-- website top navigation -->
-  <nav id="website-top-nav">
-    <ul class="website-top-nav">
-      <li><button id="btn-open-website-side-nav" class="btn-plain btn-open-website-side-nav" title="Show Website Navigation In Sidebar"><i class="bi bi-list"></i></button></li>
-      <li><h1 id="subpage-name" title="Subpage Name"><%= subpageName %></h1></li>
+<!-- website top navigation -->
+<nav id="website-top-nav">
+  <ul class="website-top-nav">
+    <li><button id="btn-open-website-side-nav" class="btn-plain btn-open-website-side-nav" title="Show Website Navigation In Sidebar"><i class="bi bi-list"></i></button></li>
+    <li><h1 id="subpage-name" title="Subpage Name"><%= subpageName %></h1></li>
 
-      <% if(roles) { %>
-        <li><a class="link" href="/auth/logout" title="Logout"><i class="bi bi-box-arrow-in-left"></i></a></li>
-      <% } else { %>
-        <li><a class="link" href="/auth/login" title="Login"><i class="bi bi-box-arrow-in-right"></i></a></li>
-      <% } %>
+    <% if(roles) { %>
+      <li><a class="link" href="/auth/logout" title="Logout"><i class="bi bi-box-arrow-in-left"></i></a></li>
+    <% } else { %>
+      <li><a class="link" href="/auth/login" title="Login"><i class="bi bi-box-arrow-in-right"></i></a></li>
+    <% } %>
 
-    </ul>
-  </nav>
+  </ul>
+</nav>
 
-  <!-- website side navigation -->
-  <nav id="website-side-nav">
-    <ul class="website-side-nav">
-      <li><a class="link" href="/" title="Main | Home Page">Main</a></li>
-      <li><a class="link" href="/public/store" title="E-Shop">Butcher's Shop</a></li>
-      <li><a class="link" href="/about" title="About This Site">About</a></li>
-      <li><a class="link" href="/contact" title="Contact Site Owner">Contact</a></li>
+<!-- website side navigation -->
+<nav id="website-side-nav">
+  <ul class="website-side-nav">
+    <li><a class="link" href="/" title="Main | Home Page">Main</a></li>
+    <li><a class="link" href="/public/store" title="E-Shop">Butcher's Shop</a></li>
+    <li><a class="link" href="/about" title="About This Site">About</a></li>
+    <li><a class="link" href="/contact" title="Contact Site Owner">Contact</a></li>
       
-      <% if(roles) { 
-        roles.forEach(role => { %>
-          <li><a class="link" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
-        <% }) %>
-        <li><a class="link" href="/auth/logout" title="Logout">Logout</a></li>
-      <% } else { %>
-        <li><a class="link" href="/auth/register" title="Register">Register</a></li>
-        <li><a class="link" href="/auth/login" title="Login">Login</a></li>
-      <% } %>
+    <% if(roles) { 
+      roles.forEach(role => { %>
+        <li><a class="link" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
+      <% }) %>
+      <li><a class="link" href="/auth/logout" title="Logout">Logout</a></li>
+    <% } else { %>
+      <li><a class="link" href="/auth/register" title="Register">Register</a></li>
+      <li><a class="link" href="/auth/login" title="Login">Login</a></li>
+    <% } %>
             
-    </ul>
-  </nav>
-</div>
+  </ul>
+</nav>
 
 <div id="overlay" class="overlay"></div>
