@@ -8,7 +8,7 @@ const User = require("../../models/user");
 // LOGIN -  GET
 exports.login_get = (req, res) => {
   res.render("auth/login", {
-    subpageName: "Login",
+    subpageName: "Credential Verification Form",
     user: {},
     sharedMessage: req.sharedVariable.sharedMessage,
     errors: [{ msg: req.params.message ?? "" }],
@@ -31,7 +31,7 @@ exports.login_post = [
     if (!errors.isEmpty()) {
       // There are errors. Render the form again with sanitized values & error messages.
       res.render("auth/login", {
-        subpageName: "Login",
+        subpageName: "Credential Verification Form",
         user,
         errors: errors.array(),
       });
@@ -43,7 +43,7 @@ exports.login_post = [
     if (!userExists) {
       // User doesn't exist. Render the form again with sanitized values/error messages..
       res.render("auth/login", {
-        subpageName: "Login",
+        subpageName: "Credential Verification Form",
         user,
         errors: [{ msg: "Email doesn't exist." }],
       });
@@ -57,7 +57,7 @@ exports.login_post = [
     if (!passwordIsValid) {
       // Invalid password. Render the form again with sanitized values/error messages..
       res.render("auth/login", {
-        subpageName: "Login",
+        subpageName: "Credential Verification Form",
         user,
         errors: [{ msg: "Invalid password." }],
       });

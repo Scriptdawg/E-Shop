@@ -4,7 +4,7 @@ const mailer = require("../middlewares/mailer.js");
 //? INDEX
 exports.index_get = (req, res) => {
   res.render("main/main", {
-    subpageName: "Main",
+    subpageName: "Home Page",
     roles: req.session.roles,
   });
 };
@@ -12,7 +12,7 @@ exports.index_get = (req, res) => {
 //? ABOUT - GET
 exports.about_get = (req, res) => {
   res.render("main/about", {
-    subpageName: "About",
+    subpageName: "About Coder's Cove",
     roles: req.session.roles,
   });
 };
@@ -20,7 +20,7 @@ exports.about_get = (req, res) => {
 //? CONTACT - GET
 exports.contact_get = (req, res) => {
   res.render("main/contact", {
-    subpageName: "Contact Us",
+    subpageName: "Compose A Message",
     roles: req.session.roles,
     message: "",
   });

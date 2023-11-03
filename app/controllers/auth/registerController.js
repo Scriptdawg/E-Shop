@@ -9,7 +9,7 @@ const User = require("../../models/user");
 // REGISTER -  GET
 exports.register_get = (req, res) => {
   res.render("auth/register", {
-    subpageName: "Register",
+    subpageName: "Registration Form",
     errors: "",
   });
 };
@@ -47,14 +47,14 @@ exports.register_post = [
     });
     if (!errors.isEmpty()) {
       res.render("auth/register", {
-        subpageName: "Register",
+        subpageName: "Registration Form",
         errors: errors.array(),
       });
     } else {
       // Check if passwords match
       if (req.body.password !== req.body.repeatPassword) {
         res.render("auth/register", {
-          subpageName: "Register",
+          subpageName: "Registration Form",
           errors: [{ msg: "Passwords don't match!" }],
         });
         return;
@@ -66,7 +66,7 @@ exports.register_post = [
       const userExists = await User.findOne({ email: req.body.email }).exec();
       if (userExists) {
         res.render("auth/register", {
-          subpageName: "Register",
+          subpageName: "Registration Form",
           errors: [{ msg: "Email already exists!" }],
         });
       } else {

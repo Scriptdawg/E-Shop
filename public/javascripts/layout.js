@@ -23,9 +23,13 @@ class Layout {
   };
   // shows to top of page button if user scrolls more then 1000px
   #scroll = () => {
-    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000)
+    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
       this.scrollTop.style.display = "block";
-    else this.scrollTop.style.display = "none";
+    }
+    else {
+      this.scrollTop.style.display = "none";
+      document.querySelector("#website-top-nav").style.top = 0;
+    }
   };
   // goes to top of page
   #scroller = () => {

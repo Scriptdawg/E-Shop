@@ -5,7 +5,7 @@
 
 <!-- website banner -->
 <div id="website-top-banner" class="website-top-banner">
-  <a class="logo" href="/">
+  <a class="logo" href="/" title="Go To Home Page">
     <img
       src="/images/logo.svg"
       width="45px"
@@ -15,32 +15,34 @@
     <span><%= title %></span>
   </a>
   <div class="sign-in">
-    <a href="/auth/login"
-      title="Sign In">Sign In
-    </a>
+
+    <% if(roles) { %>
+      <a href="/auth/logout" title="Sigh Out">Sign Out</a>
+    <% } else { %> 
+      <a href="/auth/login" title="Sigh In Or Register">Sign In</a>   
+    <% } %>
+
   </div>
 </div>
 
 <!-- website top navigation -->
 <nav id="website-top-nav">
   <ul class="website-top-nav">
-    <li><button id="btn-open-website-side-nav" class="btn-plain btn-open-website-side-nav" title="Show Website Navigation In Sidebar"><i class="bi bi-list"></i></button></li>
-    <li><h1 id="subpage-name" title="Subpage Name"><%= subpageName %></h1></li>
-<!--
-    <% if(roles) { %>
-      <li><a class="link" href="/auth/logout" title="Logout"><i class="bi bi-box-arrow-in-left"></i></a></li>
-    <% } else { %>
-      <li><a class="link" href="/auth/login" title="Login"><i class="bi bi-box-arrow-in-right"></i></a></li>
-    <% } %>
--->
+    <li><button id="btn-open-website-side-nav" class="btn-plain btn-open-website-side-nav" title="Site Pages"><i class="bi bi-list"></i></button></li>
+    <li><a class="link" href="/public/store" title="E-Shop">Store</a></li>
+    <li><a class="link" href="/contact" title="Contact Site Owner">Contact</a></li>
   </ul>
+  <!-- subpage heading -->
+  <header class="website-subpage">
+    <h1 id="subpage-name" class="subpage-name" title="Subpage Name"><%= subpageName %></h1>
+  </header>
 </nav>
 
 <!-- website side navigation -->
 <nav id="website-side-nav">
   <ul class="website-side-nav">
-    <li><a class="link" href="/" title="Main | Home Page">Main</a></li>
-    <li><a class="link" href="/public/store" title="E-Shop">Butcher's Shop</a></li>
+    <li><a class="link" href="/" title="Home Page">Home</a></li>
+    <li><a class="link" href="/public/store" title="E-Shop">Store</a></li>
     <li><a class="link" href="/about" title="About This Site">About</a></li>
     <li><a class="link" href="/contact" title="Contact Site Owner">Contact</a></li>
       
@@ -48,10 +50,10 @@
       roles.forEach(role => { %>
         <li><a class="link" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
       <% }) %>
-      <li><a class="link" href="/auth/logout" title="Logout">Logout</a></li>
+      <li><a class="link" href="/auth/logout" title="Sign Out">Sign Out</a></li>
     <% } else { %>
       <li><a class="link" href="/auth/register" title="Register">Register</a></li>
-      <li><a class="link" href="/auth/login" title="Login">Login</a></li>
+      <li><a class="link" href="/auth/login" title="Sign In">Sign In</a></li>
     <% } %>
             
   </ul>
