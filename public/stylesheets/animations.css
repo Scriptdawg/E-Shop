@@ -19,6 +19,7 @@
   grid-area: picture;
   grid-template-columns: 1fr;
   place-items: center;
+  z-index: -1;
 }
 .fade-first {
   animation: fade-first 14s;

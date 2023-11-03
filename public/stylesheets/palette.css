@@ -41,6 +41,9 @@
   --theme-green: #133a26;
   --theme-orange: #e6a756;
 
+  --light-icon: white;
+  --dark-icon: var(--black);
+  
   /* Semantic Colors */
   --caution: rgb(255, 245, 204);
   --danger: rgb(176, 0, 0);

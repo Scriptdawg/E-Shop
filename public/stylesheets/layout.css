@@ -5,10 +5,8 @@ main {
 /* ? website mission */
 .website-mission {
   background-color: var(--theme-green);
-  color: var(--caution);
-  font-weight: bold;
+  color: var(--white);
   padding: 8px;
-  text-align: center;
   font-size: 18px;
 }
 .website-mission p {
@@ -21,28 +19,27 @@ main {
     url("/images/banners/IMG_3103_lrg.jpg");
   background-position: center;
   background-size: cover;
-  color: var(--white);
   font-size: 18px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
 }
-.website-top-banner .content {
-  margin-inline: auto;
-  max-width: 1200px;
-  padding-block: 16px;
+.logo {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  place-items: center;
+  gap: 16px;
 }
-.website-top-banner p {
-  margin: 0;
-  padding: 8px 16px;
+.website-top-banner a {
+  color: var(--white);
+  text-decoration: none;
 }
-.website-top-banner p:first-child {
-  display: none;
-}
-/* Large - lg */
-@media (min-width: 992px) {
-  .website-top-banner p:first-child {
-    display: block;
-  }
-}
+
+
 /* ? website top navigation */
 #website-top-nav {
   position: sticky;
@@ -104,7 +101,7 @@ main {
   transition: translate 0.5s;
   translate: -250px;
   width: max(220px, 15vw);
-  z-index: 99;
+  z-index: 98;
 }
 .open-website-side-nav {
   translate: 0;
@@ -138,7 +135,7 @@ main {
   background-color: var(--theme-green);
   background-image: linear-gradient(var(--theme-green), var(--primary-5));
   color: var(--white);
-  padding: 16px 16px 80px 16px;
+  padding: 16px 16px 160px 16px;
   position: relative;
   text-align: center;
 }
@@ -149,7 +146,7 @@ main {
 /* ? display window size */
 .website-footer .window-size {
   background-color: transparent;
-  bottom: 40px;
+  bottom: 64px;
   color: var(--black);
   font-size: 10px;
   padding: 8px;

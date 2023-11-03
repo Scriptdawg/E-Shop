@@ -1,0 +1,26 @@
+.footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .side {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+.footer-social {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+}
+.footer-name {
+  margin-bottom: 0;
+}
+.footer-rights {
+  margin-top: 0;
+}
+@media (max-width: 37.5rem) {
+  .footer {
+    flex-direction: column;
+  }
+}
