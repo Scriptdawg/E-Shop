@@ -7,7 +7,7 @@ main {
   background-color: var(--theme-green);
   color: var(--white);
   padding: 8px;
-  font-size: 18px;
+  font-size: 14px;
 }
 .website-mission p {
   margin: 0;
@@ -33,6 +33,8 @@ main {
   grid-template-columns: auto 1fr;
   place-items: center;
   gap: 16px;
+  font-size: 24px;
+  font-family: var(--font-teritiary);
 }
 .website-top-banner a {
   color: var(--white);
