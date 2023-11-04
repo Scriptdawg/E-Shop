@@ -29,17 +29,20 @@ class Layout {
     console.log(scrollY)
     if(currentPosition > this.lastPosition && currentPosition > 150) {
       this.lastPosition = scrollY;
-      document.querySelector("#website-top-nav").classList.add("website-top-nav-move");
+      requestAnimationFrame(() => {
+        document.querySelector("#website-top-nav").classList.add("website-top-nav-move");
+      });
     } else {
       this.lastPosition = scrollY;
-      document.querySelector("#website-top-nav").classList.remove("website-top-nav-move");
+      requestAnimationFrame(() => {
+        document.querySelector("#website-top-nav").classList.remove("website-top-nav-move");
+      });
     };
     if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
       this.scrollTop.style.display = "block";
     }
     else {
       this.scrollTop.style.display = "none";
-      document.querySelector("#website-top-nav").style.top = 0;
     };
   };
   // goes to top of page
@@ -63,8 +66,10 @@ class Layout {
       });
     });
     overLay.addEventListener("click", (event) => {
-      webSideNav.classList.remove("open-website-side-nav");
-      event.target.classList.remove("show-overlay");
+      requestAnimationFrame(() => {
+        webSideNav.classList.remove("open-website-side-nav");
+        event.target.classList.remove("show-overlay");
+      });
     });
     // make un-discoverable by accessibility software
     webSideNav.addEventListener("transitionend", (event) => {
