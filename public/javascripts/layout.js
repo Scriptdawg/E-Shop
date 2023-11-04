@@ -2,6 +2,7 @@ class Layout {
   constructor() {
     this.scrollTop = document.querySelector("#btn-scroll-top");
     this.windowSize = document.querySelector("#window-size");
+    this.lastPosition = scrollY; 
     this.#main(), this.#scroller(), this.#webSideNav();
   };
   #main = () => {
@@ -22,14 +23,23 @@ class Layout {
     `
   };
   // shows to top of page button if user scrolls more then 1000px
+  // moves website-top-nav up or down on scroll
   #scroll = () => {
+    const currentPosition = scrollY;
+    if(currentPosition > this.lastPosition) {
+      this.lastPosition = scrollY;
+      document.querySelector("#website-top-nav").classList.add("website-top-nav-move");
+    } else {
+      this.lastPosition = scrollY;
+      document.querySelector("#website-top-nav").classList.remove("website-top-nav-move");
+    };
     if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
       this.scrollTop.style.display = "block";
     }
     else {
       this.scrollTop.style.display = "none";
       document.querySelector("#website-top-nav").style.top = 0;
-    }
+    };
   };
   // goes to top of page
   #scroller = () => {
