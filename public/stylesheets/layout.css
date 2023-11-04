@@ -1,7 +1,7 @@
 main {
   min-height: 75vh;
   padding-block-end: 64px;
-  margin-block-start: -50px;
+  margin-block-start: -16px;
 }
 /* ? website mission */
 .website-mission-container {
@@ -54,10 +54,10 @@ main {
 #website-top-nav {
   position: sticky;
   top: 0;
-  transition: translate 300ms;
+  transition: translate 200ms;
 }
 .website-top-nav-move {
-  translate: 0 -40px;
+  translate: 0 -48px;
 }
 
 .website-top-nav {
@@ -68,7 +68,7 @@ main {
   flex-wrap: wrap;
   gap: 16px;
   justify-content: space-between;
-  padding: 4px 8px;
+  padding: 8px;
   top: 0;
 }
 .website-top-nav .btn-open-website-side-nav {
@@ -89,7 +89,7 @@ main {
   color: var(--bright);
 }
 .website-subpage {
-  background-color: var(--overlay);
+  background-color: var(--neutral-1);
 }
 .subpage-name {
   color: white;
