@@ -26,7 +26,6 @@ class Layout {
   // moves website-top-nav up or down on scroll
   #scroll = () => {
     const currentPosition = scrollY;
-    console.log(scrollY)
     if(currentPosition > this.lastPosition && currentPosition > 150) {
       this.lastPosition = scrollY;
       requestAnimationFrame(() => {

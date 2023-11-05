@@ -10,7 +10,7 @@
 }
 .footer-social {
   display: flex;
-  gap: 48px;
+  gap: 16px;
   list-style: none;
 }
 .footer-name {
