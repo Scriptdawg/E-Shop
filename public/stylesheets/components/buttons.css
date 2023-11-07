@@ -68,6 +68,10 @@
   background-color: var(--white);
   color: var(--success);
 }
+.btn--raised:active,
+.btn--pill:active {
+  border-radius: 16px;
+}
 /* menu-svg */
 .menu-svg,
 .menu-black-svg {
