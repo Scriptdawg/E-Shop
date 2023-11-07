@@ -13,11 +13,10 @@
   transition: opacity 180ms, translate 180ms;
 }
 .btn:hover {
-  color: var(--bright);
   opacity: .8;
 }
 .btn:active {
-  translate: 1px, 1px;
+  translate: 1px 1px;
 }
 /* .btn:visited {
   color: red;
@@ -40,6 +39,9 @@
   color: var(--white);
   padding: 6px 16px;
   text-transform: uppercase;
+}
+.btn--nav:hover {
+  color: var(--bright);
 }
 /* btn--flat */
 .btn--flat {
@@ -67,11 +69,28 @@
   color: var(--success);
 }
 /* menu-svg */
-.menu-svg {
+.menu-svg,
+.menu-black-svg {
   background-image: url("/assets/menu.svg");
   background-attachment: local;
   background-position: center;
   background-size: cover;
   height: 19.6px;
   width: 28px;
+}
+.menu-black-svg {
+  background-image: url("/assets/menu-black.svg");
+}
+.cart-svg {
+  background-image: url("/assets/cart.svg");
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+}
+.cart-free-svg {
+  background-image: url("/assets/cart.svg");
+  background-repeat: no-repeat;
+  background-position: left 8px center;
+  color: var(--black);
+  padding: 8px 8px 8px 40px;
 }

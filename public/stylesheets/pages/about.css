@@ -146,10 +146,16 @@
 .box-three {
   background-color: blue;
 }
-.box:hover {
+.box:active {
   opacity: 0.5;
   rotate: -20deg;
   scale: 1.5;
   transform: skew(20deg, 20deg);
   translate: 2ch 2ch;
+}
+.button-grid {
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
