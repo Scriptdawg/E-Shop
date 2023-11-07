@@ -59,6 +59,7 @@
   margin-block: 0.75rem;
 }
 .outro p {
+  color: var(--white);
   margin-block: 0 1rem;
   padding: 16px ;
   text-align: center;
@@ -95,4 +96,8 @@
   .site-side-nav-links {
     gap: 0.5rem;
   }
+}
+.site-top-nav .btn--menu-svg {
+  background-color: transparent;
+  padding: 5px 10px 0 10px;
 }
