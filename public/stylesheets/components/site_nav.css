@@ -98,6 +98,11 @@
   }
 }
 .site-top-nav .btn--menu-svg {
-  background-color: transparent;
-  padding: 5px 10px 0 10px;
+  background-image: url("/assets/menu.svg");
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+  height: 23.6px;
+  margin: 4px 16px;
+  width: 32px;
 }

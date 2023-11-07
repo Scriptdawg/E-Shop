@@ -10,10 +10,11 @@
   line-height: 1.4;
   opacity: 1;
   outline: revert;
-  transition: translate 180ms;
+  transition: opacity 180ms, translate 180ms;
 }
 .btn:hover {
   color: var(--bright);
+  opacity: .8;
 }
 .btn:active {
   translate: 1px, 1px;
