@@ -1,0 +1,47 @@
+/* ? website mission */
+.website-mission-container {
+  background-color: var(--theme-green);
+  font-size: 14px;
+  overflow: hidden;
+}
+.website-mission {
+  animation: from-left 1s;
+  color: white;
+  margin: 0;
+  display: inline-block;
+  padding: 8px 16px;
+}
+@keyframes from-left {
+  0%   { translate: -200px 0; }
+  100% { translate: 0 0; }
+}
+/* ? website top banner */
+.website-top-banner {
+  background-attachment: local;
+  background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
+    url("/images/banners/IMG_3103_lrg.jpg");
+  background-position: center;
+  background-size: cover;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--font-teritiary);
+  padding: 16px;
+}
+.logo {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24px;
+  gap: 16px;
+}
+.website-top-banner a {
+  color: var(--white);
+  text-decoration: none;
+  font-style: italic;
+  font-weight: normal;
+}

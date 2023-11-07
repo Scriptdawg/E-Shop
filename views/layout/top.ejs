@@ -6,58 +6,58 @@
 <!-- website banner -->
 <div id="website-top-banner" class="website-top-banner">
   <a class="logo" href="/" title="Go To Home Page">
-    <img
-      src="/images/logo.svg"
-      width="45px"
-      height="43px"
-      alt="Logo"
-    />
+    <img src="/images/logo.svg" width="45px" height="43px" alt="Logo" />
     <span><%= title %></span>
   </a>
   <div class="sign-in">
-
     <% if(roles) { %>
       <a href="/auth/logout" title="Sigh Out">Sign Out</a>
-    <% } else { %> 
-      <a href="/auth/login" title="Sigh In Or Register">Sign In</a>   
+    <% } else { %>
+      <a href="/auth/login" title="Sigh In Or Register">Sign In</a>
     <% } %>
-
   </div>
 </div>
 
 <!-- website top navigation -->
-<nav id="website-top-nav">
-  <ul class="website-top-nav">
-    <li><button id="btn-open-website-side-nav" class="btn-plain btn-open-website-side-nav" title="Site Pages"><i class="bi bi-list"></i></button></li>
-    <li><a class="link" href="/public/store" title="E-Shop">Store</a></li>
-    <li><a class="link" href="/about" title="About This Site">About</a></li>
-    <li><a class="link" href="/contact" title="Contact Site Owner">Contact</a></li>
-  </ul>
+<nav id="site-top-nav">
+  <div class="site-top-nav">
+    <button id="btn-open-site-side-nav" class="btn btn--nav" title="Site Pages">Menu</button>
+    <ul class="site-top-nav-links">
+      <li><a href="/public/store" class="btn btn--nav" title="E-Shop">Store</a></li>
+      <li><a href="/about" class="btn btn--nav" title="About This Site">About</a></li>
+      <li><a href="/contact" class="btn btn--nav" title="Contact Site Owner">Contact</a></li>
+    </ul>
+  </div>
   <!-- subpage heading -->
-  <header class="website-subpage">
-    <h1 id="subpage-name" class="subpage-name" title="Subpage Name"><%= subpageName %></h1>
-  </header>
+  <div class="site-subpage">
+    <h1 id="subpage-name" class="title subpage-name" title="Subpage Name"><%= subpageName %></h1>
+  </div>
 </nav>
 
 <!-- website side navigation -->
-<nav id="website-side-nav">
-  <ul class="website-side-nav">
-    <li><a class="link" href="/" title="Home Page">Home</a></li>
-    <li><a class="link" href="/public/store" title="E-Shop">Store</a></li>
-    <li><a class="link" href="/about" title="About This Site">About</a></li>
-    <li><a class="link" href="/contact" title="Contact Site Owner">Contact</a></li>
-      
-    <% if(roles) { 
-      roles.forEach(role => { %>
-        <li><a class="link" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
-      <% }) %>
-      <li><a class="link" href="/auth/logout" title="Sign Out">Sign Out</a></li>
-    <% } else { %>
-      <li><a class="link" href="/auth/register" title="Register">Register</a></li>
-      <li><a class="link" href="/auth/login" title="Sign In">Sign In</a></li>
-    <% } %>
-            
-  </ul>
+<nav class="site-side-nav">
+  <div>
+    <div class="intro"><h3 class="title">Site Pages:</h3></div>
+    <ul class="site-side-nav-links">
+      <li><a class="btn btn--nav" href="/" title="Home Page">Home</a></li>
+      <li><a class="btn btn--nav" href="/public/store" title="E-Shop">Store</a></li>
+      <li><a class="btn btn--nav" href="/about" title="About This Site">About</a></li>
+      <li><a class="btn btn--nav" href="/contact" title="Contact Site Owner">Contact</a></li>
+      <% if(roles) {
+        roles.forEach(role=> { %>
+          <li><a class="btn btn--nav" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
+        <% }) %>
+        <li><a class="btn btn--nav" href="/auth/logout" title="Sign Out">Sign Out</a></li>
+      <% } else { %>
+        <li><a class="btn btn--nav" href="/auth/register" title="Register">Register</a></li>
+        <li><a class="btn btn--nav" href="/auth/login" title="Sign In">Sign In</a></li>
+      <% } %>
+    </ul>
+  </div>
+  <div class="outro">
+    <p class="text--xs">&copy; 2023 <%= title %>
+    </p>
+  </div>
 </nav>
 
 <div id="overlay" class="overlay"></div>

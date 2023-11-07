@@ -4,12 +4,8 @@
   grid-template-columns: 1fr;
   grid-template-areas: "picture";
   height: max(380px, 30dvh);
-  overflow: hidden;
-}
-.fade-content {
-  color: white;
-  text-align: center;
-  padding: 0;
+  /* overflow: hidden; */
+  /* overflow-wrap: break-word; */
 }
 .fade {
   background-attachment: local;
@@ -24,8 +20,16 @@
 .fade-first {
   animation: fade-first 14s;
   background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-    url("/images/slides/image_5.jpg");
+  url("/images/slides/image_5.jpg");
   opacity: 0;
+}
+.fade-content {
+  color: white;
+  text-align: center;
+  padding: 0;
+}
+.fade-content h2 {
+  color: var(--caution);
 }
 @keyframes fade-first {
   0%   { opacity: 1; }
@@ -67,7 +71,6 @@
   35%  { opacity: 0; }
   100% { opacity: 0; }
 }
-
 /* ? scale */
 .scale {
   animation: scale 10s;
@@ -82,7 +85,6 @@
   80%  { scale: 0.75; }
   100% { scale: 0; }
 }
-
 /* ? fade in */
 .fade-in {
   animation: fade-in 10s;
@@ -94,7 +96,6 @@
   60%  { scale: 1; }
   100% { scale: 1; }
 }
-
 /* ? translate */
 .translate {
   animation: translate 6s;
@@ -105,7 +106,6 @@
   from { translate: 0 140px; }
   to   { translate: 0 0; }
 }
-
 /* ? pulse */
 .pulse {
   animation: pulse 10s infinite;

@@ -1,0 +1,96 @@
+/* font families */
+:root {
+  --font-primary: system-ui;
+  --font-secondary: Verdana, Helvetica, Arial, sans-serif;
+  --font-teritiary: Georgia, serif;
+}
+/* titles */
+.title--xxl {
+  font-family: var(--font-teritiary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.title--xl {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.title--lg {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+.title {
+  color: var(--theme);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.8;
+}
+.title--sm {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.8;
+}
+.title--xs {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+/* texts */
+.text--xl {
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1.9;
+}
+.text--lg {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.text--lg {
+  font-size: 1.125rem;
+  font-weight: normal;
+  line-height: 1.7;
+}
+.text--bold {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+.text {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.7;
+}
+.text--sm {
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.6;
+}
+.text--xs {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+/* uppercase */
+.uppercase {
+  text-transform: uppercase;
+}
+.first-character::first-letter {
+  color: var(--theme);
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+/* lowercase */
+.lowercase {
+  text-transform: lowercase;
+}
+/* Extra Large - xl */
+@media (min-width: 1200px) {
+  html {
+    font-size: 110%;
+  } 
+}

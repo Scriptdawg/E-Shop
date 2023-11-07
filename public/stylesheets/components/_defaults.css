@@ -1,26 +1,36 @@
-a {
-    color: var(--anchor-color);
-    opacity: 0.85;
-    transition: opacity 200ms;
+/* a {
+  color: var(--anchor-color);
+  opacity: 0.85;
+  transition: opacity 200ms;
 }
-
 a:hover {
-    opacity: 1;
-}
-
-p {
-    color: var(--gray-light);
-}
-
-strong {
-    font-weight: inherit;
-}
-
-figure,
-blockquote {
-    margin: 0;
-}
-
+  opacity: 1;
+} */
 address {
-    font-style: normal;
+  font-style: normal;
+}
+blockquote,
+figure {
+  margin: 0;
+}
+/* p {
+  color: var(--black);
+} */
+strong {
+  font-weight: inherit;
+}
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+ul {
+  list-style-type: none;
+  margin-block: 0;
+  padding-inline: 0;
+}
+
+.error {
+  color: var(--danger);
 }

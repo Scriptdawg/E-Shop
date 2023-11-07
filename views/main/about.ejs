@@ -6,26 +6,26 @@
       <div class="slide one">
         <div class="slide-content">
           <div class="scale">Welcome to <%= title %>!</div>
-          <div class="fade-in">Picture Collections</div>
+          <h2 class="fade-in">Picture Collections</h2>
           <div class="pulse">Node.js, Express, MongoDb, PHP, SQL</div>
         </div>
       </div>
       <div class="slide two">
         <div class="slide-content">
           <h2 class="title-slide">E-Commerce</h2>
-          <p>Node.js, Express, MongoDb, PHP, SQL</p>
+          <div>Node.js, Express, MongoDb, PHP, SQL</div>
         </div>
       </div>
       <div class="slide three">
         <div class="slide-content">
           <h2 class="title-slide">Code Snippets</h2>
-          <p>Node.js, Express, MongoDb, PHP, SQL</p>
+          <div>Node.js, Express, MongoDb, PHP, SQL</div>
         </div>
       </div>
       <div class="slide four">
         <div class="slide-content">
           <h2 class="title-slide">Custom Programming</h2>
-          <p>Node.js, Express, MongoDb, PHP, SQL</p>
+          <div>Node.js, Express, MongoDb, PHP, SQL</div>
         </div>
       </div>
     </div>
@@ -57,9 +57,9 @@
         </div>
       </div>
       <div class="child">
-        <p>
+        <div>
           Where can you implement this user interface component?
-        </p>
+        </div>
         <div class="dot-box">
           <span class="dot"></span>
           <span class="dot"></span>
@@ -71,7 +71,7 @@
     
     <!-- ? hover boxes -->
     <div class="boxes">
-      <h2 class="boxes-title">Box transitions on hover:</h2>
+      <div class="boxes-title">Box transitions on hover:</div>
       <div class="box box-one">
         Red
       </div>
@@ -81,7 +81,27 @@
       <div class="box box-three">
         Blue
       </div>
-    </div>    
+    </div> 
+    
+    
+    <!-- button styles -->
+    <div style="padding:64px; ">
+      <br /><br />
+      <button>Button - no styles</button>
+      <br /><br />
+      <a href="#">Anchor - no styles</a>
+      <br /><br />
+      <a class="btn btn--line" href="#">btn--line</a>
+      <br /><br />
+      <button style="background-color:var(--theme-green)" class="btn btn--nav">btn--nav</button>
+      <br /><br />
+      <a class="btn btn--flat" href="">btn--flat</a>
+      <br /><br />
+      <button class="btn btn--raised">btn--raised</button>
+      <br /><br />
+      <button class="btn btn--pill">btn--pill</button>
+    </div>
+
   </main>
 
   <script src="/javascripts/about.js"></script>

@@ -1,37 +1,18 @@
-@import url("components/global.css");
 @import url("components/_palette.css");
-@import url("components/typography.css");
-@import url("components/layouts.css");
+@import url("components/_typography.css");
+@import url("components/_base.css");
+@import url("components/_defaults.css");
+@import url("components/buttons.css");
+@import url("components/containers.css");
+@import url("components/site_banner.css");
+@import url("components/site_nav.css");
+@import url("components/site_footer.css");
 @import url("components/forms.css");
-@import url("components/footer.css");
 @import url("pages/main.css");
 @import url("pages/about.css");
 @import url("pages/store.css");
 @import url("pages/package.css");
-html {
-  -webkit-user-select: none; /* Safari */
-  user-select: none;
-  margin-inline: auto;
-  scroll-behavior: smooth;
-}
-.container-subpage {
-  margin-inline: auto;
-  max-width: 1200px;
-  padding-inline: 16px;
-  padding-block-start: 50px;
-}
 
-ul {
-  list-style: none;
-  margin-block: 0;
-  padding-inline: 0;
-}
-.link {
-  padding: 4px 8px;
-}
-.error {
-  color: var(--danger);
-}
 /* Extra Extra Small - xxs */
 @media (max-width: 300px) {}
 /* Extra Small - xs */
@@ -50,8 +31,3 @@ ul {
 @media (min-width: 1800px) {}
 @media (min-width: 2000px) {}
 @media print {}
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: auto;
-  }
-}

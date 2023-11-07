@@ -3,7 +3,7 @@ class Layout {
     this.scrollTop = document.querySelector("#btn-scroll-top");
     this.windowSize = document.querySelector("#window-size");
     this.lastPosition = scrollY; 
-    this.#main(), this.#scroller(), this.#webSideNav();
+    this.#main(), this.#scroller(), this.#siteSideNav();
   };
   #main = () => {
     // displays initial screen size
@@ -23,18 +23,18 @@ class Layout {
     `
   };
   // shows to top of page button if user scrolls more then 1000px
-  // moves website-top-nav up or down on scroll
+  // moves site-top-nav up or down on scroll
   #scroll = () => {
     const currentPosition = scrollY;
     if(currentPosition > this.lastPosition && currentPosition > 150) {
       this.lastPosition = scrollY;
       requestAnimationFrame(() => {
-        document.querySelector("#website-top-nav").classList.add("website-top-nav-move");
+        document.querySelector("#site-top-nav").classList.add("site-top-nav-move");
       });
     } else {
       this.lastPosition = scrollY;
       requestAnimationFrame(() => {
-        document.querySelector("#website-top-nav").classList.remove("website-top-nav-move");
+        document.querySelector("#site-top-nav").classList.remove("site-top-nav-move");
       });
     };
     if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
@@ -52,29 +52,30 @@ class Layout {
     });
     return;
   };
-  // opens and closes website side navigation with overlay
-  #webSideNav = () => {
+
+  // opens and closes site side nav with overlay
+  #siteSideNav = () => {
     const overLay = document.querySelector(".overlay");
-    const webSideNav = document.querySelector(".website-side-nav");
-    document.querySelector("#btn-open-website-side-nav").addEventListener("click", () => {
-      webSideNav.style.display = "flex";
+    const siteSideNav = document.querySelector(".site-side-nav");
+    document.querySelector("#btn-open-site-side-nav").addEventListener("click", () => {
+      siteSideNav.style.display = "flex";
       overLay.style.display = "block";
       requestAnimationFrame(() => {
         overLay.classList.add("show-overlay");
-        webSideNav.classList.add("open-website-side-nav");
+        siteSideNav.classList.add("open-site-side-nav");
       });
     });
     overLay.addEventListener("click", (event) => {
       requestAnimationFrame(() => {
-        webSideNav.classList.remove("open-website-side-nav");
+        siteSideNav.classList.remove("open-site-side-nav");
         event.target.classList.remove("show-overlay");
       });
     });
     // make un-discoverable by accessibility software
-    webSideNav.addEventListener("transitionend", (event) => {
-      if(!event.target.classList.contains("open-website-side-nav")) {
+    overLay.addEventListener("transitionend", (event) => {
+      if(!event.target.classList.contains("show-overlay")) {
         event.target.style.display = "none";
-        overLay.style.display = "none";
+        siteSideNav.style.display = "none";
       };
     });
   };

@@ -98,16 +98,6 @@
   font-size: 64px;
 }
 /* buttons */
-.btn {
-  background-color: var(--light);
-  border: initial;
-  border-radius: 16px;
-  box-shadow: var(--shadow-small);
-  color: var(--black);
-  font-size: 14px;
-  padding: 4px 16px;
-  text-decoration: none;
-}
 .btn-plus,
 .ledger .btn-checkout,
 .btn-continue {
@@ -121,10 +111,7 @@
 .ledger .btn-checkout {
   text-decoration: line-through;
 }
-.btn:hover {
-  background-color: var(--white);
-  color: var(--success);
-}
+
 .btn-plain {
   background-color: transparent;
   border: initial;

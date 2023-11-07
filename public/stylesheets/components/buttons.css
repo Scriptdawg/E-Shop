@@ -1,49 +1,68 @@
+/* btn */
 .btn {
-    all: unset;
-    outline: revert;
-    box-sizing: border-box;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 0.88rem;
-    line-height: 1.5;
-    letter-spacing: 2px;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: translate 180ms, opacity 180ms;
-    opacity: 0.8;
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  opacity: 1;
+  outline: revert;
+  transition: translate 180ms;
 }
-
 .btn:hover {
-    opacity: 1;
+  color: var(--bright);
 }
-
 .btn:active {
-    translate: 1px, 1px;
+  translate: 1px, 1px;
 }
-
-.btn--nav {
-    color: var(--text-color);
-    padding: 12px;
-}
-
-.btn--raised {
-    background-color: var(--primary);
-    color: var(--black);
-    padding: 12px 53px 12px 24px;
-    background-image: url("assets/arrow-right.svg");
-    background-repeat: no-repeat;
-    background-position: right 20px center;
-}
+/* .btn:visited {
+  color: red;
+} */
+/* btn-line */
 .btn--line {
-    color: var(--text-color);
-    padding: 12px;
+  color: var(--black);
+  padding: 12px;
+}
+.btn--line::after {
+  border: 1px solid var(--primary);
+  box-sizing: border-box;
+  content: "";
+  display: inline-block;
+  height: 4px;
+  width: 100%;
+}
+/* btn--nav */
+.btn--nav {
+  color: var(--white);
+  padding: 6px 16px;
+  text-transform: uppercase;
+}
+/* btn--flat */
+.btn--flat {
+  background-color: var(--primary);
+  background-image: url("/assets/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  color: var(--black);
+  padding: 12px 53px 12px 24px;
 }
 
-.btn--line::after {
-    content: "";
-    box-sizing: border-box;
-    display: inline-block;
-    border: 1px solid var(--primary);
-    height: 4px;
-    width: 100%;
+/* btn--raised, btn--pill */
+.btn--raised,
+.btn--pill {
+  background-color: var(--light);
+  box-shadow: var(--shadow-small);
+  color: var(--inform);
+  padding: 4px 16px;
+}
+.btn--pill {
+  border-radius: 16px;
+}
+.btn--raised:hover,
+.btn--pill:hover {
+  background-color: var(--white);
+  color: var(--success);
 }

@@ -31,16 +31,16 @@ export class Store {
             <p class="short-description" title="Short Description">${shortDescription}</p>
           </div>
           <div class="left-ctrl">
-            <button id="btn-clear-${id}" class="btn btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
+            <button id="btn-clear-${id}" class="btn btn--pill btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
           </div>  
           <div class="right-ctrl">
-            <button id="btn-minus-${id}" class="btn btn-minus" data-id="${id}" title="Decrease Quantity">
+            <button id="btn-minus-${id}" class="btn btn--pill btn-minus" data-id="${id}" title="Decrease Quantity">
               <i class="bi bi-chevron-double-down"></i>
             </button>
             <span id="qty-${id}" class="qty" data-id=${id} title="Quantity">
               ${search.qty === undefined ? 0 : search.qty}
             </span>
-            <button id="btn-plus-${id}" class="btn btn-plus" data-id="${id}" title="Increase Quantity">
+            <button id="btn-plus-${id}" class="btn btn--pill btn-plus" data-id="${id}" title="Increase Quantity">
               <i class="bi bi-chevron-double-up"></i>
             </button>
           </div>
