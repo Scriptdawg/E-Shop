@@ -28,9 +28,8 @@ select {
 ul {
   list-style-type: none;
   margin-block: 0;
-  padding-inline: 0;
+  padding-inline-start: 0;
 }
-
 .error {
   color: var(--danger);
 }

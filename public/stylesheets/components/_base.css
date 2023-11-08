@@ -6,7 +6,6 @@ html {
   /* safari */
   margin-inline: auto;
   overflow-wrap: break-word;
-  scroll-behavior: smooth;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -25,7 +24,7 @@ html.light-theme {
 } */
 @media (prefers-reduced-motion: no-preference) {
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
   }
 }
 body {
