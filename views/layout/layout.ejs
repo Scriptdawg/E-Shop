@@ -2,46 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="I am a Freelance Web Developer based in Alberta, Canada.
-  I help businesses improve their web performance and user experience." /> 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png" />
-  <link rel="manifest" href="/images/favicons/site.webmanifest" />
-  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#2e7f56" />
-  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
-  <meta name="apple-mobile-web-app-title" content="Coder's Cove" />
-  <meta name="application-name" content="Coder's Cove" />
-  <meta name="msapplication-TileColor" content="#133a26" />
-  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png" />
-  <meta name="msapplication-config" content="/images/favicons/browserconfig.xml" />
-  <meta name="theme-color" content="#133a26" />
+  I help businesses improve their web performance and user experience."> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#2e7f56">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="Coder's Cove">
+  <meta name="application-name" content="Coder's Cove">
+  <meta name="msapplication-TileColor" content="#133a26">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#133a26">
+
   <!-- application -->
-  <link rel="stylesheet" href="/stylesheets/index.css" />
-  <script type="module" defer src="/javascripts/layout.js"></script>
+  <!-- loading and parsing styles.css is render-blocking -->
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <!-- loading and parsing print.css is not render-blocking -->
+  <link rel="stylesheet" href="/stylesheets/components/print.css" media="print">
+  <!-- loading and parsing mobile.css is not render-blocking on large screens -->
+  <!-- <link rel="stylesheet" href="/stylesheets/components/mobile.css" media="screen and (max-width: 480px)"> -->
+
+  <script type="module" src="/javascripts/layout.js"></script>
   <title><%= title %></title>
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://portfolio.scriptdawg.com/" />
-  <meta property="og:title" content="Paul Oosterhoff | Programmer" />
-  <meta property="og:description" content="Paul is a programmer based in Alberta, Canada." />
-  <meta property="og:image" content="/public/images/favicons/share.png" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portfolio.scriptdawg.com/">
+  <meta property="og:title" content="Paul Oosterhoff | Programmer">
+  <meta property="og:description" content="Paul is a programmer based in Alberta, Canada.">
+  <meta property="og:image" content="/public/images/favicons/share.png">
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://portfolio.scriptdawg.com/" />
-  <meta property="twitter:title" content="Paul Oosterhoff | Programmer" />
-  <meta property="twitter:description" content="Paul is a programmer based in Alberta, Canada." />
-  <meta property="twitter:image" content="/public/images/favicons/share.png" />
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://portfolio.scriptdawg.com/">
+  <meta property="twitter:title" content="Paul Oosterhoff | Programmer">
+  <meta property="twitter:description" content="Paul is a programmer based in Alberta, Canada.">
+  <meta property="twitter:image" content="/public/images/favicons/share.png">
 
   <!-- bootstrap icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  
   <!-- filepond -->
-  <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
-  <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet" />
-  <link href="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css" rel="stylesheet" />
+  <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet">
+  <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+  <link href="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css" rel="stylesheet">
+
   <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
   <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
   <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>

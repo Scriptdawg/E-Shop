@@ -32,27 +32,6 @@ main {
   right: 16px;
 }
 
-/* ? scroll to top */
-#btn-scroll-top {
-  background-color: var(--medium);
-  border: initial;
-  border-radius: 50%;
-  bottom: max(70px, 10dvh);
-  color: var(--danger);
-  cursor: pointer;
-  display: none;
-  font-size: 18px;
-  font-weight: 700;
-  opacity: 0.8;
-  padding: 10px 12px 8px 12px;
-  position: fixed;
-  right: 8px;
-}
-#btn-scroll-top:hover {
-  background-color: var(--xdark);
-  color: var(--bright);
-}
-
 @media print {}
 
 .footer {

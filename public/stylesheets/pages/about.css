@@ -159,3 +159,43 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+.cart-svg {
+  background-image: url("/assets/svg/cart.svg");
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+}
+.cart-svg div {
+  translate: 32px -6px;
+  background-color: rgba(6, 111, 6, 0.9);
+  color: white;
+  border-radius: 50%;
+  height: 5ch;
+  width: 5ch;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  line-height: 1;
+}
+.cart-free-svg {
+  background-image: url("/assets/svg/cart.svg");
+  background-repeat: no-repeat;
+  background-position: left 8px center;
+  color: var(--black);
+  padding: 8px 8px 8px 40px;
+}
+.mia-img {
+  background-image: url("/assets/ico/785ed156c97f4601.ico");
+  background-repeat: no-repeat;
+  background-position: left 8px center;
+  color: var(--black);
+  padding: 8px 8px 8px 40px;
+}
+.hummer-favicon {
+  background-image: url("/images/favicons/favicon-32x32.png");
+  background-repeat: no-repeat;
+  background-position: left 3px top 3px;
+  color: var(--black);
+  padding: 4px 8px 4px 44px;
+  max-height: 38px;
+}
