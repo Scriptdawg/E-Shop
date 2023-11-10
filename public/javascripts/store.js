@@ -15,7 +15,7 @@ export class Store {
       return `
         <div id="package-${id}" class="package">
           <div class="picture">
-            <img src="${img}" width="70px" height="70px" alt="${name}" title="${name}" />
+            <img src="${img}" width="70" height="70" alt="${name}" title="${name}">
           </div>
           <div class="cost">
             <span title="Price">$${Number.parseInt(price, 10).toFixed(2)}</span>
