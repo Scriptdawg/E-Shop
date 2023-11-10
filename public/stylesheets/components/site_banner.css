@@ -19,7 +19,7 @@
 .website-top-banner {
   background-attachment: local;
   background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-    url("/images/banners/IMG_3103_lrg.jpg");
+  url("/images/banners/IMG_3103_lrg.jpg");
   background-position: center;
   background-size: cover;
   font-size: 18px;

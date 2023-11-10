@@ -21,7 +21,7 @@
   animation: fade-first 14s;
   background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
   url("/images/slides/image_5.jpg");
-  opacity: 0;
+  opacity: 1;
 }
 .fade-content {
   color: white;

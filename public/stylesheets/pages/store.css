@@ -1,7 +1,7 @@
 /* ? subpage navigation */
 #subpage-nav {
   align-items: center;
-  background-color: var(--gray);
+  background-color: var(--theme-green);
   bottom: 0;
   color: white;
   display: flex;

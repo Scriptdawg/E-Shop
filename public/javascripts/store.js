@@ -22,7 +22,8 @@ export class Store {
           </div>
           <div class="info">
             <button id="btn-heart-${id}" class="btn-plain btn-heart" data-id="${id}" title="Toggle Favorite">
-              ${search.heart === true ? `<i class="bi bi-heart-fill"></i>` : `<i class="bi bi-heart"></i>`}
+              ${search.heart === true ? `<img src="/assets/svg/heart-fill-red.svg" width="18" height="18" alt="Red Heart">`
+                : `<img src="/assets/svg/heart.svg" width="18" height="18" alt="Black Border Heart">`}
             </button>
             <span id="subtotal-${id}" class="subtotal" title="Subtotal">$${(price * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}</span>
           </div>
@@ -35,13 +36,13 @@ export class Store {
           </div>  
           <div class="right-ctrl">
             <button id="btn-minus-${id}" class="btn btn--pill btn-minus" data-id="${id}" title="Decrease Quantity">
-              <i class="bi bi-chevron-double-down"></i>
+              <img src="/assets/svg/chevron-double-down.svg" width="16" height="16" alt="chevron-double-down-svg">
             </button>
             <span id="qty-${id}" class="qty" data-id=${id} title="Quantity">
               ${search.qty === undefined ? 0 : search.qty}
             </span>
             <button id="btn-plus-${id}" class="btn btn--pill btn-plus" data-id="${id}" title="Increase Quantity">
-              <i class="bi bi-chevron-double-up"></i>
+              <img src="/assets/svg/chevron-double-up.svg" width="18" height="18" alt="chevron-double-up-svg">
             </button>
           </div>
         </div>
@@ -122,13 +123,13 @@ export class Store {
     const search = this.picks.find(pick => pick.id === id);
     if (search === undefined) {
       this.picks.push({ id, heart: true, qty: 0 });
-      document.querySelector(`#btn-heart-${id}`).innerHTML = `<i class="bi bi-heart-fill"></i>`;
+      document.querySelector(`#btn-heart-${id}`).innerHTML = `<img src="/assets/svg/heart-fill-red.svg" width="18" height="18" alt="Red Heart">`;
     } else if (search.heart) {
       search.heart = false;
-      document.querySelector(`#btn-heart-${id}`).innerHTML = `<i class="bi bi-heart"></i>`;
+      document.querySelector(`#btn-heart-${id}`).innerHTML = `<img src="/assets/svg/heart.svg" width="18" height="18" alt="Black Border Heart">`;
     } else {
       search.heart = true;
-      document.querySelector(`#btn-heart-${id}`).innerHTML = `<i class="bi bi-heart-fill"></i>`;
+      document.querySelector(`#btn-heart-${id}`).innerHTML = `<img src="/assets/svg/heart-fill-red.svg" width="18" height="18" alt="Red Heart">`;
     };
     return this;
   };
