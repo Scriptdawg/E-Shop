@@ -89,6 +89,7 @@
   background-position: center;
   background-size: cover;
   height: 19.6px;
+  margin-inline: 16px;
   width: 28px;
 }
 .menu-white {
