@@ -1,0 +1,86 @@
+:root {
+  /* basic colors */
+  --black: rgb(38, 38, 38);
+  --overlay: rgba(0, 0, 0, 0.5);
+  --white: rgb(250, 250, 250);
+  --bright: rgb(102, 255, 0);
+    /* semantic colors */
+  --caution: rgb(255, 245, 204);
+  --danger: rgb(176, 0, 0);
+  --inform: rgb(9, 73, 169);
+  --success: rgb(0, 100, 0);
+    /* Backgrounds */
+  --bg-white: linear-gradient(white 90%, rgb(248, 248, 248));
+  /* Shadows */
+  --shadow: 0 1px 1px hsl(0deg 0% 0% / 0.1), 0 2px 2px hsl(0deg 0% 0% / 0.1),
+    0 4px 4px hsl(0deg 0% 0% / 0.1), 0 8px 8px hsl(0deg 0% 0% / 0.1),
+    0 16px 16px hsl(0deg 0% 0% / 0.1);
+  --shadow-small: 0 1px 1px hsl(0deg 0% 0% / 0.1),
+    0 2px 2px hsl(0deg 0% 0% / 0.1);
+
+  --primary: #f2d544;
+  --dark-blue: #130c24;
+  --black: #232020;
+  --gray: #999999;
+  --beige: #f5f5f1;
+  --gap: 80px;
+
+  /* Primary Colors */
+  --primary-1: #2b8379;
+  --primary-2: #19a596;
+  --primary-3: #7fd1c7;
+  --primary-4: #90e0d6;
+  --primary-5: #d0f3ef;
+  --primary-6: rgba(208, 243, 239, 0.4);
+
+  /* Secondary Colors */
+  --secondary-1: #c47e35;
+  --secondary-2: #dca15d;
+  --secondary-3: #dabb94;
+  --secondary-4: #f3dabc;
+  --secondary-5: #faf1e5;
+  --secondary-6: rgb(250, 241, 229, 0.4);
+
+  /* Neutral Colors */
+  --neutral-1: #2c2c2c;
+  --neutral-2: #434343;
+  --neutral-3: #94868b;
+  --neutral-4: #d9cfd3;
+  --neutral-5: #f2ecee;
+  --neutral-6: rgb(247, 241, 241);
+
+  /* Accent Colors */
+  --accent-1: #970e3d;
+  --accent-2: #c43464;
+  --accent-3: #de7699;
+  --accent-4: #e6c3ce;
+  --accent-5: #fff2f7;
+  --accent-6: rgba(255, 242, 247, 0.4);
+
+  /* Theme Colors */
+  --theme: #5c4d23;
+  --theme-brown: #a52a2a;
+  --theme-green: #133a26;
+  --theme-orange: #e6a756;
+  --light-icon: white;
+  --dark-icon: var(--black);
+
+  /* theme dependent variables */
+  --text-color: white;
+  --gray-dark: #666666;
+  --gray-light: #bdbdbd;
+  --anchor-color: var(--primary);
+
+  /* Miscellaneous */
+  --blue-black: rgb(72, 84, 103);
+  --dark: rgb(102, 102, 102);
+  --light: rgb(240, 240, 240);
+  --medium: rgb(230, 230, 230);
+  --normal: rgb(217, 217, 217);
+  --xdark: rgb(68, 68, 68);
+  --highlight: rgb(246, 239, 228, 0.8);
+  --bg-code: rgb(250, 235, 215);
+  --bd-flash: rgb(175, 203, 245);
+  --bg-flash: rgb(231, 239, 248);
+  --bg-webgl: rgba(247, 252, 253, 0.85);
+}

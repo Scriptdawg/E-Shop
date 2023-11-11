@@ -18,9 +18,6 @@
 .btn:active {
   translate: 1px 1px;
 }
-/* .btn:visited {
-  color: red;
-} */
 /* btn-line */
 .btn--line {
   color: var(--black);
@@ -36,12 +33,9 @@
 }
 /* btn--nav */
 .btn--nav {
-  color: var(--white);
+  color: var(--site-text);
   padding: 6px 16px;
   text-transform: uppercase;
-}
-.btn--nav:hover {
-  color: var(--bright);
 }
 /* btn--flat */
 .btn--flat {

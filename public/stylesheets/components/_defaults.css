@@ -13,9 +13,6 @@ blockquote,
 figure {
   margin: 0;
 }
-/* p {
-  color: var(--black);
-} */
 strong {
   font-weight: inherit;
 }

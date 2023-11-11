@@ -18,18 +18,19 @@
   <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
   <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
   <meta name="theme-color" content="#133a26">
-  
   <!-- application -->
   <!-- loading and parsing index.css is render-blocking -->
+  <script type="module" src="/javascripts/layout.js"></script>
   <link rel="stylesheet" href="/stylesheets/index.css">
+
+  <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+  <!-- <link rel="preload" fetchpriority="high" as="image" href="/images/slides/image_5.jpg" type="image/webp"> -->
   <!-- loading and parsing print.css is not render-blocking -->
-  <link rel="stylesheet" href="/stylesheets/components/print.css" media="print">
+  <!-- <link rel="stylesheet" href="/stylesheets/components/print.css" media="print"> -->
   <!-- loading and parsing mobile.css is not render-blocking on large screens -->
   <!-- <link rel="stylesheet" href="/stylesheets/components/mobile.css" media="screen and (max-width: 480px)"> -->
 
-  <script type="module" src="/javascripts/layout.js"></script>
   <title><%= title %></title>
-
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://portfolio.scriptdawg.com/">
@@ -47,7 +48,7 @@
   <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet">
   <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
   <link href="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css" rel="stylesheet">
-
+  
   <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
   <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
   <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
@@ -64,5 +65,6 @@
   <%- body %>
   <!-- website footer -->
   <%- include('bottom.ejs') %>
+  
 </body>
 </html>

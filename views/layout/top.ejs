@@ -1,28 +1,24 @@
-<!-- website mission -->
-<div class="website-mission-container">
-  <div class="website-mission">Making programming easy!</div>
-</div>
-
-<!-- website banner -->
-<div id="website-top-banner" class="website-top-banner">
-  <a class="logo" href="/" title="Go To Home Page">
+<!-- site-banner -->
+<div class="site-banner">
+  <!-- logo -->
+  <a class="logo btn text--xl" href="/" title="Go To Home Page">
     <img src="/assets/svg/logo.svg" width="45" height="43" alt="Logo">
-    <span><%= title %></span>
+    <span>
+      <%= title %>
+    </span>
   </a>
-  <div class="sign-in">
-    <% if(roles) { %>
-      <a href="/auth/logout" title="Sigh Out">Sign Out</a>
+  <!-- sign -->
+  <% if(roles) { %>
+    <a class="btn text--lg" href="/auth/logout" title="Sigh Out">Sign Out</a>
     <% } else { %>
-      <a href="/auth/login" title="Sigh In Or Register">Sign In</a>
-    <% } %>
-  </div>
+      <a class="btn text--lg" href="/auth/login" title="Sigh In Or Register">Sign In</a>
+      <% } %>
 </div>
 
-<!-- website top navigation -->
+<!-- site-top-nav -->
 <nav id="site-top-nav">
   <div class="site-top-nav">
-    <button 
-      id="btn-open-site-side-nav" class="btn btn--nav" title="Site Pages">
+    <button id="btn-open-site-side-nav" class="btn btn--nav" title="Site Pages">
       <div class="menu-white"></div>
     </button>
     <ul class="site-top-nav-links">
@@ -33,28 +29,33 @@
   </div>
   <!-- subpage heading -->
   <div class="site-subpage">
-    <h1 id="subpage-name" class="title subpage-name" title="Subpage Name"><%= subpageName %></h1>
+    <h1 id="subpage-name" class="title subpage-name" title="Subpage Name">
+      <%= subpageName %>
+    </h1>
   </div>
 </nav>
 
 <!-- website side navigation -->
 <nav class="site-side-nav">
   <div>
-    <div class="intro"><h3 class="title">Site Pages:</h3></div>
+    <div class="intro">
+      <h3 class="title">Site Pages:</h3>
+    </div>
     <ul class="site-side-nav-links">
       <li><a class="btn btn--nav" href="/" title="Home Page">Home</a></li>
       <li><a class="btn btn--nav" href="/public/store" title="E-Shop">Store</a></li>
       <li><a class="btn btn--nav" href="/about" title="About This Site">About</a></li>
       <li><a class="btn btn--nav" href="/contact" title="Contact Site Owner">Contact</a></li>
-      <% if(roles) {
-        roles.forEach(role=> { %>
-          <li><a class="btn btn--nav" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
+      <% if(roles) { roles.forEach(role=> { %>
+        <li><a class="btn btn--nav" href="/<%= role %>" title="<%= role %>">
+            <%= role %>
+          </a></li>
         <% }) %>
-        <li><a class="btn btn--nav" href="/auth/logout" title="Sign Out">Sign Out</a></li>
-      <% } else { %>
-        <li><a class="btn btn--nav" href="/auth/register" title="Register">Register</a></li>
-        <li><a class="btn btn--nav" href="/auth/login" title="Sign In">Sign In</a></li>
-      <% } %>
+          <li><a class="btn btn--nav" href="/auth/logout" title="Sign Out">Sign Out</a></li>
+          <% } else { %>
+            <li><a class="btn btn--nav" href="/auth/register" title="Register">Register</a></li>
+            <li><a class="btn btn--nav" href="/auth/login" title="Sign In">Sign In</a></li>
+            <% } %>
     </ul>
   </div>
   <div class="outro">

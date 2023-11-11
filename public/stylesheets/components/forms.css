@@ -22,242 +22,278 @@ textarea.input {
     min-height: 100px;
 }
 /* ! end of new */
-
+/* 
 * {
     color-scheme: dark light;
-  }
-  .btn.small {
-    font-size: 12px;
-    padding: 2px 8px;
-  }
-  .detail .tab.active {
-    background-color: var(--accent-5);
-  }
-  .tab-content {
-    display: none;
-  }
-  .tab-content.show {
-    display: block;
-  }
-  .tab {
-    all: unset;
-    outline: revert;
-    width: 100%;
-  }
-  .tab.pointer {
-    cursor: pointer;
-  }
-  .list-button {
-    all: unset;
-    background-color: var(--xlight);
-    border-left: 4px solid var(--medium);
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    margin-block: 8px;
-    outline: revert;
-    padding: 10px 16px;
-    width: calc(100% - 32px);
-  }
-  #btn-New {
-    width: auto;
-  }
-  .list-button:hover {
-    background-color: var(--light);
-    border-left: 4px solid var(--medium);
-    border-radius: 4px;
-  }
-  #btn-New:hover {
-    background-color: var(--white);
-    color: var(--success);
-  }
-  .list-button.active,
-  #btn-New.active {
-    background-color: var(--neutral-1);
-    color: var(--white);
-    scroll-margin-block-start: 46px;
-  }
-  .list-form {
-    display: none;
-  }
-  .list-form.show-box{
-    display: block;
-  }
-  .not-visible {
-    visibility: hidden;
-  }
-  input,
-  textarea,
-  select,
-  button {
-    font: inherit;
-  }
-  input[type=email],
-  input[type=number],
-  input[type=password],
-  input[type=text],
-  select,
-  textarea {
-    background-color: var(--secondary-6);
-    border: none;
-    border-left: 4px solid var(--secondary-3);
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    margin: 8px 0 24px 0;
-    padding: 8px;
-    width: 100%;
-  }
-  textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  input[type=email]:focus,
-  input[type=number]:focus,
-  input[type=password]:focus,
-  input[type=text]:focus,
-  select:focus,
-  textarea:focus {
-    background-color: var(--primary-6);
-    border-left: 4px solid var(--primary-3);
-    outline: 1px solid var(--primary-3);
-  }
-  input[type=email]:focus-within,
-  input[type=number]:focus-within,
-  input[type=password]:focus-within,
-  input[type=text]:focus-within,
-  select:focus-with,
-  textarea:focus-within {
-    color: var(--neutral-1);
-  }
-  .textbox:invalid {
-    border: 3px solid var(--danger);
-  }
-  select .hidden {
-    display: none;
-  }
-  .form-line {
-    padding-bottom: 15px;
-  }
-  fieldset {
-    border: 1px solid var(--secondary-5);
-    border-radius: 4px;
-    padding: 16px 8px;
-  }
-  label,
-  legend {
-    background-color: var(--secondary-4);
-    border-radius: 4px;
-    color: var(--theme);
-    font-size: 14px;
-    font-weight: 600;
-    padding: 2px 8px;
-  }
-  :focus:not(:focus-visible) {
-    outline: none;
-    box-shadow: 1px 1px 3px rgb(0 0 0 / 60%);
-  }
-  /* Forms */
-  .pass-word {
-    position: relative;
-  }
-  .pass-word i {
-    color: var(--xdark);
-    cursor: pointer;
-    font-size: 20px;
-    margin: 1px;
-    padding: 5px 8px;
-    position: absolute;
-    right: 3px;
-    top: 3px;
-  }
-  
-  .items-list {
-    margin-block-end: 18px;
-  }
-  .item-list-item {
-    display: grid;
-    grid-template-columns: 7ch 12ch 1fr 8ch;
-    margin-block-start: 8px;
-  }
-  .item-list-item input {
-    margin: 0;
-  }
-  .delete-item {
-    background-color: var(--secondary-6);
-    border: none;
-    color: var(--danger);
-  }
-  .qty-unit {
-    display: grid;
-    grid-template-columns: 1fr 1fr 8fr;
-    grid-template-rows: auto;
-    column-gap: 4px;
-  }
-  
-  
-  fieldset {
-    border: 1px solid var(--light);
-    padding: 8px 8px 16px 8px;
-  }
-  .chapter-form legend,
-  .page-form legend,
-  .chapter-form label,
-  .page-form label,
-  #list-div legend,
-  #list-div label {
-    background-color: transparent;
-    font-size: 12px;
-  }
-  .chapter-form input[type=text],
-  .page-form input[type=text],
-  .chapter-form textarea,
-  .page-form textarea {
-    background-color: var(--xlight);
-    border-left: 4px solid var(--medium);
-    border-radius: 4px;
-    margin: 4px 0 12px 0;  
-  }
-  .chapter-form input[type=text]:focus,
-  .page-form input[type=text]:focus,
-  .chapter-form textarea:focus,
-  .page-form textarea:focus {
-    background-color: var(--primary-6);
-    border-left: 4px solid var(--primary-3);
-    outline: 1px solid var(--primary-3);
-  }
-  .chapter-form input[type=text]:hover,
-  .page-form input[type=text]:hover,
-  .chapter-form textarea:hover,
-  .page-form textarea:hover {
-    background-color: var(--light);
-    color: var(--success);
-  }
-  
-  .paragraph {
-    cursor: pointer;
-  }
-  .paragraph:hover {
-    color: var(--inform);
-  }
-  
-  #input-display ul {
-   margin: 0;
-  }
-  #input-display input,
-  #input-display textarea {
-    /* all: unset; */
-    background-color: transparent;
-    border: 1px solid var(--light);
-    padding: 8px;
-    margin: 4px 0;
-    min-height: 16px;
-  }
-  #input-display input:focus,
-  #input-display textarea:focus {
-    background-color: var(--primary-6);
-    outline: 1px solid var(--primary-3);
-  }
-  @media (max-width: 768px) {
-  }
-  
+  } */
+.btn.small {
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+.detail .tab.active {
+  background-color: var(--accent-5);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.show {
+  display: block;
+}
+
+.tab {
+  all: unset;
+  outline: revert;
+  width: 100%;
+}
+
+.tab.pointer {
+  cursor: pointer;
+}
+
+.list-button {
+  all: unset;
+  background-color: var(--accent-5);
+  border-left: 4px solid var(--medium);
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin-block: 8px;
+  outline: revert;
+  padding: 10px 16px;
+  width: calc(100% - 32px);
+}
+
+#btn-New {
+  width: auto;
+}
+
+.list-button:hover {
+  background-color: var(--light);
+  border-left: 4px solid var(--medium);
+  border-radius: 4px;
+}
+
+#btn-New:hover {
+  background-color: var(--white);
+  color: var(--success);
+}
+
+.list-button.active,
+#btn-New.active {
+  background-color: var(--neutral-1);
+  color: var(--white);
+  scroll-margin-block-start: 46px;
+}
+
+.list-form {
+  display: none;
+}
+
+.list-form.show-box {
+  display: block;
+}
+
+.not-visible {
+  visibility: hidden;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=text],
+select,
+textarea {
+  background-color: var(--secondary-6);
+  border: none;
+  border-left: 4px solid var(--secondary-3);
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 8px 0 24px 0;
+  padding: 8px;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=text]:focus,
+select:focus,
+textarea:focus {
+  background-color: var(--primary-6);
+  border-left: 4px solid var(--primary-3);
+  outline: 1px solid var(--primary-3);
+}
+
+input[type=email]:focus-within,
+input[type=number]:focus-within,
+input[type=password]:focus-within,
+input[type=text]:focus-within,
+select:focus-with,
+textarea:focus-within {
+  color: var(--neutral-1);
+}
+
+.textbox:invalid {
+  border: 3px solid var(--danger);
+}
+
+select .hidden {
+  display: none;
+}
+
+.form-line {
+  padding-bottom: 15px;
+}
+
+fieldset {
+  border: 1px solid var(--secondary-5);
+  border-radius: 4px;
+  padding: 16px 8px;
+}
+
+label,
+legend {
+  background-color: var(--secondary-4);
+  border-radius: 4px;
+  color: var(--theme);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 2px 8px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: 1px 1px 3px rgb(0 0 0 / 60%);
+}
+
+/* Forms */
+.pass-word {
+  position: relative;
+}
+
+.pass-word i {
+  color: var(--xdark);
+  cursor: pointer;
+  font-size: 20px;
+  margin: 1px;
+  padding: 5px 8px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+.items-list {
+  margin-block-end: 18px;
+}
+
+.item-list-item {
+  display: grid;
+  grid-template-columns: 7ch 12ch 1fr 8ch;
+  margin-block-start: 8px;
+}
+
+.item-list-item input {
+  margin: 0;
+}
+
+.delete-item {
+  background-color: var(--secondary-6);
+  border: none;
+  color: var(--danger);
+}
+
+.qty-unit {
+  display: grid;
+  grid-template-columns: 1fr 1fr 8fr;
+  grid-template-rows: auto;
+  column-gap: 4px;
+}
+
+
+fieldset {
+  border: 1px solid var(--light);
+  padding: 8px 8px 16px 8px;
+}
+
+.chapter-form legend,
+.page-form legend,
+.chapter-form label,
+.page-form label,
+#list-div legend,
+#list-div label {
+  background-color: transparent;
+  font-size: 12px;
+}
+
+.chapter-form input[type=text],
+.page-form input[type=text],
+.chapter-form textarea,
+.page-form textarea {
+  background-color: var(--light);
+  border-left: 4px solid var(--medium);
+  border-radius: 4px;
+  margin: 4px 0 12px 0;
+}
+
+.chapter-form input[type=text]:focus,
+.page-form input[type=text]:focus,
+.chapter-form textarea:focus,
+.page-form textarea:focus {
+  background-color: var(--primary-6);
+  border-left: 4px solid var(--primary-3);
+  outline: 1px solid var(--primary-3);
+}
+
+.chapter-form input[type=text]:hover,
+.page-form input[type=text]:hover,
+.chapter-form textarea:hover,
+.page-form textarea:hover {
+  background-color: var(--light);
+  color: var(--success);
+}
+
+.paragraph {
+  cursor: pointer;
+}
+
+.paragraph:hover {
+  color: var(--inform);
+}
+
+#input-display ul {
+  margin: 0;
+}
+
+#input-display input,
+#input-display textarea {
+  /* all: unset; */
+  background-color: transparent;
+  border: 1px solid var(--light);
+  padding: 8px;
+  margin: 4px 0;
+  min-height: 16px;
+}
+
+#input-display input:focus,
+#input-display textarea:focus {
+  background-color: var(--primary-6);
+  outline: 1px solid var(--primary-3);
+}
+
+@media (max-width: 768px) {}
