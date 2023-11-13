@@ -4,7 +4,7 @@ const mailer = require("../middlewares/mailer.js");
 //? INDEX
 exports.index_get = (req, res) => {
   res.render("main/main", {
-    subpageName: "Home Page",
+    subpageName: "Coder's Cove Home Page",
     roles: req.session.roles,
   });
 };

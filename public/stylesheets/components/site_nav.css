@@ -11,7 +11,7 @@
   align-items: center;
   background: var(--site-bg-linear);
   display: flex;
-  height: 48px;
+  min-height: 48px;
   justify-content: space-between;
 }
 /* links */
@@ -22,7 +22,7 @@
 /* subpage name h1 */
 .site-subpage {
   background: var(--site-bg-linear);
-  height: 48px;
+  min-height: 48px;
   padding: 8px 16px;
 }
 .subpage-name {
