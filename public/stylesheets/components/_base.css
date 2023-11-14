@@ -22,11 +22,11 @@ html.light-theme {
   --light-icon: var(--black);
   --text-color: var(--black);
 } */
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   html {
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
   }
-}
+} */
 body {
   font-family: var(--font-primary);
   margin: 0;

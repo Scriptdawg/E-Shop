@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== "production") {
 const cors = require("cors");
 const createError = require("http-errors");
 const express = require("express");
-const expressLayouts = require("express-ejs-layouts");
+// const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const path = require("path");
 
@@ -60,13 +60,13 @@ async function main() {
 }
 
 // view engine setup
-app.set("layout", "layout/layout");
+// app.set("layout", "layout/layout");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // use ...
 app.use(express.json());
-app.use(expressLayouts);
+// app.use(expressLayouts);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 

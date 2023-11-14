@@ -6,6 +6,7 @@ const public_controller = require("../controllers/publicController");
 
 // Index
 router.get("/", public_controller.store_get);
+
 // API *** READ Product - list
 router.get("/api/product/list", public_controller.api_product_list_get);
 
