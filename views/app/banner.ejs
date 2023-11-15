@@ -1,0 +1,14 @@
+<!-- site-banner -->
+<div class="site-banner">
+  <!-- logo -->
+  <a class="item-one logo btn text--flex" href="/" title="Go To Home Page">
+    <img src="/app/assets/svg/logo.svg" width="40" height="40" alt="Logo">
+    <span><%= title %></span>
+  </a>
+  <!-- links -->
+  <% if(roles) { %>
+    <a class="item-two btn text--flex-sm" href="/auth/logout" title="Sigh Out">Sign Out</a>
+  <% } else { %>
+    <a class="flex-item btn text--flex-sm" href="/auth/login" title="Sigh In Or Register">Sign In</a>
+  <% } %>
+</div>

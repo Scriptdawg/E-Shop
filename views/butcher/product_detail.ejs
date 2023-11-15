@@ -12,9 +12,9 @@
   
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-product_auth_detail" class="container-subpage">
+<div id="container-subpage-product_detail" class="container-subpage">
   <main>
-    <h2 class="title large"><%= pageTitle %></h2>
+    <h2 id="top" class="title large"><%= pageTitle %></h2>
 
     <% if(product.coverImagePath) { %>
       <img
@@ -29,7 +29,7 @@
     <h3 class="title">Description:</h3>
     <p><%= product.shortDescription %></p>
 
-    <!-- don't display product story if unavailable or other -->
+    <!-- Don't display Product story if Unavailable or Other -->
     <% if(product.story.name !== "Unavailable" && product.story.name !== "Other") { %>
       <h3 class="title">Story:</h3>
       <p><%= product.story.name %></p>
@@ -37,9 +37,6 @@
       <p><%= product.story.introduction %></p>
       <p><%= product.story.content %></p>
     <% } %>
-
-    <a href="/author/product/update/<%= product.url %>">Update</a>
-    <a href="/author/product/delete/<%= product.url %>">Delete</a>
 
   </main>
 </div>

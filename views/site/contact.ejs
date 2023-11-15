@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../app/head.ejs') %>
+</head>
+
+<body>
+  <header>
+    <%- include("../app/banner.ejs") %>
+  </header>
+  
+  <%- include("../app/nav.ejs") %>
+
+  <div id="container-subpage-contact" class="container-subpage">
+    <main>
+
+      <h2 class="title large">Contact Us</h2>
+
+      <form method="POST" action="">
+        <div>
+          <label for="email">Your email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            placeholder="Enter your email ..."
+            required
+          />
+        </div>
+        <div>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <input type="text" id="message" name="message" required />
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <% if(message) { %>
+        <h3 class="title">You sent:</h3>
+        <p>Subject: <%= message.subject %></p>
+        <p>Message: <%= message.message %></p>
+        <p><b>Thank you for contacting us!</b></p>
+      <% } %>
+
+    </main>
+  </div>
+
+  <footer>
+    <!-- site footer -->
+    <%- include('../app/footer.ejs') %>
+  </footer>
+  
+</body>
+</html>

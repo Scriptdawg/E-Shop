@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../app/head.ejs") %>
+</head>
+
+<body>
+  <header>
+    <%- include("../app/banner.ejs") %>
+  </header>
+  
+  <%- include("../app/nav.ejs") %>
+
+  <main>
+
+    <!-- ? fades -->
+    <div id="fades" class="fades">
+      <div class="fade fade-first">
+        <div class="fade-content">
+          <div class="scale">Welcome to <%= title %>!</div>
+          <h2 class="title--xxl fade-in">Website Solutions</h2>
+          <div class="translate">Blogs | E-Shops </div>
+        </div>
+      </div>
+      <div class="fade fade-one">
+        <div class="fade-content">
+          <div>One</div>
+          <h2 class="title--xxl">Custom Programming</h2>
+          <div class="pulse">Node.js | Express | MongoDb | PHP | SQL</div>
+        </div>
+      </div>
+      <div class="fade fade-two">
+        <div class="fade-content">
+          <div>Two</div>
+          <h2 class="title--xxl">E-Commerce</h2>
+          <div>Node.js, Express, MongoDb, PHP, SQL</div>
+        </div>
+      </div>
+      <div class="fade fade-three">
+        <div class="fade-content">
+          <div>Three</div>
+          <h2 class="title--xxl">Code Snippets</h2>
+          <div>Node.js, Express, MongoDb, PHP, SQL</div>
+        </div>
+      </div>
+      <div class="fade fade-four">
+        <div class="fade-content">
+          <div>Four</div>
+          <h2 class="title--xxl">Picture Collections</h2>
+          <div>Node.js, Express, MongoDb, PHP, SQL</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Applicaton index.ejs</h2>
+      <p>Application landing page. At the / route.</p>
+      <p>Each page is stand-alone meaning it no longer resides inside a shell or layout page.</p>
+      <p>The head, banner, navigations, footers and other components are written as partials.</p>
+      <p>Each page uses ejs to include whichever partial is appropriate.</p>
+      <p>
+        For example, the footer can be made up of several partials.
+        The first partial would be the page or mini-app specific
+        content and the second partial would contain the app footer content. 
+      </p>
+      <p>
+        This way mini-apps can be written as a completely stand-alone
+        experience but benefit from having access to generic user-interfaces.
+      </p>
+      <p>
+        Also, only the styesheets, javascripts, plug-ins etc. that are
+        necessary for the specific page are loaded.
+      </p>
+      <p>
+        The directory stucture is arranged according to the route or mini-app.
+        A mini-app is structured as a module that can be added or
+        removed from the app without affecting the core components or leaving behind un-used code.
+        Mini-app specific assets, stylesheets, javascripts, etc. are in the respective mini-app folders.
+      </p>
+      <p>
+        In essence, the site becomes my playground for hosting various projects that can be completely
+        unique experiences. A showcase if you will.
+      </p>
+      <p>
+        It's easy! To build a page, include components from the library (framework),
+        add specific content, add specific styling ...
+        If the libray doesn't have an appropriate user interface, write a new one.
+        If it is something that is useful in another mini-app or page,
+        add it to the app library otherwise keep it in the mini-app directory/module.
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    <div style="background: var(--site-bg-linear); color: var(--white); padding-block:32px;">
+      <div class="container">
+        <p>This paragraph is the footer content in site/index.ejs and the rest is an include('partials/footer.ejs').</p>
+      </div>
+    </div>
+    <!-- site footer -->
+    <%- include('../app/footer.ejs') %>
+  </footer>
+
+</body>
+
+</html>

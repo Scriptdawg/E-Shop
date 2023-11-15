@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../app/head.ejs') %>
+</head>
+
+<body>
+  <header>
+    <%- include("../app/banner.ejs") %>
+  </header>
+  
+  <%- include("../app/nav.ejs") %>
+
+<div id="container-subpage-about" class="container-subpage-about">
+  <main>
+
+    <!-- ? carousel -->
+    <div id="carousel" class="carousel">
+      <div class="slide one">
+        <div class="slide-content">
+          <div class="scale">Welcome to <%= title %>!</div>
+          <h2 class="fade-in">Picture Collections</h2>
+          <div class="pulse">Node.js, Express, MongoDb, PHP, SQL</div>
+        </div>
+      </div>
+      <div class="slide two">
+        <div class="slide-content">
+          <h2 class="title-slide">E-Commerce</h2>
+          <div>Node.js, Express, MongoDb, PHP, SQL</div>
+        </div>
+      </div>
+      <div class="slide three">
+        <div class="slide-content">
+          <h2 class="title-slide">Code Snippets</h2>
+          <div>Node.js, Express, MongoDb, PHP, SQL</div>
+        </div>
+      </div>
+      <div class="slide four">
+        <div class="slide-content">
+          <h2 class="title-slide">Custom Programming</h2>
+          <div>Node.js, Express, MongoDb, PHP, SQL</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ? snaps -->
+    <div class="parent">
+      <div class="child">
+        <div class="dot-box">
+          <span class="dot active-dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="child">
+        <div class="dot-box">
+          <span class="dot"></span>
+          <span class="dot active-dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="child">
+        <div class="dot-box">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot active-dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="child">
+        <div>
+          <p>
+            Where can you implement this user interface component?
+          </p>
+        </div>
+        <div class="dot-box">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot active-dot"></span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ? hover boxes -->
+    <div class="boxes">
+      <div class="boxes-title">Box transitions on active: You have to hold it down.</div>
+      <div class="box box-one">
+        Red
+      </div>
+      <div class="box box-two" title="Box Two">
+        Green
+      </div>
+      <div class="box box-three">
+        Blue
+      </div>
+    </div> 
+    
+    
+    <!-- button styles -->
+    <div class="button-grid" style="padding:64px; ">
+      <button>Button - no styles</button>
+      <a href="#">Anchor - no styles</a>
+      <a class="btn btn--line" href="#">btn--line</a>
+      <button style="background-color:var(--theme-green)" class="btn btn--nav">btn--nav</button>
+      <a class="btn btn--flat" href="">btn--flat</a>
+      <button class="btn btn--raised">btn--raised</button>
+      <button class="btn btn--pill">btn--pill</button>
+      <button class="btn btn--flat">
+        <div class="menu-black" style="height: 16px; width:20px;rotate:90deg;"></div>
+      </button>
+      <button class="btn btn--raised hummer-favicon">
+        Hummmer - .png
+      </button>
+      <button class="btn btn--raised">
+        <div class="cart-svg" style="height: 50px; width:50px;display:inline-block;">
+        <div>123</div>
+        </div>
+      </button>
+      <button class="btn btn--raised cart-free-svg">
+        Cart full of stuff purchased at Coder's Cove
+      </button>
+      <button class="btn btn--raised mia-img">
+        Mia - .ico
+      </button>
+    </div>
+  
+  </main>
+
+  <script src="/site/javascripts/about.js"></script>
+
+</div>
+<footer>
+  <!-- site footer -->
+  <%- include('../app/footer.ejs') %>
+</footer>
+  
+</body>
+</html>

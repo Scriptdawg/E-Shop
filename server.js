@@ -15,10 +15,11 @@ const path = require("path");
 const administratorRouter = require("./app/routes/administrator");
 const authRouter = require("./app/routes/auth");
 const authorRouter = require("./app/routes/author");
-const mainRouter = require("./app/routes/main");
+const butcherRouter = require("./app/routes/butcher");
+const libraryRouter = require("./app/routes/library");
 const memberRouter = require("./app/routes/member");
 const moderatorRouter = require("./app/routes/moderator");
-const publicRouter = require("./app/routes/public");
+const siteRouter = require("./app/routes/site");
 
 // express application
 const app = express();
@@ -67,17 +68,18 @@ app.set("views", path.join(__dirname, "views"));
 // use ...
 app.use(express.json());
 // app.use(expressLayouts);
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "resources")));
 app.use(express.urlencoded({ extended: true }));
 
 // use routers
-app.use("/", mainRouter);
+app.use("/", siteRouter);
 app.use("/administrator", administratorRouter);
 app.use("/auth", authRouter);
 app.use("/author", authorRouter);
+app.use("/butcher", butcherRouter);
+app.use("/library", libraryRouter);
 app.use("/member", memberRouter);
 app.use("/moderator", moderatorRouter);
-app.use("/public", publicRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
