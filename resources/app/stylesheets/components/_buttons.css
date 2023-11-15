@@ -40,7 +40,7 @@
 /* btn--flat */
 .btn--flat {
   background-color: var(--primary);
-  background-image: url("/assets/svg/arrow-right.svg");
+  background-image: url("/app/assets/svg/arrow-right.svg");
   background-repeat: no-repeat;
   background-position: right 20px center;
   color: var(--black);
