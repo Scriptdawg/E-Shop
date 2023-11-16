@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-product_auth_list" class="container-subpage">
-  <main>
 
-    <h2 class="title large"><%= pageTitle %></h2>
+  <main class="container-subpage">
+    <h2 class="title"><%= pageTitle %></h2>
     <p>
       To test database connectivity, these products are retrieved from a mongoDb
       cloud database called E-Shop, a collection of documents called products
@@ -36,16 +32,14 @@
             src="<%= product.coverImagePath %>"
             alt="<%= product.name %>"
             title="<%= product.name %>"
-          />
+          >
         <% } %>
       </a>
     <% }); %>
-
   </main>
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
+
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
 </body>
 </html>

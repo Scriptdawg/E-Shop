@@ -1,3 +1,9 @@
+/* ax-btn */
+.ax-btn {
+  all: unset;
+  outline: revert;
+  box-sizing: border-box;
+}
 /* btn */
 .btn {
   all: unset;

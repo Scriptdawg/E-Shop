@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-product_create" class="container-subpage">
-  <main>
-
-    <h2 class="title large"><%= pageTitle %></h2>
+  <main class="container-subpage">
+    <h2 class="title"><%= pageTitle %></h2>
     <form method="POST" action="">
-      
       <!-- name -->
       <label for="name">Name *</label><br />
       <input
@@ -27,7 +21,7 @@
         placeholder="Enter a name ..."
         value="<%= product.name %>"
         autocomplete="off"
-      />
+      >
       
       <!-- available -->
       <label for="available">Available *</label><br />
@@ -38,7 +32,7 @@
         placeholder="Enter true or false ..."
         value="<%= product.available %>"
         autocomplete="off"
-      />
+      >
       
       <!-- category -->
       <label for="category">Category *</label><br />
@@ -49,7 +43,7 @@
         placeholder="Enter beef or chicken ..."
         value="<%= product.category %>"
         autocomplete="off"
-      />
+      >
 
       <!-- short description -->
       <label for="shortDescription">Short Description *</label><br />
@@ -87,7 +81,7 @@
         placeholder="Enter price ..."
         value="<%= product.price %>"
         autocomplete="off"
-      />
+      >
 
       <!-- price type -->
       <label for="priceType">Price Type</label><br />
@@ -106,7 +100,7 @@
 
       <!-- cover image  -->
       <label for="cover">Cover</label>
-      <input id="cover" name="cover" type="file" class="filepond" />
+      <input id="cover" name="cover" type="file" class="filepond">
 
       <button type="submit">Submit</button>
     </form>
@@ -114,19 +108,17 @@
     <p><i>* required</i></p>
 
     <% if(errors && errors !=='' ) { %>
-      <h3 class="title error">Errors:</h3>
+      <h3 class="title">Errors:</h3>
       <ul>
         <% errors.forEach(error=> { %>
           <li><%= error.msg %></li>
         <% }) %>
       </ul>
     <% } %>
-
   </main>
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
+
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
 </body>
 </html>

@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("app/banner.ejs") %>
   </header>
-  
   <%- include("app/nav.ejs") %>
 
-<div id="container-subpage-error" class="container-subpage">
-  <main>
-
-    <h2 class="title error"><%= message %></h2>
+  <main class="container-subpage">
+    <h2 class="title"><%= message %></h2>
     <h3 class="title">Error <%= error.status %></h3>
     <pre><%= error.stack %></pre>
-   
   </main>
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('app/footer.ejs') %>
-</footer>
+
+  <footer>
+    <%- include('app/footer.ejs') %>
+  </footer>
 </body>
 </html>

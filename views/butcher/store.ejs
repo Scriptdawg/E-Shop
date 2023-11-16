@@ -1,131 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<!-- store subpage -->
-<main id="store-subpage" class="store-subpage">
+  <!-- store subpage -->
+  <main id="store-subpage" class="store-subpage">
+    <!-- subpage navigation -->
+    <nav id="subpage-nav" class="subpage-nav">
+      <a id="btn-information" class="btn btn-information" href="#information" title="Categories || Ledger">
+        <img
+          src="/butcher/assets/svg/three-dots-vertical.svg"
+          width="24"
+          height="24"
+          alt="three-dots-vertical.svg"
+        >
+      </a>
+      <button id="btn-store" class="btn btn-store" title="Go Shopping">
+        <img
+          src="/butcher/assets/svg/shop.svg"
+          width="24"
+          height="24"
+          alt="shop.svg"
+        >
+      </button>
+      <button id="btn-favorites" class="btn btn-favorites" title="View Favorites">
+        <img
+          src="/butcher/assets/svg/heart-fill.svg"
+          width="24"
+          height="24"
+          alt="heart-fill.svg"
+        >
+        <div id="heart-quantity" class="heart-quantity">0</div>
+      </button>
+      <button id="btn-cart" class="btn btn-cart" title="View Cart">
+        <img
+          src="/butcher/assets/svg/cart4.svg"
+          width="24"
+          height="24"
+          alt="cart4.svg"
+        >      
+        <div id="cart-quantity" class="cart-quantity"><span>0</span></div>
+      </button>
+    </nav>
+    <!-- store content -->
+    <article id="store-content" class="store-content">
+      <!-- packages  -->
+      <section id="packages" class="packages"></section>
+      <div id="information" class="information">
+        <!-- categories -->
+        <section id="categories" class="categories">
+          <h2 class="title">Categories:</h2>
+          <ul>
+            <li><button id="btn-beef" class="btn btn-beef">Beef</button></li>
+            <li><button id="btn-chicken" class="btn btn-chicken">Chicken</button></li>
+            <li><button id="btn-miscellaneous" class="btn btn-miscellaneous">Miscellaneous</button></li>
+          </ul>
+        </section>
+        <!-- instuctions -->
+        <section id="instructions" class="instructions">
+          <h2 class="title">Instructions | Tips</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
+            quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
+          </p>
+          <h2 class="title">FAQ | Links</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
+            quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
+          </p>
+        </section>
+        <!-- ledger -->
+        <section id="ledger" class="ledger">
+          <h2 class="title">Ledger:</h2>
+          <p>Total: $<span id="total-amount">0.00</span></p>
+          <p>Number of products: <span id="cart-products">0</span></p>
+          <p>Number of items: <span class="cart-quantity">0</span></p>
+          <p>
+            <button id="btn-clear-cart" class="btn btn--pill btn-clear-cart">Empty Cart</button>
+            <br /><br />
+            <button id="checkout" class="btn btn--pill btn-checkout disabled">Checkout</button>
+            <br /><br />
+            <a class="btn btn--pill btn-continue" href="/butcher">Continue Shopping</a>
+          </p>
+        </section>
+      </div>
+      <div id="more" class="more">
+        <!-- sales -->
+        <section id="sales" class="sales">
+          <h2 class="title">Specials | Promotions</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
+            quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
+          </p>
+          <h2 class="title">Stories | Articles</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
+            quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
+          </p>
+        </section>
+        <!-- advertisements -->
+        <section id="advertisements" class="advertisements">
+          <h2 class="title">Advertisements:</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
+            quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
+          </p>
+        </section>
+      </div>
+    </article>
+  </main>
 
-  <!-- subpage navigation -->
-  <nav id="subpage-nav" class="subpage-nav">
-    <a id="btn-information" class="btn-plain btn-information" href="#information" title="Categories || Ledger">
-      <img
-        src="/butcher/assets/svg/three-dots-vertical.svg"
-        width="24"
-        height="24"
-        alt="Menu"
-        title="Menu"
-      >
-    </a>
-    <button id="btn-store" class="btn-plain btn-store" title="Go Shopping">
-      <img
-        src="/butcher/assets/svg/shop.svg"
-        width="24"
-        height="24"
-        alt="Menu"
-        title="Menu"
-      >
-    </button>
-    <button id="btn-favorites" class="btn-plain btn-favorites" title="View Favorites">
-      <img
-        src="/butcher/assets/svg/heart-fill.svg"
-        width="24"
-        height="24"
-        alt="Menu"
-        title="Menu"
-      >
-      <div id="heart-quantity" class="heart-quantity">0</div>
-    </button>
-    <button id="btn-cart" class="btn-plain btn-cart" title="View Cart">
-      <img
-        src="/butcher/assets/svg/cart4.svg"
-        width="24"
-        height="24"
-        alt="Menu"
-        title="Menu"
-      >      
-      <div id="cart-quantity" class="cart-quantity"><span>0</span></div>
-    </button>
-  </nav>
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
 
-  <!-- store content -->
-  <article id="store-content" class="store-content">
-
-    <!-- packages  -->
-    <section id="packages" class="packages"></section>
-
-    <div id="information" class="information">
-      <!-- categories -->
-      <section id="categories" class="categories">
-        <h2 class="title large">Categories:</h2>
-        <ul>
-          <li><button id="btn-beef" class="btn btn-beef">Beef</button></li>
-          <li><button id="btn-chicken" class="btn btn-chicken">Chicken</button></li>
-          <li><button id="btn-miscellaneous" class="btn btn-miscellaneous">Miscellaneous</button></li>
-        </ul>
-      </section>
-      <!-- instuctions -->
-      <section id="instructions" class="instructions">
-        <h2 class="title large">Instructions | Tips</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
-          quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!</p>
-        <h2 class="title large">FAQ | Links</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
-          quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!</p>
-
-      </section>
-      <!-- ledger -->
-      <section id="ledger" class="ledger">
-        <h2 class="title large">Ledger:</h2>
-        <p>Total: $<span id="total-amount">0.00</span></p>
-        <p>Number of products: <span id="cart-products">0</span></p>
-        <p>Number of items: <span class="cart-quantity">0</span></p>
-        <p>
-          <button id="btn-clear-cart" class="btn btn--pill btn-clear-cart">Empty Cart</button>
-          <br /><br />
-          <button id="checkout" class="btn btn--pill btn-checkout disabled">Checkout</button>
-          <br /><br />
-          <a class="btn btn--pill btn-continue" href="/butcher">Continue Shopping</a>
-        </p>
-      </section>
-    </div>
-
-    <div id="more" class="more">
-      <!-- sales -->
-      <section id="sales" class="sales">
-        <h2 class="title large">Specials | Promotions</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
-          quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!</p>
-        <h2 class="title large">Stories | Articles</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
-          quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!</p>
-      </section>
-      <!-- advertisements -->
-      <section id="advertisements" class="advertisements">
-        <h2 class="title large">Advertisements:</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
-          quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!</p>
-      </section>
-    </div>
-
-  </article>
-
-</main>
-
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
-
-<script type="module" src="/butcher/javascripts/index.js"></script>
+  <script type="module" src="/butcher/javascripts/index.js"></script>
 </body>
 </html>

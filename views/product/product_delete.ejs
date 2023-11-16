@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-product_delete" class="container-subpage">
-  <main>
-
-    <h2 class="title large"><%= pageTitle %></h2>
+  <main class="container-subpage">
+    <h2 class="title"><%= pageTitle %></h2>
     <h3 class="title"><%= product.name %></h3>
     <p>Do you really want to delete <%= product.name %>?</p>
 
@@ -25,18 +20,16 @@
         name="productid"
         required="true"
         value="<%= product._id %>"
-      />
+      >
       <button type="submit">Delete</button>
     </form>
 
-    <br />
+    <br>
     <a href="/author/product/<%= product.url %>">Cancel</a>
-
   </main>
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
+
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
 </body>
 </html>

@@ -1,12 +1,12 @@
 /* site banner */
 .site-banner {
+  align-items: center;
   background: var(--site-bg-linear);
   color: var(--site-title);
-  font-family: var(--font-teritiary);
-  font-style: italic;
-  align-items: center;
   display: flex;
   flex-wrap: wrap;
+  font-family: var(--font-teritiary);
+  font-style: italic;
   gap: 16px;
   justify-content: space-between;
   padding: 16px;
@@ -17,23 +17,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
-.sign {
-  font-size: 90%;
-}
-.text--flex {
-  font-size: clamp(1rem, 5dvw, 2rem);
-  font-weight: 600;
-  line-height: 1.8;
-}
-.text--flex-sm {
-  font-size: clamp(0.75rem, 3dvw, 1.4rem);
-  font-weight: 600;
-  line-height: 1.8;
-}
-.site-banner img {
-  width: clamp(10px, 11dvw, 50px );
-  height: clamp(10px, 11vw, 50px);
 }
 /* Small - sm */
 @media (min-width: 400px) {

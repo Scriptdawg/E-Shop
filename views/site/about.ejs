@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include('../app/head.ejs') %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-about" class="container-subpage-about">
-  <main>
+  <main class="container-subpage-about">
 
     <!-- ? carousel -->
     <div id="carousel" class="carousel">
@@ -98,8 +94,7 @@
         Blue
       </div>
     </div> 
-    
-    
+       
     <!-- button styles -->
     <div class="button-grid" style="padding:64px; ">
       <button>Button - no styles</button>
@@ -126,14 +121,11 @@
     </div>
   
   </main>
-
-  <script src="/site/javascripts/about.js"></script>
-
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
   
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
+  
+  <script src="/site/javascripts/about.js"></script>
 </body>
 </html>

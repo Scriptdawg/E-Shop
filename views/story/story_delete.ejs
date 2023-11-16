@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-story_delete" class="container-subpage">
-  <main>
+  <main class="container-subpage">
 
-    <h2 class="title large"><%= pageTitle %></h2>
+    <h2 class="title"><%= pageTitle %></h2>
     <h3 class="title"><%= story.name %></h3>
     <p>Do you really want to delete <%= story.name %>?</p>
 
@@ -25,15 +21,15 @@
         name="storyid"
         required="true"
         value="<%= story._id %>"
-      />
+      >
       <button type="submit">Delete</button>
     </form>
 
-    <br />
+    <br>
     <a href="/author/story/<%= story.url %>">Cancel</a>
 
     <% if(products) { %>
-      <h3 class="title error">Errors:</h3>
+      <h3 class="title">Errors:</h3>
       <span class="error">This story is still assigned to:</span>
       <ul style="margin-inline: 16px">
         <% products.forEach(product => { %>
@@ -43,10 +39,9 @@
     <% } %>
     
   </main>
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
+
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
 </body>
 </html>

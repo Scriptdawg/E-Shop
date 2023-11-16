@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-  <div id="container-subpage-login" class="container-subpage">
-    <main>
-      <h2 class="title large">Please Login</h2>
-      <form method="POST" action="/auth/login">
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter email ..." value="" autocomplete="on" />
-        </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="********" />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      <p>
-        If you don't have an account,
-        <a class="normal-link" href="/auth/register">register</a> here.
-      </p>
-      <% if(errors[0].msg) { %>
-        <h3 class="title error">Errors:</h3>
-        <ul>
-          <% errors.forEach(error=> { %>
-            <li><%= error.msg %></li>
-          <% }) %>
-        </ul>
-      <% } %>
-    </main>
-  </div>
+  <main class="container-subpage">
+    <h2 class="title">Please Login</h2>
+    <form method="POST" action="/auth/login">
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter email ..." value="" autocomplete="on">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="********">
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <p>
+      If you don't have an account,
+      <a href="/auth/register">register</a> here.
+    </p>
+    <% if(errors[0].msg) { %>
+      <h3 class="title">Errors:</h3>
+      <ul>
+        <% errors.forEach(error=> { %>
+          <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </main>
+
   <footer>
-    <!-- site footer -->
     <%- include('../app/footer.ejs') %>
   </footer>
 </body>

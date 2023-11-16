@@ -47,8 +47,3 @@ body {
   white-space: nowrap;
   width: 1px;
 }
-.ax-button {
-  all: unset;
-  outline: revert;
-  box-sizing: border-box;
-}

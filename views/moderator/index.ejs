@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-about" class="container-subpage">
-  <main>
-    <h2 class="title large">Moderator Content</h2>
+  <main class="container-subpage">
+    <h2 class="title">Moderator Content</h2>
     <p>
       The 'moderator role' has the ability to block users, hide submissions
       and other functions as required.
     </p>
   </main>
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
+
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
 </body>
 </html>

@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-story_create" class="container-subpage">
-  <main>
-    <h2 class="title large"><%= pageTitle %></h2>
+  <main class="container-subpage">
+    <h2 class="title"><%= pageTitle %></h2>
 
     <form method="POST" action="">
 
@@ -27,7 +23,7 @@
         placeholder="Enter a name ..."
         value="<%= story.name %>"
         autocomplete="off"
-      />
+      >
 
       <!-- synopsis -->
       <label for="synopsis" title="A brief overview.">Synopsis *</label><br />
@@ -38,14 +34,14 @@
         placeholder="Enter a synopsis ..."
         value="<%= story.synopsis %>"
         autocomplete="off"
-      />
+      >
 
       <!-- introduction -->
-      <label for="introduction" title="A story introduction paragraph. ">Introduction</label><br />
+      <label for="introduction" title="A story introduction paragraph. ">Introduction</label><br>
       <textarea id="introduction" name="introduction"><%= story.introduction %></textarea>
 
       <!-- content -->
-      <label for="content" title="Main story contents.">Content</label><br />
+      <label for="content" title="Main story contents.">Content</label><br>
       <textarea id="content" name="content"><%= story.content %></textarea>
 
       <!-- submit -->
@@ -55,19 +51,17 @@
     <p><i>* required</i></p>
 
     <% if(errors && errors !=='' ) { %>
-      <h3 class="title error">Errors:</h3>
+      <h3 class="title">Errors:</h3>
       <ul>
         <% errors.forEach(error=> { %>
           <li><%= error.msg %></li>
         <% }) %>
       </ul>
     <% } %>
-
   </main>
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
+
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
 </body>
 </html>

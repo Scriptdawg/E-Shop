@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-member" class="container-subpage">
-  <main>
-    <h2 class="title large">Member Content</h2>
+  <main class="container-subpage">
+    <h2 class="title">Member Content</h2>
     <p>
       This page has your 'profile', ability to change personal information,
       add an avatar, close your account, change your password, request to be put
@@ -24,12 +20,13 @@
       The 'member role' allows you to add comments and reviews, use a list maker
       application or use a chat application.
     </p>
-    <p>As well, members may add items to their shopping cart and place orders.</p>
+    <p>
+      As well, members may add items to their shopping cart and place orders.
+    </p>
   </main>
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
+  
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
 </body>
 </html>

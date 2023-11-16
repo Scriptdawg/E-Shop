@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-    <div id="container-subpage-administrator" class="container-subpage">
-      <main>
-        <h2 class="title large">Administrator Content</h2>
-        <p>
-          The 'administrator role' can manage users with create, read, update and
-          delete functions. It has access to database optimization tools. It controls
-          what to backup and when. It can bring the site offline.
-        </p>
-      </main>
-    </div>
-    <footer>
-      <!-- site footer -->
-      <%- include('../app/footer.ejs') %>
-    </footer>
-  </body>
-  </html>
+  <main  class="container-subpage">
+    <h2 class="title">Administrator Content</h2>
+    <p>
+      The 'administrator role' can manage users with create, read, update and
+      delete functions. It has access to database optimization tools. It controls
+      what to backup and when. It can bring the site offline.
+    </p>
+  </main>
+
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
+</body>
+</html>

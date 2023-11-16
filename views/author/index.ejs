@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-author" class="container-subpage">
-  <main>
-    <h2 class="title large">Author Content</h2>
+  <main class="container-subpage">
+    <h2 class="title">Author Content</h2>
     <p>
       The 'author role' is able to create, read, update and delete public content.
       This includes creating new products.
@@ -24,10 +20,9 @@
       <a href="/author/stories">Stories</a>
     </div>
   </main>
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
+
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
 </body>
 </html>

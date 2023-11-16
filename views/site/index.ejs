@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
   <main>
-
     <!-- ? fades -->
     <div id="fades" class="fades">
       <div class="fade fade-first">
@@ -52,8 +48,7 @@
         </div>
       </div>
     </div>
-
-    <div class="container">
+    <div class="container-subpage">
       <h2>Applicaton index.ejs</h2>
       <p>Application landing page. At the / route.</p>
       <p>Each page is stand-alone meaning it no longer resides inside a shell or layout page.</p>
@@ -90,19 +85,10 @@
         add it to the app library otherwise keep it in the mini-app directory/module.
       </p>
     </div>
-
   </main>
 
   <footer>
-    <div style="background: var(--site-bg-linear); color: var(--white); padding-block:32px;">
-      <div class="container">
-        <p>This paragraph is the footer content in site/index.ejs and the rest is an include('partials/footer.ejs').</p>
-      </div>
-    </div>
-    <!-- site footer -->
     <%- include('../app/footer.ejs') %>
   </footer>
-
 </body>
-
 </html>

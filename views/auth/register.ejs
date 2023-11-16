@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-register" class="container-subpage">
-  <main>
-
-    <h2 class="title large">Please Register</h2>
+  <main class="container-subpage">
+    <h2 class="title">Please Register</h2>
     <form method="POST" action="/auth/register">
       <div>
         <label for="fname">First name</label>
@@ -25,7 +20,7 @@
           name="fname"
           placeholder="Enter first name ..."
           value=""
-        />
+        >
       </div>
       <div>
         <label for="lname">Last name</label>
@@ -35,7 +30,7 @@
           name="lname"
           placeholder="Enter last name ..."
           value=""
-        />
+        >
       </div>
       <div>
         <label for="email">Email</label>
@@ -46,7 +41,7 @@
           placeholder="Enter email ..."
           value=""
           autocomplete="email"
-        />
+        >
       </div>
       <div>
         <label for="password">Password</label>
@@ -56,7 +51,7 @@
           name="password"
           placeholder="********"
           value=""
-        />
+        >
       </div>
       <div>
         <label for="repeatPassword">Re-enter password</label>
@@ -65,7 +60,7 @@
           id="repeatPassword"
           name="repeatPassword"
           placeholder="Re-enter password ..."
-        />
+        >
       </div>
       <div>
         <!-- <label for="roles">Role</label> -->
@@ -75,13 +70,13 @@
           name="roles"
           placeholder="Enter roles ..."
           value="member"
-        />
+        >
       </div>
       <button type="submit">Register</button>
     </form>
 
     <% if(errors && errors !== '' ) { %>
-      <h3 class="title error">Errors:</h3>
+      <h3 class="title">Errors:</h3>
       <ul>
         <% errors.forEach(error=> { %>
           <li><%= error.msg %></li>
@@ -93,21 +88,17 @@
     <details>
       <summary>Privacy policy</summary>
       <p>We take your privacy seriously. Here are some key points from our privacy policy:</p>
-    
-      <ul>
+       <ul>
         <li>We collect only the personal information that is necessary to provide our services.</li>
         <li>We do not share your personal information with third parties except as required by law.</li>
         <li>We use industry-standard security measures to protect your personal information.</li>
         <li>You can request access to or deletion of your personal information at any time.</li>
       </ul>
-
       <p>For more information, please read our full privacy policy.</p>
     </details>
-
   </main>
-</div>
+
   <footer>
-    <!-- site footer -->
     <%- include('../app/footer.ejs') %>
   </footer>
 </body>

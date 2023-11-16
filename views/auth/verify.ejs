@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-verify" class="container-subpage">
-  <main>
-    <h2 class="title large">Email Verification</h2>
+  <main class="container-subpage">
+    <h2 class="title">Email Verification</h2>
     <p>Please check your email for a verification code.</p>
-
     <form method="POST" action="/auth/verify">
       <div>
-        <input type="hidden" id="id" name="id" value="<%= id %>" />
+        <input type="hidden" id="id" name="id" value="<%= id %>">
         <label for="verificationCode">Verification Code</label>
-        <input type="text" id="verificationCode" name="verificationCode" />
+        <input type="text" id="verificationCode" name="verificationCode">
         <button type="submit">Verify</button>
       </div>
     </form>
@@ -32,16 +27,15 @@
 
       <form method="POST" action="/auth/verify/resend">
         <div>
-          <input type="hidden" id="id" name="id" value="<%= id %>" />
+          <input type="hidden" id="id" name="id" value="<%= id %>">
           <button type="submit">Resend Code</button>
         </div>
       </form>
 
     <% } %>
   </main>
-</div>
+
 <footer>
-  <!-- site footer -->
   <%- include('../app/footer.ejs') %>
 </footer>
 </body>

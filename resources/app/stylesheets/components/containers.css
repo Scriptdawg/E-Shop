@@ -1,11 +1,6 @@
 .container-subpage {
   margin-inline: auto;
-  max-width: 1200px;
+  max-width: 960px;
   padding-block-start: 50px;
   padding-inline: 16px;
-}
-.container {
-  max-width: 960px;
-  padding-inline: 20px;
-  margin-inline: auto;
 }

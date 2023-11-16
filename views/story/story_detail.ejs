@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include("../app/head.ejs") %>
 </head>
-
 <body>
   <header>
     <%- include("../app/banner.ejs") %>
   </header>
-  
   <%- include("../app/nav.ejs") %>
 
-<div id="container-subpage-product_auth_detail" class="container-subpage">
-  <main>
-  
-    <h2 class="title large"><%= pageTitle %></h2>
+  <main class="container-subpage">
+    <h2 class="title"><%= pageTitle %></h2>
     <p><%= story.synopsis %></p>
     <p><%= story.introduction %></p>
     <p><%= story.content %></p>
 
     <a href="/author/story/update/<%= story.url %>">Update</a>
     <a href="/author/story/delete/<%= story.url %>">Delete</a>
-
   </main>
-</div>
-<footer>
-  <!-- site footer -->
-  <%- include('../app/footer.ejs') %>
-</footer>
+
+  <footer>
+    <%- include('../app/footer.ejs') %>
+  </footer>
 </body>
 </html>
