@@ -1,0 +1,34 @@
+/* footer-app */
+.footer-app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 112px 16px;
+}
+/* bg-dark */
+.bg-dark {
+  background: var(--site-bg-linear);
+  color: var(--white);
+  --svg-color: var(--white);
+}
+/* social */
+.social {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+/* logo-app */
+.logo-app {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* small - sm */
+@media (min-width: 576px) {
+  .social {
+    gap: 32px;
+  }
+}

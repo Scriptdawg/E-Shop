@@ -1,15 +1,14 @@
 /* site banner */
 .site-banner {
   align-items: center;
-  background: var(--site-bg-linear);
-  color: var(--site-title);
+  background: var(--bg-linear-light);
   display: flex;
   flex-wrap: wrap;
   font-family: var(--font-teritiary);
   font-style: italic;
   gap: 16px;
   justify-content: space-between;
-  padding: 16px;
+  padding: 32px 16px 8px 16px;
 }
 /* logo */
 .logo {
@@ -18,7 +17,7 @@
   flex-wrap: wrap;
   gap: 8px;
 }
-/* Small - sm */
+/* small - sm */
 @media (min-width: 400px) {
   .logo {
     gap: 16px;
