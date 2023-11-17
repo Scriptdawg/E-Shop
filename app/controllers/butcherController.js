@@ -42,7 +42,7 @@ exports.product_detail_get = asyncHandler(async (req, res) => {
 // READ Store - list
 exports.store_get = asyncHandler(async (req, res) => {
   res.render("butcher/store", {
-    subpageName: "Browsing Products",
+    subpageName: "Butcher Shop",
     roles: req.session.roles,
   });
 })

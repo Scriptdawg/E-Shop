@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <%- include("../app/head-app.ejs") %>
+  <title><%= title %> | <%= subpageName %></title>
 </head>
 <body>
   <header>
@@ -10,7 +11,7 @@
   <%- include("../app/nav-app.ejs") %>
 
   <main class="container-subpage">
-    <h2 class="title">Please Login</h2>
+    <h2 class="title">Please Sign In</h2>
     <form method="POST" action="/auth/login">
       <div>
         <label for="email">Email</label>
@@ -20,7 +21,7 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="********">
       </div>
-      <button type="submit">Login</button>
+      <button type="submit">Sign In</button>
     </form>
     <p>
       If you don't have an account,

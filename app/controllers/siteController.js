@@ -20,7 +20,7 @@ exports.about_get = (req, res) => {
 //? CONTACT - GET
 exports.contact_get = (req, res) => {
   res.render("site/contact", {
-    subpageName: "Compose A Message",
+    subpageName: "Contact Cover's Cove",
     roles: req.session.roles,
     message: "",
   });

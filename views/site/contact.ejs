@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <%- include('../app/head-app.ejs') %>
+  <title><%= title %> | <%= subpageName %></title>
 </head>
 <body>
   <header>
@@ -10,7 +11,7 @@
   <%- include("../app/nav-app.ejs") %>
 
   <main class="container-subpage">
-    <h2 class="title">Contact Us</h2>
+    <h2 class="title">Compose A Message</h2>
     <form method="POST" action="">
       <div>
         <label for="email">Your email</label>
