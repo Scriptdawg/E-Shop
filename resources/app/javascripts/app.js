@@ -1,9 +1,9 @@
 class App {
   constructor() {
-    this.scrollTop = document.querySelector("#btn-scroll-top");
+    this.scrollTop = document.querySelector("#btn--top");
     this.windowSize = document.querySelector("#window-size");
     this.lastPosition = scrollY; 
-    this.#main(), this.#scroller(), this.#siteSideNav();
+    this.#main(), this.#scroller(), this.#appSideNav();
   };
   #main = () => {
     // displays initial screen size
@@ -23,18 +23,18 @@ class App {
     `
   };
   // shows to top of page button if user scrolls more then 1000px
-  // moves site-top-nav up or down on scroll
+  // moves app-top-nav up or down on scroll
   #scroll = () => {
     const currentPosition = scrollY;
     if(currentPosition > this.lastPosition && currentPosition > 150) {
       this.lastPosition = scrollY;
       requestAnimationFrame(() => {
-        document.querySelector("#site-top-nav").classList.add("site-top-nav-move");
+        document.querySelector("#app-top-nav").classList.add("app-top-nav-move");
       });
     } else {
       this.lastPosition = scrollY;
       requestAnimationFrame(() => {
-        document.querySelector("#site-top-nav").classList.remove("site-top-nav-move");
+        document.querySelector("#app-top-nav").classList.remove("app-top-nav-move");
       });
     };
     if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
@@ -53,21 +53,21 @@ class App {
     return;
   };
 
-  // opens and closes site side nav with overlay
-  #siteSideNav = () => {
+  // opens and closes app side nav with overlay
+  #appSideNav = () => {
     const overLay = document.querySelector(".overlay");
-    const siteSideNav = document.querySelector(".site-side-nav");
-    document.querySelector("#btn-open-site-side-nav").addEventListener("click", () => {
-      siteSideNav.style.display = "flex";
+    const appSideNav = document.querySelector(".app-side-nav");
+    document.querySelector("#btn-open-app-side-nav").addEventListener("click", () => {
+      appSideNav.style.display = "flex";
       overLay.style.display = "block";
       requestAnimationFrame(() => {
         overLay.classList.add("show-overlay");
-        siteSideNav.classList.add("open-site-side-nav");
+        appSideNav.classList.add("open-app-side-nav");
       });
     });
     overLay.addEventListener("click", (event) => {
       requestAnimationFrame(() => {
-        siteSideNav.classList.remove("open-site-side-nav");
+        appSideNav.classList.remove("open-app-side-nav");
         event.target.classList.remove("show-overlay");
       });
     });
@@ -75,7 +75,7 @@ class App {
     overLay.addEventListener("transitionend", (event) => {
       if(!event.target.classList.contains("show-overlay")) {
         event.target.style.display = "none";
-        siteSideNav.style.display = "none";
+        appSideNav.style.display = "none";
       };
     });
   };

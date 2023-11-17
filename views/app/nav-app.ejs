@@ -1,34 +1,33 @@
-
-<!-- site-top-nav -->
-<nav id="site-top-nav">
-  <div class="site-top-nav">
-    <button id="btn-open-site-side-nav" class="menu-black btn" title="Site Pages"></button>
-    <ul class="site-top-nav-links">
+<!-- app-top-nav -->
+<nav id="app-top-nav">
+  <div class="app-top-nav">
+    <button id="btn-open-app-side-nav" class="menu-black btn" title="app Pages"></button>
+    <ul class="app-top-nav-links">
       <li><a href="/butcher" class="btn btn--nav" title="E-Shop">Butcher</a></li>
-      <li><a href="/about" class="btn btn--nav" title="About This Site">About</a></li>
-      <li><a href="/contact" class="btn btn--nav" title="Contact Site Owner">Contact</a></li>
+      <li><a href="/about" class="btn btn--nav" title="About This app">About</a></li>
+      <li><a href="/contact" class="btn btn--nav" title="Contact app Owner">Contact</a></li>
     </ul>
   </div>
   <!-- subpage heading -->
-  <div class="site-subpage">
+  <div class="app-subpage">
     <h1 id="subpage-name" class="title subpage-name" title="Subpage Name">
       <%= subpageName %>
     </h1>
   </div>
 </nav>
 
-<!-- website side navigation -->
-<nav class="site-side-nav">
+<!-- app side navigation -->
+<nav class="app-side-nav">
 
   <div>
     <div class="intro">
       <h3 class="title--lg uppercase">Pages</h3>
     </div>
-    <ul class="site-side-nav-links">
+    <ul class="app-side-nav-links">
       <li><a class="btn btn--nav" href="/" title="Home Page">Home</a></li>
       <li><a class="btn btn--nav" href="/butcher" title="E-Shop">Butcher</a></li>
-      <li><a class="btn btn--nav" href="/about" title="About This Site">About</a></li>
-      <li><a class="btn btn--nav" href="/contact" title="Contact Site Owner">Contact</a></li>
+      <li><a class="btn btn--nav" href="/about" title="About This app">About</a></li>
+      <li><a class="btn btn--nav" href="/contact" title="Contact app Owner">Contact</a></li>
       <% if(roles) { roles.forEach(role=> { %>
           <li><a class="btn btn--nav" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
         <% }) %>

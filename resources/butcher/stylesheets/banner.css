@@ -1,7 +1,8 @@
-/* site banner */
-.site-banner {
+/* banner-butcher */
+.banner {
   align-items: center;
   background: var(--bg-linear-light);
+  color: var(--danger);
   display: flex;
   flex-wrap: wrap;
   font-family: var(--font-teritiary);
@@ -9,16 +10,16 @@
   gap: 16px;
   justify-content: space-between;
   padding: 32px 16px 8px 16px;
+
 }
-/* logo */
+/* logo-butcher */
 .logo {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
-/* small - sm */
-@media (min-width: 400px) {
+@media (min-width: 576px) {
   .logo {
     gap: 16px;
   }

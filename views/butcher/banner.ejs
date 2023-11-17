@@ -1,0 +1,14 @@
+<!-- banner (for now, just copy of banner-app with name and color changed) -->
+<div class="banner">
+  <!-- logo -->
+  <a class="logo btn text--xl" href="/" title="Go To Coder's Cove Home Page">
+    <img src="/app/assets/svg/logo.svg" width="40" height="40" alt="Logo">
+    <span>Butcher Shop</span>
+  </a>
+  <!-- links -->
+  <% if(roles) { %>
+    <a class="btn" href="/auth/logout" title="Sigh Out">Sign Out</a>
+  <% } else { %>
+    <a class="btn" href="/auth/login" title="Sigh In Or Register">Sign In</a>
+  <% } %>
+</div>

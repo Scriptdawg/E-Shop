@@ -7,8 +7,7 @@ export class Shop extends Store {
     this.#main();
   };
   #main = () => {
-    // document.querySelector("#website-top-banner").classList.add("hide");
-    document.querySelector("#subpage-name").textContent = "Butcher's Shop";
+    document.querySelector("#subpage-name").textContent = "Browsing Products";
     if (this.category) this.view = this.products.filter(product => product.category === this.category);
     else this.view = this.products;
     this.printProducts().view.forEach(product => {

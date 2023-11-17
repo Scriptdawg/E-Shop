@@ -4,8 +4,8 @@
 @import url("components/_buttons.css");
 @import url("components/_typography.css");
 @import url("components/containers.css");
-@import url("components/site_banner.css");
-@import url("components/site_nav.css");
+@import url("components/banner_app.css");
+@import url("components/nav_app.css");
 @import url("components/footer_app.css");
 @import url("components/forms.css");
 

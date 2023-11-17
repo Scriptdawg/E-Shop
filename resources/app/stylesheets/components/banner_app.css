@@ -1,0 +1,12 @@
+/* banner-app */
+.banner-app {
+  align-items: center;
+  background: var(--bg-linear-light);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-teritiary);
+  font-style: italic;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 32px 16px 8px 16px;
+}

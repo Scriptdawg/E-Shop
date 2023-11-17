@@ -80,17 +80,17 @@
 .menu-black {
   background-image: url("/app/assets/svg/menu-black.svg");
 }
+/* btn-round for round svg buttons */
 .btn--round {
   border-radius: 50%;
   padding: 6px 8px 0 8px;
 }
-/* btn--scroll-top */
-.btn--scroll-top {
+/* btn--top scrolls to top of page */
+.btn--top {
   background-color: rgba(240 240 240 / 80%);
   border-radius: 8px 0 0 8px;
   bottom: max(70px, 10dvh);
   color: var(--danger);
-  cursor: pointer;
   display: none;
   position: fixed;
   right: 0;
