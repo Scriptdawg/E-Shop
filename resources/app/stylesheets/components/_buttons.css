@@ -98,7 +98,9 @@
   padding: 6px 4px;
   position: fixed;
   right: 0;
+  -webkit-text-orientation: upright;
   text-orientation: upright;
+  -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
   text-transform: uppercase;
 }
