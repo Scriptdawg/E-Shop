@@ -32,3 +32,23 @@
     gap: 32px;
   }
 }
+/* btn--scroll-top */
+.btn--scroll-top {
+  background-color: var(--medium);
+  border: initial;
+  border-radius: 8px 0 0 8px;
+  bottom: max(70px, 10dvh);
+  color: var(--danger);
+  cursor: pointer;
+  display: none;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.8;
+  padding: 8px;
+  position: fixed;
+  right: 0;
+}
+.btn--scroll-top:hover {
+  background-color: var(--xdark);
+  color: var(--lime);
+}
