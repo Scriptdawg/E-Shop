@@ -55,3 +55,9 @@
   /* recently added */
   --svg-color: var(--black);
 }
+/* bg-dark */
+.bg-dark {
+  background: var(--site-bg-linear);
+  color: var(--white);
+  --svg-color: var(--white);
+}
