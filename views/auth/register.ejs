@@ -3,6 +3,7 @@
 <head>
   <%- include("../app/head-app.ejs") %>
   <title><%= title %> | <%= subpageName %></title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
   <header>
@@ -46,22 +47,28 @@
       </div>
       <div>
         <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="********"
-          value=""
-        >
+        <div class="pass-word">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="********"
+            value=""
+          >
+          <i class="material-icons">visibility</i>
+        </div>
       </div>
       <div>
         <label for="repeatPassword">Re-enter password</label>
-        <input
-          type="password"
-          id="repeatPassword"
-          name="repeatPassword"
-          placeholder="Re-enter password ..."
-        >
+        <div class="pass-word">
+          <input
+            type="password"
+            id="repeatPassword"
+            name="repeatPassword"
+            placeholder="Re-enter password ..."
+          >
+          <i class="material-icons">visibility</i>
+        </div>
       </div>
       <div>
         <!-- <label for="roles">Role</label> -->
@@ -102,6 +109,7 @@
   <footer>
     <%- include('../app/footer-app.ejs') %>
   </footer>
+  <script src="/auth/javascripts/login.js"></script>
 </body>
 </html>
   

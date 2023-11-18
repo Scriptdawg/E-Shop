@@ -3,6 +3,7 @@
 <head>
   <%- include("../app/head-app.ejs") %>
   <title><%= title %> | <%= subpageName %></title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
   <header>
@@ -17,10 +18,15 @@
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Enter email ..." value="" autocomplete="on">
       </div>
+
       <div>
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="********">
+        <div class="pass-word">
+          <input type="password" id="password" name="password" placeholder="********">
+          <i class="material-icons">visibility</i>
+        </div>
       </div>
+
       <button type="submit">Sign In</button>
     </form>
     <p>
@@ -40,5 +46,8 @@
   <footer>
     <%- include('../app/footer-app.ejs') %>
   </footer>
+
+  <script src="/auth/javascripts/login.js"></script>
+
 </body>
 </html>

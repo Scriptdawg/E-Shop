@@ -297,3 +297,18 @@ fieldset {
 }
 
 @media (max-width: 768px) {}
+
+/* eyeball show-hide password */
+.pass-word {
+  position: relative;
+}
+.pass-word i {
+  color: var(--xdark);
+  cursor: pointer;
+  font-size: 20px;
+  margin: 1px;
+  padding: 5px 8px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
