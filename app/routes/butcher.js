@@ -5,7 +5,13 @@ const butcher_controller = require("../controllers/butcherController");
 //! BUTCHER ROUTES 
 
 // Index
-router.get("/", butcher_controller.store_get);
+router.get("/", butcher_controller.index_get);
+
+// HOME READ - detail
+router.get("/home", butcher_controller.home_get);
+
+// READ Store - list
+router.get("/store", butcher_controller.store_get);
 
 // API *** READ Product - list
 router.get("/api/product/list", butcher_controller.api_product_list_get);

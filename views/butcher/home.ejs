@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../app/head-app.ejs") %>
+  <link rel="stylesheet" href="/butcher/stylesheets/index.css">
+  <title><%= title %> | <%= subpageName %></title>
+</head>
+<body>
+  <header>
+    <%- include("../butcher/banner.ejs") %>
+  </header>
+  <%- include("../app/nav-app.ejs") %>
+
+  <!-- store subpage -->
+  <main class="container-subpage">
+    <h2>Butcher Shop Home Page</h2>
+    <p>Add lots of wonderful content ...</p>
+    <a href="/butcher/store">Start Shopping!</a>
+  </main>
+
+  <footer>
+    <%- include('../app/footer-app.ejs') %>
+  </footer>
+
+</body>
+</html>

@@ -3,6 +3,22 @@ const Product = require("../models/product.js");
 
 // ! BUTCHER ROUTES
 
+// INDEX
+exports.index_get =(req, res) => {
+  res.render("butcher/index", {
+    subpageName: "Butcher Shop",
+    roles: req.session.roles,
+  });
+};
+
+// HOME READ - detail
+exports.home_get =(req, res) => {
+  res.render("butcher/home", {
+    subpageName: "Butcher Shop Home Page",
+    roles: req.session.roles,
+  });
+};
+
 // API *** READ Product - list
 exports.api_product_list_get = asyncHandler(async (req, res) => {
   const merged = [];
