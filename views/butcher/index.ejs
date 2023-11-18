@@ -25,25 +25,27 @@
     <%= title %> | <%= subpageName %>
   </title>
   <style>
-    body {
+    html {
       background-color: gray;
+    }
+    body {
       margin: 0;
     }
-
-    a {
+    main {
       width: 100dvw;
       height: 100dvh;
       display: grid;
       place-content: center;
       text-align: center;
+    }
+    a {
+      all: unset;
       text-decoration: none;
     }
-
     h1 {
       color: white;
       font-size: 1.75rem;
-    }
-
+     }
     img {
       width: 60%;
       height: auto;
@@ -52,13 +54,13 @@
 </head>
 
 <body>
-  <a href="/butcher/home">
   <main>
+    <a href="/butcher/home">
       <img src="/butcher/assets/images/awqm_footer.png" width="300" height="300" alt="Butcher"
         title="Butcher Shop Home Page">
       <h1>The Butcher Shop</h1>
+    </a>
     </main>
-  </a>
 </body>
 
 </html>

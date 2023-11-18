@@ -14,7 +14,7 @@ exports.index_get =(req, res) => {
 // HOME READ - detail
 exports.home_get =(req, res) => {
   res.render("butcher/home", {
-    subpageName: "Butcher Shop Home Page",
+    subpageName: "Butcher Shop",
     roles: req.session.roles,
   });
 };
