@@ -1,6 +1,6 @@
-//! MODERATOR ROUTES
+// MODERATOR ROUTES
 
-//? INDEX - GET
+// INDEX - GET
 exports.index = (req, res) => {
   res.render("moderator/index", {
     subpageName: "Moderator",

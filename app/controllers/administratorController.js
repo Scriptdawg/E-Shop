@@ -1,6 +1,6 @@
-//! ADMINISTRATOR ROUTES
+// ADMINISTRATOR ROUTES
 
-//? INDEX
+// INDEX
 exports.index = (req, res) => {
   res.render("administrator/index", {
     subpageName: "Administrator",

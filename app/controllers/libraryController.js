@@ -1,6 +1,6 @@
-//! LIBRARY ROUTES
+// LIBRARY ROUTES
 
-//? INDEX
+// INDEX
 exports.index_get = (req, res) => {
   res.render("library/index", {
     subpageName: "Coder's Cove Home Page",

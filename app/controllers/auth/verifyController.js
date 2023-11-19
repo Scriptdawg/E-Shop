@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const mailer = require("../../middlewares/mailer");
 
-//! VERIFY ROUTES
+// VERIFY ROUTES
 
 // VERIFY - GET
 exports.verify_get = async (req, res) => {
@@ -14,7 +14,7 @@ exports.verify_get = async (req, res) => {
   if (!userExists.verified) {
     // Create verification code.
 
-    //! DUPLICATE CODE
+    // DUPLICATE CODE
     const verificationCode = require("crypto").randomBytes(4).toString("hex");
     const verificationSalt = verificationCode + process.env.VERIFICATION_SALT;
     const verificationHash = await bcrypt.hash(verificationSalt, 14);
@@ -24,7 +24,7 @@ exports.verify_get = async (req, res) => {
 
     // Change verification code in 10 minutes.
     setTimeout(async () => {
-      //! DUPLICATE CODE
+      // DUPLICATE CODE
       const verificationCode = require("crypto").randomBytes(4).toString("hex");
       const verificationSalt = verificationCode + process.env.VERIFICATION_SALT;
       const verificationHash = await bcrypt.hash(verificationSalt, 14);
@@ -51,7 +51,7 @@ exports.verify_get = async (req, res) => {
     return;
   }
 
-  //! DUPLICATE CODE
+  // ! DUPLICATE CODE
   // Already verified.
   const roles = userExists.roles.map((role) => role.name);
   // Issue access token.
@@ -99,7 +99,7 @@ exports.verify_post = async (req, res) => {
   }
   await User.findByIdAndUpdate(req.body.id, { verified: true });
 
-  //! DUPLICATE CODE
+  // ! DUPLICATE CODE
   const roles = userExists.roles.map((role) => role.name);
   // Issue access token.
   const accessToken = jwt.sign(

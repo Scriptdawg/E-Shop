@@ -1,6 +1,6 @@
-//! MEMBER ROUTES
+// MEMBER ROUTES
 
-//? INDEX
+// INDEX
 exports.index = (req, res) => {
   res.render("member/index", {
     subpageName: "Member",

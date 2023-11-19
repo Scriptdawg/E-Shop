@@ -3,7 +3,7 @@ const { body, validationResult } = require("express-validator");
 const Product = require("../models/product.js");
 const Story = require("../models/story.js");
 
-//! STORY ROUTES
+// STORY ROUTES
 
 // CREATE Story - GET create form
 exports.story_create_get = asyncHandler(async (req, res) => {

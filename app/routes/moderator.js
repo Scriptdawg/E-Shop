@@ -3,9 +3,9 @@ const router = express.Router();
 const moderator_controller = require("../controllers/moderatorController");
 const authJwt = require("../middlewares/authJwt");
 
-//! MODERATOR ROUTES
+// MODERATOR ROUTES
 
-//? INDEX
+// INDEX
 router.get(
   "/",
   [authJwt.verifyToken, authJwt.isModerator],

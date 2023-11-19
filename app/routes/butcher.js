@@ -2,13 +2,13 @@ const express = require("express");
 const router = express.Router();
 const butcher_controller = require("../controllers/butcherController");
 
-//! BUTCHER ROUTES 
+// BUTCHER ROUTES 
 
 // Index
 router.get("/", butcher_controller.index_get);
 
-// HOME READ - detail
-router.get("/home", butcher_controller.home_get);
+// MAIN READ - detail
+router.get("/main", butcher_controller.main_get);
 
 // READ Store - list
 router.get("/store", butcher_controller.store_get);

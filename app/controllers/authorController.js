@@ -1,4 +1,4 @@
-//! AUTHOR ROUTES
+// AUTHOR ROUTES
 
 // INDEX - GET
 exports.index = (req, res) => {

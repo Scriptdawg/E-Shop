@@ -1,4 +1,4 @@
-//! LOGOUT ROUTES
+// LOGOUT ROUTES
 
 // LOGOUT - GET
 exports.logout_get = (req, res) => {

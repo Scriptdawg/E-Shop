@@ -5,16 +5,16 @@ const product_controller = require("../controllers/productController");
 const story_controller = require("../controllers/storyController");
 const authJwt = require("../middlewares/authJwt");
 
-//! AUTHOR ROUTES
+// AUTHOR ROUTES
 
-//? INDEX
+// INDEX
 router.get(
   "/",
   [authJwt.verifyToken, authJwt.isAuthor],
   author_controller.index
 );
 
-//? PRODUCT
+// PRODUCT
 // CREATE Product - This must come before routes that display Product (uses id)
 router.get(
   "/product/create",
@@ -65,7 +65,7 @@ router.post(
   product_controller.product_delete_post
 );
 
-//? STORY
+// STORY
 // CREATE Story - This must come before routes that display Story (uses id)
 router.get(
   "/story/create",

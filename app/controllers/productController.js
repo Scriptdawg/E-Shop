@@ -6,7 +6,7 @@ const imageMimeTypes = ["image/jpeg", "image/png", "image/gif"];
 
 const priceTypes = ["/kilogram", "/pound", "/package", "/box", " points"];
 
-//! PRODUCT ROUTES
+// PRODUCT ROUTES
 
 // CREATE Product - GET create form
 exports.product_create_get = asyncHandler(async (req, res) => {

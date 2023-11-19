@@ -3,9 +3,8 @@
   <div class="app-top-nav">
     <button class="menu-black btn" id="btn-open-app-side-nav" title="app Pages"></button>
     <ul class="app-top-nav-links">
-      <li><a class="btn btn--nav" href="/butcher" title="Butcher Shop">Butcher Shop</a></li>
-      <li><a class="btn btn--nav" href="/about" title="About This app">About</a></li>
-      <li><a class="btn btn--nav" href="/contact" title="Contact app Owner">Contact</a></li>
+      <li><a class="btn btn--nav" href="/butcher/store" title="Browse Products">Products</a></li>
+      <li><a class="btn btn--nav" href="/butcher/main" title="Butcher Shop Main Page">Main</a></li>
     </ul>
   </div>
   <!-- subpage heading -->
@@ -16,15 +15,14 @@
 
 <!-- app side navigation -->
 <nav class="app-side-nav">
+
   <div>
     <div class="intro">
       <h3 class="title--lg uppercase">Pages</h3>
     </div>
     <ul class="app-side-nav-links">
-      <li><a class="btn btn--nav" href="/butcher" title="Butcher Shop">Butcher Shop</a></li>
-      <li><a class="btn btn--nav" href="/" title="Home Page">Home</a></li>
-      <li><a class="btn btn--nav" href="/about" title="About This app">About</a></li>
-      <li><a class="btn btn--nav" href="/contact" title="Contact app Owner">Contact</a></li>
+      <li><a class="btn btn--nav" href="/butcher/store" title="Browse Products">Products</a></li>
+      <li><a class="btn btn--nav" href="/butcher/main" title="Butcher Shop Main Page">Main</a></li>
       <% if(roles) { roles.forEach(role=> { %>
           <li><a class="btn btn--nav" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
         <% }) %>
@@ -33,11 +31,14 @@
         <li><a class="btn btn--nav" href="/auth/register" title="Register">Register</a></li>
         <li><a class="btn btn--nav" href="/auth/login" title="Sign In">Sign In</a></li>
       <% } %>
+      <li><a class="btn btn--nav" href="/" title="Coder's Cove Home Page">Coder's Cove</a></li>
     </ul>
   </div>
+
   <div class="outro">
     <p class="text--xs">&copy; 2023 <%= title %></p>
   </div>
+  
 </nav>
 
 <div id="overlay" class="overlay"></div>

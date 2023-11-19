@@ -3,7 +3,7 @@ const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const User = require("../../models/user");
 
-//! LOGIN ROUTES
+// LOGIN ROUTES
 
 // LOGIN -  GET
 exports.login_get = (req, res) => {

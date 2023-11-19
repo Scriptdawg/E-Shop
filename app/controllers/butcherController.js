@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const Product = require("../models/product.js");
 
-// ! BUTCHER ROUTES
+// BUTCHER ROUTES
 
 // INDEX
 exports.index_get =(req, res) => {
@@ -11,9 +11,9 @@ exports.index_get =(req, res) => {
   });
 };
 
-// HOME READ - detail
-exports.home_get =(req, res) => {
-  res.render("butcher/home", {
+// MAIN READ - detail
+exports.main_get =(req, res) => {
+  res.render("butcher/main", {
     subpageName: "Butcher Shop",
     roles: req.session.roles,
   });
