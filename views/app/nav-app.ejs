@@ -1,11 +1,11 @@
 <!-- app-top-nav -->
 <nav id="app-top-nav">
   <div class="app-top-nav">
-    <button class="menu-black btn" id="btn-open-app-side-nav" title="app Pages"></button>
+    <button class="btn btn--nav menu-black btn" id="btn-open-app-side-nav" title="Menu"></button>
     <ul class="app-top-nav-links">
-      <li><a class="btn btn--nav" href="/butcher" title="Butcher Shop">Butcher Shop</a></li>
-      <li><a class="btn btn--nav" href="/about" title="About This app">About</a></li>
-      <li><a class="btn btn--nav" href="/contact" title="Contact app Owner">Contact</a></li>
+      <li><a class="btn btn--nav" href="/butcher" title="Butcher Shop Application">Butcher Shop</a></li>
+      <li><a class="btn btn--nav" href="/about" title="About Coder's Cove">About</a></li>
+      <li><a class="btn btn--nav" href="/contact" title="Contact Coder's Cove">Contact</a></li>
     </ul>
   </div>
   <!-- subpage heading -->
@@ -18,13 +18,13 @@
 <nav class="app-side-nav">
   <div>
     <div class="intro">
-      <h3 class="title--lg uppercase">Pages</h3>
+      <h3 class="title--lg uppercase" title="Application Pages">Pages</h3>
     </div>
     <ul class="app-side-nav-links">
-      <li><a class="btn btn--nav" href="/butcher" title="Butcher Shop">Butcher Shop</a></li>
-      <li><a class="btn btn--nav" href="/" title="Home Page">Home</a></li>
-      <li><a class="btn btn--nav" href="/about" title="About This app">About</a></li>
-      <li><a class="btn btn--nav" href="/contact" title="Contact app Owner">Contact</a></li>
+      <li><a class="btn btn--nav" href="/butcher" title="Butcher Shop Application">Butcher Shop</a></li>
+      <li><a class="btn btn--nav" href="/" title="Coder's Cove Home Page">Home</a></li>
+      <li><a class="btn btn--nav" href="/about" title="About Coder's Cove">About</a></li>
+      <li><a class="btn btn--nav" href="/contact" title="Contact Coder's Cove">Contact</a></li>
       <% if(roles) { roles.forEach(role=> { %>
           <li><a class="btn btn--nav" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
         <% }) %>
@@ -36,7 +36,7 @@
     </ul>
   </div>
   <div class="outro">
-    <p class="text--xs">&copy; 2023 <%= title %></p>
+    <p class="text--xs" title="Coder's Cove Logo">&copy; 2023 <%= title %></p>
   </div>
 </nav>
 

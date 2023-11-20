@@ -40,10 +40,10 @@ section {
   padding: 16px;
   margin-block-start: 32px;
 }
-.categories button {
+/* .categories button {
   font-size: 18px;
   padding: 8px 16px;
-}
+} */
 /* ? store content grid */
 .store-content {
   display: grid;

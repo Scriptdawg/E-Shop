@@ -54,11 +54,28 @@ class Index {
   // Attach event listeners to category buttons
   #categoryButtons = (data) => {
     // ? Beef
-    document.querySelector("#btn-beef").addEventListener("click", () =>  new Shop(data, "beef"));
+    document.querySelector("#btn-beef").addEventListener("click", () => {
+      new Shop(data, "beef");
+      closeSidebar();
+    });
     // ? Chicken
-    document.querySelector("#btn-chicken").addEventListener("click", () => new Shop(data, "chicken"));
+    document.querySelector("#btn-chicken").addEventListener("click", () => {
+      new Shop(data, "chicken");
+      closeSidebar();
+    });
     // ? Miscellaneous
-    document.querySelector("#btn-miscellaneous").addEventListener("click", () => new Shop(data));
+    document.querySelector("#btn-miscellaneous").addEventListener("click", () => {
+      new Shop(data);
+      closeSidebar();
+    }); 
+    const closeSidebar = () => {
+      const overLay = document.querySelector(".overlay");
+      const appSideNav = document.querySelector(".app-side-nav");
+      requestAnimationFrame(() => {
+        appSideNav.classList.remove("open-app-side-nav");
+        overLay.classList.remove("show-overlay");
+      });
+    };
   };
 
 };

@@ -22,7 +22,7 @@ export class Shop extends Store {
     document.body.scrollTop = 0; // for Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     document.querySelector(".categories").classList.add("show");
-    document.querySelector(".instructions").classList.remove("show");
+    document.querySelector(".instructions").classList.add("show");
     document.querySelector(".ledger").classList.remove("show");
     document.querySelector(".sales").classList.add("show");
   };
@@ -68,7 +68,7 @@ export class Shop extends Store {
     document.querySelector("#packages").innerHTML = `
       <div id="empty-cart" class="empty-cart">
         <p>There aren't any products that match search phrase.</p>
-        <a class="btn btn--pill btn-continue" href="/butcher">Continue Shopping</a>
+        <a class="btn btn--pill btn-continue" href="/butcher/store">Continue Shopping</a>
       </div>
     `;
   };

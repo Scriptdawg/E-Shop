@@ -70,9 +70,9 @@
   background-attachment: local;
   background-position: center;
   background-size: cover;
-  height: 19.6px;
+  height: 40px;
   margin-inline: 16px;
-  width: 28px;
+  width: 40px;
 }
 .menu-white {
   background-image: url("/app/assets/svg/menu-white.svg");

@@ -71,7 +71,7 @@ export class Cart extends Store {
       <div id="empty-state" class="empty-state">
         <i class="bi bi-cart-x-fill"></i>
         <p>Shopping Cart is Empty</p>
-        <a class="btn btn--pill btn-continue" href="/butcher">Continue Shopping</a>
+        <a class="btn btn--pill btn-continue" href="/butcher/store">Continue Shopping</a>
       </div>
     `;
     document.querySelector("#btn-clear-cart").classList.add("hide");

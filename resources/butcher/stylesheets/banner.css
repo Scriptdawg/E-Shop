@@ -19,6 +19,9 @@
   flex-wrap: wrap;
   gap: 8px;
 }
+.logo img {
+  border-radius: 50%;
+}
 @media (min-width: 576px) {
   .logo {
     gap: 16px;

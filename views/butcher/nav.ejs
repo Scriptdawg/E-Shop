@@ -1,7 +1,7 @@
 <!-- app-top-nav -->
 <nav id="app-top-nav">
   <div class="app-top-nav">
-    <button class="menu-black btn" id="btn-open-app-side-nav" title="app Pages"></button>
+    <button class="menu-black btn" id="btn-open-app-side-nav" title="Menu"></button>
     <ul class="app-top-nav-links">
       <li><a class="btn btn--nav" href="/butcher/store" title="Browse Products">Products</a></li>
       <li><a class="btn btn--nav" href="/butcher/main" title="Butcher Shop Main Page">Main</a></li>
@@ -15,10 +15,22 @@
 
 <!-- app side navigation -->
 <nav class="app-side-nav">
-
+  
   <div>
+    <!-- categories -->
+    <div id="categories" class="categories">
+      <div class="intro">
+        <h3 class="title--lg uppercase" title="Product Categories">Categories</h3>
+      </div>
+      <ul class="app-side-nav-links">
+        <li><button id="btn-beef" class="btn btn--nav btn-beef">Beef</button></li>
+        <li><button id="btn-chicken" class="btn btn--nav btn-chicken">Chicken</button></li>
+        <li><button id="btn-miscellaneous" class="btn btn--nav btn-miscellaneous">Miscellaneous</button></li>
+      </ul>
+    </div>
+    <!-- application pages -->
     <div class="intro">
-      <h3 class="title--lg uppercase">Pages</h3>
+      <h3 class="title--lg uppercase" title="Application Pages">Pages</h3>
     </div>
     <ul class="app-side-nav-links">
       <li><a class="btn btn--nav" href="/butcher/store" title="Browse Products">Products</a></li>
@@ -36,7 +48,7 @@
   </div>
 
   <div class="outro">
-    <p class="text--xs">&copy; 2023 <%= title %></p>
+    <p class="text--xs" title="Coder's Cove Logo">&copy; 2023 <%= title %></p>
   </div>
   
 </nav>

@@ -17,8 +17,9 @@ main {
   align-items: center;
   background: var(--bg-linear-light);
   display: flex;
-  min-height: 48px;
+  flex-wrap: wrap;
   justify-content: space-between;
+  min-height: 48px;
 }
 /* links */
 .app-top-nav-links {
@@ -74,8 +75,9 @@ main {
   gap: 1rem;
 }
 .app-side-nav-links .btn {
-  display: block;
+  /* display: block; */
   padding-inline: 32px;
+  width: 100%;
 }
 .app-side-nav-links .btn:hover {
   background-color: antiquewhite;
