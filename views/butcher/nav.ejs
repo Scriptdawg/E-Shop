@@ -3,7 +3,7 @@
   <div class="app-top-nav">
     <button class="menu-black btn" id="btn-open-app-side-nav" title="Menu"></button>
     <ul class="app-top-nav-links">
-      <li><a class="btn btn--nav" href="/butcher/store" title="Browse Products">Products</a></li>
+      <li id="shop"><a class="btn btn--nav" href="/butcher/store" title="Go Shopping">Shop</a></li>
       <li><a class="btn btn--nav" href="/butcher/main" title="Butcher Shop Main Page">Main</a></li>
     </ul>
   </div>
@@ -18,14 +18,14 @@
   
   <div>
     <!-- categories -->
-    <div id="categories" class="categories">
+    <div class="categories">
       <div class="intro">
         <h3 class="title--lg uppercase" title="Product Categories">Categories</h3>
       </div>
       <ul class="app-side-nav-links">
-        <li><button id="btn-beef" class="btn btn--nav btn-beef">Beef</button></li>
-        <li><button id="btn-chicken" class="btn btn--nav btn-chicken">Chicken</button></li>
-        <li><button id="btn-miscellaneous" class="btn btn--nav btn-miscellaneous">Miscellaneous</button></li>
+        <li><button id="btn-all-products" class="btn btn--nav">All Products</button></li>
+        <li><button id="btn-beef" class="btn btn--nav">Beef</button></li>
+        <li><button id="btn-chicken" class="btn btn--nav">Chicken</button></li>
       </ul>
     </div>
     <!-- application pages -->
@@ -33,7 +33,7 @@
       <h3 class="title--lg uppercase" title="Application Pages">Pages</h3>
     </div>
     <ul class="app-side-nav-links">
-      <li><a class="btn btn--nav" href="/butcher/store" title="Browse Products">Products</a></li>
+      <li><a class="btn btn--nav" href="/butcher/store" title="Go Shopping">Shop</a></li>
       <li><a class="btn btn--nav" href="/butcher/main" title="Butcher Shop Main Page">Main</a></li>
       <% if(roles) { roles.forEach(role=> { %>
           <li><a class="btn btn--nav" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>

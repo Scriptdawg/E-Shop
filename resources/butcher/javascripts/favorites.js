@@ -20,6 +20,9 @@ export class Favorites extends Store {
     document.querySelector(".categories").classList.remove("show");
     document.querySelector(".instructions").classList.add("show");
     document.querySelector(".ledger").classList.remove("show");
+    document.querySelector("#btn-store").classList.remove("hidden");
+    document.querySelector("#btn-favorites").classList.add("hidden");
+    document.querySelector("#btn-cart").classList.remove("hidden");
   };
   // Activates buttons event listeners
   #attachButtons = () => {

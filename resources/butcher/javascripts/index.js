@@ -53,6 +53,11 @@ class Index {
 
   // Attach event listeners to category buttons
   #categoryButtons = (data) => {
+    // ? All Products
+    document.querySelector("#btn-all-products").addEventListener("click", () => {
+      new Shop(data);
+      closeSidebar();
+    }); 
     // ? Beef
     document.querySelector("#btn-beef").addEventListener("click", () => {
       new Shop(data, "beef");
@@ -63,11 +68,7 @@ class Index {
       new Shop(data, "chicken");
       closeSidebar();
     });
-    // ? Miscellaneous
-    document.querySelector("#btn-miscellaneous").addEventListener("click", () => {
-      new Shop(data);
-      closeSidebar();
-    }); 
+    // ? closeSidebar when category button clicked
     const closeSidebar = () => {
       const overLay = document.querySelector(".overlay");
       const appSideNav = document.querySelector(".app-side-nav");

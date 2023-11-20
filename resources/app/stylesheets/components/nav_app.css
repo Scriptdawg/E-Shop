@@ -24,6 +24,7 @@ main {
 /* links */
 .app-top-nav-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 /* subpage name h1 */
@@ -49,7 +50,7 @@ main {
   overscroll-behavior: contain;
   position: fixed;
   top: 0;
-  transition: translate 0.5s;
+  transition: translate 300ms;
   translate: -250px;
   width: max(240px, 20vw);
   z-index: 98;
@@ -89,7 +90,7 @@ main {
   display: none;
   inset: 0;
   position: fixed;
-  transition: translate 0.5s;
+  transition: translate 300ms;
   translate: -100vw;
   z-index: 97;
 }
@@ -97,9 +98,9 @@ main {
   translate: 0;
 }
 @media (max-width: 48.5rem) {
-  .app-top-nav-links li:not(:nth-child(1)) {
+  /* .app-top-nav-links li:not(:nth-child(1)) {
     display: none;
-  }
+  } */
 }
 @media (max-height: 800px) {
   .app-side-nav-links {
