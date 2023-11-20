@@ -56,16 +56,19 @@ class Index {
     // ? All Products
     document.querySelector("#btn-all-products").addEventListener("click", () => {
       new Shop(data);
+      document.querySelector("#subpage-name").textContent = "All Products";
       closeSidebar();
     }); 
     // ? Beef
     document.querySelector("#btn-beef").addEventListener("click", () => {
       new Shop(data, "beef");
+      document.querySelector("#subpage-name").textContent = "Beef";
       closeSidebar();
     });
     // ? Chicken
     document.querySelector("#btn-chicken").addEventListener("click", () => {
       new Shop(data, "chicken");
+      document.querySelector("#subpage-name").textContent = "Chicken";
       closeSidebar();
     });
     // ? closeSidebar when category button clicked

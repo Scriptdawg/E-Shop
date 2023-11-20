@@ -7,6 +7,7 @@ export class Favorites extends Store {
   };
   #main = () => {
     document.querySelector("#subpage-name").textContent = "Favorites List";
+    document.querySelector("#packages").style.minHeight = "initial";
     this.view = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.heart));
     this.printProducts();
     this.picks.filter(pick => pick.heart && !pick.qty).forEach(pick => {
@@ -20,6 +21,7 @@ export class Favorites extends Store {
     document.querySelector(".categories").classList.remove("show");
     document.querySelector(".instructions").classList.add("show");
     document.querySelector(".ledger").classList.remove("show");
+    document.querySelector("#shop").classList.remove("hide");
     document.querySelector("#btn-store").classList.remove("hidden");
     document.querySelector("#btn-favorites").classList.add("hidden");
     document.querySelector("#btn-cart").classList.remove("hidden");

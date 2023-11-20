@@ -1,7 +1,7 @@
-/* ? packages grid */
-.packages {
-  min-height: 70vh;
+#packages {
+  min-height: 80vh;
 }
+/* ? packages grid */
 /* Medium - md */
 @media (min-width: 768px) {
   .packages {

@@ -8,6 +8,7 @@ export class Cart extends Store {
   // Main
   #main = () => {
     document.querySelector("#subpage-name").textContent = "Cart Contents";
+    document.querySelector("#packages").style.minHeight = "initial";
     this.view = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.qty));
     this.printProducts();
     this.picks.filter(pick => pick.qty === 1).forEach(pick => document
@@ -24,6 +25,7 @@ export class Cart extends Store {
     document.querySelector(".categories").classList.remove("show");
     document.querySelector(".instructions").classList.remove("show");
     document.querySelector(".ledger").classList.add("show");
+    document.querySelector("#shop").classList.remove("hide");
     document.querySelector("#btn-store").classList.remove("hidden");
     document.querySelector("#btn-favorites").classList.remove("hidden");
     document.querySelector("#btn-cart").classList.add("hidden");
