@@ -2,25 +2,56 @@
 <html lang="en">
 <head>
   <%- include("../app/head-app.ejs") %>
-  <link rel="stylesheet" href="/butcher/stylesheets/index.css">
-  <title><%= title %> | <%= subpageName %></title>
+    <link rel="stylesheet" href="/butcher/stylesheets/index.css" />
+    <title>
+      <%= title %> | <%= subpageName %>
+    </title>
 </head>
 <body>
-  <header>
-    <%- include("../butcher/banner.ejs") %>
-  </header>
+  <header><%- include("../butcher/banner.ejs") %></header>
   <%- include("../butcher/nav.ejs") %>
 
-  <!-- store subpage -->
   <main class="container-subpage">
-    <h2>Butcher Shop Main Page</h2>
-    <p>Add lots of wonderful content here ...</p>
-    <a href="/butcher/store">Start Shopping!</a>
+    <!-- introduction -->
+    <section>
+      <h2>From our farm to your table!</h2>
+      <p>The 'Butcher Shop' is a fictitious online store.</p>
+      <p>
+        We raise, process and package all of our products in our modern, state
+        of the art, farm facilities.
+      </p>
+    </section>
+    <!-- chicken -->
+    <section>
+      <h3>Chicken</h3>
+      <div style="display: flex; justify-content: space-around">
+        <img src="/butcher/assets/images/daniel-tuttle-_kGG9EyZxyA-unsplash.jpg" width="200" height="150"
+          alt="chick" title="chick" />
+        <img src="/butcher/assets/images/daniel-tuttle-2Yuqu4Ljih8-unsplash.jpg" width="150" height="100"
+          alt="chick" title="chick" />
+      </div>
+      <p>
+        Our chickens are raised in open areas inside large barns with modern
+        air circulation systems. This is a healthy environment for birds,
+        prevents disease and reduces fat content.
+      </p>
+      <p>
+        We never use antibiotics or hormones in any of our poultry.
+      </p>
+      <p>
+        We process our chickens at 6 to 8 pounds. They are large enough to
+        accommodate stuffing and will feed a gathering of at least six people.
+        You will find them tender and juicy with low fat content.
+      </p>
+      <p>
+        Buy a whole chicken for your next family gathering or stock up your
+        freezer with fresh air sealed and frozen cuts!
+      </p>
+      <a class="btn btn--flat" href="/butcher/store">Shop Now</a>
+    <section>
+
   </main>
 
-  <footer>
-    <%- include('../app/footer-app.ejs') %>
-  </footer>
-
+  <footer><%- include('../app/footer-app.ejs') %></footer>
 </body>
 </html>
