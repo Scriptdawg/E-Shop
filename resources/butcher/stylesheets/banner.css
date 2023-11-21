@@ -2,7 +2,6 @@
 .banner {
   align-items: center;
   background: var(--bg-linear-light);
-  color: var(--danger);
   display: flex;
   flex-wrap: wrap;
   font-family: var(--font-teritiary);
@@ -18,9 +17,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
-.logo img {
-  border-radius: 50%;
 }
 @media (min-width: 576px) {
   .logo {
