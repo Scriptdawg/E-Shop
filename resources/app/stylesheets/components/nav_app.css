@@ -1,9 +1,3 @@
-/* top */
-main {
-  /* min-height: 75vh; */
-  padding-block-end: 64px;
-  margin-block-start: -16px;
-}
 /* ? app top nav */
 #app-top-nav {
   position: sticky;

@@ -62,20 +62,17 @@
             quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
           </p>
         </section>
+
         <!-- ledger -->
         <section id="ledger" class="ledger">
-          <h2 class="title">Ledger:</h2>
-          <p>Total: $<span id="total-amount">0.00</span></p>
-          <p>Number of products: <span id="cart-products">0</span></p>
-          <p>Number of items: <span class="cart-quantity">0</span></p>
-          <p>
-            <button id="btn-clear-cart" class="btn btn--pill btn-clear-cart">Empty Cart</button>
-            <br /><br />
-            <button id="checkout" class="btn btn--pill btn-checkout disabled">Checkout</button>
-            <br /><br />
-            <a class="btn btn--pill btn-continue" href="/butcher/store">Continue Shopping</a>
-          </p>
+          <p style="visibility: hidden;">Number of products: <span id="cart-products">0</span></p>
+          <!-- <p>Number of items: <span class="cart-quantity">0</span></p> -->
+          <p style="text-align: right;">Total: $<span id="total-amount">0.00</span></p>
+          <button id="checkout" class="btn btn--raised btn-checkout" disabled>Checkout</button>
+          <button id="btn-clear-cart" class="btn btn--raised btn-clear-cart">Empty Cart</button>
+          <a class="btn btn--raised btn-continue" href="/butcher/store">Continue Shopping</a>
         </section>
+
       </div>
       <div id="more" class="more">
         <!-- sales -->

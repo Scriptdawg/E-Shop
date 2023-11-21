@@ -8,22 +8,3 @@
 @import url("components/nav_app.css");
 @import url("components/footer_app.css");
 @import url("components/forms.css");
-
-/* Extra Extra Small - xxs */
-@media (max-width: 300px) {}
-/* Extra Small - xs */
-@media (max-width: 575px) {}
-/* Small - sm */
-@media (min-width: 576px) {}
-/* Medium - md */
-@media (min-width: 768px) {}
-/* Large - lg */
-@media (min-width: 992px) {}
-/* Extra Large - xl */
-@media (min-width: 1200px) {}
-/* Extra Extra Large - xxl */
-@media (min-width: 1400px) {}
-@media (min-width: 1600px) {}
-@media (min-width: 1800px) {}
-@media (min-width: 2000px) {}
-@media print {}

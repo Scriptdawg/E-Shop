@@ -23,6 +23,11 @@
 .btn-favorites .bi-heart-fill {
   color: white;
 }
+.btn-clear-cart,
+.btn-checkout,
+.btn-continue {
+  margin: 16px;
+}
 #heart-quantity,
 #cart-quantity {
   background-color: green;
@@ -34,10 +39,16 @@
   top: 0;
 }
 /* ? individual styles */
-section {
+.instructions,
+.sales,
+.advertisements {
   font-size: 18px;
   padding: 16px;
   margin-block-start: 32px;
+}
+.ledger {
+  margin: 0;
+  padding-inline: 16px;
 }
 /* ? store content grid */
 .store-content {
