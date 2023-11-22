@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include("../app/head-app.ejs") %>
     <link rel="stylesheet" href="/butcher/stylesheets/index.css" />
@@ -7,51 +8,61 @@
       <%= title %> | <%= subpageName %>
     </title>
 </head>
+
 <body>
   <header><%- include("../butcher/banner.ejs") %></header>
   <%- include("../butcher/nav.ejs") %>
 
-  <main class="container-subpage">
-    <!-- introduction -->
-    <section>
-      <h2>From our farm to your table!</h2>
-      <p>The 'Butcher Shop' is a fictitious online store.</p>
-      <p>
-        We raise, process and package all of our products in modern, state
-        of the art, farm facilities.
-      </p>
-    </section>
-    <!-- chicken -->
-    <section>
-      <h3>Chicken</h3>
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-around">
-        <img src="/butcher/assets/images/daniel-tuttle-_kGG9EyZxyA-unsplash.jpg" width="150" height="100"
-          alt="chicken" title="Standing Chicken Casting A Shadow" />
-        <img src="/butcher/assets/images/daniel-tuttle-2Yuqu4Ljih8-unsplash.jpg" width="150" height="100"
-          alt="chick" title="Chick Sitting On Small Treasure Boxes" />
-      </div>
-      <p>
-        Our chickens are raised in open areas inside large barns with modern
-        air circulation systems. This is a healthy environment for birds,
-        prevents disease and reduces fat content.
-      </p>
-      <p>
-        We never use antibiotics or hormones in any of our poultry.
-      </p>
-      <p>
-        We process our chickens at 6 to 8 pounds. They are large enough to
-        accommodate stuffing and will feed a gathering of at least six people.
-        You will find them tender and juicy with low fat content.
-      </p>
-      <p>
-        Buy a whole chicken for your next family gathering or stock up your
-        freezer with air sealed, fresh or frozen cuts!
-      </p>
-      <a class="btn btn--flat" href="/butcher/store">Shop Now</a>
-    <section>
+    <main class="container-subpage">
 
-  </main>
+      <!-- introduction -->
+      <section class="container">
+        <h2 class="title--lg">From our farm to your table!</h2>
+        <p>The 'Butcher Shop' is a <strong>fictitious</strong> online store.</p>
+        <p>
+          We raise, process and package all of our products in modern, state
+          of the art, farm facilities.
+        </p>
+      </section>
 
-  <footer><%- include('../app/footer-app.ejs') %></footer>
+      <!-- chicken -->
+      <section class="container">
+        <h3 class="title">Chicken</h3>
+        <div class="animal-pics">
+          <img src="/butcher/assets/images/daniel-tuttle-_kGG9EyZxyA-unsplash.jpg" width="120" height="80"
+            alt="chicken" title="Standing Chicken Casting A Shadow" />
+          <img src="/butcher/assets/images/daniel-tuttle-2Yuqu4Ljih8-unsplash.jpg" width="120" height="80"
+            alt="chick" title="Chick Sitting On Small Treasure Boxes" />
+        </div>
+        <p>
+          Our chickens are raised in open areas inside large barns with modern
+          air circulation systems. This is a healthy environment for birds that
+          prevents disease and reduces fat content.
+        </p>
+        <p>
+          We never use antibiotics or hormones in any of our poultry.
+        </p>
+        <p>
+          We process our chickens at 6 to 8 pounds. They are large enough to
+          accommodate stuffing and will feed a gathering of at least six people.
+          You will find them tender and juicy with low fat content.
+        </p>
+        <p>
+          Buy a whole chicken for your next family get-together or stock up your
+          freezer with air sealed, fresh or frozen cuts!
+        </p>
+        <a class="btn btn--flat" href="/butcher/store">Shop Now</a>
+      </section>
+
+      <!-- beef -->
+      <section class="container">
+        <h3 class="title">Beef</h3>
+        <p>Beef is good, beef is  great.</p>
+      </section>
+
+    </main>
+
+    <footer><%- include('../app/footer-app.ejs') %></footer>
 </body>
+
 </html>

@@ -18,14 +18,16 @@
 }
 .title--lg {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.7;
+  margin-block: 8px;
 }
 .title {
   color: var(--theme);
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.8;
+  margin-block: 8px;
 }
 .title--sm {
   font-size: 1rem;
