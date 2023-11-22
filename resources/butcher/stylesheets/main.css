@@ -1,9 +1,10 @@
 .animal-pics {
   display: flex;
   flex-wrap: wrap;
+  gap: 16px;
   justify-content: space-around;
 }
 .animal-pics img {
-  width: clamp(120px, 15vw, 200px);
   height: auto;
+  width: clamp(120px, 15vw, 200px);
 }
