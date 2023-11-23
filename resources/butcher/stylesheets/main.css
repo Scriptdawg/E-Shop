@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   gap: 16px;
   justify-content: space-around;
+  margin-block: 16px;
 }
 .animal-pics img {
   height: auto;
@@ -10,9 +11,7 @@
 }
 .brd-left{
   background: var(--bg-white);
-  /* border: 1px solid var(--light); */
-  border-left: 4px solid var(--theme-brown);
-  color: var(--theme-brown);
+  border-left: 3px solid var(--primary);
   display: inline-block;
   padding-inline: 8px 16px;
 }
