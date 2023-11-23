@@ -62,3 +62,11 @@ exports.store_get = asyncHandler(async (req, res) => {
     roles: req.session.roles,
   });
 })
+
+// READ Lighthouse - detail
+exports.lighthouse_get = asyncHandler(async (req, res) => {
+  res.render("butcher/lighthouse", {
+    subpageName: "Lighthouse Report",
+    roles: req.session.roles,
+  });
+})

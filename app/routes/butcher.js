@@ -13,6 +13,9 @@ router.get("/main", butcher_controller.main_get);
 // READ Store - list
 router.get("/store", butcher_controller.store_get);
 
+// READ Lighthouse - detail
+router.get("/lighthouse", butcher_controller.lighthouse_get);
+
 // API *** READ Product - list
 router.get("/api/product/list", butcher_controller.api_product_list_get);
 
