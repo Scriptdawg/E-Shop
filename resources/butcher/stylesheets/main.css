@@ -8,3 +8,11 @@
   height: auto;
   width: clamp(120px, 15vw, 200px);
 }
+.brd-left{
+  background: var(--bg-white);
+  /* border: 1px solid var(--light); */
+  border-left: 4px solid var(--theme-brown);
+  color: var(--theme-brown);
+  display: inline-block;
+  padding-inline: 8px 16px;
+}
