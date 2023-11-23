@@ -1,10 +1,7 @@
 .animal-pics {
   display: flex;
-  /* flex-wrap: wrap; */
-  /* gap: 8px; */
-  /* justify-content: space-between; */
   margin-block: 16px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .animal-pics img {
   height: auto;
