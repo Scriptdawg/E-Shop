@@ -10,10 +10,8 @@
     <%- include("../butcher/banner.ejs") %>
   </header>
   <%- include("../butcher/nav.ejs") %>
-
   <!-- store subpage -->
   <main id="store-subpage" class="store-subpage">
-
     <!-- subpage navigation -->
     <nav id="subpage-nav" class="subpage-nav">
       <button id="btn-store" class="btn btn-store" title="Go Shopping">
@@ -47,7 +45,7 @@
     <article id="store-content" class="store-content">
       <!-- packages  -->
       <section id="packages" class="packages"></section>
-      
+      <!-- information -->
       <div id="information" class="information">
         <!-- instuctions -->
         <section id="instructions" class="instructions">
@@ -62,7 +60,6 @@
             quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
           </p>
         </section>
-
         <!-- ledger -->
         <section id="ledger" class="ledger">
           <p style="visibility: hidden;">Number of products: <span id="cart-products">0</span></p>
@@ -72,7 +69,6 @@
           <button id="btn-clear-cart" class="btn btn--raised btn-clear-cart">Empty Cart</button>
           <a class="btn btn--raised btn-continue" href="/butcher/store">Continue Shopping</a>
         </section>
-
       </div>
       <div id="more" class="more">
         <!-- sales -->
@@ -99,11 +95,9 @@
       </div>
     </article>
   </main>
-
   <footer>
     <%- include('../app/footer-app.ejs') %>
   </footer>
-
   <script type="module" src="/butcher/javascripts/index.js"></script>
 </body>
 </html>

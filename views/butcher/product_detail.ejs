@@ -9,7 +9,6 @@
     <%- include("../app/banner-app.ejs") %>
   </header>
   <%- include("../app/nav-app.ejs") %>
-
   <main class="container-subpage">
     <h2 class="title"><%= pageTitle %></h2>
     <% if(product.coverImagePath) { %>
@@ -23,7 +22,6 @@
     <% } %>
     <h3 class="title">Description:</h3>
     <p><%= product.shortDescription %></p>
-
     <!-- Don't display Product story if Unavailable or Other -->
     <% if(product.story.name !== "Unavailable" && product.story.name !== "Other") { %>
       <h3 class="title">Story:</h3>
@@ -32,9 +30,7 @@
       <p><%= product.story.introduction %></p>
       <p><%= product.story.content %></p>
     <% } %>
-
   </main>
-
   <footer>
     <%- include('../app/footer-app.ejs') %>
   </footer>

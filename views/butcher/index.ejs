@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- meta, icons, web manifest etc. -->
   <meta charset="UTF-8">
@@ -8,7 +7,6 @@
   <meta name="description" content="I am a Freelance Web Developer based in Alberta, Canada.
   I help businesses improve their web performance and user experience.">
   <meta name="color-scheme" content="light">
-
   <link rel="apple-touch-icon" sizes="180x180" href="/butcher/assets/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/butcher/assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/butcher/assets/favicons/favicon-16x16.png">
@@ -20,84 +18,72 @@
   <meta name="msapplication-TileColor" content="#133a26">
   <meta name="msapplication-config" content="/butcher/assets/favicons/browserconfig.xml">
   <meta name="theme-color" content="#133a26">
-
-  <title>
-    <%= title %> | <%= subpageName %>
-  </title>
+  <title><%= title %> | <%= subpageName %></title>
   <style>
     * {
       box-sizing: border-box;
     }
-
     html {
-      /* background-color: #133a26; */
-      background-image: url("/butcher/assets/images/IMG_6275_sml.jpg");
-      background-size: cover;
+      background-color: #133a26;
+      background-image: url("/butcher/assets/images/backgrounds/mountains.jpg");
       background-position: center;
       background-repeat: no-repeat;
+      background-size: cover;
     }
-
     body {
       font-family: system-ui;
       margin: 0;
     }
-
     #splash {
-      display: flex;
       align-items: center;
-      justify-content: center;
+      display: flex;
       height: 90vh;
       height: 100dvh;
+      justify-content: center;
     }
-
     h1 {
+      bottom: 32px;
       color: white;
-      font-weight: bold;
+      font-family: Georgia, serif;
       font-size: 1.5rem;
+      font-style: italic;
+      font-weight: bold;
       margin-block: 0;
       padding-inline: 16px;
       position: fixed;
-      bottom: 32px;
       text-align: center;
       width: 100%;
-      font-family: Georgia, serif;
-      font-style: italic;
     }
-
     img {
-      width: 100px;
-      height: auto;
+      animation: logo-pulse 5s 60;
       border-radius: 50%;
-      animation: logo-pulse 6s 30;
+      height: auto;
+      width: 100px;
     }
-
     @keyframes logo-pulse {
       0% {
         opacity: 1;
         scale: 1;
       }
       50% {
-        opacity: 0.7;
-        scale: 0.9;
+        opacity: 0.8;
+        scale: 0.8;
       }
       100% {
         opacity: 1;
         scale: 1;
       }
     }
-
     @media (min-width: 300px) {
       img {
         width: 257px;
       }
     }
-
     @media (min-width: 576px) {
       img {
         width: 308px;
       }
     }
-
     @media (min-width: 1200px) {
       img {
         width: 420px;
@@ -105,21 +91,19 @@
     }
   </style>
 </head>
-
 <body>
   <main>
     <div id="splash">
       <a href="/butcher/main" title="Go To Butcher Shop Main Page">
         <picture>
-          <source media="(min-width: 1200px)" srcset="/butcher/assets/images/butcher_logo/butcher-logo_420.png" />
-          <source media="(min-width:  576px)" srcset="/butcher/assets/images/butcher_logo/butcher-logo_308.png" />
-          <source media="(min-width:  300px)" srcset="/butcher/assets/images/butcher_logo/butcher-logo_257.png" />
-          <img src="/butcher/assets/images/butcher_logo/butcher-logo_100.png" width="100" height="100" alt="logo" />
+          <source media="(min-width: 1200px)" srcset="/butcher/assets/images/butcher_logo/butcher-logo_420.png">
+          <source media="(min-width:  576px)" srcset="/butcher/assets/images/butcher_logo/butcher-logo_308.png">
+          <source media="(min-width:  300px)" srcset="/butcher/assets/images/butcher_logo/butcher-logo_257.png">
+          <img src="/butcher/assets/images/butcher_logo/butcher-logo_100.png" width="100" height="100" alt="logo">
         </picture>
       </a>
     </div>
     <h1>Quality Meat Products</h1>
   </main>
 </body>
-
 </html>
