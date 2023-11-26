@@ -23,12 +23,10 @@ export class Cart extends Store {
     document.querySelector("#btn-clear-cart").classList.remove("hide");
     document.querySelector("#checkout").classList.remove("hide");
     document.querySelector(".categories").classList.remove("show");
-    document.querySelector(".instructions").classList.remove("show");
     document.querySelector(".ledger").classList.add("show");
     document.querySelector("#shop").classList.remove("hide");
     document.querySelector("#btn-store").classList.remove("hidden");
-    document.querySelector("#btn-favorites").classList.remove("hidden");
-    document.querySelector("#btn-cart").classList.add("hidden");
+
   }
   // Activates buttons event listeners
   #attachButtons = () => {

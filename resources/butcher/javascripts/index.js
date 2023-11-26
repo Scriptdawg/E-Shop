@@ -50,7 +50,6 @@ class Index {
       new Cart(data);
     });
   };
-
   // Attach event listeners to category buttons
   #categoryButtons = (data) => {
     // ? All Products
@@ -81,6 +80,5 @@ class Index {
       });
     };
   };
-
 };
 new Index();

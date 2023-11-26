@@ -22,13 +22,9 @@ export class Shop extends Store {
     document.body.scrollTop = 0; // for Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     document.querySelector(".categories").classList.add("show");
-    document.querySelector(".instructions").classList.add("show");
     document.querySelector(".ledger").classList.remove("show");
-    document.querySelector(".sales").classList.add("show");
     document.querySelector("#shop").classList.add("hide");
     document.querySelector("#btn-store").classList.add("hidden");
-    document.querySelector("#btn-favorites").classList.remove("hidden");
-    document.querySelector("#btn-cart").classList.remove("hidden");
   };
   // Activates buttons event listeners
   #attachButtons = () => {

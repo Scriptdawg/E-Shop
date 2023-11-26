@@ -1,5 +1,5 @@
 #packages {
-  min-height: 80vh;
+  min-height: 100vh;
 }
 /* ? packages grid */
 /* Medium - md */
@@ -126,10 +126,7 @@
   outline: none;
 }
 .categories,
-.instructions,
-.ledger,
-.sales,
-.advertisements {
+.ledger {
   display: none;
 }
 .show {

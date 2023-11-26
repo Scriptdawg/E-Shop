@@ -38,14 +38,7 @@
   right: -4px;
   top: 0;
 }
-/* ? individual styles */
-.instructions,
-.sales,
-.advertisements {
-  font-size: 18px;
-  padding: 16px;
-  margin-block-start: 32px;
-}
+/* ? ledger */
 .ledger {
   margin: 0;
   padding-inline: 16px;
@@ -55,22 +48,5 @@
   display: grid;
   gap: 24px;
   margin-inline: auto;
-  max-width: 2000px;
-}
-/* large - lg */
-@media (min-width: 992px) {
-  .store-content {
-    grid-template-columns: 270px 1fr 270px;
-    grid-template-areas:
-      "info packs more";
-  }
-  .information {
-    grid-area: info;
-  }
-  .packages {
-    grid-area: packs;
-  }
-  .more {
-    grid-area: more;
-  }
+  max-width: 960px;
 }

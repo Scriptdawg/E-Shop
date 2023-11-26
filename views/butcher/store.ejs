@@ -1,103 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include("../butcher/head.ejs") %>
-  <title><%= title %> | <%= subpageName %></title>
-  <link rel="stylesheet" href="/butcher/stylesheets/index.css">
-</head>
+  <head>
+    <!-- include shared head partial -->
+    <%- include("../butcher/head.ejs") %>
+    <link rel="stylesheet" href="/butcher/stylesheets/index.css">
+    <script type="module" src="/butcher/javascripts/index.js"></script>
+    <title><%= title %> | <%= subpageName %></title>
+  </head>
 <body>
-  <header>
-    <%- include("../butcher/banner.ejs") %>
-  </header>
+  <!-- banner -->
+  <header><%- include("../butcher/banner.ejs") %></header>
+  <!-- navigation -->
   <%- include("../butcher/nav.ejs") %>
+
   <!-- store subpage -->
   <main id="store-subpage" class="store-subpage">
-    <!-- subpage navigation -->
-    <nav id="subpage-nav" class="subpage-nav">
-      <button id="btn-store" class="btn btn-store" title="Go Shopping">
-        <img
-          src="/butcher/assets/svg/shop.svg"
-          width="24"
-          height="24"
-          alt="shop.svg"
-        >
-      </button>
-      <button id="btn-favorites" class="btn btn-favorites" title="View Favorites">
-        <img
-          src="/butcher/assets/svg/heart-fill.svg"
-          width="24"
-          height="24"
-          alt="heart-fill.svg"
-        >
-        <div id="heart-quantity" class="heart-quantity">0</div>
-      </button>
-      <button id="btn-cart" class="btn btn-cart" title="View Cart">
-        <img
-          src="/butcher/assets/svg/cart4.svg"
-          width="24"
-          height="24"
-          alt="cart4.svg"
-        >      
-        <div id="cart-quantity" class="cart-quantity"><span>0</span></div>
-      </button>
-    </nav>
     <!-- store content -->
     <article id="store-content" class="store-content">
       <!-- packages  -->
       <section id="packages" class="packages"></section>
-      <!-- information -->
-      <div id="information" class="information">
-        <!-- instuctions -->
-        <section id="instructions" class="instructions">
-          <h2 class="title">Instructions | Tips</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
-            quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
-          </p>
-          <h2 class="title">FAQ | Links</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
-            quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
-          </p>
-        </section>
-        <!-- ledger -->
-        <section id="ledger" class="ledger">
-          <p style="visibility: hidden;">Number of products: <span id="cart-products">0</span></p>
-          <!-- <p>Number of items: <span class="cart-quantity">0</span></p> -->
-          <p style="text-align: right;">Total: $<span id="total-amount">0.00</span></p>
-          <button id="checkout" class="btn btn--raised btn-checkout" disabled>Checkout</button>
-          <button id="btn-clear-cart" class="btn btn--raised btn-clear-cart">Empty Cart</button>
-          <a class="btn btn--raised btn-continue" href="/butcher/store">Continue Shopping</a>
-        </section>
-      </div>
-      <div id="more" class="more">
-        <!-- sales -->
-        <section id="sales" class="sales">
-          <h2 class="title">Specials | Promotions</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
-            quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
-          </p>
-          <h2 class="title">Stories | Articles</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
-            quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
-          </p>
-        </section>
-        <!-- advertisements -->
-        <section id="advertisements" class="advertisements">
-          <h2 class="title">Advertisements:</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ducimus maiores. Soluta vero molestias
-            quasi earum. Ea commodi, saepe harum porro odio ut qui veritatis, et a, deleniti id molestias!
-          </p>
-        </section>
-      </div>
+      <!-- ledger -->
+      <section id="ledger" class="ledger">
+        <p style="visibility: hidden;">Number of products: <span id="cart-products">0</span></p>
+        <!-- <p>Number of items: <span class="cart-quantity">0</span></p> -->
+        <p style="text-align: right;">Total: $<span id="total-amount">0.00</span></p>
+        <button id="checkout" class="btn btn--raised btn-checkout" disabled>Checkout</button>
+        <button id="btn-clear-cart" class="btn btn--raised btn-clear-cart">Empty Cart</button>
+        <a class="btn btn--raised btn-continue" href="/butcher/store">Continue Shopping</a>
+      </section>
     </article>
   </main>
-  <footer>
-    <%- include('../app/footer-app.ejs') %>
+
+  <footer><%- include('../app/footer-app.ejs') %>
   </footer>
-  <script type="module" src="/butcher/javascripts/index.js"></script>
+  
+  <!-- subpage navigation -->
+  <nav id="subpage-nav" class="subpage-nav">
+    <button id="btn-store" class="btn btn-store" title="Go Shopping">
+      <img
+        src="/butcher/assets/svg/shop.svg"
+        width="24"
+        height="24"
+        alt="shop.svg"
+      >
+    </button>
+    <button id="btn-favorites" class="btn btn-favorites" title="View Favorites">
+      <img
+        src="/butcher/assets/svg/heart-fill.svg"
+        width="24"
+        height="24"
+        alt="heart-fill.svg"
+      >
+      <div id="heart-quantity" class="heart-quantity">0</div>
+    </button>
+    <button id="btn-cart" class="btn btn-cart" title="View Cart">
+      <img
+        src="/butcher/assets/svg/cart4.svg"
+        width="24"
+        height="24"
+        alt="cart4.svg"
+      >      
+      <div id="cart-quantity" class="cart-quantity"><span>0</span></div>
+    </button>
+  </nav>
 </body>
 </html>
