@@ -7,11 +7,11 @@
   cursor: pointer;
   display: inline-block;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
   line-height: 1.6;
-  opacity: 1;
   outline: revert;
+  padding: 6px 12px;
   transition: opacity 180ms;
 }
 .btn:hover {
@@ -21,23 +21,9 @@ a.btn:focus,
 button.btn:focus {
   box-shadow: none;
 }
-/* btn-line */
-.btn--line {
-  color: var(--black);
-  padding: 12px;
-}
-.btn--line::after {
-  border: 1px solid var(--primary);
-  box-sizing: border-box;
-  content: "";
-  display: inline-block;
-  height: 4px;
-  width: 100%;
-}
-/* btn--nav */
-.btn--nav {
-  padding: 6px 16px;
-  text-transform: uppercase;
+a.btn:active,
+button.btn:active {
+  background-color: inherit;
 }
 /* btn--flat */
 .btn--flat {
@@ -47,6 +33,51 @@ button.btn:focus {
   background-position: right 20px center;
   color: var(--black);
   padding: 10px 51px 10px 22px;
+}
+/* btn--nav */
+.btn--nav {
+  text-transform: uppercase;
+}
+.btn--side-nav {
+  text-transform: uppercase;
+  padding-inline: 32px;
+  width: 100%;
+}
+.btn--side-nav:hover {
+  background-color: var(--hover);
+}
+.btn.btn--side-nav:active {
+  background-color: var(--hover);
+}
+/* btn--menu-black, btn--menu-white (svg) */
+.btn--menu-black,
+.btn--menu-white {
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+  height: 36px;
+  width: 36px;
+}
+.btn--menu-black {
+  background-image: url("/app/assets/svg/menu-black.svg");
+}
+.btn--menu-white {
+  background-image: url("/app/assets/svg/menu-white.svg");
+}
+/* btn--round for round svg buttons */
+.btn--round {
+  border-radius: 50%;
+  padding: 6px 8px 0 8px;
+}
+/* btn--top scrolls to top of page */
+.btn--top {
+  background-color: var(--bg-light);
+  border-radius: 8px 0 0 8px;
+  bottom: max(70px, 10dvh);
+  color: var(--danger);
+  display: none;
+  position: fixed;
+  right: 0;
 }
 /* btn--raised, btn--pill */
 .btn--raised,
@@ -69,34 +100,17 @@ button.btn--pill:focus {
   background-color: var(--white);
   color: var(--success);
 }
-/* menu-svg */
-.menu-white,
-.menu-black {
-  background-attachment: local;
-  background-position: center;
-  background-size: cover;
-  height: 36px;
-  margin-inline: 16px;
-  width: 36px;
+/* ? NOT USED */
+/* btn-line */
+.btn--line {
+  color: var(--black);
+  padding: 12px;
 }
-.menu-white {
-  background-image: url("/app/assets/svg/menu-white.svg");
-}
-.menu-black {
-  background-image: url("/app/assets/svg/menu-black.svg");
-}
-/* btn-round for round svg buttons */
-.btn--round {
-  border-radius: 50%;
-  padding: 6px 8px 0 8px;
-}
-/* btn--top scrolls to top of page */
-.btn--top {
-  background-color: rgba(240 240 240 / 80%);
-  border-radius: 8px 0 0 8px;
-  bottom: max(70px, 10dvh);
-  color: var(--danger);
-  display: none;
-  position: fixed;
-  right: 0;
+.btn--line::after {
+  border: 1px solid var(--primary);
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
 }

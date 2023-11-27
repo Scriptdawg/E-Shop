@@ -1,7 +1,7 @@
 <!-- app-top-nav -->
 <nav id="app-top-nav">
   <div class="app-top-nav">
-    <button class="btn btn--nav menu-black btn" id="btn-open-app-side-nav" title="Menu"></button>
+    <button id="btn-open-app-side-nav" class="btn btn--menu-black" title="Menu"></button>
     <ul class="app-top-nav-links">
       <li><a class="btn btn--nav" href="/butcher" title="Butcher Shop Application">Butcher Shop</a></li>
       <li><a class="btn btn--nav" href="/about" title="About Coder's Cove">About</a></li>
@@ -21,17 +21,17 @@
       <h3 class="title--lg uppercase" title="Application Pages">Pages</h3>
     </div>
     <ul class="app-side-nav-links">
-      <li><a class="btn btn--nav" href="/butcher" title="Butcher Shop Application">Butcher Shop</a></li>
-      <li><a class="btn btn--nav" href="/" title="Coder's Cove Home Page">Home</a></li>
-      <li><a class="btn btn--nav" href="/about" title="About Coder's Cove">About</a></li>
-      <li><a class="btn btn--nav" href="/contact" title="Contact Coder's Cove">Contact</a></li>
+      <li><a class="btn btn--side-nav" href="/butcher" title="Butcher Shop Application">Butcher Shop</a></li>
+      <li><a class="btn btn--side-nav" href="/" title="Coder's Cove Home Page">Home</a></li>
+      <li><a class="btn btn--side-nav" href="/about" title="About Coder's Cove">About</a></li>
+      <li><a class="btn btn--side-nav" href="/contact" title="Contact Coder's Cove">Contact</a></li>
       <% if(roles) { roles.forEach(role=> { %>
-          <li><a class="btn btn--nav" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
+          <li><a class="btn btn--side-nav" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
         <% }) %>
-        <li><a class="btn btn--nav" href="/auth/logout" title="Sign Out">Sign Out</a></li>
+        <li><a class="btn btn--side-nav" href="/auth/logout" title="Sign Out">Sign Out</a></li>
       <% } else { %>
-        <li><a class="btn btn--nav" href="/auth/register" title="Register">Register</a></li>
-        <li><a class="btn btn--nav" href="/auth/login" title="Sign In">Sign In</a></li>
+        <li><a class="btn btn--side-nav" href="/auth/register" title="Register">Register</a></li>
+        <li><a class="btn btn--side-nav" href="/auth/login" title="Sign In">Sign In</a></li>
       <% } %>
     </ul>
   </div>

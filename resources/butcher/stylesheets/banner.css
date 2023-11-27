@@ -18,6 +18,9 @@
   flex-wrap: wrap;
   gap: 8px;
 }
+.logo.btn {
+  padding-inline-start: 4px;
+}
 @media (min-width: 576px) {
   .logo {
     gap: 16px;

@@ -26,6 +26,7 @@
 
   /* backgrounds */
   --bg-white: linear-gradient(white 90%, rgb(248, 248, 248));
+  --bg-light: rgba(240 240 240 / 80%);
   /* shadows */
   --shadow: 0 1px 1px hsl(0deg 0% 0% / 0.1),
     0 2px 2px hsl(0deg 0% 0% / 0.1), 0 4px 4px hsl(0deg 0% 0% / 0.1),
@@ -54,10 +55,5 @@
 
   /* recently added */
   --svg-color: var(--black);
-}
-/* bg-dark */
-.bg-dark {
-  background: var(--site-bg-linear);
-  color: var(--white);
-  --svg-color: var(--white);
+  --hover: rgb(250, 234, 214)
 }
