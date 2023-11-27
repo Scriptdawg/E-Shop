@@ -27,12 +27,9 @@
       background-repeat: no-repeat;
       background-size: cover;
       min-height: 100vh;
-      min-height: 100dvh;
+      /* min-height: 100dvh; */
     }
-    body {
-      font-family: system-ui;
-      margin: 0;
-    }
+    body { margin: 0; }
     .splash {
       align-items: center;
       display: flex;
@@ -42,7 +39,7 @@
     }
     h1 {
       bottom: 32px;
-      color: #fff;
+      color: #eee;
       font-family: Georgia, serif;
       font-size: 1.5rem;
       font-style: italic;
@@ -52,6 +49,7 @@
       position: fixed;
       text-align: center;
       width: 100%;
+  
     }
     img {
       animation: logo-pulse 6s 150;
@@ -84,7 +82,9 @@
         </picture>
       </a>
     </div>
-    <h1>Quality Meat Products</h1>
+    <a href="/butcher/main" title="Go To Butcher Shop Main Page">
+      <h1>Quality Meat Products</h1>
+    </a>
   </main>
 </body>
 </html>
