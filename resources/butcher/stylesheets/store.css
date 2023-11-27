@@ -1,7 +1,7 @@
 /* ? subpage navigation */
 #subpage-nav {
   align-items: center;
-  background-color: var(--black);
+  background-color: var(--light);
   bottom: 0;
   color: white;
   display: flex;
@@ -15,10 +15,17 @@
 }
 .btn-store,
 .btn-favorites,
-.btn-cart {
+.btn-cart,
+.btn-svg {
+  all: unset;
+  border: none;
   color: white;
   font-size: 18px;
+  padding: 4px 8px 0 8px;
   position: relative;
+}
+.btn-svg:focus {
+  box-shadow: none;
 }
 .btn-favorites .bi-heart-fill {
   color: white;
@@ -43,10 +50,8 @@
   margin: 0;
   padding-inline: 16px;
 }
-/* ? store content grid */
-.store-content {
-  display: grid;
-  gap: 24px;
-  margin-inline: auto;
-  max-width: 960px;
+@media (max-width: 576px) {
+  .store-subpage {
+    padding-inline: 0;
+  }
 }

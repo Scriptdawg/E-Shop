@@ -20,30 +20,29 @@
   <meta name="theme-color" content="#133a26">
   <title><%= title %> | <%= subpageName %></title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     html {
-      background-color: #133a26;
       background-image: url("/butcher/assets/images/backgrounds/mountains.jpg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      min-height: 100vh;
+      min-height: 100dvh;
     }
     body {
       font-family: system-ui;
       margin: 0;
     }
-    #splash {
+    .splash {
       align-items: center;
       display: flex;
       height: 90vh;
-      height: 100dvh;
+      height: 90dvh;
       justify-content: center;
     }
     h1 {
       bottom: 32px;
-      color: white;
+      color: #fff;
       font-family: Georgia, serif;
       font-size: 1.5rem;
       font-style: italic;
@@ -55,45 +54,27 @@
       width: 100%;
     }
     img {
-      animation: logo-pulse 5s 60;
+      animation: logo-pulse 6s 150;
       border-radius: 50%;
       height: auto;
       width: 100px;
     }
+    img:hover {
+      outline: 2px solid #eee;
+    }
     @keyframes logo-pulse {
-      0% {
-        opacity: 1;
-        scale: 1;
-      }
-      50% {
-        opacity: 0.8;
-        scale: 0.8;
-      }
-      100% {
-        opacity: 1;
-        scale: 1;
-      }
+      80% { opacity: 1; }
+      90% { opacity: 0.7; }
+      100% { opacity: 1; }
     }
-    @media (min-width: 300px) {
-      img {
-        width: 257px;
-      }
-    }
-    @media (min-width: 576px) {
-      img {
-        width: 308px;
-      }
-    }
-    @media (min-width: 1200px) {
-      img {
-        width: 420px;
-      }
-    }
+    @media (min-width: 300px) { img { width: 257px; } }
+    @media (min-width: 576px) { img { width: 308px; } }
+    @media (min-width: 1200px) {img { width: 420px; } }
   </style>
 </head>
 <body>
   <main>
-    <div id="splash">
+    <div class="splash">
       <a href="/butcher/main" title="Go To Butcher Shop Main Page">
         <picture>
           <source media="(min-width: 1200px)" srcset="/butcher/assets/images/butcher_logo/butcher-logo_420.png">

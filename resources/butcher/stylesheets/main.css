@@ -1,15 +1,15 @@
-.animal-pics {
-  display: flex;
-  margin-block: 16px;
-  overflow-x: auto;
-}
-.animal-pics img {
-  height: auto;
-  width: clamp(100px, 15vw, 200px);
-}
 .brd-left{
   background: var(--bg-white);
   border-left: 3px solid var(--primary);
   display: inline-block;
   padding-inline: 8px 16px;
+}
+.meat-pics {
+  display: flex;
+  margin-block: 16px;
+  overflow-x: auto;
+}
+.meat-pics img {
+  height: auto;
+  width: clamp(100px, 15vw, 200px);
 }

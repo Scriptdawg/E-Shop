@@ -1,13 +1,9 @@
-/* ax-btn */
-.ax-btn {
-  all: unset;
-  outline: revert;
-  box-sizing: border-box;
-}
 /* btn */
 .btn {
   all: unset;
   box-sizing: border-box;
+  border: none;
+  box-shadow: none;
   cursor: pointer;
   display: inline-block;
   font-size: 0.875rem;
@@ -16,10 +12,14 @@
   line-height: 1.6;
   opacity: 1;
   outline: revert;
-  transition: opacity 180ms, translate 180ms;
+  transition: opacity 180ms;
 }
 .btn:hover {
   opacity: 0.7;
+}
+a.btn:focus,
+button.btn:focus {
+  box-shadow: none;
 }
 /* btn-line */
 .btn--line {
@@ -59,6 +59,11 @@
 .btn--pill {
   border-radius: 16px;
 }
+button.btn--raised:focus,
+button.btn--pill:focus {
+  box-shadow: var(--shadow-small);
+};
+
 .btn--raised:hover,
 .btn--pill:hover {
   background-color: var(--white);
