@@ -3,19 +3,15 @@
 }
 .packages {
   display: grid;
-  grid-template-columns:
-  repeat(auto-fill, minmax(380px, 1fr));
-  grid-auto-rows: min-content;
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 /* packages grid */
 @media (min-width: 768px) {
   .packages {
-    display: grid;
     grid-template-columns:
     repeat(auto-fill, minmax(380px, 1fr));
     grid-auto-rows: min-content;
-    gap: 8px;
   }
 }
 /* package grid */
