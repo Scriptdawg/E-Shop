@@ -32,17 +32,17 @@ export class Store {
             <p class="short-description" title="Short Description">${shortDescription}</p>
           </div>
           <div class="left-ctrl">
-            <button id="btn-clear-${id}" class="btn btn--pill btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
+            <button id="btn-clear-${id}" class="btn btn--raised btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
           </div>  
           <div class="right-ctrl">
-            <button id="btn-minus-${id}" class="btn btn--pill btn-minus" data-id="${id}" title="Decrease Quantity">
-              <img src="/butcher/assets/svg/chevron-double-down.svg" width="16" height="16" alt="chevron-double-down-svg">
+            <button id="btn-minus-${id}" class="btn btn--raised btn-minus" data-id="${id}" title="Decrease Quantity">
+              <img src="/butcher/assets/svg/dash-lg.svg" width="16" height="16" alt="chevron-double-down-svg">
             </button>
             <span id="qty-${id}" class="qty" data-id=${id} title="Quantity">
               ${search.qty === undefined ? 0 : search.qty}
             </span>
-            <button id="btn-plus-${id}" class="btn btn--pill btn-plus" data-id="${id}" title="Increase Quantity">
-              <img src="/butcher/assets/svg/chevron-double-up.svg" width="18" height="18" alt="chevron-double-up-svg">
+            <button id="btn-plus-${id}" class="btn btn--raised btn-plus" data-id="${id}" title="Increase Quantity">
+              <img src="/butcher/assets/svg/plus-lg.svg" width="18" height="18" alt="chevron-double-up-svg">
             </button>
           </div>
         </div>

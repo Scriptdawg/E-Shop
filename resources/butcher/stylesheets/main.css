@@ -1,18 +1,45 @@
-.brd-left{
-  background: var(--bg-white);
-  border-left: 3px solid var(--primary);
+:root {
+  --white: #fff;
+  --black: #000;
+  --theme: #133a26;
+  --primary-1: #2b8379;
+  --primary-2: #19a596;
+  --primary-3: #7fd1c7;
+  --primary-4: #7fd1c7;
+  --primary-5: #d0f3ef;
+  --neutral-1: #2c2c2c;
+  --neutral-2: #434343;
+  --neutral-3: #94868b;
+  --neutral-4: #d9cfd3;
+  --neutral-5: #f2ecee;
+  --accent-1: #970e3d;
+  --accent-2: #c43464;
+  --accent-3: #de7699;
+  --accent-4: #e6c3ce;
+  --accent-5: #fff2f7;
+}
+
+.brd-left {
+  border-left: 3px solid var(--primary-1);
   display: inline-block;
   padding-inline: 8px 16px;
 }
+
 .meat-pics {
   display: flex;
   margin-block: 16px;
   overflow-x: auto;
 }
+
 .meat-pics img {
   height: auto;
   width: clamp(100px, 15vw, 200px);
 }
+
 .butcher-main section {
   margin-block-end: 48px;
+}
+
+html {
+  background-color: var(--neutral-5);
 }

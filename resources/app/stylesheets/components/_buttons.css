@@ -15,7 +15,7 @@
   transition: opacity 180ms;
 }
 .btn:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 a.btn:focus,
 button.btn:focus {
@@ -23,11 +23,12 @@ button.btn:focus {
 }
 /* btn--flat */
 .btn--flat {
-  background-color: var(--primary);
+  background-color: var(--primary-1);
   background-image: url("/app/assets/svg/arrow-right.svg");
   background-repeat: no-repeat;
   background-position: right 20px center;
-  color: var(--black);
+  border-radius: 4px;
+  color: var(--white);
   padding: 10px 51px 10px 22px;
 }
 /* btn--nav */
@@ -78,6 +79,7 @@ button.btn:focus {
   background-color: var(--light);
   box-shadow: var(--shadow-small);
   color: var(--inform);
+  line-height: 1;
   padding: 4px 16px;
 }
 .btn--pill {
