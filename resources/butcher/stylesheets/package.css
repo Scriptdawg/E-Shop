@@ -20,61 +20,48 @@
   background-image: var(--bg-white);
   display: grid;
   gap: 8px;
-  grid-template-columns: 70px 1fr auto;
+  grid-template-columns: 70px 1fr;
   grid-template-areas:
-  "picture   cost        info"
-  "term      term        term"
-  "left-ctrl middle-ctrl right-ctrl";
+  "picture   info"
+  "term      term"
+  "ctrl-btns ctrl-btns";
   padding: 16px;
 }
 /* picture */
 .picture {
-  align-items: center;
+  align-self: center;
   grid-area: picture;
 }
 .picture img {
   height: auto;
   width: 100%;
 }
-/* cost flex */
-.cost {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
-  font-weight: bold;
-  grid-area: cost;
-  justify-content: center;
-}
 /* info flex */
 .info {
-  align-items: end;
-  color: var(--success);
-  display: flex;
-  flex-direction: column;
   font-weight: 600;
   grid-area: info;
-  justify-content: space-between;
+  justify-content: space-around;
+  position: relative;
+}
+.btn-heart {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .subtotal {
-  align-self: center;
+  color: var(--primary-1);
+  text-align: right;
 }
 /* term */
 .term {
   grid-area: term;
 }
-/* left ctrl */
-.left-ctrl {
-  grid-area: left-ctrl;
-}
-/* right ctrl */
-.right-ctrl {
+/*ctrl-btns */
+.ctrl-btns {
   align-items: center;
-  display: grid;
-  grid-area: right-ctrl;
-  grid-template-columns: repeat(3, 50px);
-  justify-content: center;
-  text-align: center;
+  display: flex;
+  grid-area: ctrl-btns;
+  justify-content: space-between;
 }
 .empty-state {
   background-image: var(--bg-white);

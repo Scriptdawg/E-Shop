@@ -2,6 +2,7 @@ export class Store {
   constructor() {
     this.picks = JSON.parse(localStorage.getItem("data")) || [];
     this.view = [];
+    this.estWeight = 2;
   };
   //  Generates the packages html
   printProducts = () => {
@@ -17,32 +18,31 @@ export class Store {
           <div class="picture">
             <img src="${img}" width="70" height="70" alt="${name}" title="${name}">
           </div>
-          <div class="cost">
-            <span title="Price">$${Number.parseInt(price, 10).toFixed(2)}</span>
-          </div>
-          <div class="info">
-            <button id="btn-heart-${id}" class="btn btn-heart" data-id="${id}" title="Toggle Favorite">
-              ${search.heart === true ? `<img src="/butcher/assets/svg/heart-fill-red.svg" width="18" height="18" alt="Red Heart">`
-                : `<img src="/butcher/assets/svg/heart.svg" width="18" height="18" alt="Black Border Heart">`}
-            </button>
-            <span id="subtotal-${id}" class="subtotal" title="Subtotal">$${(price * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}</span>
-          </div>
           <div class="term">
             <h2 class="title" title="Product Name">${name}</h2>
             <p class="short-description" title="Short Description">${shortDescription}</p>
           </div>
-          <div class="left-ctrl">
-            <button id="btn-clear-${id}" class="btn btn--raised btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
-          </div>  
-          <div class="right-ctrl">
-            <button id="btn-minus-${id}" class="btn btn--raised btn-minus" data-id="${id}" title="Decrease Quantity">
-              <img src="/butcher/assets/svg/dash-lg.svg" width="16" height="16" alt="chevron-double-down-svg">
-            </button>
-            <span id="qty-${id}" class="qty" data-id=${id} title="Quantity">
+          <div class="info">
+            <div title="Price">$${Number.parseInt(price, 10).toFixed(2)} / lb</div>
+            <div title="Estimated Package Weight">Weight: ${this.estWeight} lbs</div>
+            <span id="qty-${id}" class="qty" data-id=${id} title="Quantity">Quantity:
               ${search.qty === undefined ? 0 : search.qty}
             </span>
+            <div id="subtotal-${id}" class="subtotal" title="Subtotal">Cost:
+              $${(price * this.estWeight * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}
+            </div>
+            <button id="btn-heart-${id}" class="btn btn-heart" data-id="${id}" title="Toggle Favorite">
+              ${search.heart === true ? `<img src="/butcher/assets/svg/heart-fill-red.svg" width="18" height="18" alt="Red Heart">`
+              : `<img src="/butcher/assets/svg/heart.svg" width="18" height="18" alt="Black Border Heart">`}
+            </button>
+          </div>
+          <div class="ctrl-btns">
+            <button id="btn-clear-${id}" class="btn btn--pill btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
+            <button id="btn-minus-${id}" class="btn btn--raised btn-minus" data-id="${id}" title="Decrease Quantity">
+              <img src="/butcher/assets/svg/dash-lg.svg" width="16" height="16" alt="dash-lg.svg">
+            </button>
             <button id="btn-plus-${id}" class="btn btn--raised btn-plus" data-id="${id}" title="Increase Quantity">
-              <img src="/butcher/assets/svg/plus-lg.svg" width="18" height="18" alt="chevron-double-up-svg">
+              <img src="/butcher/assets/svg/plus-lg.svg" width="18" height="18" alt="plus-lg.svg">
             </button>
           </div>
         </div>
@@ -67,9 +67,9 @@ export class Store {
   // Updates the package qty and subtotal
   updatePackage = id => {
     const search = this.picks.find(pick => pick.id === id);
-    document.querySelector(`#qty-${id}`).textContent = search.qty;
+    document.querySelector(`#qty-${id}`).textContent = `Quantity: ${search.qty}`;
     const query = this.products.find(product => product.id === id);
-    document.querySelector(`#subtotal-${id}`).textContent = `$${(search.qty * query.price).toFixed(2)}`;
+    document.querySelector(`#subtotal-${id}`).textContent = `Cost: $${(this.estWeight * search.qty * query.price).toFixed(2)}`;
     this.updateCartQuantity();
     return this;
   };
@@ -109,7 +109,7 @@ export class Store {
       return this;
     }
     document.querySelector("#total-amount").textContent = this.picks.filter(pick => pick.qty)
-      .map(pick => this.products.find(product => product.id === pick.id).price * pick.qty)
+      .map(pick => this.products.find(product => product.id === pick.id).price * this.estWeight * pick.qty)
       .reduce((accumulator, current) => accumulator + current, 0).toFixed(2);
     return this;
   };

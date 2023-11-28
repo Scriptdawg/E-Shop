@@ -49,9 +49,9 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#133a26",
-    "background_color": "#133a26",
-    "start_url": "https://animal-y4xn.onrender.com/butcher/main",
+    "theme_color": "#2b8379",
+    "background_color": "#2b8379",
+    "start_url": "https://animal-y4xn.onrender.com/butcher/",
     "display": "standalone",
     "orientation": "portrait"
 }
