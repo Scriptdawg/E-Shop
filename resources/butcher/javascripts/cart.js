@@ -22,8 +22,7 @@ export class Cart extends Store {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     document.querySelector("#btn-clear-cart").classList.remove("hide");
     document.querySelector("#checkout").classList.remove("hide");
-    document.querySelector(".categories").classList.remove("show");
-    document.querySelector(".ledger").classList.add("show");
+    document.querySelector(".ledger").classList.remove("hide");
     document.querySelector("#shop").classList.remove("hide");
     document.querySelector("#btn-store").classList.remove("hidden");
 
@@ -76,7 +75,5 @@ export class Cart extends Store {
         <a class="btn btn--pill btn-continue" href="/butcher/store">Continue Shopping</a>
       </div>
     `;
-    document.querySelector("#btn-clear-cart").classList.add("hide");
-    document.querySelector("#checkout").classList.add("hide");
   };
 };

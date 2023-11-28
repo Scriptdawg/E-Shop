@@ -21,10 +21,6 @@ a.btn:focus,
 button.btn:focus {
   box-shadow: none;
 }
-a.btn:active,
-button.btn:active {
-  background-color: inherit;
-}
 /* btn--flat */
 .btn--flat {
   background-color: var(--primary);
@@ -44,9 +40,6 @@ button.btn:active {
   width: 100%;
 }
 .btn--side-nav:hover {
-  background-color: var(--hover);
-}
-.btn.btn--side-nav:active {
   background-color: var(--hover);
 }
 /* btn--menu-black, btn--menu-white (svg) */
@@ -94,7 +87,6 @@ button.btn--raised:focus,
 button.btn--pill:focus {
   box-shadow: var(--shadow-small);
 };
-
 .btn--raised:hover,
 .btn--pill:hover {
   background-color: var(--white);

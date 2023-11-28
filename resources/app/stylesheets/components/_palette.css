@@ -4,7 +4,7 @@
   --white: rgb(250 250 250);
 
   /* overlays */
-  --overlay: rgba(0 0 0 / 50%);
+  --overlay: rgba(0 0 0 / 40%);
   --pic-overlay: linear-gradient(23deg, rgba(255 100 0 / 20%),
       rgba(0 0 0 / 20%), rgba(0 0 0 / 20%));
   /* highlights */

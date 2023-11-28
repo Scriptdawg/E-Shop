@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- include shared head partial -->
-    <%- include("../butcher/head.ejs") %>
-    <link rel="stylesheet" href="/butcher/stylesheets/index.css">
-    <script type="module" src="/butcher/javascripts/index.js"></script>
-    <title><%= title %> | <%= subpageName %></title>
-  </head>
+<head>
+  <!-- include shared head partial -->
+  <%- include("../butcher/head.ejs") %>
+  <link rel="stylesheet" href="/butcher/stylesheets/index.css">
+  <script type="module" src="/butcher/javascripts/index.js"></script>
+  <title><%= title %> | <%= subpageName %></title>
+</head>
 <body>
   <!-- banner -->
   <header><%- include("../butcher/banner.ejs") %></header>
@@ -15,8 +15,10 @@
 
   <!-- store subpage -->
   <main class="container-subpage store-subpage">
+
     <!-- packages  -->
     <div id="packages" class="packages"></div>
+
     <!-- ledger -->
     <div id="ledger" class="ledger">
       <p style="visibility: hidden;">Number of products: <span id="cart-products">0</span></p>
@@ -26,14 +28,14 @@
       <button id="btn-clear-cart" class="btn btn--raised btn-clear-cart">Empty Cart</button>
       <a class="btn btn--raised btn-continue" href="/butcher/store">Continue Shopping</a>
     </div>
+    
   </main>
 
-  <footer><%- include('../app/footer-app.ejs') %>
-  </footer>
+  <footer><%- include('../app/footer-app.ejs') %></footer>
   
   <!-- subpage navigation -->
-  <nav id="subpage-nav" class="subpage-nav">
-    <button id="btn-store" class="btn btn-svg" title="Go Shopping">
+  <nav id="subpage-nav">
+    <button id="btn-store" class="btn" title="Go Shopping">
       <img
         src="/butcher/assets/svg/shop.svg"
         width="24"
@@ -41,7 +43,7 @@
         alt="shop.svg"
       >
     </button>
-    <button id="btn-favorites" class="btn btn-svg" title="View Favorites">
+    <button id="btn-favorites" class="btn" title="View Favorites">
       <img
         src="/butcher/assets/svg/heart-fill.svg"
         width="24"
@@ -50,7 +52,7 @@
       >
       <div id="heart-quantity" class="heart-quantity">0</div>
     </button>
-    <button id="btn-cart" class="btn-svg" title="View Cart">
+    <button id="btn-cart" class="btn" title="View Cart">
       <img
         src="/butcher/assets/svg/cart4.svg"
         width="24"

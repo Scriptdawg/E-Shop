@@ -1,4 +1,4 @@
-/* banner-butcher */
+/* banner */
 .banner {
   align-items: center;
   background: var(--bg-linear-light);
@@ -6,20 +6,15 @@
   flex-wrap: wrap;
   font-family: var(--font-teritiary);
   font-style: italic;
-  gap: 16px;
+  gap: 8px;
   justify-content: space-between;
-  padding: 32px 16px 8px 16px;
-
 }
-/* logo-butcher */
+/* logo */
 .logo {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
-.logo.btn {
-  padding-inline-start: 4px;
 }
 @media (min-width: 576px) {
   .logo {

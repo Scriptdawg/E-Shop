@@ -21,8 +21,8 @@ export class Shop extends Store {
     this.updateCartQuantity().updateHeartQuantity().updateTotalAmount();
     document.body.scrollTop = 0; // for Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.querySelector(".ledger").classList.add("hide");
     document.querySelector(".categories").classList.add("show");
-    document.querySelector(".ledger").classList.remove("show");
     document.querySelector("#shop").classList.add("hide");
     document.querySelector("#btn-store").classList.add("hidden");
   };

@@ -21,14 +21,14 @@ export class Store {
             <span title="Price">$${Number.parseInt(price, 10).toFixed(2)}</span>
           </div>
           <div class="info">
-            <button id="btn-heart-${id}" class="btn-plain btn-heart" data-id="${id}" title="Toggle Favorite">
+            <button id="btn-heart-${id}" class="btn btn-heart" data-id="${id}" title="Toggle Favorite">
               ${search.heart === true ? `<img src="/butcher/assets/svg/heart-fill-red.svg" width="18" height="18" alt="Red Heart">`
                 : `<img src="/butcher/assets/svg/heart.svg" width="18" height="18" alt="Black Border Heart">`}
             </button>
             <span id="subtotal-${id}" class="subtotal" title="Subtotal">$${(price * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}</span>
           </div>
           <div class="term">
-            <h2 class="title large" title="Product Name">${name}</h2>
+            <h2 class="title" title="Product Name">${name}</h2>
             <p class="short-description" title="Short Description">${shortDescription}</p>
           </div>
           <div class="left-ctrl">

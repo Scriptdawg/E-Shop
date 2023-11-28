@@ -18,8 +18,7 @@ export class Favorites extends Store {
     this.updateCartQuantity().updateHeartQuantity().updateTotalAmount();
     document.body.scrollTop = 0; // for Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    document.querySelector(".categories").classList.remove("show");
-    document.querySelector(".ledger").classList.remove("show");
+    document.querySelector(".ledger").classList.add("hide");
     document.querySelector("#shop").classList.remove("hide");
     document.querySelector("#btn-store").classList.remove("hidden");
   };
