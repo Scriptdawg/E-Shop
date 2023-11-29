@@ -43,3 +43,15 @@
 html {
   background-color: var(--neutral-5);
 }
+
+.subpage-name {
+  color: var(--primary-1);
+}
+.estimate {
+  color: var(--inform);
+  padding: 32px;
+}
+.estimate h3 {
+  border-left: 4px solid var(--inform);
+  padding-left: 8px;
+}
