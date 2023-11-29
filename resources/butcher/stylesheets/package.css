@@ -40,13 +40,11 @@
 .info {
   font-weight: 600;
   grid-area: info;
-  justify-content: space-around;
-  position: relative;
 }
 .btn-heart {
-  position: absolute;
-  top: 0;
-  right: 0;
+  grid-row: 1;
+  grid-column: 3;
+  align-self: start;
 }
 .subtotal {
   color: var(--primary-1);
