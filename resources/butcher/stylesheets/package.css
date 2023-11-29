@@ -18,8 +18,8 @@
 .package {
   border-radius: 16px;
   background-image: var(--bg-white);
+  column-gap: 16px;
   display: grid;
-  gap: 8px;
   grid-template-columns: 70px 1fr;
   grid-template-areas:
   "picture   info"
@@ -42,9 +42,9 @@
   grid-area: info;
 }
 .btn-heart {
-  grid-row: 1;
-  grid-column: 3;
   align-self: start;
+  grid-area: info;
+  justify-self: end;
 }
 .subtotal {
   color: var(--primary-1);
@@ -54,12 +54,17 @@
 .term {
   grid-area: term;
 }
+.term h2,
+.term p {
+  margin-block: 0;
+}
 /*ctrl-btns */
 .ctrl-btns {
   align-items: center;
   display: flex;
   grid-area: ctrl-btns;
   justify-content: space-between;
+  margin-block-start: 8px;
 }
 .empty-state {
   background-image: var(--bg-white);

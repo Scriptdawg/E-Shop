@@ -2,16 +2,16 @@ export class Store {
   constructor() {
     this.picks = JSON.parse(localStorage.getItem("data")) || [];
     this.view = [];
-    this.estWeight = 2;
   };
   //  Generates the packages html
+ //<div title="Price">$${Number.parseInt(price, 10).toFixed(2)} / lb</div>
   printProducts = () => {
     if (!this.view.length) {
       this.printEmptyState();
       return;
     }
     document.querySelector("#packages").innerHTML = this.view.map(product => {
-      const { id, img, name, price, shortDescription, priceType } = product;
+      const { id, img, name, price, shortDescription, priceType, weight } = product;
       const search = this.picks.find(pick => pick.id === id) || [];
       return `
         <div id="package-${id}" class="package">
@@ -23,13 +23,13 @@ export class Store {
             <p class="short-description" title="Short Description">${shortDescription}</p>
           </div>
           <div class="info">
-            <div title="Price">$${Number.parseInt(price, 10).toFixed(2)} / lb</div>
-            <div title="Estimated Package Weight">Weight: ${this.estWeight} lbs</div>
+            <div title="Price">$${price} / lb</div>
+            <div title="Estimated Package Weight">Weight: ${weight} lbs</div>
             <span id="qty-${id}" class="qty" data-id=${id} title="Quantity">Quantity:
               ${search.qty === undefined ? 0 : search.qty}
             </span>
             <div id="subtotal-${id}" class="subtotal" title="Subtotal">Cost:
-              $${(price * this.estWeight * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}
+              $${(price * weight * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}
             </div>
           </div>
       
@@ -71,7 +71,7 @@ export class Store {
     const search = this.picks.find(pick => pick.id === id);
     document.querySelector(`#qty-${id}`).textContent = `Quantity: ${search.qty}`;
     const query = this.products.find(product => product.id === id);
-    document.querySelector(`#subtotal-${id}`).textContent = `Cost: $${(this.estWeight * search.qty * query.price).toFixed(2)}`;
+    document.querySelector(`#subtotal-${id}`).textContent = `Cost: $${(query.weight * search.qty * query.price).toFixed(2)}`;
     this.updateCartQuantity();
     return this;
   };
@@ -111,7 +111,8 @@ export class Store {
       return this;
     }
     document.querySelector("#total-amount").textContent = this.picks.filter(pick => pick.qty)
-      .map(pick => this.products.find(product => product.id === pick.id).price * this.estWeight * pick.qty)
+      .map(pick => this.products.find(product => product.id === pick.id).price *
+      this.products.find(product => product.id === pick.id).weight * pick.qty)
       .reduce((accumulator, current) => accumulator + current, 0).toFixed(2);
     return this;
   };

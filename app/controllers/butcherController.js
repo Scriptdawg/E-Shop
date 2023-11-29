@@ -37,6 +37,7 @@ exports.api_product_list_get = asyncHandler(async (req, res) => {
       price: product.price,
       priceType: product.priceType,
       shortDescription: product.shortDescription,
+      weight: product.weight,
       img: imagePath
     };
     merged.push(item);

@@ -52,6 +52,7 @@ exports.product_create_post = [
       story: req.body.story,
       price: req.body.price,
       priceType: req.body.priceType,
+      weight: req.body.weight,
     });
 
     saveCover(product, req.body.cover);
@@ -183,6 +184,7 @@ exports.product_update_post = [
       story: req.body.story,
       price: req.body.price,
       priceType: req.body.priceType,
+      weight: req.body.weight,
       _id: req.params.id, // This is required, or a new ID will be assigned!
     });
 

@@ -14,6 +14,7 @@ const ProductSchema = new Schema({
   shortDescription: { type: String, required: true },
   specialMessage: { type: String },
   story: { type: Schema.Types.ObjectId, ref: "Story", required: true },
+  weight: { type: String, required: true },
 });
 
 // Virtual for product's url

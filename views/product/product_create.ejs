@@ -99,6 +99,17 @@
         <% }) %>
       </select>
 
+      <!-- weight -->
+      <label for="weight">Weight</label>
+      <input
+        type="text"
+        id="weight"
+        name="weight"
+        placeholder="Enter package weight ..."
+        value="<%= product.weight %>"
+        autocomplete="off"
+      >
+
       <!-- cover image  -->
       <label for="cover">Cover</label>
       <input id="cover" name="cover" type="file" class="filepond">
