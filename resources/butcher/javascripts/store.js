@@ -4,7 +4,6 @@ export class Store {
     this.view = [];
   };
   //  Generates the packages html
- //<div title="Price">$${Number.parseInt(price, 10).toFixed(2)} / lb</div>
   printProducts = () => {
     if (!this.view.length) {
       this.printEmptyState();
@@ -32,12 +31,10 @@ export class Store {
               $${(price * weight * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}
             </div>
           </div>
-      
-            <button id="btn-heart-${id}" class="btn btn-heart" data-id="${id}" title="Toggle Favorite">
-              ${search.heart === true ? `<img src="/butcher/assets/svg/heart-fill-red.svg" width="18" height="18" alt="Red Heart">`
-              : `<img src="/butcher/assets/svg/heart.svg" width="18" height="18" alt="Black Border Heart">`}
-            </button>
-
+          <button id="btn-heart-${id}" class="btn btn-heart" data-id="${id}" title="Toggle Favorite">
+            ${search.heart === true ? `<img src="/butcher/assets/svg/heart-fill-red.svg" width="18" height="18" alt="Red Heart">`
+            : `<img src="/butcher/assets/svg/heart.svg" width="18" height="18" alt="Black Border Heart">`}
+          </button>
           <div class="ctrl-btns">
             <button id="btn-clear-${id}" class="btn btn--pill btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
             <button id="btn-minus-${id}" class="btn btn--raised btn-minus" data-id="${id}" title="Decrease Quantity">

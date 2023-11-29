@@ -4,7 +4,6 @@ export class Cart extends Store {
     super();
     this.products = products;
     this.#main();
-    this.#printCartSummary();
   };
   // Main
   #main = () => {
@@ -23,9 +22,9 @@ export class Cart extends Store {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     document.querySelector("#btn-clear-cart").classList.remove("hide");
     document.querySelector(".ledger").classList.remove("hide");
+    this.printCartSummary();
     document.querySelector("#shop").classList.remove("hide");
     document.querySelector("#btn-store").classList.remove("hidden");
-
   }
   // Activates buttons event listeners
   #attachButtons = () => {
@@ -35,6 +34,7 @@ export class Cart extends Store {
         if (this.plus(button.dataset.id) === 2)
           document.querySelector(`#btn-minus-${button.dataset.id}`).classList.remove("hidden");
         this.updatePackage(button.dataset.id).updateLocalStorage().updateTotalAmount();
+        this.printCartSummary();
       });
     });
     //? Minus Buttons
@@ -43,6 +43,7 @@ export class Cart extends Store {
         if (this.minus(button.dataset.id) === 1)
           document.querySelector(`#btn-minus-${button.dataset.id}`).classList.add("hidden");
         this.updatePackage(button.dataset.id).updateLocalStorage().updateTotalAmount();
+        this.printCartSummary();
       });
     });
     // ? Clear Buttons
@@ -52,12 +53,15 @@ export class Cart extends Store {
         this.clearPackage(button.dataset.id);
         this.updatePackage(button.dataset.id).updateLocalStorage().updateTotalAmount();
         document.querySelector(`#package-${button.dataset.id}`).classList.add("hide");
+        document.querySelector(`#table-${button.dataset.id}`).classList.add("hide");
         if (!this.picks.filter(pick => pick.qty).length) this.printEmptyState();
+        this.printCartSummary();
       });
     });
     // ? Clear Cart Button - remove all packages from the cart
     document.querySelector("#btn-clear-cart").addEventListener("click", () => {
       this.clearCart().updateCartQuantity().updateLocalStorage().updateTotalAmount();
+      this.printCartSummary();
     });
     //? Heart Buttons
     document.querySelectorAll(".btn-heart").forEach(button => {
@@ -77,25 +81,24 @@ export class Cart extends Store {
     `;
   };
   // Prints cart summary
-  #printCartSummary = () => {
-    // Table
-    function renderTableRows(rows) {
-      let html = "";
-      rows.forEach(function (row) {
-        html += `<tr>
-                      <td>${row[0]}</td>
-                      <td>${row[1]}</td>
-                      <td>${row[2]}</td>
-                    </tr>`
-      });
-      return html;
+  printCartSummary = () => {
+    const picks = this.picks.filter(pick => pick.qty);
+    if (!picks[0]) {
+      document.querySelector(".ledger").classList.add("hide");
+      return this;
     }
-    const data = [
-      ["Chicken Breasts 10lb Box", "1", "$60.00"],
-      ["Prime Rib Roast", "1", "$93.00"]
-    ];
-    const html = renderTableRows(data);
-    const tbody = document.querySelector("#cart-totals tbody");
-    tbody.insertAdjacentHTML("beforeend", html);
+    let html = "";
+    picks.filter(pick => pick.qty).forEach(pick => {
+      const product = this.view.find(product => product.id === pick.id);
+      html += `
+        <tr id="table-${product.id}">
+          <td>${product.name}</td>
+          <td id="table-qty-${product.id}">${pick.qty}</td>
+          <td id="table-subtotal-${product.id}">$${(product.price * product.weight * pick.qty).toFixed(2)}</td>
+        </tr>
+      `
+    });
+    document.querySelector("#cart-totals tbody").innerHTML = html;
+    return this;
   }
 };
