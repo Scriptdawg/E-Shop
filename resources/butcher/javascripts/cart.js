@@ -4,6 +4,7 @@ export class Cart extends Store {
     super();
     this.products = products;
     this.#main();
+    this.#printCartSummary();
   };
   // Main
   #main = () => {
@@ -21,7 +22,6 @@ export class Cart extends Store {
       .forEach(description => description.classList.add("hide"));
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     document.querySelector("#btn-clear-cart").classList.remove("hide");
-    document.querySelector("#checkout").classList.remove("hide");
     document.querySelector(".ledger").classList.remove("hide");
     document.querySelector("#shop").classList.remove("hide");
     document.querySelector("#btn-store").classList.remove("hidden");
@@ -71,9 +71,31 @@ export class Cart extends Store {
     document.querySelector("#packages").innerHTML = `
       <div id="empty-state" class="empty-state">
         <i class="bi bi-cart-x-fill"></i>
-        <p>Shopping Cart is Empty</p>
-        <a class="btn btn--pill btn-continue" href="/butcher/store">Continue Shopping</a>
+        <p>Your Cart Is Empty!</p>
+        <a class="btn btn--pill btn-continue" href="/butcher/store">Browse Products</a>
       </div>
     `;
   };
+  // Prints cart summary
+  #printCartSummary = () => {
+    // Table
+    function renderTableRows(rows) {
+      let html = "";
+      rows.forEach(function (row) {
+        html += `<tr>
+                      <td>${row[0]}</td>
+                      <td>${row[1]}</td>
+                      <td>${row[2]}</td>
+                    </tr>`
+      });
+      return html;
+    }
+    const data = [
+      ["Chicken Breasts 10lb Box", "1", "$60.00"],
+      ["Prime Rib Roast", "1", "$93.00"]
+    ];
+    const html = renderTableRows(data);
+    const tbody = document.querySelector("#cart-totals tbody");
+    tbody.insertAdjacentHTML("beforeend", html);
+  }
 };

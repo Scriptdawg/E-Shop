@@ -79,8 +79,10 @@ button.btn:focus {
   background-color: var(--light);
   box-shadow: var(--shadow-small);
   color: var(--inform);
-  line-height: 1;
   padding: 4px 16px;
+}
+.btn--raised {
+  line-height: 1;
 }
 .btn--pill {
   border-radius: 16px;

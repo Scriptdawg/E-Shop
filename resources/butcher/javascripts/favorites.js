@@ -66,8 +66,8 @@ export class Favorites extends Store {
     document.querySelector("#packages").innerHTML = `
       <div id="empty-state" class="empty-state">
         <i class="bi bi-heart"></i>
-        <p>Favorites list is Empty</p>
-        <a class="btn btn--pill btn-continue" href="/butcher/store">Continue Shopping</a>
+        <p>You Don't Have Any Favorites!</p>
+        <a class="btn btn--pill btn-continue" href="/butcher/store">Browse Products</a>
       </div>
     `;
   };

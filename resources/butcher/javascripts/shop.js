@@ -68,7 +68,7 @@ export class Shop extends Store {
     document.querySelector("#packages").innerHTML = `
       <div id="empty-cart" class="empty-cart">
         <p>There aren't any products that match search phrase.</p>
-        <a class="btn btn--pill btn-continue" href="/butcher/store">Continue Shopping</a>
+        <a class="btn btn--pill btn-continue" href="/butcher/store">Browse Products</a>
       </div>
     `;
   };
