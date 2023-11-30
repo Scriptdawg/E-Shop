@@ -98,7 +98,7 @@ export class Cart extends Store {
         </tr>
       `
     });
-    document.querySelector("#cart-totals tbody").innerHTML = html;
+    document.querySelector("#cart-summary tbody").innerHTML = html;
     return this;
   };
 };

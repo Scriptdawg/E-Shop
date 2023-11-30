@@ -1,4 +1,15 @@
+@import url("/app/stylesheets/components/_palette.css");
+@import url("/app/stylesheets/components/_buttons.css");
+@import url("/app/stylesheets/components/_typography.css");
+@import url("/app/stylesheets/components/nav_app.css");
+@import url("/app/stylesheets/components/footer_app.css");
+@import url("palette.css");
+@import url("typograhy.css");
+@import url("base.css");
+@import url("containers.css");
+@import url("buttons.css");
 @import url("banner.css");
 @import url("main.css");
 @import url("store.css");
 @import url("package.css");
+@import url("cart.css");

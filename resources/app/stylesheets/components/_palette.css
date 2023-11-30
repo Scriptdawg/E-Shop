@@ -56,4 +56,10 @@
   /* recently added */
   --svg-color: var(--black);
   --hover: rgb(250, 234, 214)
+
+    /* --accent-1: #970e3d;
+  --accent-2: #c43464;
+  --accent-3: #de7699;
+  --accent-4: #e6c3ce;
+  --accent-5: #fff2f7; */
 }

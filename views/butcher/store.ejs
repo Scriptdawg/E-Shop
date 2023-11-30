@@ -1,99 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- include shared head partial -->
   <%- include("../butcher/head.ejs") %>
-    <link rel="stylesheet" href="/butcher/stylesheets/index.css">
     <script type="module" src="/butcher/javascripts/index.js"></script>
     <title>
       <%= title %> | <%= subpageName %>
     </title>
 </head>
-
-<body class="container-store">
+<body>
   <!-- banner -->
   <header><%- include("../butcher/banner.ejs") %></header>
   <!-- navigation -->
   <%- include("../butcher/nav.ejs") %>
-
-    <!-- store subpage -->
-    <main class="container-subpage">
-
-      <!-- packages  -->
-      <div id="packages" class="packages"></div>
-
-      <!-- ledger -->
-      <div id="ledger" class="ledger">
-        <!-- Table -->
-        <h3 class="title--lg brd-left">Cart Summary</h3>
-        <table class="cart-totals" id="cart-totals">
-          <thead>
-            <tr>
-              <th>Products (<span id="cart-products">0</span>)</th>
-              <th>Qty</th>
-              <th>Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-          <tfoot>
-            <td>Totals:</td>
-            <td><span class="cart-quantity">0</span></td>
-            <td>$<span id="total-amount">0.00</span></td>
-          </tfoot>
-        </table>
-        <div style="text-align: right;">
-          <a class="btn btn--flat" href="/butcher/checkout">Checkout</a>
-        </div>        
-        
-        <!-- <p style="visibility: hidden;">Number of products: <span id="cart-products">0</span></p> -->
-        <!-- <p>Number of items: <span class="cart-quantity">0</span></p> -->
-        <!-- <p style="text-align: right;">Total: $<span id="total-amount">0.00</span></p> -->
-        <br><br>
-        <div style="text-align: center">
-          <button id="btn-clear-cart" class="btn btn--pill btn-clear-cart">Empty Cart</button>
-          <br><br><br>
-          <a class="btn btn--pill btn-continue" href="/butcher/store">Continue Shopping</a>
-        </div>
+  <!-- store subpage -->
+  <main class="container-subpage">
+    <!-- packages  -->
+    <div id="packages" class="packages"></div>
+    <!-- ledger -->
+    <div id="ledger" class="ledger">
+      <!-- cart-summary -->
+      <h3 class="title--lg brd-left">Cart Summary</h3>
+      <table id="cart-summary" class="cart-summary">
+        <thead>
+          <tr>
+            <th>Products (<span id="cart-products">0</span>)</th>
+            <th>Qty</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- cart.js printCartSummary() here -->
+        </tbody>
+        <tfoot>
+          <td>Totals</td>
+          <td><span class="cart-quantity">0</span></td>
+          <td>$<span id="total-amount">0.00</span></td>
+        </tfoot>
+      </table>
+      <div style="text-align: right;">
+        <a class="btn btn--flat" href="/butcher/checkout">Checkout</a>
+      </div>        
+      <br><br>
+      <div style="text-align: center">
+        <button id="btn-clear-cart" class="btn btn--pill btn-clear-cart">Empty Cart</button>
+        <br><br><br>
+        <a class="btn btn--pill btn-continue" href="/butcher/store">Continue Shopping</a>
       </div>
-    </main>
-
-    <footer>
-      <div class="container-subpage estimate text">
-        <h3 class="title--lg">Estimated Prices:</h3>
-        <p>
-          Meat is sold by the weight of each cut.
-          These cuts can vary in size.
-          The weight of each product is an <strong>estimated average</strong> weight of the cut.
-          The 'cost' is this estimated weight times the price per pound times the quantity selected.
-          This is also reflected in the total amount of your cart.
-        </p>
-        <p>
-          The <strong>actual total amount</strong> of your order will be determined when you pick up your products.
-        </p>
-        <p>
-          This approach was used to give you an idea of how much your order will cost when you pick it up.
-          It's so you can <strong>budget</strong> more accurately!
-        </p>
-      </div>
-      <%- include('../app/footer-app.ejs') %>
-    </footer>
-
-    <!-- subpage navigation -->
-    <nav id="subpage-nav">
-      <button id="btn-store" class="btn" title="Go Shopping">
-        <img src="/butcher/assets/svg/shop.svg" width="24" height="24" alt="shop.svg">
-      </button>
-      <button id="btn-favorites" class="btn" title="View Favorites">
-        <img src="/butcher/assets/svg/heart.svg" width="24" height="24" alt="heart-fill.svg">
-        <div id="heart-quantity" class="heart-quantity">0</div>
-      </button>
-      <button id="btn-cart" class="btn" title="View Cart">
-        <img src="/butcher/assets/svg/cart4.svg" width="24" height="24" alt="cart4.svg">
-        <div id="cart-quantity" class="cart-quantity"><span>0</span></div>
-      </button>
-    </nav>
+    </div>
+  </main>
+  <footer>
+    <div class="container-subpage estimate text">
+      <h3 class="title--lg">Estimated Prices:</h3>
+      <p>
+        Meat is sold by the weight of each cut.
+        These cuts can vary in size.
+        The weight of each product is an <strong>estimated average</strong> weight of the cut.
+        The 'cost' is this estimated weight times the price per pound times the quantity selected.
+        This is also reflected in the total amount of your cart.
+      </p>
+      <p>
+        The <strong>actual total amount</strong> of your order will be determined when you pick up your products.
+      </p>
+      <p>
+        This approach was used to give you an idea of how much your order will cost when you pick it up.
+        It's so you can <strong>budget</strong> more accurately!
+      </p>
+    </div>
+    <%- include('../app/footer-app.ejs') %>
+  </footer>
+  <!-- subpage navigation -->
+  <nav id="subpage-nav">
+    <button id="btn-store" class="btn" title="Go Shopping">
+      <img src="/butcher/assets/svg/shop.svg" width="24" height="24" alt="shop.svg">
+    </button>
+    <button id="btn-favorites" class="btn" title="View Favorites">
+      <img src="/butcher/assets/svg/heart.svg" width="24" height="24" alt="heart-fill.svg">
+      <div id="heart-quantity" class="heart-quantity">0</div>
+    </button>
+    <button id="btn-cart" class="btn" title="View Cart">
+      <img src="/butcher/assets/svg/cart4.svg" width="24" height="24" alt="cart4.svg">
+      <div id="cart-quantity" class="cart-quantity"><span>0</span></div>
+    </button>
+  </nav>
 </body>
-
 </html>
