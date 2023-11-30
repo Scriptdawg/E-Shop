@@ -22,9 +22,9 @@ export class Cart extends Store {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     document.querySelector("#btn-clear-cart").classList.remove("hide");
     document.querySelector(".ledger").classList.remove("hide");
-    this.printCartSummary();
     document.querySelector("#shop").classList.remove("hide");
     document.querySelector("#btn-store").classList.remove("hidden");
+    this.printCartSummary();
   }
   // Activates buttons event listeners
   #attachButtons = () => {
@@ -86,7 +86,7 @@ export class Cart extends Store {
     if (!picks[0]) {
       document.querySelector(".ledger").classList.add("hide");
       return this;
-    }
+    };
     let html = "";
     picks.filter(pick => pick.qty).forEach(pick => {
       const product = this.view.find(product => product.id === pick.id);
@@ -100,5 +100,5 @@ export class Cart extends Store {
     });
     document.querySelector("#cart-totals tbody").innerHTML = html;
     return this;
-  }
+  };
 };

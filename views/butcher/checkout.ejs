@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- include shared head partial -->
+  <%- include("../butcher/head.ejs") %>
+    <link rel="stylesheet" href="/butcher/stylesheets/index.css">
+    <!-- <script type="module" src="/butcher/javascripts/index.js"></script> -->
+    <title>
+      <%= title %> | <%= subpageName %>
+    </title>
+</head>
+
+<body class="container-store">
+  <!-- banner -->
+  <header><%- include("../butcher/banner.ejs") %></header>
+  <!-- navigation -->
+  <%- include("../butcher/nav.ejs") %>
+
+    <!-- store subpage -->
+    <main class="container-subpage">
+      <div class="container">
+        <h2>Thanks for placing an order!</h2>
+        <p>Your cart has been emptied.</p>
+        <p>
+          If this was a live system, you would have to register.
+          Your order would be saved to the database and
+          you would receive a confirmation email.
+        </p>
+        <a class="btn btn--flat" href="/butcher/store">Start Re-filling Your Cart</a>
+      </div>
+    </main>
+
+    <script>
+      let picks = JSON.parse(localStorage.getItem("data")) || [];
+      picks.forEach(pick => pick.qty = 0);
+      picks = picks.filter(pick => pick.qty || pick.heart);
+      localStorage.setItem("data", JSON.stringify(picks));
+    </script>
+
+    <footer>
+      <%- include('../app/footer-app.ejs') %>
+    </footer>
+</body>
+
+</html>

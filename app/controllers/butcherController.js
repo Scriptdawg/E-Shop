@@ -62,7 +62,7 @@ exports.store_get = asyncHandler(async (req, res) => {
     subpageName: "Butcher Shop",
     roles: req.session.roles,
   });
-})
+});
 
 // READ Lighthouse - detail
 exports.lighthouse_get = asyncHandler(async (req, res) => {
@@ -70,4 +70,12 @@ exports.lighthouse_get = asyncHandler(async (req, res) => {
     subpageName: "Lighthouse Report",
     roles: req.session.roles,
   });
-})
+});
+
+// READ Checkout - detail
+exports.checkout_get = asyncHandler(async (req, res) => {
+  res.render("butcher/checkout", {
+    subpageName: "Checkout",
+    roles: req.session.roles,
+  });
+});
