@@ -14,41 +14,63 @@ export class Store {
       const search = this.picks.find(pick => pick.id === id) || [];
       return `
         <div id="package-${id}" class="package">
-          <div class="picture">
-            <img src="${img}" width="70" height="70" alt="${name}" title="${name}">
-          </div>
+
           <div class="term">
             <h2 class="title" title="Product Name">${name}</h2>
             <p class="short-description" title="Short Description">${shortDescription}</p>
           </div>
-          <div class="info">
-            <div title="Price">$${price} / lb</div>
-            <div title="Estimated Package Weight">Weight: ${weight} lbs</div>
-            <span id="qty-${id}" class="qty" data-id=${id} title="Quantity">Quantity:
-              ${search.qty === undefined ? 0 : search.qty}
-            </span>
-            <div id="subtotal-${id}" class="subtotal" title="Subtotal">Cost:
-              $${(price * weight * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}
-            </div>
+
+          <div class="picture">
+            <img src="${img}" width="70" height="70" alt="${name}" title="${name}">
           </div>
+
+          <ul class="info">
+            <li title="Price">
+              Price: $${price} / lb
+            </li>
+            <li title="Estimated Package Weight">
+              Weight: ${weight} lbs
+            </li>
+
+            <li id="qty-${id}" class="qty" data-id=${id} title="Quantity">
+              <span>Quantity: ${search.qty === undefined ? 0 : search.qty}</span>
+            </li>
+            <li id="subtotal-${id}" class="subtotal" title="Subtotal">
+              <span>Cost: $${(price * weight * (search.qty === undefined ? 0 : search.qty)).toFixed(2)}</span>
+            </li>
+          </ul>
+
           <button id="btn-heart-${id}" class="btn btn-heart" data-id="${id}" title="Toggle Favorite">
             ${search.heart === true ? `<img src="/butcher/assets/svg/heart-fill-red.svg" width="18" height="18" alt="Red Heart">`
             : `<img src="/butcher/assets/svg/heart.svg" width="18" height="18" alt="Black Border Heart">`}
           </button>
-          <div class="ctrl-btns">
-            <button id="btn-clear-${id}" class="btn btn--pill btn-clear" data-id="${id}" title="Set quantity to zero!">Clear</button>
-            <button id="btn-minus-${id}" class="btn btn--raised btn-minus" data-id="${id}" title="Decrease Quantity">
-              <img src="/butcher/assets/svg/dash-lg.svg" width="16" height="16" alt="dash-lg.svg">
-            </button>
-            <button id="btn-plus-${id}" class="btn btn--raised btn-plus" data-id="${id}" title="Increase Quantity">
-              <img src="/butcher/assets/svg/plus-lg.svg" width="18" height="18" alt="plus-lg.svg">
-            </button>
-          </div>
+
+          <ul class="ctrl-btns">
+            <li>
+              <button id="btn-clear-${id}" class="btn btn--nav btn-clear" data-id="${id}" title="Set quantity to zero!">
+                clear
+              </button>
+            </li>
+            <li>
+              <button id="btn-minus-${id}" class="btn btn--nav btn-minus" data-id="${id}" title="Decrease Quantity">
+                less
+              </button>
+            </li>
+            <li>
+              <button id="btn-plus-${id}" class="btn btn--nav btn-plus" data-id="${id}" title="Increase Quantity">
+                more
+              </button>
+            </li>
+          </ul>
+            
         </div>
       `
     }).join("");
     return this;
   };
+            // <img src="/butcher/assets/svg/plus-lg.svg" width="18" height="18" alt="plus-lg.svg">
+            //<img src="/butcher/assets/svg/dash-lg.svg" width="16" height="16" alt="dash-lg.svg">
+
   // Increases the selected package qty by 1
   plus = id => {
     const search = this.picks.find(pick => pick.id === id);
@@ -66,9 +88,9 @@ export class Store {
   // Updates the package qty and subtotal
   updatePackage = id => {
     const search = this.picks.find(pick => pick.id === id);
-    document.querySelector(`#qty-${id}`).textContent = `Quantity: ${search.qty}`;
+    document.querySelector(`#qty-${id}`).innerHTML = `<span>Quantity: ${search.qty}</span>`;
     const query = this.products.find(product => product.id === id);
-    document.querySelector(`#subtotal-${id}`).textContent = `Cost: $${(query.weight * search.qty * query.price).toFixed(2)}`;
+    document.querySelector(`#subtotal-${id}`).innerHTML = `<span>Cost: $${(query.weight * search.qty * query.price).toFixed(2)}</span>`;
     this.updateCartQuantity();
     return this;
   };

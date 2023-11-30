@@ -16,4 +16,5 @@
   --inform: #0949a9;
   --success: #006400;
   --bg-white: linear-gradient(#ffffff 90%, #f8f8f8);
+  --bg-light: linear-gradient( #f8f8f8, #ffffff 90%, #f8f8f8);
 }
