@@ -82,13 +82,13 @@ export class Cart extends Store {
   };
   // Prints cart summary
   printCartSummary = () => {
-    const picks = this.picks.filter(pick => pick.qty);
+    let picks = this.picks.filter(pick => pick.qty);
     if (!picks[0]) {
       document.querySelector(".ledger").classList.add("hide");
       return this;
     };
     let html = "";
-    picks.filter(pick => pick.qty).forEach(pick => {
+    this.picks.filter(pick => pick.qty).forEach(pick => {
       const product = this.view.find(product => product.id === pick.id);
       html += `
         <tr id="table-${product.id}">
