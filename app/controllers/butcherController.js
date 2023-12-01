@@ -14,7 +14,7 @@ exports.index_get =(req, res) => {
 // MAIN READ - detail
 exports.main_get =(req, res) => {
   res.render("butcher/main", {
-    subpageName: "Who Are We? ",
+    subpageName: "There's A New Butcher In Town!",
     roles: req.session.roles,
   });
 };
