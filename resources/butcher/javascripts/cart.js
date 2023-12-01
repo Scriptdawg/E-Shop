@@ -7,7 +7,7 @@ export class Cart extends Store {
   };
   // Main
   #main = () => {
-    document.querySelector("#subpage-name").textContent = "Cart Contents";
+    document.querySelector("#subpage-name").textContent = "Items In Your Cart";
     document.querySelector("#packages").style.minHeight = "initial";
     this.view = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.qty));
     this.printProducts();
@@ -76,7 +76,7 @@ export class Cart extends Store {
       <div id="empty-state" class="empty-state">
         <i class="bi bi-cart-x-fill"></i>
         <p>Your Cart Is Empty!</p>
-        <a class="btn btn--pill btn-continue" href="/butcher/store">Browse Products</a>
+        <a class="btn btn--shop btn-continue" href="/butcher/store">Browse Products</a>
       </div>
     `;
   };

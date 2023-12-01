@@ -29,14 +29,18 @@
   top: 0;
 }
 
-.btn-plus,
 .btn-continue {
   color: var(--inform);
 }
 
-.btn-minus,
-.package .btn-clear,
-.ledger .btn-clear-cart {
+.btn-plus {
+  color: var(--success);
+}
+
+.btn-minus {
+  color: var(--inform);
+}
+.package .btn-clear {
   color: var(--danger);
 }
 

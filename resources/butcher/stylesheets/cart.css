@@ -16,7 +16,6 @@
   margin-block: 16px;
   width: 100%;
 }
-
 .cart-summary thead,
 .cart-summary tfoot {
   background-color: var(--primary-1);

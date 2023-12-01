@@ -1,5 +1,6 @@
 :root {
   --white: #fff;
+  --light: #f4f4f4;
   --black: #000;
   --primary-1: #2b8379;
   --primary-2: #19a596;
@@ -17,4 +18,9 @@
   --success: #006400;
   --bg-white: linear-gradient(#ffffff 90%, #f8f8f8);
   --bg-light: linear-gradient( #f8f8f8, #ffffff 90%, #f8f8f8);
+  --shadow: 0 1px 1px hsl(0deg 0% 0% / 0.1),
+    0 2px 2px hsl(0deg 0% 0% / 0.1), 0 4px 4px hsl(0deg 0% 0% / 0.1),
+    0 8px 8px hsl(0deg 0% 0% / 0.1), 0 16px 16px hsl(0deg 0% 0% / 0.1);
+  --shadow-small: 0 1px 1px hsl(0deg 0% 0% / 0.1),
+    0 2px 2px hsl(0deg 0% 0% / 0.1);  
 }

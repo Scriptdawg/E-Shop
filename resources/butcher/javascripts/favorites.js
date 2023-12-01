@@ -6,7 +6,7 @@ export class Favorites extends Store {
     this.#main();
   };
   #main = () => {
-    document.querySelector("#subpage-name").textContent = "Favorites List";
+    document.querySelector("#subpage-name").textContent = "Your Favorites List";
     document.querySelector("#packages").style.minHeight = "initial";
     this.view = this.products.filter(product => this.picks.find(pick => pick.id === product.id && pick.heart));
     this.printProducts();
@@ -67,7 +67,7 @@ export class Favorites extends Store {
       <div id="empty-state" class="empty-state">
         <i class="bi bi-heart"></i>
         <p>You Don't Have Any Favorites!</p>
-        <a class="btn btn--pill btn-continue" href="/butcher/store">Browse Products</a>
+        <a class="btn btn--shop btn-continue" href="/butcher/store">Browse Products</a>
       </div>
     `;
   };

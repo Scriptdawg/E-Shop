@@ -1,0 +1,46 @@
+/* btn--flat */
+.btn--flat {
+  background-color: var(--primary-1);
+  background-image: url("/butcher/assets/svg/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  border-radius: 4px;
+  color: var(--white);
+  padding: 10px 51px 10px 22px;
+}
+.btn--shop {
+  background-color: var(--light);
+  background-image: url("/butcher/assets/svg/shop.svg");
+  background-repeat: no-repeat;
+  background-position: left 16px center;
+  border-radius: 4px;
+  box-shadow: var(--shadow-small);
+  color: var(--inform);
+  padding: 8px 16px 8px 44px;
+}
+button.btn--shop:focus {
+  box-shadow: var(--shadow-small); 
+}
+.btn--shop:hover {
+  background-color: var(--white);
+  color: var(--success);
+  opacity: 1;
+}
+.btn--trash {
+  background-color: var(--light);
+  background-image: url("/butcher/assets/svg/trash.svg");
+  background-repeat: no-repeat;
+  background-position: left 16px center;
+  border-radius: 4px;
+  box-shadow: var(--shadow-small);
+  color: var(--danger);
+  padding: 8px 16px 8px 44px;
+}
+button.btn--trash:focus {
+  box-shadow: var(--shadow-small); 
+}
+.btn--trash:hover {
+  background-color: var(--white);
+  color: var(--success);
+  opacity: 1;
+}
