@@ -14,25 +14,31 @@
   padding: 6px 12px;
   transition: opacity 180ms;
 }
+
 .btn:hover {
   opacity: 0.8;
 }
+
 a.btn:focus,
 button.btn:focus {
   box-shadow: none;
 }
+
 /* btn--nav */
 .btn--nav {
   text-transform: uppercase;
 }
+
 .btn--side-nav {
   text-transform: uppercase;
   padding-inline: 32px;
   width: 100%;
 }
+
 .btn--side-nav:hover {
   background-color: var(--primary-5);
 }
+
 /* btn--menu-black, btn--menu-white (svg) */
 .btn--menu-black,
 .btn--menu-white {
@@ -42,17 +48,21 @@ button.btn:focus {
   height: 36px;
   width: 36px;
 }
+
 .btn--menu-black {
   background-image: url("/butcher/assets/svg/menu-black.svg");
 }
+
 .btn--menu-white {
   background-image: url("/butcher/assets/svg/menu-white.svg");
 }
+
 /* btn--round for round svg buttons */
 .btn--round {
   border-radius: 50%;
   padding: 6px 8px 0 8px;
 }
+
 /* btn--top scrolls to top of page */
 .btn--top {
   background-color: var(--bg-light);
@@ -63,6 +73,7 @@ button.btn:focus {
   position: fixed;
   right: 0;
 }
+
 /* btn--flat */
 .btn--flat {
   background-color: var(--primary-1);
@@ -73,6 +84,7 @@ button.btn:focus {
   color: var(--white);
   padding: 10px 51px 10px 22px;
 }
+
 .btn--shop {
   background-color: var(--light);
   background-image: url("/butcher/assets/svg/shop.svg");
@@ -83,14 +95,53 @@ button.btn:focus {
   color: var(--inform);
   padding: 8px 16px 8px 44px;
 }
+
 button.btn--shop:focus {
-  box-shadow: var(--shadow-small); 
+  box-shadow: var(--shadow-small);
 }
+
 .btn--shop:hover {
   background-color: var(--white);
   color: var(--success);
   opacity: 1;
 }
+
+.btn--nav-shop {
+  background-image: url("/butcher/assets/svg/shop.svg");
+  background-repeat: no-repeat;
+  background-position: left 4px center;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  padding: 8px 4px 8px 26px;
+}
+
+button.btn--nav-shop:focus {
+  box-shadow: none;
+}
+.btn--nav-favorites {
+  background-image: url("/butcher/assets/svg/heart.svg");
+  background-repeat: no-repeat;
+  background-position: left 4px center;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  padding: 8px 4px 8px 26px;
+}
+
+button.btn--nav-favorites:focus {
+  box-shadow: none;
+}
+.btn--nav-cart {
+  background-image: url("/butcher/assets/svg/cart4.svg");
+  background-repeat: no-repeat;
+  background-position: left 4px center;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  padding: 8px 4px 8px 26px;
+}
+button.btn--nav-cart:focus {
+  box-shadow: none;
+}
+
 .btn--trash {
   background-color: var(--light);
   background-image: url("/butcher/assets/svg/trash.svg");
@@ -101,9 +152,11 @@ button.btn--shop:focus {
   color: var(--danger);
   padding: 8px 16px 8px 44px;
 }
+
 button.btn--trash:focus {
-  box-shadow: var(--shadow-small); 
+  box-shadow: var(--shadow-small);
 }
+
 .btn--trash:hover {
   background-color: var(--white);
   color: var(--success);

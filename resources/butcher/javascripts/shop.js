@@ -23,8 +23,8 @@ export class Shop extends Store {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     document.querySelector(".ledger").classList.add("hide");
     document.querySelector(".categories").classList.add("show");
-    document.querySelector("#shop").classList.add("hide");
-    document.querySelector("#btn-store").classList.add("hidden");
+    // document.querySelector("#shop").classList.add("hide");
+    // document.querySelector("#btn-store").classList.add("hidden");
   };
   // Activates buttons event listeners
   #attachButtons = () => {

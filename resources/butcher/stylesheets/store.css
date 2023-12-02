@@ -1,31 +1,15 @@
 /* subpage navigation */
 #subpage-nav {
   align-items: center;
-  background: var(--bg-white);
+  background-color: var(--primary-5);
   bottom: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   left: 0;
-  padding: 16px 32px 0 16px;
+  padding: 8px 16px;
   position: fixed;
   right: 0;
-}
-
-#btn-cart,
-#btn-favorites {
-  position: relative;
-}
-
-#cart-quantity,
-#heart-quantity {
-  background-color: var(--primary-1);
-  border-radius: 50%;
-  color: var(--white);
-  font-size: 12px;
-  padding: 0px 4px;
-  position: absolute;
-  right: -4px;
-  top: 0;
 }
 
 .btn-continue {
