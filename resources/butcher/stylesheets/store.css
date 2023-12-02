@@ -1,7 +1,7 @@
 /* subpage navigation */
 #subpage-nav {
   align-items: center;
-  background-color: var(--primary-5);
+  background: var(--bg-light);
   bottom: 0;
   display: flex;
   flex-wrap: wrap;
