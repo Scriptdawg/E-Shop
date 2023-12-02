@@ -79,7 +79,7 @@
 
 /* ctrl-btns */
 .ctrl-btns {
-  background-image: var(--bg-light);
+  background: var(--bg-light);
   border-radius: 0 0 8px 8px;
   display: flex;
   grid-area: ctrl-btns;

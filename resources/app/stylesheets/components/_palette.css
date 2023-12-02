@@ -34,7 +34,7 @@
   --shadow-small: 0 1px 1px hsl(0deg 0% 0% / 0.1),
     0 2px 2px hsl(0deg 0% 0% / 0.1);
 
-
+    --primary-5: #d0f3ef;
   /* ? theme Colors */
   --theme: #133a26;
   --theme-brown: #a52a2a;

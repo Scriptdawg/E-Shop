@@ -31,7 +31,7 @@ button.btn:focus {
   width: 100%;
 }
 .btn--side-nav:hover {
-  background-color: var(--hover);
+  background-color: var(--primary-5);
 }
 /* btn--menu-black, btn--menu-white (svg) */
 .btn--menu-black,

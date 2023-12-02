@@ -1,0 +1,37 @@
+/* footer-app */
+.footer-app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 128px 16px;
+}
+/* social */
+.social {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+@media (min-width: 576px) {
+  .social {
+    gap: 32px;
+  }
+}
+/* window-size */
+.window-size {
+  min-height: 16px;
+  min-width: 50px;
+}
+/* logo-app */
+.logo-app {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+@media (min-width: 576px) {
+  .logo-app {
+    gap: 16px;
+  }
+}
