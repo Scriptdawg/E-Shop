@@ -65,10 +65,10 @@ button.btn:focus {
 
 /* btn--top scrolls to top of page */
 .btn--top {
-  background-color: var(--bg-light);
-  border-radius: 8px 0 0 8px;
+  background: var(--overlay);
+  border-radius: 4px 0 0 4px;
   bottom: max(70px, 10dvh);
-  color: var(--danger);
+  color: var(--white);
   display: none;
   position: fixed;
   right: 0;

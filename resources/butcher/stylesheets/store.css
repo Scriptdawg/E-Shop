@@ -2,6 +2,7 @@
 #subpage-nav {
   align-items: center;
   background: var(--bg-light);
+  border-top: 1px solid var(--dark);
   bottom: 0;
   display: flex;
   flex-wrap: wrap;
