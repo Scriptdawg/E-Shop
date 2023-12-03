@@ -1,7 +1,11 @@
 <!-- app-top-nav -->
 <nav id="app-top-nav">
   <div class="app-top-nav">
-    <button id="btn-open-app-side-nav" class="btn btn--menu-black" title="Menu"></button>
+    <button id="btn-open-app-side-nav" class="btn" title="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="menu" viewBox="0 0 512 512" height="32">
+        <path d="M64 384h384v-42.67H64zm0-106.67h384v-42.66H64zM64 128v42.67h384V128z" fill="var(--svg-color)"></path>
+      </svg>
+    </button>
     <ul class="app-top-nav-links">
       <li id="shop"><a class="btn btn--nav" href="/butcher/store" title="Go Shopping">Shop</a></li>
       <li><a class="btn btn--nav" href="/butcher/main" title="Butcher Shop Main Page">Main</a></li>
@@ -9,7 +13,9 @@
   </div>
   <!-- subpage heading -->
   <div class="app-subpage">
-    <h1 class="title subpage-name" id="subpage-name" title="Subpage Name"><%= subpageName %></h1>
+    <h1 class="title subpage-name" id="subpage-name" title="Subpage Name">
+      <%= subpageName %>
+    </h1>
   </div>
 </nav>
 <!-- app side navigation -->
@@ -34,18 +40,21 @@
       <li><a class="btn btn--side-nav" href="/butcher/store" title="Go Shopping">Shop</a></li>
       <li><a class="btn btn--side-nav" href="/butcher/main" title="Butcher Shop Main Page">Main</a></li>
       <% if(roles) { roles.forEach(role=> { %>
-          <li><a class="btn btn--side-nav" href="/<%= role %>" title="<%= role %>"><%= role %></a></li>
+        <li><a class="btn btn--side-nav" href="/<%= role %>" title="<%= role %>">
+            <%= role %>
+          </a></li>
         <% }) %>
-        <li><a class="btn btn--side-nav" href="/auth/logout" title="Sign Out">Sign Out</a></li>
-      <% } else { %>
-        <li><a class="btn btn--side-nav" href="/auth/register" title="Register">Register</a></li>
-        <li><a class="btn btn--side-nav" href="/auth/login" title="Sign In">Sign In</a></li>
-      <% } %>
-      <li><a class="btn btn--side-nav" href="/" title="Coder's Cove Home Page">Coder's Cove</a></li>
+          <li><a class="btn btn--side-nav" href="/auth/logout" title="Sign Out">Sign Out</a></li>
+          <% } else { %>
+            <li><a class="btn btn--side-nav" href="/auth/register" title="Register">Register</a></li>
+            <li><a class="btn btn--side-nav" href="/auth/login" title="Sign In">Sign In</a></li>
+            <% } %>
+              <li><a class="btn btn--side-nav" href="/" title="Coder's Cove Home Page">Coder's Cove</a></li>
     </ul>
   </div>
   <div class="outro">
-    <p class="text--xs" title="Coder's Cove Logo">&copy; 2023 <%= title %></p>
+    <p class="text--xs" title="Coder's Cove Logo">&copy; 2023 <%= title %>
+    </p>
   </div>
 </nav>
 <div id="overlay" class="overlay"></div>

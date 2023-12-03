@@ -1,14 +1,15 @@
 /* btn */
 .btn {
   all: unset;
-  box-sizing: border-box;
   border: none;
+  border-radius: 4px;
   box-shadow: none;
+  box-sizing: border-box;
   cursor: pointer;
   display: inline-block;
   font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   line-height: 1.6;
   outline: revert;
   padding: 6px 12px;
@@ -16,7 +17,7 @@
 }
 
 .btn:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 a.btn:focus,
@@ -24,13 +25,13 @@ button.btn:focus {
   box-shadow: none;
 }
 
-/* btn--nav */
-.btn--nav {
+/* btn--nav, btn--side-nav */
+.btn--nav,
+.btn--side-nav {
   text-transform: uppercase;
 }
 
 .btn--side-nav {
-  text-transform: uppercase;
   padding-inline: 32px;
   width: 100%;
 }
@@ -39,126 +40,74 @@ button.btn:focus {
   background-color: var(--primary-5);
 }
 
-/* btn--menu-black, btn--menu-white (svg) */
-.btn--menu-black,
-.btn--menu-white {
-  background-attachment: local;
-  background-position: center;
-  background-size: cover;
-  height: 36px;
-  width: 36px;
-}
-
-.btn--menu-black {
-  background-image: url("/butcher/assets/svg/menu-black.svg");
-}
-
-.btn--menu-white {
-  background-image: url("/butcher/assets/svg/menu-white.svg");
-}
-
 /* btn--round for round svg buttons */
 .btn--round {
   border-radius: 50%;
   padding: 6px 8px 0 8px;
 }
 
-/* btn--top scrolls to top of page */
-.btn--top {
-  background: var(--overlay);
-  border-radius: 4px 0 0 4px;
-  bottom: max(70px, 10dvh);
-  color: var(--white);
-  display: none;
-  position: fixed;
-  right: 0;
-}
-
 /* btn--flat */
 .btn--flat {
   background-color: var(--primary-1);
   background-image: url("/butcher/assets/svg/arrow-right.svg");
-  background-repeat: no-repeat;
   background-position: right 20px center;
-  border-radius: 4px;
+  background-repeat: no-repeat;
   color: var(--white);
   padding: 10px 51px 10px 22px;
 }
 
-.btn--shop {
+/* raised btn--shop, btn--trash */
+.btn--shop,
+.btn--trash {
   background-color: var(--light);
-  background-image: url("/butcher/assets/svg/shop.svg");
-  background-repeat: no-repeat;
   background-position: left 16px center;
-  border-radius: 4px;
+  background-repeat: no-repeat;
   box-shadow: var(--shadow-small);
-  color: var(--inform);
   padding: 8px 16px 8px 44px;
 }
 
-button.btn--shop:focus {
-  box-shadow: var(--shadow-small);
+.btn--shop {
+  background-image: url("/butcher/assets/svg/shop.svg");
+  color: var(--inform);
 }
 
-.btn--shop:hover {
+.btn--trash {
+  background-image: url("/butcher/assets/svg/trash.svg");
+  color: var(--danger);
+}
+
+.btn--shop:hover,
+.btn--trash:hover {
   background-color: var(--white);
-  color: var(--success);
-  opacity: 1;
+}
+
+/* subpage navigation buttons */
+.btn--nav-shop,
+.btn--nav-favorites,
+.btn--nav-cart {
+  background-position: left 4px center;
+  background-repeat: no-repeat;
+  padding: 8px 4px 8px 26px;
 }
 
 .btn--nav-shop {
   background-image: url("/butcher/assets/svg/shop.svg");
-  background-repeat: no-repeat;
-  background-position: left 4px center;
-  border-radius: 4px;
-  letter-spacing: 1px;
-  padding: 8px 4px 8px 26px;
 }
 
-button.btn--nav-shop:focus {
-  box-shadow: none;
-}
 .btn--nav-favorites {
   background-image: url("/butcher/assets/svg/heart.svg");
-  background-repeat: no-repeat;
-  background-position: left 4px center;
-  border-radius: 4px;
-  letter-spacing: 1px;
-  padding: 8px 4px 8px 26px;
 }
 
-button.btn--nav-favorites:focus {
-  box-shadow: none;
-}
 .btn--nav-cart {
   background-image: url("/butcher/assets/svg/cart4.svg");
-  background-repeat: no-repeat;
-  background-position: left 4px center;
-  border-radius: 4px;
-  letter-spacing: 1px;
-  padding: 8px 4px 8px 26px;
-}
-button.btn--nav-cart:focus {
-  box-shadow: none;
 }
 
-.btn--trash {
-  background-color: var(--light);
-  background-image: url("/butcher/assets/svg/trash.svg");
-  background-repeat: no-repeat;
-  background-position: left 16px center;
-  border-radius: 4px;
-  box-shadow: var(--shadow-small);
-  color: var(--danger);
-  padding: 8px 16px 8px 44px;
-}
-
-button.btn--trash:focus {
-  box-shadow: var(--shadow-small);
-}
-
-.btn--trash:hover {
-  background-color: var(--white);
-  color: var(--success);
-  opacity: 1;
+/* btn--top scrolls to top of page */
+.btn--top {
+  background: var(--overlay);
+  bottom: max(70px, 10dvh);
+  color: var(--white);
+  display: none;
+  position: fixed;
+  right: 2px;
 }

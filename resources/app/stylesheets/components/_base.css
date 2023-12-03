@@ -3,11 +3,11 @@
 }
 
 html {
-  /* safari */
   margin-inline: auto;
   overflow-wrap: break-word;
-  -webkit-user-select: none;
-  user-select: none;
+  /* safari */
+  /* -webkit-user-select: none;
+  user-select: none; */
 }
 
 /* html {

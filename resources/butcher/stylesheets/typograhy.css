@@ -81,18 +81,8 @@
 .text--xs {
   font-size: 0.75rem;
   font-weight: 600;
+  letter-spacing: 0.1rem;
   line-height: 1.5;
-}
-
-/* uppercase */
-.uppercase {
-  text-transform: uppercase;
-}
-
-.first-character::first-letter {
-  color: var(--theme);
-  font-size: 1.5em;
-  text-transform: uppercase;
 }
 
 /* lowercase */
@@ -100,7 +90,18 @@
   text-transform: lowercase;
 }
 
-/* Extra Large - xl */
+/* uppercase */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* first-character larger uppercase */
+.first-character::first-letter {
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+/* increase font for extra large screens */
 @media (min-width: 1200px) {
   html {
     font-size: 110%;
