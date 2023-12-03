@@ -37,7 +37,7 @@
       justify-content: center;
     }
     img {
-      animation: logo-pulse 6s 150;
+      animation: logo-flash 5s 120;
       border-radius: 50%;
       height: auto;
       width: 100px;
@@ -45,9 +45,10 @@
     img:hover {
       outline: 2px solid #eee;
     }
-    @keyframes logo-pulse {
-      80% { opacity: 1; }
-      90% { opacity: 0.7; }
+    @keyframes logo-flash {
+      10% { opacity: 1; }
+      20% { opacity: 0.7; }
+      30% { opacity: 1; }
       100% { opacity: 1; }
     }
     @media (min-width: 300px) { img { width: 257px; } }

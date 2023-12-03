@@ -30,11 +30,13 @@
 /* subpage name h1 */
 .app-subpage {
   background: var(--bg-white);
+  border-bottom: 1px solid var(--dark);
   min-height: 48px;
   padding: 8px 16px;
 }
 
 .subpage-name {
+  color: var(--primary-1);
   margin-block: 0;
 }
 

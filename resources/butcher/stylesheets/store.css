@@ -39,3 +39,7 @@
 .show {
   display: block;
 }
+.estimate {
+  color: var(--inform);
+  padding: 32px;
+}

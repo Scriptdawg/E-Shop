@@ -1,9 +1,3 @@
-.brd-left {
-  border-left: 3px solid var(--primary-1);
-  display: inline-block;
-  padding-inline: 8px 16px;
-}
-
 .meat-pics {
   display: flex;
   margin-block: 16px;
@@ -17,18 +11,4 @@
 
 .butcher-main section {
   margin-block-end: 48px;
-}
-
-.subpage-name {
-  color: var(--primary-1);
-}
-
-.estimate {
-  color: var(--inform);
-  padding: 32px;
-}
-
-.estimate h3 {
-  border-left: 4px solid var(--inform);
-  padding-left: 8px;
 }
