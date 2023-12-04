@@ -85,6 +85,11 @@
   gap: 16px;
 }
 
+/* categories */
+.categories {
+  display: none;
+}
+
 /* overlay */
 .overlay {
   background-color: var(--overlay);
@@ -111,4 +116,19 @@
   .app-side-nav-links {
     gap: 8px;
   }
+}
+
+/* subpage navigation */
+#subpage-nav {
+  align-items: center;
+  background: var(--bg-light);
+  border-top: 1px solid var(--dark);
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  left: 0;
+  padding: 8px 16px;
+  position: fixed;
+  right: 0;
 }
