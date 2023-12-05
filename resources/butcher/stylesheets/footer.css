@@ -1,5 +1,5 @@
-/* footer-app */
-.footer-app {
+/* footer */
+.footer {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -23,15 +23,15 @@
   min-height: 16px;
   min-width: 50px;
 }
-/* logo-app */
-.logo-app {
+/* footer-logo */
+.footer-logo {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 @media (min-width: 576px) {
-  .logo-app {
+  .footer-logo {
     gap: 16px;
   }
 }

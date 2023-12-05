@@ -10,7 +10,7 @@ export class Store {
       return;
     }
     document.querySelector("#packages").innerHTML = this.view.map(product => {
-      const { id, img, name, price, shortDescription, priceType, weight } = product;
+      const { id, img, name, price, shortDescription, weight } = product;
       const search = this.picks.find(pick => pick.id === id) || [];
       return `
         <div id="package-${id}" class="package">

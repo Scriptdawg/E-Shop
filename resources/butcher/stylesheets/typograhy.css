@@ -6,13 +6,6 @@
 }
 
 /* titles */
-.title--xxl {
-  font-family: var(--font-teritiary);
-  font-size: 2.5rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
 .title--xl {
   font-size: 2rem;
   font-weight: 600;
@@ -85,19 +78,8 @@
   line-height: 1.5;
 }
 
-/* lowercase */
-.lowercase {
-  text-transform: lowercase;
-}
-
 /* uppercase */
 .uppercase {
-  text-transform: uppercase;
-}
-
-/* first-character larger uppercase */
-.first-character::first-letter {
-  font-size: 1.4em;
   text-transform: uppercase;
 }
 

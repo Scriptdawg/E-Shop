@@ -1,4 +1,4 @@
-/* ? packages grid */
+/* packages grid */
 #packages {
   min-height: 100vh;
 }
@@ -17,7 +17,7 @@
   }
 }
 
-/* ? package grid */
+/* package grid */
 .package {
   background-color: var(--white);
   border-radius: 8px;
@@ -101,7 +101,7 @@
   color: var(--success);
 }
 
-/* ? empty-state */
+/* empty-state */
 .empty-state {
   background-color: var(--white);
   display: grid;
@@ -111,13 +111,17 @@
   row-gap: 16px;
 }
 
-/* ? display & visibility */
+/* display & visibility */
 .hide {
   display: none;
 }
 
 .hidden {
   visibility: hidden;
+}
+
+.show {
+  display: block;
 }
 
 /* estimate */
