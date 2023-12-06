@@ -1,0 +1,30 @@
+.tags {
+  padding-left: 0;
+}
+.tag {
+  --tag-color: var(--gray);
+  border: 1px solid var(--tag-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  margin: 8px;
+  margin-left: 0;
+  outline: 1px solid transparent;
+  position: relative;
+}
+
+.tag::before {
+  border: 1px solid var(--tag-color);
+  box-sizing: border-box;
+  content: "";
+  inset: -3px;
+  position: absolute;
+}
+.tag:hover {
+  --tag-color: var(--primary);
+  color: var(--primary);
+  outline-color: var(--primary);
+}

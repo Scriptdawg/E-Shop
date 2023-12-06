@@ -1,0 +1,64 @@
+:root {
+  /* Font Families */
+  --font-primary: system-ui;
+  --font-secondary: Verdana, Helvetica, Arial, sans-serif;
+  --font-teritiary: Georgia, serif;
+  /* Fixed Colors */
+  --beige: #f5f5f1;
+  --black: #232020;
+  --dark-blue: #130c24;
+  --gray: #999999;
+  --primary: #19a596;
+  --white: white;
+  /* Theme Dependent Colors */
+  --anchor-color: var(--primary);
+  --dark-icon: var(--black);
+  --gray-dark: #666666;
+  --gray-light: #bdbdbd;
+  --text-color: white;
+  --light-icon: white;
+  /* Sizing */
+  --gap: clamp(30px, 10vw, 80px);
+}
+* {
+  box-sizing: border-box;
+}
+/* Dark Theme */
+html {
+  background-color: var(--dark-blue);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+/* Light Theme */
+html.light-theme {
+  background-color: var(--beige);
+  --anchor-color: var(--black);
+  --dark-icon: var(--white);
+  --gray-light: var(--gray-dark);
+  --light-icon: var(--black);
+  --text-color: var(--black);
+}
+body {
+  font-family: var(--font-primary);
+  margin: 0;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+::selection {
+  background-color: var(--primary);
+  color: var(--white);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+@media (max-width: 37.5rem) {
+  html {
+    font-size: 80%;
+  }
+}

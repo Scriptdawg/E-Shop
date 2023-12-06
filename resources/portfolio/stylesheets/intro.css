@@ -1,0 +1,30 @@
+#intro {
+  position: relative; /* for scroll-down */
+}
+#intro-h1 {
+  margin-bottom: 0;
+}
+#intro-h1,
+#intro-h2 {
+  font-family: var(--font-teritiary);
+  font-size: 2.5rem;
+  opacity: 0.8;
+  overflow-wrap: break-word;
+}
+#intro-h2 {
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+#intro p {
+  margin-block: 16px;
+}
+@media (max-width: 37.5rem) {
+  #intro {
+    min-height: calc(100vh -128px);
+    min-height: calc(100dvh - 128px);
+  }
+  #about-me {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}

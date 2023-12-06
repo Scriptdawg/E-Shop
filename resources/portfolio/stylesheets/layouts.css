@@ -1,0 +1,17 @@
+.layout-section {
+  padding-block-end: 200px;
+  scroll-margin-top: 20px;
+}
+.layout-section-title {
+  margin-bottom: 36px;
+}
+.layout-grid-half {
+  display: grid;
+  column-gap: var(--gap);
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 37.5rem) {
+  .layout-grid-half {
+    grid-template-columns: 1fr;
+  }
+}

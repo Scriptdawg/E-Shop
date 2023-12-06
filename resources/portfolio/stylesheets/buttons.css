@@ -1,0 +1,48 @@
+.btn {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  opacity: 0.8;
+  outline: revert;
+  text-transform: uppercase;
+  transition: translate 180ms, opacity 180ms;
+}
+.btn:hover {
+  opacity: 1;
+}
+.btn:active {
+  translate: 1px 1px;
+}
+.btn--nav {
+  color: var(--text-color);
+  padding: 12px;
+}
+.btn--raised {
+  background-color: var(--primary);
+  background-image: url("../assets/svg/arrow-right.svg");
+  background-position: right 20px center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  color: var(--white);
+  padding: 12px 53px 12px 24px;
+}
+.btn--line {
+  color: var(--text-color);
+  padding: 12px;
+}
+.btn--line::after {
+  border: 1px solid var(--primary);
+  box-sizing: border-box;
+  content: "";
+  display: inline-block;
+  height: 4px;
+  width: 100%;
+}
+.btn.disabled {
+  opacity: 0.5;
+}

@@ -1,0 +1,27 @@
+.hire-form {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr 3fr;
+}
+.hire-action {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+.hire-line {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.hire-line p {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+.hire-line a {
+  font-size: 14px;
+}
+@media (max-width: 37.5rem) {
+  .hire-form {
+    grid-template-columns: 1fr;
+  }
+}

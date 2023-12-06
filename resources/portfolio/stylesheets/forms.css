@@ -1,0 +1,32 @@
+.input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--gray);
+  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 24px;
+  padding: 12px 10px;
+  transition: border-color 200ms;
+  width: 100%;
+}
+.input:focus {
+  border-bottom-color: var(--primary);
+  outline: none;
+}
+textarea.input {
+  min-height: 100px;
+  resize: vertical;
+}
+.info-message-container,
+.error-message-container {
+  visibility: hidden;
+}
+.info-message-container.visible-message,
+.error-message-container.visible-message {
+  visibility: visible;
+}
+.info-message {
+  color: var(--primary);
+}
