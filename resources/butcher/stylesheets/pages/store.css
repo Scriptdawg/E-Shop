@@ -1,0 +1,134 @@
+@layer page {
+
+  /* packages grid */
+  #packages {
+    min-height: 100vh;
+  }
+
+  .packages {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .packages {
+      grid-auto-rows: min-content;
+      grid-template-columns:
+        repeat(auto-fill, minmax(380px, 1fr));
+    }
+  }
+
+  /* package grid */
+  .package {
+    background-color: var(--white);
+    border-radius: 8px;
+    column-gap: 16px;
+    display: grid;
+    grid-template-areas:
+      "picture   info"
+      "term      term"
+      "ctrl-btns ctrl-btns";
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: auto 1fr auto;
+    padding: 18px 16px 0 16px;
+  }
+
+  /* picture */
+  .picture {
+    align-self: center;
+    grid-area: picture;
+  }
+
+  .picture img {
+    height: auto;
+    width: 100%;
+  }
+
+  /* info */
+  .info {
+    font-weight: 600;
+    grid-area: info;
+  }
+
+  .qty,
+  .subtotal {
+    color: var(--primary-1);
+    text-align: end;
+  }
+
+  .info span {
+    display: inline-block;
+    min-width: 100px;
+    text-align: left;
+  }
+
+  /* term */
+  .term {
+    grid-area: term;
+  }
+
+  .term h2,
+  .term p {
+    margin-block: 0;
+  }
+
+  /* package buttons */
+  .ctrl-btns {
+    background: var(--bg-light);
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    grid-area: ctrl-btns;
+    justify-content: space-between;
+    margin-block-start: 8px;
+    margin-inline: -16px;
+  }
+
+  .btn-heart {
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+    justify-self: end;
+    align-self: start;
+  }
+
+  .btn-clear {
+    color: var(--danger);
+  }
+
+  .btn-minus {
+    color: var(--inform);
+  }
+
+  .btn-plus {
+    color: var(--success);
+  }
+
+  /* empty-state */
+  .empty-state {
+    background-color: var(--white);
+    display: grid;
+    grid-column-start: span 3;
+    padding-block: 32px;
+    place-items: center;
+    row-gap: 16px;
+  }
+
+  /* display & visibility */
+  .hide {
+    display: none;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .show {
+    display: block;
+  }
+
+  /* estimate */
+  .estimate {
+    color: var(--inform);
+    padding: 32px;
+  }
+}

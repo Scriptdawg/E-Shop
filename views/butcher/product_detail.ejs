@@ -5,10 +5,11 @@
   <title>Butcher Shop | <%= subpageName %></title>
 </head>
 <body>
+  <noscript>Butcher Shop requires JavaScript. Please enable.</noscript>
   <header>
-    <%- include("../app/banner-app.ejs") %>
+    <%- include("../butcher/banner.ejs") %>
   </header>
-  <%- include("../app/nav-app.ejs") %>
+  <%- include("../butcher/nav.ejs") %>
   <main class="container-subpage">
     <h2 class="title"><%= pageTitle %></h2>
     <% if(product.coverImagePath) { %>
@@ -32,7 +33,7 @@
     <% } %>
   </main>
   <footer>
-    <%- include('../app/footer-app.ejs') %>
+    <%- include('../butcher/footer.ejs') %>
   </footer>
 </body>
 </html>

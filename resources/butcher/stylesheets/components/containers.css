@@ -1,0 +1,12 @@
+@layer component {
+  .container {
+    padding: 16px;
+  }
+
+  .container-subpage {
+    margin-inline: auto;
+    max-width: 960px;
+    padding-block-start: 32px;
+    padding-inline: 16px;
+  }
+}
