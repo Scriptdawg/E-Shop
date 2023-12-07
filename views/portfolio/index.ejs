@@ -220,17 +220,13 @@
             <li class="tag"><a class="btn btn--nav" href="https://scriptdawg.com/webgl" target="_blank">WebGL</a></li>
             <li class="tag"><a class="btn btn--nav" href="https://animal-y4xn.onrender.com" target="_blank">Node.js</a>
             </li>
-            <li class="tag"><a class="btn btn--nav disabled">React</a></li>
+
             <li class="tag"><a class="btn btn--nav" href="https://animal-y4xn.onrender.com" target="_blank">Mongodb</a>
             </li>
             <li class="tag"><a class="btn btn--nav" href="https://blog.scriptdawg.com" target="_blank">MySql</a></li>
             <li class="tag"><a class="btn btn--nav" href="https://mia.scriptdawg.com" target="_blank">PHP</a></li>
-            <li class="tag"><a class="btn btn--nav disabled">Java</a></li>
-            <li class="tag"><a class="btn btn--nav disabled">Python</a></li>
-            <li class="tag"><a class="btn btn--nav disabled">Security</a></li>
             <li class="tag"><a class="btn btn--nav" href="https://github.com/Scriptdawg" target="_blank">Git |
                 Github</a></li>
-            <li class="tag"><a class="btn btn--nav disabled">Education</a></li>
           </ul>
         </div>
       </section>
@@ -272,25 +268,59 @@
               </div>
             </address>
             <!-- Hire Form -->
-            <form id="hire-form">
-              <label for="hire-name" class="sr-only">Your name</label>
-              <input id="hire-name" type="text" autocomplete="name" class="input" required placeholder="Your name" />
-              <label for="hire-email" class="sr-only">Your email</label>
-              <input id="hire-email" type="email" autocomplete="email" class="input" required
-                placeholder="Your email" />
-              <label for="hire-message" class="sr-only">Your message</label>
-              <textarea id="hire-message" class="input" required placeholder="Your message"></textarea>
+            <form  id="hire-form" method="POST" action="">
+              <label for="name" class="sr-only">Your name</label>
+              <input
+                class="input"
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                placeholder="Your name" 
+                required
+              />
+
+              <label for="email" class="sr-only">Your email</label>
+              <input
+                class="input"
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                placeholder="Your email"
+                required
+              />
+
+              <label for="subject" class="sr-only">Subject</label>
+              <input
+                class="input"
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+
+              <label for="message" class="sr-only">Your message</label>
+              <textarea
+                class="input"
+                id="message"
+                name="message"
+                placeholder="Your message"
+                required
+                ></textarea>
+
               <div class="hire-action">
                 <input type="submit" class="btn btn--raised" value="Send" />
               </div>
-              <!-- info-message -->
-              <div class="info-message-container">
-                <p class="info-message"></p>
-              </div>
-              <!-- error-message -->
-              <div class="error-message-container">
-                <p class="error-message"></p>
-              </div>
+              
+              <% if(message) { %>
+                <h3 class="title">You sent:</h3>
+                <p>Subject: <%= message.subject %></p>
+                <p>Message: <%= message.message %></p>
+                <p><b>Thank you for contacting us!</b></p>
+              <% } %>
+                
             </form>
           </div>
         </div>

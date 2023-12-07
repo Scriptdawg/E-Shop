@@ -1,9 +1,9 @@
-import { Helpers } from "./helpers.js";
-import { FetchWrap } from "./fetchWrap.js";
+// import { Helpers } from "./helpers.js";
+// import { FetchWrap } from "./fetchWrap.js";
 class Portfolio {
   constructor() {
     this.#main();
-    this.#hireForm();
+    // this.#hireForm();
   }
   #main = () => {
     document.querySelector("#scroll-down").addEventListener("click", () => {
