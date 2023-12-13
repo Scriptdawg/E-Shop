@@ -53,7 +53,13 @@
           <i class="material-icons">visibility</i>
         </div>
       </div>
-      <button type="submit">Reset Password</button>
+      <button
+        type="submit"
+        id="reset-submit"
+        onclick="document.querySelector('reset-submit').style.visibility ='hidden';"
+      >
+        Reset Password
+      </button>
     </form>
 
     <% if(errors && errors !== '' ) { %>

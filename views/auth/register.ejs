@@ -80,7 +80,13 @@
           value="member"
         >
       </div>
-      <button type="submit">Register</button>
+      <button
+        type="submit"
+        id="register-submit"
+        onclick="document.querySelector('#register-submit').style.visibility ='hidden';"
+      >
+        Register
+      </button>
     </form>
 
     <% if(errors && errors !== '' ) { %>

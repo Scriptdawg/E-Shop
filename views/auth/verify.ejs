@@ -18,7 +18,13 @@
         <input type="hidden" id="id" name="id" value="<%= id %>">
         <label for="verificationCode">Verification Code</label>
         <input type="text" id="verificationCode" name="verificationCode">
-        <button type="submit">Verify</button>
+        <button
+          type="submit"
+          id="verify-submit"
+          onclick="document.querySelector('verify-submit').style.visibility ='hidden';"
+        >
+          Verify
+        </button>       
       </div>
     </form>
 
@@ -29,7 +35,13 @@
       <form method="POST" action="/auth/verify/resend">
         <div>
           <input type="hidden" id="id" name="id" value="<%= id %>">
-          <button type="submit">Resend Code</button>
+          <button
+            type="submit"
+            id="resend-submit"
+            onclick="document.querySelector('resend-submit').style.visibility ='hidden';"
+          >
+            Resend Code
+          </button>
         </div>
       </form>
 
