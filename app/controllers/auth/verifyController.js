@@ -77,7 +77,7 @@ exports.verify_get = async (req, res) => {
       }
     }
   }
-  res.redirect("/public/dogs");
+  res.redirect("/member");
 };
 
 // VERIFY - POST

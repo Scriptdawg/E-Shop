@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../app/head-app.ejs") %>
+  <title><%= title %> | <%= subpageName %></title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <header>
+    <%- include("../app/banner-app.ejs") %>
+  </header>
+  <%- include("../app/nav-app.ejs") %>
+
+  <main class="container-subpage">
+    <h2 class="title">Please Enter Credentials</h2>
+    <form method="POST" action="/auth/reset">
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter email ..."
+          value=""
+          autocomplete="email"
+        >
+      </div>
+
+      <div>
+        <label for="password">New Password</label>
+        <div class="pass-word">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="********"
+            value=""
+            autocomplete="new-password"
+          >
+          <i class="material-icons">visibility</i>
+        </div>
+      </div>
+      <div>
+        <label for="repeatPassword">Re-enter password</label>
+        <div class="pass-word">
+          <input
+            type="password"
+            id="repeatPassword"
+            name="repeatPassword"
+            placeholder="Re-enter password ..."
+            autocomplete="new-password"
+          >
+          <i class="material-icons">visibility</i>
+        </div>
+      </div>
+      <button type="submit">Reset Password</button>
+    </form>
+
+    <% if(errors && errors !== '' ) { %>
+      <h3 class="title">Errors:</h3>
+      <ul>
+        <% errors.forEach(error=> { %>
+          <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <br><br>
+    <details>
+      <summary>Privacy policy</summary>
+      <p>We take your privacy seriously. Here are some key points from our privacy policy:</p>
+       <ul>
+        <li>We collect only the personal information that is necessary to provide our services.</li>
+        <li>We do not share your personal information with third parties except as required by law.</li>
+        <li>We use industry-standard security measures to protect your personal information.</li>
+        <li>You can request access to or deletion of your personal information at any time.</li>
+      </ul>
+      <p>For more information, please read our full privacy policy.</p>
+    </details>
+  </main>
+
+  <footer>
+    <%- include('../app/footer-app.ejs') %>
+  </footer>
+
+  <script src="/auth/javascripts/login.js"></script>
+
+</body>
+</html>

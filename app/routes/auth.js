@@ -4,6 +4,7 @@ const register_controller = require("../controllers/auth/registerController");
 const verify_controller = require("../controllers/auth/verifyController");
 const login_controller = require("../controllers/auth/loginController");
 const logout_controller = require("../controllers/auth/logoutController");
+const reset_controller = require("../controllers/auth/resetController");
 
 // AUTHORIZATION ROUTES
 
@@ -23,5 +24,9 @@ router.post("/login", login_controller.login_post);
 
 // LOGOUT
 router.get("/logout", logout_controller.logout_get);
+
+// RESET PASSWORD
+router.get("/reset", reset_controller.reset_get);
+router.post("/reset", reset_controller.reset_post);
 
 module.exports = router;
