@@ -1,0 +1,128 @@
+:root {
+  --caution: rgb(255, 245, 204);
+  --danger: rgb(176, 0, 0);
+  --inform: rgb(9, 73, 169);
+  --success: rgb(0, 100, 0);
+  --theme: #133a26;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  margin-block: 0;
+  font-size: 1rem;
+}
+
+h1 {
+  color: var(--success);
+  text-align: center;
+}
+
+.page-container {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: 2rem 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  margin-block: 2rem;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 700px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* CAROUSEL */
+.carousel-box {
+  display: block;
+  position: relative;
+  margin-block: 2rem;
+}
+
+.carousel {
+  background-image: linear-gradient(to right, whitesmoke, black, whitesmoke);
+  padding: 0.5rem 1rem 1rem 1rem;
+  margin-inline: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  border-radius: .2em;
+  box-shadow: gainsboro 0 0 1em;
+  display: none;
+  height: 100%;
+  margin: auto;
+  max-width: 100%;
+  min-width: 70%;
+  object-fit: cover;
+}
+
+.slide:first-child {
+  display: block;
+}
+
+/* previous & next buttons */
+.prev,
+.next {
+  background-color: transparent;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: -3.8em;
+  padding: 3em .75em;
+  position: absolute;
+  top: 50%;
+  transition: 0.6s ease;
+  user-select: none;
+  width: auto;
+}
+
+/* position the "prev button" to the left */
+.prev {
+  left: 0;
+  text-shadow: 0 0 3px black;
+}
+
+/* position the "next button" to the right */
+.next {
+  right: 0;
+  text-shadow: 0 0 3px black;
+}
+
+/* mouse over link */
+.prev:hover,
+.next:hover {
+  background-color: transparent;
+  color: var(--danger);
+}
+
+/* number text (1 of 3 etc) */
+#picNumber {
+  background-color: transparent;
+  bottom: 2px;
+  color: white;
+  font-size: .7em;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  user-select: none;
+  width: 100%;
+  margin: 0;
+}

@@ -19,6 +19,7 @@ const butcherRouter = require("./app/routes/butcher");
 const libraryRouter = require("./app/routes/library");
 const memberRouter = require("./app/routes/member");
 const moderatorRouter = require("./app/routes/moderator");
+const pictureRouter = require("./app/routes/picture");
 const portfolioRouter = require("./app/routes/portfolio");
 const siteRouter = require("./app/routes/site");
 
@@ -81,6 +82,7 @@ app.use("/butcher", butcherRouter);
 app.use("/library", libraryRouter);
 app.use("/member", memberRouter);
 app.use("/moderator", moderatorRouter);
+app.use("/picture", pictureRouter);
 app.use("/portfolio", portfolioRouter);
 
 // catch 404 and forward to error handler

@@ -4,7 +4,7 @@
   grid-template-columns: 1fr;
   grid-template-areas: "picture";
   height: max(380px, 30dvh);
-  /* overflow: hidden; */
+  overflow: hidden;
   /* overflow-wrap: break-word; */
 }
 .fade {
@@ -40,28 +40,28 @@
   animation: fade 40s infinite;
   animation-delay: 10s;
   background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-    url("/site/assets/images/IMG_2950_lrg.jpg");
+    url("/site/assets/images/IMG_6224_lrg.jpg");
   opacity: 0;
 }
 .fade-two {
   animation: fade 40s infinite;
   animation-delay: 20s;
   background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-    url("/site/assets/images/IMG_6224_lrg.jpg");
+    url("/site/assets/images/IMG_6273_lrg.jpg");
   opacity: 0;
 }
 .fade-three {
   animation: fade 40s infinite;
   animation-delay: 30s;
   background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-    url("/site/assets/images/IMG_6273_lrg.jpg");
+    url("/site/assets/images/IMG_6275_lrg.jpg");
   opacity: 0;
 }
 .fade-four {
   animation: fade 40s infinite;
   animation-delay: 40s;
   background-image: linear-gradient(rgba(0 0 0 / 20%), rgba(0 0 0 / 20%)),
-    url("/site/assets/images/IMG_6275_lrg.jpg");
+    url("/site/assets/images/IMG_2950_lrg.jpg");
   opacity: 0;
 }
 @keyframes fade {
@@ -138,4 +138,43 @@
   0%   { translate: 0 -100px; rotate: 0; }
   50%  { translate: 0 100px;  rotate: 0.5turn; }
   100% { translate: 0 0;      rotate: 1turn; }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  max-width: 1000px;
+  margin-inline: auto;
+  margin-block: 64px;
+}
+.areaThree {
+  background-color: red;
+}
+.areaTwo {
+  background-color: green;
+}
+.areaFour {
+  background-color: orange;
+}
+.areaOne img,
+.areaMia img {
+  width: 100%;
+  height: 100%;
+}
+.areaMia {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+.areaSix {
+  background-color: purple;
+}
+.areaSeven {
+  background-color: turquoise;
+}
+.areaEight {
+  background-color: yellow;
+}
+.areaNine {
+  background-color: blue;
 }

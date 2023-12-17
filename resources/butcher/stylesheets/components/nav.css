@@ -18,7 +18,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     min-height: 48px;
-    padding-inline: 16px;
+    padding-inline: 2px 16px;
     z-index: 98;
   }
 

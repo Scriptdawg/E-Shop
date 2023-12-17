@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Playing with pictures." />
+
+  <%- include('../app/head-app.ejs') %>
+  <title><%= title %> | <%= subpageName %></title>
+
+  <link rel="stylesheet" href="/picture/stylesheets/index.css" />
+  <script defer src="/picture/javascripts/index.js"></script>
+  <title>Picture Collections</title>
+</head>
+
+<body>
+
+  <header>
+    <%- include("../app/banner-app.ejs") %>
+  </header>
+  <%- include("../app/nav-app.ejs") %>
+
+  <main class="page-container">
+    <h1>Mia</h1>
+    <h2>Playing in our backyard.</h2>
+
+    <div class="carousel-box">
+      <div class="carousel" onmouseover="pauseSlide(this)">
+        <img class="slide fade" src="/picture/assets/images/IMG_3221_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+        <img class="slide fade" src="/picture/assets/images/IMG_3222_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+        <img class="slide fade" src="/picture/assets/images/IMG_3223_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+        <img class="slide fade" src="/picture/assets/images/IMG_3224_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+        <img class="slide fade" src="/picture/assets/images/IMG_3219_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+        <img class="slide fade" src="/picture/assets/images/IMG_3222_2_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+        <img class="slide fade" src="/picture/assets/images/IMG_3212_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+        <img class="slide fade" src="/picture/assets/images/IMG_3216_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+        <img class="slide fade" src="/picture/assets/images/IMG_3220_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+        <img class="slide fade" src="/picture/assets/images/IMG_3221_2_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+        <img class="slide fade" src="/picture/assets/images/IMG_3224_2_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      </div>
+      <p id="picNumber">1 of 1</p>
+      <a class="prev" onclick="prevSlide()">&#10092;</a>
+      <a class="next" onclick="nextSlide(1)">&#10093;</a>
+    </div>
+
+    <p>
+      Mia is very photogenic. These pictures show her running in our backyard
+      at top speed. The sun was shining making her fur look extra white. Check
+      out the action shots and close ups.
+    </p>
+    <p><b>Location:</b> Arrowwood, Alberta</p>
+
+    <div class="container">
+      <img src="/picture/assets/images/IMG_3221_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      <img src="/picture/assets/images/IMG_3222_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      <img src="/picture/assets/images/IMG_3223_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      <img src="/picture/assets/images/IMG_3224_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      <img src="/picture/assets/images/IMG_3219_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      <img src="/picture/assets/images/IMG_3222_2_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      <img src="/picture/assets/images/IMG_3212_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      <img src="/picture/assets/images/IMG_3216_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      <img src="/picture/assets/images/IMG_3220_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      <img src="/picture/assets/images/IMG_3221_2_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+      <img src="/picture/assets/images/IMG_3224_2_538.jpg" width="538" height="404" alt="Mia" title="Mia" />
+    </div>
+
+    <div id="javascript">Hello</div>
+  </main>
+  
+  <footer>
+    <%- include('../app/footer-app.ejs') %>
+  </footer>
+
+</body>
+
+</html>

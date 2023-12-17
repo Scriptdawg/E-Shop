@@ -7,7 +7,7 @@
     font-family: var(--font-teritiary);
     font-style: italic;
     justify-content: space-between;
-    padding: 4px 16px 0 16px;
+    padding: 4px 16px 0 6px;
   }
 
   .logo {
