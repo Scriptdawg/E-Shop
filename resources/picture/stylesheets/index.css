@@ -10,33 +10,29 @@ body {
   margin: 0;
 }
 
-h1,
 h2 {
-  margin-block: 0;
-  font-size: 1rem;
-}
-
-h1 {
   color: var(--success);
+  font-size: 1.25rem;
+  margin-block: 0;
   text-align: center;
 }
 
 .page-container {
-  max-width: 1000px;
   margin-inline: auto;
+  max-width: 1000px;
   padding: 2rem 1rem;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 2px;
+  grid-template-columns: 1fr;
   margin-block: 2rem;
 }
 
 .container img {
-  width: 100%;
   height: auto;
+  width: 100%;
 }
 
 @media (min-width: 700px) {
@@ -48,15 +44,15 @@ h1 {
 /* CAROUSEL */
 .carousel-box {
   display: block;
-  position: relative;
   margin-block: 2rem;
+  position: relative;
 }
 
 .carousel {
   background-image: linear-gradient(to right, whitesmoke, black, whitesmoke);
-  padding: 0.5rem 1rem 1rem 1rem;
   margin-inline: auto;
   overflow: hidden;
+  padding: 0.5rem 1rem 1rem 1rem;
   position: relative;
 }
 
@@ -66,13 +62,9 @@ h1 {
   display: none;
   height: 100%;
   margin: auto;
-  max-width: 100%;
-  min-width: 70%;
+  width: 100%;
+  /* min-width: 70%; */
   object-fit: cover;
-}
-
-.slide:first-child {
-  display: block;
 }
 
 /* previous & next buttons */
@@ -119,10 +111,11 @@ h1 {
   color: white;
   font-size: .7em;
   left: 0;
+  letter-spacing: 0.1rem;
+  margin: 0;
   padding: 0;
   position: absolute;
   text-align: center;
   user-select: none;
   width: 100%;
-  margin: 0;
 }
