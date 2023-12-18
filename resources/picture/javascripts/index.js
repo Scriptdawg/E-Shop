@@ -1,6 +1,3 @@
-document.querySelector("#javascript").innerHTML = `
-  Hello from index.js!
-`
 // carousel
 var myIndex = 0;
 carousel();

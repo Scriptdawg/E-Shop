@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../app/head-app.ejs") %>
+  <title><%= title %> | <%= subpageName %></title>
+  <link rel="stylesheet" href="/picture/stylesheets/index.css" />
+  <script defer src="/picture/javascripts/index.js"></script>
+</head>
+<body>
+  <header>
+    <%- include("../app/banner-app.ejs") %>
+  </header>
+  <%- include("../app/nav-app.ejs") %>
+
+  <main class="page-container">
+    <h2 class="title"><%= pageTitle %></h2>
+
+    <div class="carousel-box">
+      <div class="carousel" onmouseover="pauseSlide(this)">
+        <img class="slide fade" src="/picture/assets/images/<%= picture.id %>_1.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+        <img class="slide fade" src="/picture/assets/images/<%= picture.id %>_2.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+        <img class="slide fade" src="/picture/assets/images/<%= picture.id %>_3.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+        <img class="slide fade" src="/picture/assets/images/<%= picture.id %>_4.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+        <img class="slide fade" src="/picture/assets/images/<%= picture.id %>_5.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+        <img class="slide fade" src="/picture/assets/images/<%= picture.id %>_6.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+        <img class="slide fade" src="/picture/assets/images/<%= picture.id %>_7.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+        <img class="slide fade" src="/picture/assets/images/<%= picture.id %>_8.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+      </div>
+      <p id="picNumber">1 of 1</p>
+      <button class="btn prev" onclick="prevSlide()">&#10092;</button>
+      <button class="btn next" onclick="nextSlide(1)">&#10093;</button>
+    </div>    
+
+    <p><%= picture.shortDescription %></p>
+    <p><%= picture.longDescription %></p>
+
+    <div class="container">
+      <img src="/picture/assets/images/<%= picture.id %>_1.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+      <img src="/picture/assets/images/<%= picture.id %>_2.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+      <img src="/picture/assets/images/<%= picture.id %>_3.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+      <img src="/picture/assets/images/<%= picture.id %>_4.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+      <img src="/picture/assets/images/<%= picture.id %>_5.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+      <img src="/picture/assets/images/<%= picture.id %>_6.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+      <img src="/picture/assets/images/<%= picture.id %>_7.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+      <img src="/picture/assets/images/<%= picture.id %>_8.jpg" width="600" height="400" alt="<%= picture.name %>" title="<%= picture.name %>" />
+    </div>
+
+  </main>
+
+  <footer>
+    <%- include('../app/footer-app.ejs') %>
+  </footer>
+</body>
+</html>

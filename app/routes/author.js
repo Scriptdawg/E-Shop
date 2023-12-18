@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const author_controller = require("../controllers/authorController");
 const product_controller = require("../controllers/productController");
+const picture_controller = require("../controllers/pictureController");
 const story_controller = require("../controllers/storyController");
 const authJwt = require("../middlewares/authJwt");
 
@@ -63,6 +64,52 @@ router.post(
   "/product/delete",
   [authJwt.verifyToken, authJwt.isAuthor],
   product_controller.product_delete_post
+);
+
+// PICTURE
+// CREATE Picture - This must come before routes that display Picture (uses id)
+router.get(
+  "/picture/create",
+  [authJwt.verifyToken, authJwt.isAuthor],
+  picture_controller.picture_create_get
+);
+router.post(
+  "/picture/create",
+  [authJwt.verifyToken, authJwt.isAuthor],
+  picture_controller.picture_create_post
+);
+// READ Picture - detail & list
+router.get(
+  "/picture/:id",
+  [authJwt.verifyToken, authJwt.isAuthor],
+  picture_controller.picture_detail_get
+);
+router.get(
+  "/pictures",
+  [authJwt.verifyToken, authJwt.isAuthor],
+  picture_controller.picture_list_get
+);
+// UPDATE Picture
+router.get(
+  "/picture/update/:id",
+  [authJwt.verifyToken, authJwt.isAuthor],
+  picture_controller.picture_update_get
+);
+router.post(
+  "/picture/update/:id",
+  [authJwt.verifyToken, authJwt.isAuthor],
+  picture_controller.picture_update_post
+);
+// DELETE Picture
+router.get(
+  "/picture/delete/:id",
+  [authJwt.verifyToken, authJwt.isAuthor],
+  picture_controller.picture_delete_get
+);
+router.post(
+  "/picture/delete",
+  [authJwt.verifyToken, authJwt.isAuthor],
+  picture_controller.picture_delete_post
 );
 
 // STORY

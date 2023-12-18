@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../app/head-app.ejs") %>
+  <title><%= title %> | <%= subpageName %></title>
+</head>
+<body>
+  <header>
+    <%- include("../app/banner-app.ejs") %>
+  </header>
+  <%- include("../app/nav-app.ejs") %>
+
+  <main class="container-subpage">
+    <h2 class="title"><%= pageTitle %></h2>
+    <h3 class="title"><%= picture.name %></h3>
+    <p>Do you really want to delete <%= picture.name %>?</p>
+
+    <form method="POST" action="/author/picture/delete">
+      <input
+        type="hidden"
+        name="pictureid"
+        required="true"
+        value="<%= picture._id %>"
+      >
+      <button type="submit">Delete</button>
+    </form>
+
+    <br>
+    <a href="/author/picture/<%= picture.url %>">Cancel</a>
+  </main>
+
+  <footer>
+    <%- include('../app/footer-app.ejs') %>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../app/head-app.ejs") %>
+  <link rel="stylesheet" href="/picture/stylesheets/index.css" />
+  <title><%= title %> | <%= subpageName %></title>
+</head>
+<body>
+  <header>
+    <%- include("../app/banner-app.ejs") %>
+  </header>
+  <%- include("../app/nav-app.ejs") %>
+
+
+  <main class="page-container">
+    <div class="container">
+      <% pictures.forEach((picture)=> { %>
+        <a href="detail/<%= picture.url %>">
+          <h2 class="title"><%= picture.name %></h2>
+          <% if(picture.coverImagePath) { %>
+            <img
+              width="600"
+              height="400"
+              src="<%= picture.coverImagePath %>"
+              alt="<%= picture.name %> - database picture"
+              title="<%= picture.name %>"
+            >
+          <% } %>
+        </a>
+      <% }); %>
+    </div>
+  </main>
+
+  <footer>
+    <%- include('../app/footer-app.ejs') %>
+  </footer>
+</body>
+</html>
