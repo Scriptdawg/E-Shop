@@ -51,7 +51,7 @@
     ],
     "theme_color": "#2b8379",
     "background_color": "#2b8379",
-    "start_url": "http://localhost:3000/butcher/",
+    "start_url": "https://animal-y4xn.onrender.com/butcher/",
     "display": "standalone",
     "orientation": "portrait"
 }

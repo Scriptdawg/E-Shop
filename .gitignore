@@ -2,8 +2,3 @@
 node_modules
 package-lock.json
 requests.rest
-index.js
-images
-images_local
-images_host
-favicons
