@@ -21,6 +21,6 @@
     ],
     "theme_color": "#19a596",
     "background_color": "#19a596",
-    "start_url": "https://animal-y4xn.onrender.com/portfolio/",
+    "start_url": "http://localhost:3000/portfolio/",
     "display": "standalone"
 }
